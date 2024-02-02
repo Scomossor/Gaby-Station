@@ -71,9 +71,13 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 1
-  - type: PhysicalComposition #Goobstation - Recycle update
+# Corvax-Printer-Start
+  - type: Material
+  - type: PhysicalComposition
     materialComposition:
-      Paper: 25
+      SheetPrinter: 100
+      Paper: 25 #Goobstation - Recycle update
+# Corvax-Printer-End
 
 - type: entity
   name: paper scrap
