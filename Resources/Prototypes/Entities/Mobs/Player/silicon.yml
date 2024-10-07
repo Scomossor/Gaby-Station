@@ -90,7 +90,15 @@
   - type: UserInterface
     interfaces:
       enum.SiliconLawsUiKey.Key:
-        type: SiliconLawBoundUserInterface
+        type: SiliconLawBoundUserInterface  - type: HolographicAvatar
+    layerData:
+    - sprite: Mobs/Silicon/station_ai.rsi
+      state: default
+
+- type: HolographicAvatar
+    layerData:
+    - sprite: Mobs/Silicon/station_ai.rsi
+      state: default
 
 # Ai
 - type: entity
@@ -351,7 +359,7 @@
     listeningRange: 0.5
     speakerVolume: Speak
   - type: Holopad
-  - type: StationAiWhitelist  
+  - type: StationAiWhitelist
   - type: UserInterface
     interfaces:
         enum.HolopadUiKey.AiRequestWindow:
