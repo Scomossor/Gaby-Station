@@ -177,7 +177,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
             // Switch the AI's perspective from free roaming to the target holopad
             _xformSystem.SetCoordinates(stationAiCore.Value.Comp.RemoteEntity.Value, Transform(source).Coordinates);
-            _stationAiSystem.SwitchRemoteMode(stationAiCore.Value, false);
+            _stationAiSystem.SwitchRemoteEntityMode(stationAiCore.Value, false);
 
             return;
         }
@@ -595,7 +595,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
         if (TryComp<StationAiCoreComponent>(entity, out var stationAiCore))
         {
-            _stationAiSystem.SwitchRemoteMode((entity.Owner, stationAiCore), true);
+            _stationAiSystem.SwitchRemoteEntityMode((entity.Owner, stationAiCore), true);
 
             if (TryComp<TelephoneComponent>(entity, out var stationAiCoreTelphone))
                 _telephoneSystem.EndTelephoneCalls((entity, stationAiCoreTelphone));
@@ -670,11 +670,6 @@ public sealed class HolopadSystem : SharedHolopadSystem
         // Switch the AI's perspective from free roaming to the target holopad
         _xformSystem.SetCoordinates(stationAiCore.Value.Comp.RemoteEntity.Value, Transform(entity).Coordinates);
         _stationAiSystem.SwitchRemoteEntityMode(stationAiCore.Value, false);
-
-        // Open the holopad Ui if it hasn't been opened yet
-        if (TryComp<UserInterfaceComponent>(entity, out var entityUserInterfaceComponent) &&
-            !_userInterfaceSystem.IsUiOpen((entity, entityUserInterfaceComponent), HolopadUiKey.InteractionWindow))
-            _userInterfaceSystem.OpenUi((entity, entityUserInterfaceComponent), HolopadUiKey.InteractionWindow, user);
     }
 
     private void ExecuteBroadcast(Entity<HolopadComponent> source, EntityUid user)
