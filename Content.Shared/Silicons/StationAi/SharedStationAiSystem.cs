@@ -378,7 +378,6 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
-        ent.Comp.Remote = true;
         SetupEye(ent);
 
         // Just so text and the likes works properly
