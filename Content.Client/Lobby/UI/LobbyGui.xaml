@@ -90,6 +90,8 @@
                                 Text="{Loc 'ui-lobby-options-button'}" />
                         <Button Name="LeaveButton" Access="Public" StyleClasses="ButtonBig"
                                 Text="{Loc 'ui-lobby-leave-button'}" />
+                        <Button Name="RemarksButton" Access="Public" StyleClasses="ButtonBig"
+                                Text="{Loc 'ui-lobby-remarks-button'}" />
                     </BoxContainer>
                     <controls:HSpacer Spacing="10" />
                     <!-- Server info -->
