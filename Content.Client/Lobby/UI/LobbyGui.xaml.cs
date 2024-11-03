@@ -25,7 +25,7 @@ namespace Content.Client.Lobby.UI
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
 
             var logoTexture = _resCache.GetResource<TextureResource>("/Textures/Logo/logo.png");
-            //Logo.Texture = logoTexture;
+            Logo.Texture = logoTexture;
 
             //!LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             RemarksButton.OnPressed += _ => _consoleHost.ExecuteCommand("adminremarks");
