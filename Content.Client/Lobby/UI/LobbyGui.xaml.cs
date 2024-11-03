@@ -5,6 +5,7 @@ using Robust.Client.Console;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
+using Robust.Client.ResourceManagement;
 
 namespace Content.Client.Lobby.UI
 {
@@ -12,6 +13,7 @@ namespace Content.Client.Lobby.UI
     public sealed partial class LobbyGui : UIScreen
     {
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+        [Dependency] private readonly IResourceCache _resCache = default!;
 
         public LobbyGui()
         {
@@ -22,7 +24,10 @@ namespace Content.Client.Lobby.UI
 
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
 
-            LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
+            var logoTexture = _resCache.GetResource<TextureResource>("/Textures/Logo/logo.png");
+            //Logo.Texture = logoTexture;
+
+            //!LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             RemarksButton.OnPressed += _ => _consoleHost.ExecuteCommand("adminremarks");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
         }

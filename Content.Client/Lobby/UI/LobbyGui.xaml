@@ -70,28 +70,35 @@
             <PanelContainer Name="RightSide" StyleClasses="AngleRect" HorizontalAlignment="Right" VerticalExpand="True"
                             VerticalAlignment="Stretch">
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                    <!-- Top row -->
-                    <BoxContainer Orientation="Horizontal" MinSize="0 40" Name="HeaderContainer" Access="Public"
+                    <!-- Top row
+                    !<BoxContainer Orientation="Horizontal" MinSize="0 40" Name="HeaderContainer" Access="Public"
                                   SeparationOverride="4">
                         <Label Margin="8 0 0 0" StyleClasses="LabelHeadingBigger" VAlign="Center"
                                Text="{Loc 'ui-lobby-title'}" />
                         <Label Name="ServerName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
                                HorizontalExpand="True" HorizontalAlignment="Center" />
-                    </BoxContainer>
-                    <!-- Gold line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" />
-                    <controls:HSpacer Spacing="10" />
+                    </BoxContainer> -->
+                    <!-- Gold line
+                    !<controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" />
+
+                    !<controls:HSpacer Spacing="10" /> -->
                     <!-- Voting & misc button bar -->
-                    <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Right">
+                    <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Center">
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="ButtonBig" />
                         <vote:VoteCallMenuButton Name="CallVoteButton" StyleClasses="ButtonBig" />
                         <Button Name="OptionsButton" Access="Public" StyleClasses="ButtonBig"
                                 Text="{Loc 'ui-lobby-options-button'}" />
-                        <Button Name="LeaveButton" Access="Public" StyleClasses="ButtonBig"
-                                Text="{Loc 'ui-lobby-leave-button'}" />
+                         <!-- !<Button Name="LeaveButton" Access="Public" StyleClasses="ButtonBig"
+                                Text="{Loc 'ui-lobby-leave-button'}" /> -->
                         <Button Name="RemarksButton" Access="Public" StyleClasses="ButtonBig"
                                 Text="{Loc 'ui-lobby-remarks-button'}" />
+                    </BoxContainer>
+                    <controls:HSpacer Spacing="10" />
+                    <!-- logo -->
+                    <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="LogoContainer" HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" HorizontalExpand="True" Margin="0 8">
+                        <TextureRect Name="Logo" Stretch="KeepCentered"/>
                     </BoxContainer>
                     <controls:HSpacer Spacing="10" />
                     <!-- Server info -->

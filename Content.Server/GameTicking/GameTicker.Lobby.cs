@@ -75,7 +75,7 @@ namespace Content.Server.GameTicking
             var planetName = _distressSignal.SelectedPlanetMapName ??
                 Loc.GetString("game-ticker-no-map-selected");
             var gmTitle = Loc.GetString(preset.ModeTitle);
-            var desc = Loc.GetString(preset.Description);
+            //var desc = Loc.GetString(preset.Description);
             return Loc.GetString(
                 RunLevel == GameRunLevel.PreRoundLobby
                     ? "game-ticker-get-info-preround-text"
@@ -85,8 +85,8 @@ namespace Content.Server.GameTicking
                 ("readyCount", readyCount),
                 ("planetName", planetName),
                 ("mapName", stationNames.ToString()),
-                ("gmTitle", gmTitle),
-                ("desc", desc));
+                ("gmTitle", gmTitle));
+                //("desc", desc));
         }
 
         private TickerConnectionStatusEvent GetConnectionStatusMsg()
