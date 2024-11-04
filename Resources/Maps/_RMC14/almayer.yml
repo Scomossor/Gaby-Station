@@ -7745,14 +7745,14 @@ entities:
   - uid: 499
     components:
     - type: MetaData
-      name: Savannah Dock B
+      name: almayer
     - type: Transform
       pos: 14.5,-6.5
       parent: 1
   - uid: 500
     components:
     - type: MetaData
-      name: Savannah Dock A
+      name: almayer
     - type: Transform
       pos: -9.5,-6.5
       parent: 1
