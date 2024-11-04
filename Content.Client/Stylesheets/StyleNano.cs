@@ -161,7 +161,7 @@ namespace Content.Client.Stylesheets
         //gaby station
         public const string StyleClassButtonColorGaby = "ButtonColorGaby";
 
-        public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
+        public static readonly Color ChatBackgroundColor = Color.FromHex("#131313");
 
         //Bwoink
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
