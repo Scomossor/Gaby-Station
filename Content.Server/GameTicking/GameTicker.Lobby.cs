@@ -84,8 +84,8 @@ namespace Content.Server.GameTicking
                 ("playerCount", playerCount),
                 ("readyCount", readyCount),
                 ("planetName", planetName),
-                ("mapName", stationNames.ToString()),
-                ("gmTitle", gmTitle));
+                ("mapName", stationNames.ToString()));
+                //("gmTitle", gmTitle),
                 //("desc", desc));
         }
 

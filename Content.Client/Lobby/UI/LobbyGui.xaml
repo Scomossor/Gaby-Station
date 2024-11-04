@@ -70,31 +70,21 @@
             <PanelContainer Name="RightSide" StyleClasses="AngleRect" HorizontalAlignment="Right" VerticalExpand="True"
                             VerticalAlignment="Stretch">
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                    <!-- Top row
-                    !<BoxContainer Orientation="Horizontal" MinSize="0 40" Name="HeaderContainer" Access="Public"
-                                  SeparationOverride="4">
-                        <Label Margin="8 0 0 0" StyleClasses="LabelHeadingBigger" VAlign="Center"
-                               Text="{Loc 'ui-lobby-title'}" />
-                        <Label Name="ServerName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
-                               HorizontalExpand="True" HorizontalAlignment="Center" />
-                    </BoxContainer> -->
-                    <!-- Gold line
-                    !<controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" />
-
-                    !<controls:HSpacer Spacing="10" /> -->
+                    <!-- Top row -->
                     <!-- Voting & misc button bar -->
                     <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Center">
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="ButtonBig" />
+                        
                         <vote:VoteCallMenuButton Name="CallVoteButton" StyleClasses="ButtonBig" />
-                        <Button Name="OptionsButton" Access="Public" StyleClasses="ButtonBig"
-                                Text="{Loc 'ui-lobby-options-button'}" />
-                         <!-- !<Button Name="LeaveButton" Access="Public" StyleClasses="ButtonBig"
-                                Text="{Loc 'ui-lobby-leave-button'}" /> -->
+                        
                         <Button Name="RemarksButton" Access="Public" StyleClasses="ButtonBig"
                                 Text="{Loc 'ui-lobby-remarks-button'}" />
+
+                        <Button Name="OptionsButton" Access="Public" StyleClasses="ButtonBig"
+                                Text="{Loc 'ui-lobby-options-button'}" />
                     </BoxContainer>
-                    <controls:HSpacer Spacing="10" />
+                    <controls:HSpacer Spacing="5" />
                     <!-- logo -->
                     <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="LogoContainer" HorizontalAlignment="Center" 
                         VerticalAlignment="Center" HorizontalExpand="True" Margin="0 8">
@@ -111,8 +101,8 @@
                     <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
-                    <!-- Gold line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" Access="Public" />
+                    <!-- Gaby line -->
+                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
                     <controls:HSpacer Spacing="10" />
                     <widgets:ChatBox Name="Chat" Access="Public" VerticalExpand="True" Margin="3 3 3 3" MinHeight="50" />
                 </BoxContainer>

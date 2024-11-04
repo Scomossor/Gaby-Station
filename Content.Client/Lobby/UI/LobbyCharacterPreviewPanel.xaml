@@ -16,7 +16,8 @@
             <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Name="CharacterSetup" Text="{Loc 'lobby-character-preview-panel-character-setup-button'}"
                         HorizontalAlignment="Center"
-                        Margin="0 5 0 0" />
+                        Margin="0 5 0 0"
+                        StyleClasses="ButtonColorGaby"/>
                 <Button Name="PatronPerks" Access="Public" Text="{Loc 'rmc-ui-patron-perks'}"
                         Margin="0 5 0 0" Visible="False" />
             </BoxContainer>

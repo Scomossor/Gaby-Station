@@ -14,6 +14,7 @@ public sealed class MenuButton : ContainerButton
     [Dependency] private readonly IInputManager _inputManager = default!;
     public const string StyleClassLabelTopButton = "topButtonLabel";
     public const string StyleClassRedTopButton = "topButtonLabel";
+    public const string StyleClassGabyTopButton = "topButtonLabel";
 
     private static readonly Color ColorNormal = Color.FromHex("#7b7e9e");
     private static readonly Color ColorRedNormal = Color.FromHex("#FEFEFE");
@@ -21,9 +22,17 @@ public sealed class MenuButton : ContainerButton
     private static readonly Color ColorRedHovered = Color.FromHex("#FFFFFF");
     private static readonly Color ColorPressed = Color.FromHex("#789B8C");
 
+    //gaby
+    private static readonly Color ColorGabyNormal = Color.FromHex("#527A25");
+    private static readonly Color ColorGabyHovered = Color.FromHex("#527A25");
+
     private const float VertPad = 8f;
     private Color NormalColor => HasStyleClass(StyleClassRedTopButton) ? ColorRedNormal : ColorNormal;
     private Color HoveredColor => HasStyleClass(StyleClassRedTopButton) ? ColorRedHovered : ColorHovered;
+
+    //gaby station
+    private Color NormalColorGaby => HasStyleClass(StyleClassGabyTopButton) ? ColorGabyNormal : NormalColorGaby;
+    private Color HoveredColorGaby => HasStyleClass(StyleClassGabyTopButton) ? ColorGabyHovered : ColorHovered;
 
     private BoundKeyFunction _function;
     private readonly BoxContainer _root;
