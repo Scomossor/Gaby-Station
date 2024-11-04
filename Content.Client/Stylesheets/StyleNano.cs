@@ -96,7 +96,8 @@ namespace Content.Client.Stylesheets
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
-
+        
+        // gaby station
         public static readonly Color GabyTheme = Color.FromHex("#667C4D");
 
         public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
@@ -113,6 +114,10 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
+
+        // gaby station
+        public static readonly Color ButtonColorDefaultGaby = Color.FromHex("#667C4D");
+        public static readonly Color ButtonColorHoveredGaby = Color.FromHex("#4C5B39");
 
         //NavMap
         public static readonly Color PointRed = Color.FromHex("#B02E26");
@@ -152,6 +157,9 @@ namespace Content.Client.Stylesheets
         public const string StyleClassCrossButtonRed = "CrossButtonRed";
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
+
+        //gaby station
+        public const string StyleClassButtonColorGaby = "ButtonColorGaby";
 
         public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
 
@@ -1203,6 +1211,20 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefaultRed),
                     }),
 
+                // gaby station
+                new StyleRule(
+                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassGabyTopButton}, null, new[] {Button.StylePseudoClassNormal}),
+                    new[]
+                    {
+                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefaultGaby),
+                    }),
+                new StyleRule(
+                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassGabyTopButton}, null, new[] {Button.StylePseudoClassHover}),
+                    new[]
+                    {
+                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorHoveredGaby),
+                    }),
+
                 new StyleRule(
                     new SelectorElement(typeof(MenuButton), null, null, new[] {Button.StylePseudoClassNormal}),
                     new[]
@@ -1485,6 +1507,17 @@ namespace Content.Client.Stylesheets
 
                 Element<LineEdit>().Class("PaperLineEdit")
                     .Prop(LineEdit.StylePropertyStyleBox, new StyleBoxEmpty()),
+
+                // Gaby Station Button ---
+                Element<Button>().Class("ButtonColorGaby")
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDefaultGaby),
+
+                Element<Button>().Class("ButtonColorGaby").Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDefaultGaby),
+
+                Element<Button>().Class("ButtonColorGaby").Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorHoveredGaby),
+                // ---
 
                 // Red Button ---
                 Element<Button>().Class("ButtonColorRed")
