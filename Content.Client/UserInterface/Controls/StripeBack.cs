@@ -8,7 +8,7 @@ namespace Content.Client.UserInterface.Controls
     {
         private const float PadSize = 4;
         private const float EdgeSize = 2;
-        private static readonly Color EdgeColor = Color.FromHex("#525252ff");
+        private static readonly Color EdgeColor = Color.FromHex("#667C4D");
 
         private bool _hasTopEdge = true;
         private bool _hasBottomEdge = true;

@@ -24,7 +24,7 @@
             </BoxContainer>
             <PanelContainer>
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.NanoGold}" ContentMarginTopOverride="2" />
+                    <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.GabyTheme}" ContentMarginTopOverride="2" />
                 </PanelContainer.PanelOverride>
             </PanelContainer>
             <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
@@ -33,7 +33,7 @@
                 </ScrollContainer>
                 <PanelContainer MinSize="2 0">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.NanoGold}" ContentMarginTopOverride="2" />
+                        <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.GabyTheme}" ContentMarginTopOverride="2" />
                     </PanelContainer.PanelOverride>
                 </PanelContainer>
                 <BoxContainer Name="CharEditor" HorizontalExpand="True" />
