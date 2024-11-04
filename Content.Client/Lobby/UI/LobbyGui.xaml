@@ -35,7 +35,7 @@
                                         <Label Name="StartTime"
                                                Access="Public"
                                                Align="Left"
-                                               FontColorOverride="{x:Static maths:Color.DarkGray}"
+                                               FontColorOverride="{x:Static maths:Color.White}"
                                                StyleClasses="LabelBig" HorizontalExpand="True" />
                                         <Button Name="ReadyButton" Access="Public" ToggleMode="True"
                                                 Text="{Loc 'ui-lobby-ready-up-button'}"
