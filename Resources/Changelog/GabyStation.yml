@@ -4,3 +4,5 @@ Entries:
   changes:
     - type: Add # One of the following: Add, Remove, Tweak, Fix
       message: Adiciona o changelog do Gaby Station!
+Name: GabyStation
+Order: -2
