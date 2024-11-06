@@ -1,0 +1,6 @@
+Entries:
+- author: Dreykor
+  time: '2024-11-6T12:01:00.0000000+00:00'
+  changes:
+    - type: Add # One of the following: Add, Remove, Tweak, Fix
+      message: Adiciona o changelog do Gaby Station!
