@@ -65,7 +65,7 @@ namespace Content.IntegrationTests.Tests
             "Cog",
             "Oasis",
             "RMCDev",
-            // "Savannah",
+            "Savannah",
             "Almayer",
             "RMCAdminFax",
         };
