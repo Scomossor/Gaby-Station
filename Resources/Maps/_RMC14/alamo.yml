@@ -22,7 +22,7 @@ entities:
       - uid: 2
         components:
           - type: MetaData
-            name: grid
+            name: Alamo
           - type: Transform
             pos: 34.17392,76.09929
             parent: invalid
