@@ -125,7 +125,7 @@ namespace Content.Server.RoundEnd
             return _countdownTokenSource != null;
         }
 
-        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement")
+        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement", bool hasReason = false, string reason = "")
         {
             var duration = DefaultCountdownDuration;
 
@@ -140,10 +140,10 @@ namespace Content.Server.RoundEnd
                 }
             }
 
-            RequestRoundEnd(duration, requester, checkCooldown, text, name);
+            RequestRoundEnd(duration, requester, checkCooldown, text, name, hasReason, reason);
         }
 
-        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement")
+        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement", bool hasReason = false, string reason = "")
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
@@ -180,9 +180,13 @@ namespace Content.Server.RoundEnd
                 units = "eta-units-minutes";
             }
 
-            _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(text,
-                ("time", time),
-                ("units", Loc.GetString(units))),
+            var announcement = "";
+            if (hasReason)
+                announcement = Loc.GetString(text, ("reason", reason), ("time", time), ("units", Loc.GetString(units)));
+            else
+                announcement = Loc.GetString(text, ("time", time), ("units", Loc.GetString(units)));
+
+            _chatSystem.DispatchGlobalAnnouncement(announcement,
                 Loc.GetString(name),
                 false,
                 null,
@@ -215,7 +219,7 @@ namespace Content.Server.RoundEnd
             }
         }
 
-        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true)
+        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true, string name = "comms-console-announcement-title-centcom")
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
             if (checkCooldown && _cooldownTokenSource != null) return;
@@ -234,7 +238,7 @@ namespace Content.Server.RoundEnd
             }
 
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
-                Loc.GetString("Station"), false, colorOverride: Color.Gold);
+                Loc.GetString(name), false, colorOverride: Color.Gold);
 
             _audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true);
 

@@ -27,6 +27,9 @@ namespace Content.Client.Communications.UI
             _menu.OnBroadcast += BroadcastButtonPressed;
             _menu.OnAlertLevel += AlertLevelSelected;
             _menu.OnEmergencyLevel += EmergencyShuttleButtonPressed;
+
+            _menu.OnMaint += MaintEmergencyButtonPressed;
+            _menu.OnCentcomm += CentCommButtonPressed;
         }
 
         public void AlertLevelSelected(string level)
@@ -56,6 +59,16 @@ namespace Content.Client.Communications.UI
         public void BroadcastButtonPressed(string message)
         {
             SendMessage(new CommunicationsConsoleBroadcastMessage(message));
+        }
+
+        public void MaintEmergencyButtonPressed()
+        {
+            SendMessage(new CommunicationsConsoleToggleEmergencyMaintMessage());
+        }
+
+        public void CentCommButtonPressed()
+        {
+            SendMessage(new CommunicationsConsoleCentCommButtonMessage());
         }
 
         public void CallShuttle()

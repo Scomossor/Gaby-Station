@@ -1,0 +1,13 @@
+﻿- type: constructionGraph
+  id: Canvas
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: canvas
+      steps:
+      - material: Cloth
+        amount: 1
+        doAfter: 2
+  - node: canvas
+    entity: CanvasMedium

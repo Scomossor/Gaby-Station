@@ -1,6 +1,7 @@
 - type: entity
   name: Skibidi Toilet
   id: MobSkibidiToilet
+  suffix: Admeme
   parent: SimpleMobBase
   description: Skibidi dop dop dop yes yes
   components:
@@ -207,6 +208,7 @@
 - type: entity
   name: Sportacus
   description: ding dong eat it up i gota go
+  suffix: Admeme
   id: MobSportacus
   parent: [BaseSimpleMob, MobCombat, MobBloodstream]
   components:

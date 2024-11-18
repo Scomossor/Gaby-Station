@@ -1,0 +1,20 @@
+Entries:
+- author: Dreykor
+  time: '2024-11-6T12:01:00.0000000+00:00'
+  url: https://github.com/Scomossor/Gaby-Station/pull/2 #url se tiver
+  changes:
+    - type: Add # One of the following: Add, Remove, Tweak, Fix
+      message: Adiciona o changelog do Gaby Station!
+- author: cosmosgc
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  url: https://github.com/Scomossor/Gaby-Station/pull/4
+  changes:
+    - type: Add
+      message: Adiciona canvas para desenho
+- author: AgentePanela
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução ao lobby
+Name: GabyStation
+Order: -2

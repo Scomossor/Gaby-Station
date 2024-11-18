@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseItem
+  id: CanvasBase
+  name: Canvas
+  description: A canvas to Paint.
+  Canvas:
+    Height: 16
+    Width: 16
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Misc/artstuff.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - Payload
+  - type: Item
+    sprite: _Gabystation/Objects/Misc/artstuff.rsi
+  - type: UseDelay
+    delay: 2.0
+  - type: Construction
+    graph: Canvas
+    node: canvas
+  - type: ActivatableUI
+    key: enum.CanvasUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CanvasUiKey.Key:
+        type: CanvasBoundUserInterface
+  - type: Canvas
+    color: white
+    paintingCode: ""
+    artist: ""
+    height: 16
+    width: 16
+
+- type: entity
+  parent: CanvasBase
+  id: CanvasMedium
+  name: Medium Canvas
+  description: A medium sized canvas to paint.
+  Canvas:
+    Height: 16
+    Width: 16
+  components:
+  - type: Canvas
+    height: 16
+    width: 16
+
+- type: entity
+  parent: CanvasBase
+  id: CanvasLarge
+  name: Large Canvas
+  description: A big sized canvas to paint.
+  Canvas:
+    Height: 16
+    Width: 32
+  components:
+  - type: Canvas
+    height: 16
+    width: 32
+
+- type: entity
+  parent: CanvasBase
+  id: CanvasGiant
+  name: Giant Canvas
+  description: A giant sized canvas to paint.
+  Canvas:
+    Height: 16
+    Width: 32
+  components:
+  - type: Canvas
+    height: 32
+    width: 32

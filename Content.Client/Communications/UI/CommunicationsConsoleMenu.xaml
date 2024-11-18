@@ -3,15 +3,22 @@
     Title="{Loc 'comms-console-menu-title'}"
     MinSize="400 225">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5">
-        <TextEdit Name="MessageInput" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 5" MinHeight="100" />
-        <Button Name="AnnounceButton" Text="{Loc 'comms-console-menu-announcement-button'}" ToolTip="{Loc 'comms-console-menu-announcement-button-tooltip'}" StyleClasses="OpenLeft" Access="Public" />
-        <Button Name="BroadcastButton" Text="{Loc 'comms-console-menu-broadcast-button'}" ToolTip="{Loc 'comms-console-menu-broadcast-button-tooltip'}" StyleClasses="OpenLeft" Access="Public" />
+        <Label Text="{Loc 'comms-console-menu-label-announcements'}" VerticalExpand="True"/>
+        <TextEdit Name="MessageInput" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 5" MinHeight="75" />
+        <Button Name="AnnounceButton" Text="{Loc 'comms-console-menu-announcement-button'}" StyleClasses="OpenLeft" Access="Public" />
+        <Button Name="BroadcastButton" Text="{Loc 'comms-console-menu-broadcast-button'}" StyleClasses="OpenRight" Access="Public" />
+
+        <Label Text="{Loc 'comms-console-menu-label-alerts'}" VerticalExpand="True"/>
 
         <OptionButton Name="AlertLevelButton" ToolTip="{Loc 'comms-console-menu-alert-level-button-tooltip'}" StyleClasses="OpenRight" Access="Public" />
 
         <Control MinSize="10 10" />
 
+        <Label Text="{Loc 'comms-console-menu-label-others'}" VerticalExpand="True"/>
+        <Button Name="CentCommButton" Text="{Loc 'comms-console-menu-message-centcomm'}" StyleClasses="ButtonColorGreen" Access="Public" />
+        <Button Name="MaintEmergencyButton" Text="{Loc 'comms-console-menu-emergency-maint'}" StyleClasses="ButtonColorGreen"  Access="Public" />
+        <!-- <Button Name="NuclearCodeButton" Text="{Loc 'comms-console-menu-nuclear-code'}" StyleClasses="ButtonColorRed" Access="Public" /> Se quiserem adicionar isso, ta ai-->
+        <Button Name="EmergencyShuttleButton" Text="Placeholder Text" StyleClasses="ButtonColorRed" Access="Public" />
         <RichTextLabel Name="CountdownLabel" VerticalExpand="True" />
-        <Button Name="EmergencyShuttleButton" Text="Placeholder Text" ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}" Access="Public" />
     </BoxContainer>
 </controls:FancyWindow>
