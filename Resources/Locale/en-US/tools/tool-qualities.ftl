@@ -11,7 +11,7 @@ tool-quality-cutting-name = Cortando
 tool-quality-cutting-tool-name = Cortador de fios
 
 tool-quality-welding-name = Soldando
-tool-quality-welding-tool-name = Soldados
+tool-quality-welding-tool-name = Soldador
 
 tool-quality-pulsing-name = Pulsando
 tool-quality-pulsing-tool-name = Multi-Ferramentas
