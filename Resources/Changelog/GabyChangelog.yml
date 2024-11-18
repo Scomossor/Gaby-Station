@@ -14,5 +14,10 @@ Entries:
   changes:
     - type: Add
       message: Tradução ao lobby
+- author: Dreykor
+  time: '2024-18-11T14:42:00.0000000+00:00'
+  changes:
+    - type: add
+      message: A espécie Moth agora pode usar cabelo e barba!
 Name: GabyStation
 Order: -2

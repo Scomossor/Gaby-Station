@@ -17,6 +17,8 @@
   sprites:
     Head: MobMothHead
     Snout: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Chest: MobMothTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -42,10 +44,10 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
-      points: 0
+      points: 1
       required: false
     Tail:
       points: 1
@@ -73,6 +75,9 @@
     Arms:
       points: 2
       required: false
+
+- type: humanoidBaseSprite
+  id: MobHumanoidAnyMarking
 
 - type: humanoidBaseSprite
   id: MobMothHead
