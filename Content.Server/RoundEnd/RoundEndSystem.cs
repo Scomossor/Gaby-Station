@@ -188,7 +188,6 @@ namespace Content.Server.RoundEnd
 
             _chatSystem.DispatchGlobalAnnouncement(announcement,
                 Loc.GetString(name),
-                Loc.GetString(name),
                 false,
                 null,
                 Color.Gold);

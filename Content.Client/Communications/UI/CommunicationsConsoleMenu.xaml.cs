@@ -29,7 +29,10 @@ namespace Content.Client.Communications.UI
         public event Action<string>? OnAnnounce;
         public event Action<string>? OnBroadcast;
 
-        public CommunicationsConsoleMenu()
+        public event Action? OnCentcomm;
+        public event Action? OnMaint;
+
+        public CommunicationsConsoleMenu(CommunicationsConsoleBoundUserInterface owner)
         {
             IoCManager.InjectDependencies(this);
             RobustXamlLoader.Load(this);
@@ -70,12 +73,12 @@ namespace Content.Client.Communications.UI
 
             AlertLevelButton.Disabled = !AlertLevelSelectable;
 
-            MaintEmergencyButton.OnPressed += (_) => Owner.MaintEmergencyButtonPressed();
+            MaintEmergencyButton.OnPressed += _ => OnCentcomm?.invoke();
 
-            CentCommButton.OnPressed += (_) => Owner.CentCommButtonPressed();
+            CentCommButton.OnPressed += _ => OnMaint?.invoke();
 
-            EmergencyShuttleButton.OnPressed += (_) => Owner.EmergencyShuttleButtonPressed();
-            EmergencyShuttleButton.Disabled = !owner.CanCall;
+            EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
+            EmergencyShuttleButton.Disabled = !CanCall;
 
             UpdateCountdown();
         }

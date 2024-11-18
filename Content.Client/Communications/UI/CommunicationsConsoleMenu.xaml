@@ -9,25 +9,16 @@
         <Button Name="BroadcastButton" Text="{Loc 'comms-console-menu-broadcast-button'}" StyleClasses="OpenRight" Access="Public" />
 
         <Label Text="{Loc 'comms-console-menu-label-alerts'}" VerticalExpand="True"/>
-        <OptionButton Name="AlertLevelButton" Access="Public" />
+
         <OptionButton Name="AlertLevelButton" ToolTip="{Loc 'comms-console-menu-alert-level-button-tooltip'}" StyleClasses="OpenRight" Access="Public" />
 
         <Control MinSize="10 10" />
 
         <Label Text="{Loc 'comms-console-menu-label-others'}" VerticalExpand="True"/>
         <Button Name="CentCommButton" Text="{Loc 'comms-console-menu-message-centcomm'}" StyleClasses="ButtonColorGreen" Access="Public" />
-        <Button Name="MaintEmergencyButton" Text="{Loc 'comms-console-menu-emergency-maint'}" StyleClasses="ButtonColorYellow"  Access="Public" />
+        <Button Name="MaintEmergencyButton" Text="{Loc 'comms-console-menu-emergency-maint'}" StyleClasses="ButtonColorCaution"  Access="Public" />
         <!-- <Button Name="NuclearCodeButton" Text="{Loc 'comms-console-menu-nuclear-code'}" StyleClasses="ButtonColorRed" Access="Public" /> Se quiserem adicionar isso, ta ai-->
         <Button Name="EmergencyShuttleButton" Text="Placeholder Text" StyleClasses="ButtonColorRed" Access="Public" />
         <RichTextLabel Name="CountdownLabel" VerticalExpand="True" />
-        <!-- Footer (microwave copy) - - - por algum motivo quebra o codigo
-        <BoxContainer Orientation="Vertical">
-            <PanelContainer StyleClasses="LowDivider" />
-            <BoxContainer Orientation="Horizontal" Margin="10 2 5 0" VerticalAlignment="Bottom">
-            <Label Text="{Loc 'comms-console-menu-footer-left'}" StyleClasses="WindowFooterText" />
-            <Label Text="{Loc 'comms-console-menu-footer-right'}" StyleClasses="WindowFooterText"
-                HorizontalAlignment="Right" HorizontalExpand="True"  Margin="0 0 5 0" />
-            <TextureRect StyleClasses="NTLogoDark" Stretch="KeepAspectCentered" VerticalAlignment="Center" HorizontalAlignment="Right" SetSize="19 19"/>
-        </BoxContainer>-->
     </BoxContainer>
 </controls:FancyWindow>

@@ -370,7 +370,9 @@ namespace Content.Server.Communications
                     || !TryComp<AirlockComponent>(doorUid, out var airlock))
                     continue;
 
-                _airlock.ToggleEmergencyAccess(doorUid, airlock);
+                var ent = new Entity<AirlockComponent>(doorUid, airlock);
+
+                _airlock.SetEmergencyAccess(ent, !airlock.EmergencyAccess);
             }
             comp.ToggleAcessTimer = _timing.CurTime.TotalSeconds;
         }

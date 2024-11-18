@@ -8,13 +8,13 @@
     Width: 16
   components:
   - type: Sprite
-    sprite: Objects/Misc/artstuff.rsi
+    sprite: _Gabystation/Objects/Misc/artstuff.rsi
     state: icon
   - type: Tag
     tags:
       - Payload
   - type: Item
-    sprite: Objects/Misc/artstuff.rsi
+    sprite: _Gabystation/Objects/Misc/artstuff.rsi
   - type: UseDelay
     delay: 2.0
   - type: Construction
@@ -45,7 +45,7 @@
   - type: Canvas
     height: 16
     width: 16
-  
+
 - type: entity
   parent: CanvasBase
   id: CanvasLarge
