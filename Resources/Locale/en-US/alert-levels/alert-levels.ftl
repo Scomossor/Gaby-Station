@@ -1,36 +1,36 @@
-alert-level-announcement = Attention! Station alert level is now {$name}! {$announcement}
+alert-level-announcement = Aten√ß√£o! O n√≠vel de alerta da Esta√ß√£o foi mudado para: {$name}! {$announcement}
 
 alert-level-unknown = Unknown.
 alert-level-unknown-instructions = Unknown.
 
 alert-level-green = Verde
-alert-level-green-announcement = Est· tudo bem! J· podem voltar a atividades normais.
+alert-level-green-announcement = Est√° tudo bem! J√° podem voltar a atividades normais.
 alert-level-green-instructions = Volte a seu trabalho.
 
 alert-level-blue = Azul
-alert-level-blue-announcement = Foram relatadas ameaÁas na estaÁ„o. Caso seja parado por um seguranÁa, coopere! Se ver algo suspeito avise imediatamente a seguranÁa.
-alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a seguranÁa.
+alert-level-blue-announcement = Foram relatadas amea√ßas na esta√ß√£o. Caso seja parado por um seguran√ßa, coopere! Se ver algo suspeito avise imediatamente a seguran√ßa.
+alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a seguran√ßa.
 
 alert-level-red = Vermelho
-alert-level-red-announcement = AmeaÁa perigosa na estaÁ„o. Os seguranÁas devem se equipar e utilizar forÁa letal caso necess·rio, e os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
+alert-level-red-announcement = Amea√ßa perigosa na esta√ß√£o. Os seguran√ßas devem se equipar e utilizar for√ßa letal caso necess√°rio, e os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
 alert-level-red-instructions = os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
 
 alert-level-violet = Violeta
-alert-level-violet-announcement = Foram relatadas ameaÁas virais na estaÁ„o. Acionando a equipe mÈdica para isolar os tripulantes com quaisquer sintomas. Os tripulantes s„o aconselhados a cumprir distanciamento e tomarem medidas de seguranÁa para evitar uma maior propagaÁ„o, usem m·scaras e luvas.
-alert-level-violet-instructions = Os tripulantes s„o aconselhados a cumprir distanciamento e tomarem medidas de seguranÁa para evitar uma maior propagaÁ„o, usem m·scaras e luvas.
+alert-level-violet-announcement = Foram relatadas amea√ßas virais na esta√ß√£o. Acionando a equipe m√©dica para isolar os tripulantes com quaisquer sintomas. Os tripulantes s√£o aconselhados a cumprir distanciamento e tomarem medidas de seguran√ßa para evitar uma maior propaga√ß√£o, usem m√°scaras e luvas.
+alert-level-violet-instructions = Os tripulantes s√£o aconselhados a cumprir distanciamento e tomarem medidas de seguran√ßa para evitar uma maior propaga√ß√£o, usem m√°scaras e luvas.
 
 alert-level-yellow = Amarelo
-alert-level-yellow-announcement = H· dano estrutural na estaÁ„o. Acionando a equipe de engenheiros para consertar e isolar a ·rea de danos. Os tripulantes devem evitar ·reas de perigo estrutural, caso possÌvel continuem com suas atividades.
-alert-level-yellow-instructions = Os tripulantes devem evitar ·reas de perigo estrutural, caso possÌvel continuem com suas atividades.
+alert-level-yellow-announcement = H√° dano estrutural na esta√ß√£o. Acionando a equipe de engenheiros para consertar e isolar a √°rea de danos. Os tripulantes devem evitar √°reas de perigo estrutural, caso poss√≠vel continuem com suas atividades.
+alert-level-yellow-instructions = Os tripulantes devem evitar √°reas de perigo estrutural, caso poss√≠vel continuem com suas atividades.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = O Comando Central ordenou o nÌvel de seguranÁa Gamma na estaÁ„o. Os seguranÁas devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = O Comando Central ordenou o n√≠vel de seguran√ßa Gamma na esta√ß√£o. Os seguran√ßas devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 alert-level-gamma-instructions = todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
-alert-level-delta-announcement = AmeaÁa de destruiÁ„o em massa. Os tripulantes s„o aconselhados a ouvir os chefes de departamento para obter ordens e mais informaÁıes sobre o ocorrido.
+alert-level-delta-announcement = Amea√ßa de destrui√ß√£o em massa. Os tripulantes s√£o aconselhados a ouvir os chefes de departamento para obter ordens e mais informa√ß√µes sobre o ocorrido.
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = O Comando Central ordenou o nÌvel de seguranÁa Epsilon na estaÁ„o. Considerem todos os contratos expirados.
+alert-level-epsilon-announcement = O Comando Central ordenou o n√≠vel de seguran√ßa Epsilon na esta√ß√£o. Considerem todos os contratos expirados.
 alert-level-epsilon-instructions = Considerem todos os contratos expirados.
