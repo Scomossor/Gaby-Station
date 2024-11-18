@@ -1,1 +1,1 @@
-﻿role-not-whitelisted = Você não está permitido a desempenhar essa função.
+﻿role-not-whitelisted = You are not whitelisted to play this role.

@@ -1,2 +1,2 @@
-loadout-window = Equipamento
-loadout-none = Nenhum
+loadout-window = Loadout
+loadout-none = None

@@ -1,1 +1,1 @@
-multiple-tool-component-no-behavior = Nenhum
+multiple-tool-component-no-behavior = None
