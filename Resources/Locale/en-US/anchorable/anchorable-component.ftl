@@ -1,3 +1,3 @@
-anchorable-anchored = Anchored
-anchorable-unanchored = Unanchored
-anchorable-occupied = Tile occupied
+anchorable-anchored = Fixado!
+anchorable-unanchored = Solto!
+anchorable-occupied = lugar Ocupado!
