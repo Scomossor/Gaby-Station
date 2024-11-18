@@ -1,18 +1,18 @@
-﻿role-timer-department-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of [color={$departmentColor}]{$department}[/color] department playtime to play this role.
-role-timer-department-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes in [color={$departmentColor}]{$department}[/color] department to play this role. (Are you trying to play a trainee role?)
-role-timer-overall-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of playtime to play this role.
-role-timer-overall-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes of playtime to play this role. (Are you trying to play a trainee role?)
-role-timer-role-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes with [color={$departmentColor}]{$job}[/color] to play this role.
-role-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}[/color] fewer minutes with [color={$departmentColor}]{$job}[/color] to play this role. (Are you trying to play a trainee role?)
-role-timer-age-to-old = Your character's age must be at most [color=yellow]{$age}[/color] to play this role.
-role-timer-age-to-young = Your character's age must be at least [color=yellow]{$age}[/color] to play this role.
-role-timer-whitelisted-species = Your character must be one of the following species to play this role:
-role-timer-blacklisted-species = Your character must not be one of the following species to play this role:
-role-timer-whitelisted-traits = Your character must have one of the following traits:
-role-timer-blacklisted-traits = Your character must not have any of the following traits:
+﻿role-timer-department-insufficient = Você precisa de mais [color=yellow]{TOSTRING($time, "0")}[/color] minutos jogados no [color={$departmentColor}]{$department}[/color]  para desempenhar essa função.
+role-timer-department-too-high = Você já tem mais de [color=yellow]{TOSTRING($time, "0")}[/color] minutos jogados no [color={$departmentColor}]{$department}[/color] e tem experiência demais para rebaixar-se a essa função.
+role-timer-overall-insufficient = Você precisa de mais [color=yellow]{TOSTRING($time, "0")}[/color] minutos de tempo de jogo para desempenhar essa função.
+role-timer-overall-too-high = Você já tem mais de [color=yellow]{TOSTRING($time, "0")}[/color] minutos de tempo de jogo, e tem experiência demais para rebaixar-se a essa função.
+role-timer-role-insufficient = Você precisa de mais [color=yellow]{TOSTRING($time, "0")}[/color] minutos jogados com [color={$departmentColor}]{$job}[/color] para desempenhar essa função.
+role-timer-role-too-high = Você já tem mais de [color=yellow] {TOSTRING($time, "0")}[/color] minutos jogados com [color={$departmentColor}]{$job}[/color] e tem experiência demais para rebaixar-se a essa função.
+role-timer-age-to-old = A idade do seu personagem deve ser no máximo [color=yellow]{$age}[/color] para desempenhar essa função.
+role-timer-age-to-young = A idade do seu personagem deve ser pelo menos [color=yellow]{$age}[/color] para desempenhar essa função.
+role-timer-whitelisted-species = Seu personagem deve ser de uma das seguintes espécies para desempenhar esta função:
+role-timer-blacklisted-species = Seu personagem não deve ser de uma das seguintes espécies para desempenhar esta função:
+role-timer-whitelisted-traits = Seu personagem deve ter uma das seguintes características:
+role-timer-blacklisted-traits = Seu personagem não deve ter nenhuma das seguintes características:
 
-role-timer-locked = Locked (hover for details)
+role-timer-locked = Bloqueado (passe o mouse para ver detalhes)
 
-role-timer-department-unknown = Unknown Department
+role-timer-department-unknown = Departamento desconhecido
 
-role-ban = You have been banned from this role.
+role-ban = Você foi banido e não pode mais desempenhar essa função
