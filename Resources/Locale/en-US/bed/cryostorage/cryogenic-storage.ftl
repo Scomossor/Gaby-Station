@@ -1,7 +1,7 @@
 ﻿
 ### Announcement
 
-earlyleave-cryo-job-unknown = Unknown
+earlyleave-cryo-job-unknown = Desconhecido
 # {$entity} available for GENDER function purposes
-earlyleave-cryo-announcement = {$character} ({$job}) has entered cryogenic storage!
+earlyleave-cryo-announcement = {$character} ({$job}) Entrou em sono criogênico!
 earlyleave-cryo-sender = Station
