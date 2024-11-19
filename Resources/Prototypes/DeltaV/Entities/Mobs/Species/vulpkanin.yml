@@ -103,6 +103,7 @@
     - DoorBumpOpener
     - VulpEmotes
   - type: FootPrints # WD EDIT
+  - type: Wagging # Einstein-Engine
 
 - type: entity
   save: false
