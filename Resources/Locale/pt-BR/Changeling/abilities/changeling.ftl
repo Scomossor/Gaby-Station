@@ -20,11 +20,11 @@ changeling-transform-fail-choose = Você não escolheu uma forma para se transfo
 changeling-transform-fail-absorbed = Você não consegue transformar um Husk!
 changeling-transform-finish = Você agora é {$target}.
 
-changeling-sting-fail-self = Você tentou picar {CAPITALIZE(THE($target))}, mas algo te impediu de fazer isso!
-changeling-sting-fail-ling = Alguém tentou discretamente picar você!
+changeling-sting-fail-self = Você tentou ferroar {CAPITALIZE(THE($target))}, mas algo te impediu de fazer isso!
+changeling-sting-fail-ling = Alguém tentou discretamente ferroar você!
 
 changeling-sting = Você silenciosamente pica {CAPITALIZE(THE($target))}.
-changeling-sting-fail-simplemob = Você não consegue picar uma criatura menor!
+changeling-sting-fail-simplemob = Você não consegue ferroar uma criatura menor!
 changeling-sting-extract-fail = Não é possível extrair DNA.
 changeling-sting-extract-max = É preciso se livrar do DNA armazenado com antes.
 
