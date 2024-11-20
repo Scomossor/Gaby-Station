@@ -14,7 +14,7 @@ changeling-absorb-onexamine = [color=red]O corpo parece vazio.[/color]
 
 changeling-transform-cycle = Trocou para o DNA de {$target}.
 changeling-transform-cycle-empty = Você não tem nenhuma linha de DNA!
-changeling-transform-others = O corpo de {CAPITALIZE(THE($user))} Começa a se contorcer e tomar a forma de um outro ser!
+changeling-transform-others = O corpo de {CAPITALIZE(THE($user))} começa a se contorcer e tomar a forma de um outro ser!
 changeling-transform-fail-self = Você não consegue se transformar enquanto nessa forma!
 changeling-transform-fail-choose = Você não escolheu uma forma para se transformar!
 changeling-transform-fail-absorbed = Você não consegue transformar um Husk!
