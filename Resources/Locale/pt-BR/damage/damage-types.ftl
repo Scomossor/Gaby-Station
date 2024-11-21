@@ -1,0 +1,13 @@
+damage-type-asphyxiation = Asfixia
+damage-type-bloodloss = Perda de sangue
+damage-type-blunt = Pancada
+damage-type-cellular = Celular
+damage-type-caustic = Cáustico
+damage-type-cold = Frio
+damage-type-heat = Calor
+damage-type-piercing = Perfuração
+damage-type-poison = Veneno
+damage-type-radiation = Radiação
+damage-type-shock = Choque
+damage-type-slash = Cortes
+damage-type-structural = Estrutural

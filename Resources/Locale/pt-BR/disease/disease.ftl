@@ -1,0 +1,1 @@
+disease-vomit = {CAPITALIZE(A/O($person))} vomita.
