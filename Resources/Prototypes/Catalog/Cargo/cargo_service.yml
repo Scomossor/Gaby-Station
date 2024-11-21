@@ -81,7 +81,7 @@
 - type: cargoProduct
   id: ServicePersonnel
   icon:
-    sprite: Objects/Misc/id_cards.rsi
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi
     state: default
   product: CrateServicePersonnel
   cost: 1000

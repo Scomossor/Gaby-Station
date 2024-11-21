@@ -1,0 +1,38 @@
+- type: entity
+  id: SWSShot
+  name: SWS Shot
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/SWSRifle.rsi
+    layers:
+    - state: effect_pulse
+      shader: unshaded
+  - type: Projectile
+    impactEffect: ImpactSWS
+    damage:
+      types:
+        Slash: 6
+
+
+- type: entity
+  id: PlasmaCut
+  name: plasma cut
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/eletricplasma.rsi
+    layers:
+    - state: eletric_shot
+      shader: unshaded
+  - type: GatheringProjectile
+  - type: Projectile
+    impactEffect: ImpactPlasmaCut
+    damage:
+      types:
+        Slash: 24
+        Heat: 6
+        Structural: 45
+     

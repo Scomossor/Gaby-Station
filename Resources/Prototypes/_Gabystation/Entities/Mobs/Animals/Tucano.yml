@@ -1,0 +1,45 @@
+- type: entity
+  name: Bananilson
+  parent: [ SimpleMobBase, FlyingMobBase ]
+  id: MobTucanoBananilson
+  description: Um mascote tropical para uma estação igualmente tropical!
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 5
+    baseSprintSpeed : 8 # rápido
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: tucano
+      sprite: _Gabystation/Mobs/Animals/tucano.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 10
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: tucano
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.8 # Bananilson é docil demais
+    interactSuccessString: petting-success-bird
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/_Gabystation/Animals/tucano.ogg
+  - type: Bloodstream
+    bloodMaxVolume: 2000 # aquele que matar bananilson conhecerá um rio de sangue.

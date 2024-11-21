@@ -1,5 +1,5 @@
 ghost-target-window-ghostbar = Ghost Bar
-ghost-window-spawn-ghostbar-button = Spawn at Ghost Bar
-ghost-window-spawn-ghostbar-button-timer = Spawn at Ghost Bar ({$time}s)
-ghost-bar-rules = Treat this role, and station, as you would just being a regular Ghost. You may talk about all current round events without the need for LOOC, and you remember everything from your previous life. DO NOT attack others, start fights, or attempt to break the station. If you see anyone doing this, please Ahelp and they will be promptly thrown into space. Also, if you decide to leave the bar, you DO NOT remember anything from being here, or your life before it.
+ghost-window-spawn-ghostbar-button = Spawnar no Ghost Bar
+ghost-window-spawn-ghostbar-button-timer = Spawne no Ghost Bar em ({$time}s)...
+ghost-bar-rules = Aja no Ghostbar assim como você agiria sendo um Ghost comum. Você pode falar sobre o round atual, se lembra da sua morte e tudo mais. NÃO ataque os outros, comece brigas ou quebre estruturas do Ghostbar. Se você estiver sendo agredido, não revide; use o Ahelp. Se você presenciar alguém quebrando as regras do Ghostbar, reporte no Ahelp. E, claro, se você decidir sair do Ghostbar e voltar para o round, deve esquecer tudo o que viu e ouviu aqui.
 

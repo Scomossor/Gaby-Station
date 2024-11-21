@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPomni
+  name:  Digital Jester
+  description: Se alegre! Você está preso em um circo digital.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/pomni.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/pomni.rsi
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesPomni
+  name: Digital shoes
+  description: Pise em frente sem olhar para trás! Tente aceitar a situação atual.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Shoes/pomni.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Shoes/pomni.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepJester
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingHeadMaskPomni
+  name: Digital mask
+  description: Olhe ao redor e não enlouqueça! Tudo está tão surreal.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Mask/pomni.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Mask/pomni.rsi
+  - type: Tag
+    tags:
+    - ClownMask
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsGlovesPomni
+  name: Digital gloves
+  description: Abra todas as portas que der! Encontre uma saida desse caos digital.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Hands/Gloves/pomni.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Hands/Gloves/pomni.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberColor: fibers-red-and-blue

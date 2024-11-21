@@ -22,13 +22,13 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
+    - id: NecromorphSpawn # Gabystation add
     - id: VentClog
 
 - type: entityTable
   id: BasicAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: ClosetSkeleton
     - id: DragonSpawn
     - id: KingRatMigration
     - id: NinjaSpawn

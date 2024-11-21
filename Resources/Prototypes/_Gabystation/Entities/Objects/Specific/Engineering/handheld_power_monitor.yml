@@ -4,12 +4,12 @@
   parent:
   - BaseItem
   - PowerCellSlotSmallItem
-  # CE apenas carambolas!! para de dar pros outros
+  # CE apenas carambolas!! para de dar pros outros / Lá ele
   id: HandheldPowerMonitor
   description: A hand-held power monitor that display the station powers level.
   components:
   - type: Sprite
-    sprite: _Gabystation/Entities/Objects/Specific/Engineering/handheldpowermonitor.rsi # arrumar a bomba do sprite -- arrumei, fiz um sprite proprio por que eu sou legal
+    sprite: _Gabystation/Objects/Specific/Engineering/handheldpowermonitor.rsi # arrumar a bomba do sprite -- arrumei, fiz um sprite proprio por que eu sou legal
     state: scanner
   - type: PowerCellDraw
     drawRate: 0.60

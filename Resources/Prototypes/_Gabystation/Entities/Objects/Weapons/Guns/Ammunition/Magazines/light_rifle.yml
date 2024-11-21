@@ -1,0 +1,31 @@
+- type: entity
+  id: MagazineSWS
+  name: SWS Magazine
+  parent: BaseMagazineLightRifle
+  description: Holds ammunition for the SWS Motorized Pulse Rifle
+  components:
+  - type: Tag
+    tags:
+      - MagazineSWS
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeSWS
+    proto: CartridgeSWS
+    capacity: 125
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Ammunition/Magazines/SWSPulseMagazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance

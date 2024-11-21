@@ -56,7 +56,7 @@
     </ColorBox>
     <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Recusa de MentalShield (E)
+        Recusa de MindShield (E)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -160,7 +160,7 @@
     </ColorBox>
     <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Invasão de Local de Alto-Risco (T)
+        Invasão de Alto-Risco (T)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -225,7 +225,7 @@
     </ColorBox>
     <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Homicídio em Massa (V)
+        Chacina (V)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -264,7 +264,7 @@
 
   ## Crimes Menores
   - Avisos devem ser dados primeiro para ofensas iniciais.
-  - Se múltiplos crimes menores forem cometidos ou a ofensa é repetida, 10 minutos por ofensa é o máximo, com um limite de 30 minutos.
+  - Se múltiplos crimes menores forem cometidos ou a ofensa é repetida, 10 minutos por ofensa é o máximo, com um limite de 20 minutos.
   <Table Columns="4">
     <ColorBox>
       <Box>
@@ -399,7 +399,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        As vezes, referido como hooliganismo. É o pega-tudo pra tripulantes que estão perturbando.
+        As vezes, referido como hooliganismo. É um pau pra todaobra para tripulantes que estão perturbando.
         Cobre ofensas como nudez, insultos desnecessários, incitação de crime ou violência e afins.
       </Box>
     </ColorBox>
@@ -594,9 +594,9 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The difference between petty theft and grand theft is based on how crucial the stolen item is, this mostly is
-        used for the theft of command staff items, things like door remotes, hardsuits, jetpacks, and unreplaceable
-        machine parts.
+        A diferença entre roubo menor e roubo maior é baseada em quão crítico o item roubado é. 
+        O crime de roubo maior é majoritariamente usado para o roubo de itens do Comando, e
+        peças insubstituíveis de maquinário importante.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -606,18 +606,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Destruction
+        Destruição em Massa
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To cause massive damage to an area or major station system.
+        Causar dano gigante para uma área ou sistema (como a Atmos) de grande importância.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This is mostly used for deadly bombings or sabotage of major station systems such as power production,
-        chemistry, substations, or atmos.
+        Essa lei é geralmente usada para bombardeios mortais ou sabotagem de sistemas importantes como a Atmos, Chem, etc.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -627,17 +626,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Secure Trespass
+        Invasão de Alto-Risco
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To enter a secured area without permission.
+        Entrar em uma área que não seja de alto-risco sem permissão..
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This covers places like telecomms, head offices, security zones, command areas, the vault and armory.
+        Isso cobre locais como as Telecomms, Armory, Bridge, Satélite da IA, etc.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -647,18 +646,18 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Assault/Battery
+        Agressão
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To threaten to or to use physical force against someone without the intent to kill.
+        Ameaçar ou usar força física sem a intenção de matar.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted murder and battery are different; a fist fight is most likely assault. A shooting is most likely an
-        attempt at murder.
+        Tentativa de Assassinato e Agressão são duas coisas diferentes; porradaria é muito provavelmente Agressão, 
+        enquanto um tiroteio seria Tentativa de Assassinato.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -668,17 +667,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Manslaughter
+        Homicídio Culposo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To incidentally kill a sapient being without intent.
+        Acidentalmente matar um ser vivo inteligente sem a intenção assassina.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Includes manslaughter in self-defense and negligent manslaughter.
+        Inclui homicídio culposo de auto-defesa e homicídio culposo por negligência.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -688,17 +687,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rioting
+        Rebelião
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To take part in a large group of personnel creating an unlawful public disturbance.
+        Participar de um grande grupo de funcionários criando distúrbio público ilegal.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Crimes like damage of property or battery are expected to be thrown on top of this charge. Leaders of a riot can be charged with all crimes that happen under their lead.
+        Crimes como danificação de propriedade ou agressão devem ser adicionados a essa ofensa (ou seja, suas sentenças também devem ser adicionadas à sentença inicial). Líderes de uma rebelião podem ser responsabilizados por todos os crimes que ocorram durante sua liderança.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -708,45 +707,45 @@
     </ColorBox>
   </Table>
 
-  ## Extreme Crimes
-  - The maximum sentence per extreme crime is 15 minutes.
-  - Particularly violent offenders may be placed in perma. (Attacking officers in an attempt to escape prison)
-  - Attempted murder and murder are linked crimes and cannot be stacked together.
-  - Attempted murderers should be granted a more lenient sentence than a murderer.
+  ## Crimes Extremos
+  - A sentença máxima para crimes extremos é de 45 minutos.
+  - Criminosos particularmente problemáticos podem ser postos na perma.
+  - Tentativa de Assassinato e Homicídio Doloso são conectados, e não podem ser aplicados juntamente a um criminoso.
+  - Criminosos que tentaram assassinar devem receber mais leniência nas penas do que um assassino real.
   <Table Columns="4">
     <ColorBox>
       <Box>
-        Offense
+        Ofensa
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Description
+        Descrição
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
+        Notas
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Code
+        Código
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Custody
+        Violação de Custódia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To break out of a cell or custody with the intention of escaping.
+        Tentar escapar de uma cela ou custódia com intenção de fugir.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        While rare, this charge can be bumped to an execution if the suspect has repeatedly attempted to break out of the permanent brig. Includes people breaking others out.
+        Mesmo que raro, essa ofensa pode ser elevada à execução caso o criminoso tenha repetidamente violado a custódia. A pena também se aplica para aqueles que liberem outros.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -756,17 +755,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Kidnapping
+        Sequestro
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To unlawfully restrain, transport, control or confine a sapient being against that individual’s will.
+        Restringir, transportar, controlar ou por em custódia, de forma ilegal, um ser senciente contra sua vontade.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        A large range of things, used mostly as a catch all when dealing with unlawful control of another being.
+        Essa lei cobre uma grande variedade de coisas, sendo um pau pra toda obra quando se lida com controle ilegal de outros indivíduos.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -776,17 +775,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted Murder
+        Tentativa de Assassinato
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To make an attempt to use physical force against someone with the clear intent to kill.
+        Utilizar a força contra outro indivíduo com a intenção de matar.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Make sure you've got the proof to back up the intention claims, such as proof of a lethal weapon being used.
+        Tenha certeza que você tem as evidências necessárias para provar as alegações, como uma arma letal tendo sido usada.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -796,17 +795,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Murder
+        Homicídio Doloso
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To kill a sapient being with malicious intent.
+        Matar um ser senciente com intenção maliciosa.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This only changes from attempted to full-on murder if the victim enters a state of being deceased, having to be resurrected.
+        O crime de Tentativa de Assassinato só se torna Homícidio Doloso caso a vítima tenha falecido oficialmente, necessitando prevenção de ressuscitação.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -816,42 +815,42 @@
     </ColorBox>
   </Table>
 
-  ## Capital Crimes
-  - Capital crimes should usually lead to a death sentence or shift lasting detainment.
+  ## Crimes Capitais
+  - Crimes Capitais devem, normalmente, serem punidos com execuções ou detenção pelo resto do turno.
   <Table Columns="4">
     <ColorBox>
       <Box>
-        Offense
+        Ofensa
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Description
+        Descrição
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
+        Notas
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Code
+        Código
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Refusal of Mental Shielding
+        Recusa de MindShield
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To refuse to comply with a reasonable Mind Shielding procedure.
+        Recusar a cooperar com um procedimento válido de MindShielding.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Applies if the suspect is excessively uncooperative or the implant fails to function due to the mental state of the prisoner already being too far gone. If the implant fails execution is heavily recommended.
+        Aplica-se caso o suspeito esteja sendo excessivamente não-cooperativo ou o implante falhe em funcionar pelo estado mental do prisioneiro já estar perdido demais. Se o implante falhar, execução é extremamente recomendada.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -861,17 +860,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Terrorism
+        Terrorismo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To engage in maliciously destructive actions which threaten to destroy, or successfully destroy a vessel or habitat.
+        Engajar em ações maliciosas e destrutivas que ameaçam destruir, ou destroem com sucesso uma nave ou habitat.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Summed up; extreme sabotage of station systems or setting off self-destruction systems.
+        Resumidamente: sabotagem extrema dos sistemas da estação. Ativar a bomba nuclear, por exemplo, se encaixaria nisso.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -881,17 +880,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Prevention of Revival
+        Prevenção de Ressuscitação
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To render a body unresurrectable.
+        Fazer com que um corpo se torne inressuscitável.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This covers gibbing, spacing, intentionally hiding a body, or other ways of preventing a body with a soul from being resurrected.
+        Isso cobre gibbar, esconder de forma intencional um corpo, jogar um corpo no espaço ou outros meios de prevenir com que um corpo que tenha alma seja ressuscitado.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -901,17 +900,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Murder
+        Chacina
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To kill three or more sapient beings with malicious intent.
+        Matar três ou mais seres sencientes de forma intencional.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Only applies when there have been multiple killings with intention.
+        Só se aplica quando houver três ou mais assassinatos confirmados, feitos de forma intencional.
       </Box>
     </ColorBox>
     <ColorBox>

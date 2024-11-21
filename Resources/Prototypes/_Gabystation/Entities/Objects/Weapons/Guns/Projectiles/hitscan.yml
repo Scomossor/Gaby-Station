@@ -1,0 +1,16 @@
+- type: hitscan
+  id: PlasmaBeam
+  damage:
+    types:
+      Slash: 24
+      Heat: 6
+      Structural: 45
+  muzzleFlash:
+    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/PlasmaCutter.rsi
+    state: muzzle_cutter
+  travelFlash:
+    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/PlasmaCutter.rsi
+    state: beam_cutter
+  impactFlash:
+    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/PlasmaCutter.rsi
+    state: impact_cutter

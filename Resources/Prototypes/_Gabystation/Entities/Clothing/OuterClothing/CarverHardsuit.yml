@@ -1,0 +1,53 @@
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSpecOps
+  noSpawn: true
+  name: Special Operations Helmet
+  description: The retractable GOV's Carver hardsuit helmet are strangely comfortable and don't hinder the user's sight thanks to integrated sensors...Although its simple design, the technology is advanced.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hardsuits/CarverHardsuit.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hardsuits/CarverHardsuit.rsi
+  - type: PointLight
+    color: "#d4464b"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitSpecOps
+  name: Special Operations Hardsuit
+  description: Made by the GOV for the extermination of alien pests. Even with all the protection, not all operations were successful, which explains why the hardsuit is found in various salvages.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/OuterClothing/Hardsuits/CarverHardsuit.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/OuterClothing/Hardsuits/CarverHardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.5
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSpecOps

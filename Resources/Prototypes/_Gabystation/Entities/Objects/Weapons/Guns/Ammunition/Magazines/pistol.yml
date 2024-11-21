@@ -1,0 +1,21 @@
+- type: entity
+  id: MagazinePlasmaCutter
+  name: Plasma Energy Battery
+  parent: BasePowerCellPlasma
+  description: Small energy cells, which holds gasses that can create plasma.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Ammunition/Magazines/PlasmaCutterMagazine.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: base
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Tag
+    tags:
+      - PowerCell
+      - MagazinePlasmaCutter
+  - type: Battery
+    maxCharge: 1106
+    startingCharge: 1106

@@ -1,0 +1,127 @@
+- type: entity
+  name: Carcaça
+  parent: SimpleMobBase
+  id: NecromorphSlasherCorpo
+  description: É melhor se livrar dessa coisa o quanto antes. #só pra assustar, no fim não fazem nada
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 0.1
+    baseSprintSpeed : 0.1 #"eles se mexeram?", quero fazer jogadores pensarem nisso
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Gabystation/Mobs/Necromorphs/Slasher.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MobPrice 
+    price: 4000 #money, money
+
+- type: entity
+  parent:
+  - BaseMobFlesh
+  - SimpleSpaceMobBase
+  id: NecromorphSlasher
+  name: Slasher
+  description: Um antigo cadaver, um atual predador necrofágo. Contemple a evolução forçada em matéria morta. Estraçalhe para fazê-los se calar.
+  components:
+  - type: Hands
+  - type: Tool #podem abrir portas
+    speed: 1.5
+    qualities:
+      - Prying
+  - type: Prying
+    pryPowered: !type:Bool
+        true
+    force: !type:Bool
+      true
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: SpamEmitSound #gritam em constante agonia
+    sound:
+      params:
+        volume: -8
+      collection: NecromorphScreams
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Gabystation/Mobs/Necromorphs/Slasher.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+  - type: Butcherable
+    spawned:
+    - id: NecromorphSlasherCorpo #gibar os corpos é a única forma de faze-los parar de gritar
+      amount: 1
+  - type: PressureImmunity
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: crit
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+  - type: Temperature
+    heatDamageThreshold: 360
+    coldDamageThreshold: -150
+    currentTemperature: 310.15
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+        Piercing: 10
+        Structural: 20 
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999 #Precisa estracalhar para gibar seus corpos
+      behaviors:
+      - !type:GibBehavior { }
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+
+- type: damageModifierSet
+  id: NecromorphSlasher
+  coefficients:
+    Blunt: 0.7
+    Slash: 1.4 #mesmo assim não recomendo ir no X1 usando uma faquinha, apenas os robustos conseguem.
+    Piercing: 0.4 #balas realmente fazem cocegas. 
+    Cold: 0.0 # Não existe arma que cause dano de frio, né? Por enquanto...
+    Heat: 1.25
+    Poison: 0.5
+    Radiation: 0.4
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0

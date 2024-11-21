@@ -6,11 +6,11 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Misc/id_cards.rsi
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi
   - type: Clothing
     slots:
     - idcard
-    sprite: Objects/Misc/id_cards.rsi
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi
   - type: Item
     size: Small
     heldPrefix: default
@@ -792,12 +792,12 @@
   description: An ID card that gives you access beyond your wildest dreams.
   components:
   - type: Sprite
-    sprite: Objects/Misc/id_cards.rsi
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi
     layers:
     - state: admin
     - state: idadmin
   - type: Clothing
-    sprite: Objects/Misc/id_cards.rsi
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: green
   - type: IdCard

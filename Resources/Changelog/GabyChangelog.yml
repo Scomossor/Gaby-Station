@@ -46,5 +46,10 @@ Entries:
   changes:
     - type: Add
       message: Adiciona Cabelo e Barba para a raça Moth!
+- author: Dreykor
+  time: '2024-11-20T10:26:00.0000000+00:00'
+  changes:
+    - type: Fix
+      message: Corrige a falta de cabelo e barba para Moth! # Viva a evoluçao!
 Name: GabyStation
 Order: -2

@@ -1,0 +1,178 @@
+- type: Tag
+  id: MagazinePlasmaCutter
+
+- type: entity
+  name: 211-V Plasma Cutter
+  parent: WeaponLaserSvalinn
+  id: WeaponPistolPlasmaCutter
+  description: This compact cutter fires bolts of ionized plasma that cut easily through most surfaces, making it a cheap but versatile mining tool.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Pistol/PlasmaCutter.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: welder_flame
+      visible: false
+      shader: unshaded
+      map: ["enum.ToggleVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ToggleableLightVisuals
+    spriteLayer: flame
+    inhandVisuals:
+      left:
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right-flame
+        shader: unshaded
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      collection: WelderOn
+      params:
+        variation: 0.125
+        volume: -5
+    soundDeactivate:
+      collection: WelderOff
+      params:
+        variation: 0.125
+        volume: -5
+  - type: ItemToggleSize
+    activatedSize: Large
+  - type: UseDelay
+  - type: ItemToggleHot
+  - type: Clothing
+    sprite: _Gabystation/Objects/Weapons/Guns/Pistol/PlasmaCutter.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/welder_drop.ogg
+  - type: RefillableSolution
+    solution: Welder
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 250
+        maxVol: 250
+  - type: Tool
+    useSound:
+      collection: Welder
+    qualities: Welding
+    speedModifier: 2
+  - type: Welder
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 4
+    color: purple
+    netsync: false
+  - type: ItemTogglePointLight
+  - type: Appearance
+  - type: RequiresEyeProtection
+  - type: IgnitionSource
+    temperature: 700
+  - type: Cautery # GoobStation
+    speed: 0.7
+  - type: SurgeryTool # GoobStation
+    startSound:
+      collection: Welder
+    endSound:
+      collection: WelderOff
+  - type: Item
+    sprite: _Gabystation/Objects/Weapons/Guns/Pistol/PlasmaCutter.rsi
+    size: 10
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Gabystation/Weapons/Guns/Gunshots/plasma_cutter.ogg
+      params:
+       volume: -6
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePlasmaCutter
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - MagazinePlasmaCutter
+  - type: StaticPrice
+    price: 1200
+
+            
+  #Ignorar parte abaixo comentada
+
+  # - type: MagazineAmmoProvider
+  # - type: ItemSlots
+  #   slots:
+  #     gun_magazine:
+  #       name: Magazine
+  #       startingItem: PowerCellSmall
+  #       insertSound: /Audio/_Gabystation/Weapons/Guns/Bolt/plasma_cutter_bolt_open.og
+  #       ejectSound: /Audio/_Gabystation/Weapons/Guns/Bolt/plasma_cutter_bolt_open.og
+  #       whitelist:
+  #         tags:
+  #           - PowerCell
+  #           - PowerCellSmall
+  # - type: ContainerContainer
+  #   containers:
+  #     gun_magazine: !type:ContainerSlot
+  # - type: MagazineVisuals
+  #   magState: mag
+  #   steps: 1
+  #   zeroVisible: true
+  # - type: Appearance
+  # - type: StaticPrice
+  #   price: 1200
+      
+# TODO: TROCAR POR BATERIAS. CUTTERS NÃO USAM CARTUCHOS! #
+      
+  # - type: ItemSlots
+    # slots:
+      # gun_magazine:
+        # name: Magazine
+        # startingItem: CartridgePlasmaCutter
+        # insertSound: /Audio/_Gabystation/Weapons/PlasmaCutter/reload.ogg
+        # ejectSound:
+          # path: /Audio/_Gabystation/Weapons/PlasmaCutter/eject.ogg
+          # params:
+            # volume: -4
+        # priority: 2
+        # whitelist:
+          # tags:
+            # - CartridgePlasmaCutter
+      # gun_chamber:
+        # name: Chamber
+        # startingItem: CartridgePlasmaCutter
+        # priority: 1
+        # whitelist:
+          # tags:
+            # - CartridgePlasmaCutter
+  # - type: ContainerContainer
+  # - type: MagazineVisuals
+    # magState: mag
+    # steps: 1
+    # zeroVisible: true
+  # - type: Appearance
+  # - type: StaticPrice
+    # price: 1200

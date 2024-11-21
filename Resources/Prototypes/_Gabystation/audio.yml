@@ -1,0 +1,15 @@
+- type: soundCollection
+  id: NecromorphScreams
+  files:
+    - /Audio/_Gabystation/Animals/necro1.ogg
+    - /Audio/_Gabystation/Animals/necro2.ogg
+    - /Audio/_Gabystation/Animals/necro3.ogg
+    - /Audio/_Gabystation/Animals/necro4.ogg
+    - /Audio/_Gabystation/Animals/necro5.ogg
+
+- type: soundCollection
+  id: SWSshots
+  files:
+    - /Audio/_Gabystation/Weapons/Guns/Gunshots/sws1.ogg
+    - /Audio/_Gabystation/Weapons/Guns/Gunshots/sws2.ogg
+    - /Audio/_Gabystation/Weapons/Guns/Gunshots/sws3.ogg

@@ -1,0 +1,35 @@
+- type: entity
+  id: ImpactPlasmaCut
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Gabystation/Objects/Weapons/Guns/Impacts/PlasmaCutter.rsi
+      state: impact_eletric
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+      
+- type: entity
+  id: ImpactSWS
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Gabystation/Objects/Weapons/Guns/Impacts/SWSRifle.rsi
+      state: impact_pulse
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
