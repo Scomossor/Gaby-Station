@@ -1,20 +1,20 @@
-# - type: entity
-#   id: NecromorphSpawn
-#   parent: BaseStationEventShortDelay
-#   components:
-#   - type: StationEvent
-#     startAnnouncement: station-event-vent-creatures-start-announcement
-#     startAudio:
-#       path: /Audio/_Gabystation/Animals/necro1.ogg
-#       params:
-#         volume: -4
-#     earliestStart: 20
-#     minimumPlayers: 15
-#     weight: 5
-#     duration: 60
-#   - type: VentCrittersRule
-#     entries:
-#     - id: NecromorphSlasher
-#       prob: 0.05
-#     - id: NecromorphSlasherCorpo
-#       prob: 0.2
+ - type: entity
+   id: NecromorphSpawn
+   parent: BaseStationEventShortDelay
+   components:
+   - type: StationEvent
+     startAnnouncement: station-event-vent-creatures-start-announcement
+     startAudio:
+       path: /Audio/_Gabystation/Animals/necro1.ogg
+       params:
+         volume: -4
+     earliestStart: 20
+     minimumPlayers: 15
+     weight: 5
+     duration: 60
+   - type: VentCrittersRule
+     entries:
+     - id: NecromorphSlasher
+       prob: 0.05
+     - id: NecromorphSlasherCorpo
+       prob: 0.2
