@@ -74,8 +74,6 @@
     - sprite: Mobs/Silicon/station_ai.rsi
       state: default
   - type: ShowJobIcons
-  - type: Speech
-    speechVerb: Robotic
 
 - type: entity
   id: AiHeldIntellicard
@@ -96,12 +94,8 @@
   - type: UserInterface
     interfaces:
       enum.SiliconLawsUiKey.Key:
-        type: SiliconLawBoundUserInterface  - type: HolographicAvatar
-    layerData:
-    - sprite: Mobs/Silicon/station_ai.rsi
-      state: default
-
-- type: HolographicAvatar
+        type: SiliconLawBoundUserInterface
+  - type: HolographicAvatar
     layerData:
     - sprite: Mobs/Silicon/station_ai.rsi
       state: default
