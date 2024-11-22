@@ -1,4 +1,4 @@
-cheiro de amônia = Alguma coisa cheira mal aqui..
+ammonia-smell = Alguma coisa cheira mal aqui..
 ## Perecível
 
 perishable-1 = [color=green] { CAPITALIZE( POSS-ADJ( $target ) ) } O corpo parece fresco[/color] 
