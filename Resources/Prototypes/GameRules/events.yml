@@ -22,7 +22,6 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
-    - id: NecromorphSpawn # Gabystation add
     - id: VentClog
 
 - type: entityTable
