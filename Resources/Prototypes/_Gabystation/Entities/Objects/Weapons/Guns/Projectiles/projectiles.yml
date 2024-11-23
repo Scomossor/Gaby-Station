@@ -32,7 +32,7 @@
     impactEffect: ImpactPlasmaCut
     damage:
       types:
-        Slash: 24
+        Slash: 15
         Heat: 6
         Structural: 45
      
