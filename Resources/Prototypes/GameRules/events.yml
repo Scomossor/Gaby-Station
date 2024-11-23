@@ -22,8 +22,8 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
-    - id: NecromorphSpawn # Gabystation add
     - id: VentClog
+- id: NecromorphSpawn # Gabystation add
 
 - type: entityTable
   id: BasicAntagEventsTable

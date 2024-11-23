@@ -6,7 +6,7 @@
   components:
   - type: MovementSpeedModifier
     baseWalkSpeed : 5
-    baseSprintSpeed : 8 # rápido
+    baseSprintSpeed : 5
   - type: Sprite
     drawdepth: Mobs
     layers:

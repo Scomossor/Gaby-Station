@@ -1,0 +1,10 @@
+department-Cargo = Departamento de Carga
+department-Civilian = Tripulantes
+department-Command = Comando
+department-CentralCommand = Comando Central
+department-Engineering = Departamento de Engenharia
+department-Medical = Departamento de medicina
+department-Security = Departamento de segurança
+department-Science = Departamendo de ciências
+department-Silicon = Silício
+department-Specific = Ocupações Específicas da Estação
