@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Tails by Wells Chaplon (discord: wellnachapara)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "daengati_tail",
+            "directions": 4
+        },
+        {
+            "name": "nightcrawler_tail",
+            "directions": 4
+        }
+    ]
+}

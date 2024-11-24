@@ -20,6 +20,16 @@
   categories:
     -  UplinkDisruption
 
+- type: listing
+  id: UplinkRemoteSignallerAdvanced
+  name: uplink-signaller-name
+  description: uplink-signaller-desc
+  productEntity: RemoteSignallerAdvanced
+  cost:
+    Telecrystal: 8
+  categories:
+    -  UplinkDisruption
+
 # skibidi no more D:
 #- type: listing
 #  id: UplinkBoxSkibidiRizz

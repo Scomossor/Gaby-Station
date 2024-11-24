@@ -1,0 +1,17 @@
+- type: marking
+  id: DaengatiTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: daengati_tail
+
+- type: marking
+  id: DaengatiNightCrawlerTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: nightcrawler_tail

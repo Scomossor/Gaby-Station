@@ -1,0 +1,40 @@
+- type: entity
+  parent: BaseMobHuman
+  name: Urist McDemon
+  id: MobDaengatiBase
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Daengati
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 3.5
+        Heat: 2
+  - type: Body
+    prototype: Human
+  - type: Temperature
+    heatDamageThreshold: 500
+    coldDamageThreshold: 270
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold : 0.4 #o padrão é 0.1
+    heatDamage:
+      types:
+        Heat : 0.5 #O padrão é 1.5
+  - type: Damageable
+    damageModifierSet: Daengati
+
+- type: entity
+  save: false
+  name: Urist McDemon
+  parent: MobHumanDummy
+  id: MobDaengatiDummy
+  noSpawn: true
+  description: A dummy Daengati meant to be used in character setup.

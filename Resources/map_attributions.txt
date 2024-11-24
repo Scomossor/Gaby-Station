@@ -54,3 +54,9 @@
 
 - files: ["cog.yml"]
   authors: Spacemann
+
+#Gabystation Maps
+#These are located in /_Gabystation/Maps/
+
+- files: ["gamma.yml"]
+  authors: Leshiy, CRISOOOOO

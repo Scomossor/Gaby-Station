@@ -70,7 +70,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      300: Dead
   - type: MobStateActions
     actions:
       Critical:
@@ -84,7 +84,7 @@
         Base: crit
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
-    baseSprintSpeed: 5
+    baseSprintSpeed: 4.5
   - type: Temperature
     heatDamageThreshold: 360
     coldDamageThreshold: -150
