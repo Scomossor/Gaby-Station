@@ -13,6 +13,8 @@
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
   applyTraits: false
+  whitelisted: true
+
 
 - type: job
   id: Borg

@@ -1,0 +1,59 @@
+- type: jukebox
+  id: Fnaf1
+  name: The Living Tombstone - Five Nights at Freddy's 1 Song
+  path:
+    path: /Audio/_Gabystation/Jukebox/fnaf1.ogg
+
+- type: jukebox
+  id: SpaceAsshole
+  name: Chris Remo - Space Asshole
+  path:
+    path: /Audio/_Gabystation/Jukebox/spaceAsshole.ogg
+
+- type: jukebox
+  id: DigitalCircus
+  name: Gooseworx - Your New Home (Digital Circus)
+  path:
+    path: /Audio/_Gabystation/Jukebox/DigitalCircus.ogg
+
+#- type: jukebox
+#  id: TodoGay
+#  name: Marcelo Adnet - Todo Mundo é Gay
+#  path:
+#    path: /Audio/_Gabystation/Jukebox/gay.ogg
+
+- type: jukebox
+  id: DigitalCircus
+  name: Gooseworx - Your New Home (Digital Circus)
+  path:
+    path: /Audio/_Gabystation/Jukebox/DigitalCircus.ogg
+
+- type: jukebox
+  id: CheiaDeManias
+  name: Raça Negra - Cheia de Manias
+  path:
+    path: /Audio/_Gabystation/Jukebox/cheia_de_manias.ogg
+
+- type: jukebox
+  id: AGrandeFamilia
+  name: Dudu Nobre - A Grande Familia
+  path:
+    path: /Audio/_Gabystation/Jukebox/a_grande_familia.ogg
+
+- type: jukebox
+  id: Evidencias
+  name: Chitãozinho & Xororó - Evidencias
+  path:
+    path: /Audio/_Gabystation/Jukebox/evidencias.ogg
+
+- type: jukebox
+  id: Evidencias
+  name: EH!DE - My Heart
+  path:
+    path: /Audio/_Gabystation/Jukebox/heart.ogg
+
+- type: jukebox
+  id: Evidencias
+  name: Tobu - Candyland
+  path:
+    path: /Audio/_Gabystation/Jukebox/candyland.ogg
