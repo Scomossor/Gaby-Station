@@ -46,4 +46,4 @@ job-description-serviceworker = Aprenda o básico sobre o bar, cozinhe e cultive
 job-description-station-ai = Siga suas leis e sirva a tripulação.
 job-description-visitor = Aproveite sua visita à estação.
 job-description-warden = Patrulhe o departamento de segurança, certifique-se de que ninguém esteja roubando do arsenal e certifique-se de que todos os prisioneiros tenham históricos criminais ​​e sejam libertados quando o tempo acabar.
-job-description-zookeeper = Faça uma exibição alegre de animais fofos e carpas espaciais para toda a tripulação ver. 
+job-description-zookeeper = Faça uma exibição alegre de animais fofos e carpas espaciais para toda a tripulação ver.

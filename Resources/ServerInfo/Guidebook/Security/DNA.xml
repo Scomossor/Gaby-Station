@@ -1,0 +1,33 @@
+﻿<Document>
+  # DNA e Impressões Digitais
+
+  ## Como obter o DNA de alguém?
+
+  Você pode escanear poças de sangue, vômito, copos, garrafas, latas e outros recipientes de líquidos usando o [color=#a4885c]forensic scanner[/color] para obter o DNA de qualquer pessoa.
+  <Box>
+    <GuideEntityEmbed Entity="ForensicScanner"/>
+  </Box>
+  Portanto, tome cuidado antes de brigar com alguém.
+  
+  O mesmo scanner também pode obter informações de impressões digitais sobre quem tocou praticamente qualquer objeto. Se o possível perpetrador estava usando luvas, o seu scanner imprimirá quais fibras foram deixadas na cena do crime.
+
+  ## Eu tenho DNA. Como posso reconhecer de quem é?
+
+  Você pode imprimir as informações forenses do objeto digitalizado para nunca perdê-lo. Agora, com o papel contendo DNA, você pode simplesmente encontrar um  [color=#a4885c]Station Records Computer[/color] e procurar uma pessoa cujo DNA corresponda. O mesmo se aplica a descobrir de quem é a impressão digital.
+  
+  ## Tirando impressões digitais
+  
+  Também é possível tirar impressões digitais de alguém enquanto estiver no local, se você tirar as luvas e aplicar um absorvente forense nos dedos. Não há necessidade de voltar ao [color=#a4885c]Station Records Computer[/color] para verificar se o mordomo fez isso!
+  
+  <GuideEntityEmbed Entity="ForensicPad"/>
+  
+  ## Fibras
+  
+  Sempre que pessoas usando luvas tocam em alguma coisa na estação, elas deixam algumas fibras para trás. Isso complica as coisas, mas nada é insolúvel para um verdadeiro detetive.
+  
+  Existem até [color=red]16[/color] diferentes tipos de fibras possíveis. Isso pode impedi-lo de resolver o caso?
+  
+  <Box>
+    <GuideEntityEmbed Entity="ComputerStationRecords"/>
+  </Box>
+</Document>

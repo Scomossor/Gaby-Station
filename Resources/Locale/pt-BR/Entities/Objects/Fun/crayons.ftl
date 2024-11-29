@@ -1,0 +1,36 @@
+ent-Crayon = crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonWhite = white crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonMime = mime crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonRainbow = rainbow crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonBlack = black crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonRed = red crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonOrange = orange crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonYellow = yellow crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonGreen = green crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonBlue = blue crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonPurple = purple crayon
+    .desc = A colourful crayon. Looks tasty. Mmmm...
+
+ent-CrayonBox = crayon box
+    .desc = It's a box of crayons.
+

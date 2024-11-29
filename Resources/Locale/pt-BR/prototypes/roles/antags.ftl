@@ -1,4 +1,4 @@
-﻿## goob edited
+## goob edited
 roles-antag-syndicate-agent-name = Traidor
 roles-antag-syndicate-agent-objective = Complete seus objetivos sem ser pego.
 

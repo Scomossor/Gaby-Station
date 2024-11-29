@@ -31,3 +31,61 @@ zzzz-fmt-power-joules = { TOSTRING($divided, "F1") } { $places ->
     [4] TJ
     *[5] ???
 }
+
+# Used internally by the THE() function.
+zzzz-the = { PROPER($ent) ->
+   *[false] o { $ent }
+     [true] a { $ent }
+   }
+
+# Used internally by the SUBJECT() function.
+zzzz-subject-pronoun = { GENDER($ent) ->
+   *[male] ele
+    [female] ela
+    [epicene] eles
+    [neuter] elas
+   }
+
+# Used internally by the OBJECT() function.
+zzzz-object-pronoun = { GENDER($ent) ->
+   *[male] dele
+    [female] dela
+    [epicene] deles
+    [neuter] delas
+   }
+
+# Used internally by the POSS-PRONOUN() function.
+zzzz-possessive-pronoun = { GENDER($ent) ->
+   *[male] dele
+    [female] dela
+    [epicene] deles
+    [neuter] delas
+   }
+
+# Used internally by the POSS-ADJ() function.
+zzzz-possessive-adjective = { GENDER($ent) ->
+   *[male] seu
+    [female] sua
+    [epicene] seus
+    [neuter] suas
+   }
+
+# Used internally by the REFLEXIVE() function.
+zzzz-reflexive-pronoun = { GENDER($ent) ->
+   *[male] ele mesmo
+    [female] ela mesma
+    [epicene] eles mesmos
+    [neuter] elas mesmas
+   }
+
+# Used internally by the CONJUGATE-BE() function.
+zzzz-conjugate-be = { GENDER($ent) ->
+    [epicene] são
+   *[other] é
+   }
+
+# Used internally by the CONJUGATE-HAVE() function.
+zzzz-conjugate-have = { GENDER($ent) ->
+    [epicene] têm
+   *[other] tem
+   }

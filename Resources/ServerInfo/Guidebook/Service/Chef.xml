@@ -21,16 +21,84 @@ First and foremost, you'll need to familiarize yourself with the kitchen, and th
 <GuideEntityEmbed Entity="VendingMachineDinnerware" Caption="Dinnerware Vend"/>
 </Box>
 
-## Kitchen Prep:
+Micro-ondas. Ao acelerar as moléculas dipolo nos alimentos e criar fricção molecular, cuja energia exotérmica se espalha por toda a casca estrutural do objeto que está sendo aquecido, um forno de micro-ondas aquece e cozinha os alimentos. Permite, por exemplo, obter bolsos de donk quentes, que são uma versão mais nutritiva dos seus homólogos frios, ou preparar um pão aquecendo um pedaço de massa cortado. As tecnologias NanoTrasen permitem utilizar um forno micro-ondas convencional não apenas como aquecedor de alimentos, mas também como processador estrutural de matéria, ampliando significativamente o leque de possibilidades e tornando um forno micro-ondas convencional um multi-fogão universal.
 
-It's hard to put into words how to play chef without feeling like you're being given orders, but here are some basics.
+- Se, após a utilização do forno micro-ondas, os ingredientes nele contidos caírem, isso significa apenas que a receita que utilizou foi reproduzida incorretamente. Certifique-se de verificar se você tem os ingredientes certos e ajuste o cronômetro de acordo com a receita.
 
-- Check what you have on hand when it comes to ingredients, most kitchens have some Flour, Rice, Eggs, Monkey Cubes, and a few other things to get started with.
-- Try your hand at mixing up some dough by putting water and flour together in a beaker. (Use the sinks!)
-- Check the Wiki (or Food Recipes) guidebook for things you can make, and put all the listed ingredients into a microwave to cook it into a meal.
-- Set up mouse traps. Yes, really. It's easy to see all your hard work disappear if you don't take precautions for mice infestations.
+- Não se preocupe se você adicionou um ingrediente extra. Os ingredientes extras não interferem no preparo do prato e não desaparecem durante o cozimento.
 
-Once you're a bit more experienced and familiar with what you can make, it might be best to put together a few menus, or a "cheat sheet" so you can give a list of ingredients to botany.
+- Alguns ingredientes, como o sal, estão em recipientes. Não importa a forma como essas substâncias vão parar dentro do medicamento: você pode usar um saquinho ou um copo.
+
+- Para poupar tempo, é possível cozinhar vários pratos idênticos ao mesmo tempo. Por exemplo, inserindo 2 pedaços de massa em vez de um e aumentando o cronômetro proporcionalmente ao excesso adicionado (de 15 segundos para 30), você terá 2 pães de uma só vez. Esse processo pode ser feito com qualquer quantidade de alimento que o próprio aparelho possa acomodar.
+
+
+Triturador. Lâminas afiadas e compressores de alta pressão permitem que o Triturador esmague e extraia quase todas as substâncias carregadas em seu compartimento.
+
+- A maioria das refeições cozidas pode ser fatiada e dada aos funcionários em pedaços para manter uma distribuição justa dos alimentos entre os membros da tripulação.
+
+- Alimentos e muitos ingredientes podem ser liquefeitos e misturados no Triturador. Comida líquida... Hum!
+
+## Preparação da cozinha:
+
+- Verifique o que você tem em mãos quando se trata de ingredientes, a maioria das cozinhas tem farinha, arroz, ovos, cubos de macaco e algumas outras coisas para começar.
+- Experimente misturar um pouco de massa colocando água e farinha em um copo. (Use as pias!)
+- Verifique o guia Wiki (ou Receitas de Comida) para saber o que você pode fazer e coloque todos os ingredientes listados no micro-ondas para prepará-los em uma refeição.
+
+Quando você estiver um pouco mais experiente e familiarizado com o que pode fazer, talvez seja melhor montar alguns menus ou uma "folha de dicas" para fornecer uma lista de ingredientes para a botânica.
+
+## Misturando massa:
+
+Adicione a farinha e a água em um copo. (Use a pia para água!)<Box>
+<GuideEntityEmbed Entity="LargeBeaker"/>
+<GuideEntityEmbed Entity="ReagentContainerFlour"/>
+<GuideEntityEmbed Entity="DrinkWaterBottleFull" Caption="water"/>
+<GuideEntityEmbed Entity="FoodDough"/>
+</Box>
+## Fazendo Farinha:
+
+Coloque o trigo em um Triturador (com um copo colocado dentro) e triture!<Box>
+<GuideEntityEmbed Entity="KitchenReagentGrinder"/>
+<GuideEntityEmbed Entity="LargeBeaker"/>
+<GuideEntityEmbed Entity="WheatBushel"/>
+<GuideEntityEmbed Entity="ReagentContainerFlour"/>
+</Box>
+## Obtendo Plantas:
+
+Peça à Botânica o que você precisa; sem um botânico, você mesmo pode precisar cultivar mais plantas.<Box>
+<GuideEntityEmbed Entity="SignHydro1" Caption=" "/>
+<GuideEntityEmbed Entity="hydroponicsTray"/>
+<GuideEntityEmbed Entity="WheatBushel"/>
+<GuideEntityEmbed Entity="SignHydro2" Caption=" "/>
+</Box>
+## Coletando Leite:
+
+Alt-Click em uma vaca com um recipiente na mão. (Béqueres, baldes, jugs, etc.)
+<Box>
+<GuideEntityEmbed Entity="Bucket"/>
+<GuideEntityEmbed Entity="MobCow"/>
+<GuideEntityEmbed Entity="ReagentContainerMilk"/>
+</Box>
+## Como abater:
+
+Na maioria dos casos, você poderá usar uma faca diretamente em uma criatura que esteja morta. É melhor fazer isso no freezer, pois os resultados são... confusos.
+
+Os macacos, entretanto (e outros humanóides), precisam ser arrastados para uma "meatspike" para serem massacrados.
+<Box>
+<GuideEntityEmbed Entity="KitchenSpike"/>
+<GuideEntityEmbed Entity="KitchenKnife"/>
+<GuideEntityEmbed Entity="MobMonkey"/>
+<GuideEntityEmbed Entity="FoodMeat"/>
+</Box>
+
+
+# Dicas para jogar como Chef
+
+— Os ratos são seus principais inimigos no caminho para deixar a tripulação feliz. Sendo criaturas rápidas e vorazes, esvaziam facilmente até os maiores estoques de alimentos, e alguns deles não hesitam em incomodar o azarado cozinheiro, por exemplo, virando os copos, derramando assim o seu conteúdo. As ratoeiras, cuidadosamente fornecidas a você, ajudarão a se livrar do flagelo dos ratos. Pressione "Z" enquanto segura um deles para ativá-lo e, em seguida, coloque-os em lugares onde serão difíceis de localizar, como sob o balcão que separa a área de serviço da sua cozinha, e observe como um roedor faminto vai direto para o paraíso dos ratos. Não se esqueça de recarregá-lo após o uso bem-sucedido. As ratoeiras também podem ser lançadas diretamente contra seus inimigos se você for habilidoso o suficiente.
+
+— Muitas vezes ocorrem incidentes quando um passageiro atrevido ou outra pessoa sobe insolentemente no balcão, pisando com os pés sujos em seu território sagrado. O que fazer então? A NanoTrasen recomenda fortemente que você resolva o conflito de forma pacífica, chegando a um acordo com o infrator ou ligando para o Serviço de Segurança.
+
+— Os ratos não são os únicos roedores que querem entrar furtivamente no seu território. Os ratos não são nada avessos a lucrar com seus pratos cuidadosamente preparados; no entanto, ao contrário dos ratos inofensivos, eles podem facilmente comer não apenas uma fatia do seu pão, mas também uma fatia sua. Recomendamos abandonar a cozinha devido ao risco injustificado de vida - confie nos agentes do Serviço de Segurança para se livrar deste flagelo. Se o desejo de vingança não consegue fazer você ir embora tão facilmente, espalhe cacos de vidro pela cozinha: eles causam ferimentos graves a qualquer rato que pisar neles, o que pode reduzir significativamente a eficácia de combate de seu exército. As ratoeiras também continuam sendo um método relevante - o principal é poder usá-las com rapidez e precisão.
+
 
 ## Mixing Dough:
 Add Flour and Water together in a beaker. (Use the sink for water!)
@@ -65,11 +133,4 @@ Alt-Click on a Cow with a container in your hand. (Beakers, Buckets, Milk Jugs, 
 ## How to Butcher:
 In most cases, you should be able to use a knife directly on a creature that's dead. It's best to do this in the freezer, as the results are... messy.
 
-Monkeys, however, (and other humanoids), need to be dragged onto a meatspike to be butchered.
-<Box>
-<GuideEntityEmbed Entity="KitchenSpike"/>
-<GuideEntityEmbed Entity="KitchenKnife"/>
-<GuideEntityEmbed Entity="MobMonkey"/>
-<GuideEntityEmbed Entity="FoodMeat"/>
-</Box>
 </Document>

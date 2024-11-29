@@ -1,4 +1,4 @@
-﻿comp-gas-thermomachine-ui-title-freezer = Esfriador
+comp-gas-thermomachine-ui-title-freezer = Esfriador
 comp-gas-thermomachine-ui-title-heater = Aquecedor
 
 comp-gas-thermomachine-ui-temperature = Temperatura (K):

@@ -1,10 +1,10 @@
 <Document>
-  # Species
+  # Espécies
 
-  Nanotrasen employs a variety of sapient species.
+  A Nanotrasen contrata uma variedade de Espécies sencientes.
 
   <Box>
-  <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
+  <GuideEntityEmbed Entity="MobArachnid" Caption="Aracnídio"/>
   <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
   <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
   <GuideEntityEmbed Entity="MobFelinid" Caption="Felinid"/>

@@ -1,4 +1,4 @@
-﻿## Phrases used for where central command got this information.
+## Phrases used for where central command got this information.
 random-sentience-event-data-1 = varreduras de nossos sensores de longo alcance
 random-sentience-event-data-2 = nossos sofisticados modelos probabilísticos
 random-sentience-event-data-3 = nossa onipotência

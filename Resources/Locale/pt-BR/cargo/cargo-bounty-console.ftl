@@ -1,4 +1,4 @@
-﻿bounty-console-menu-title = Console de recompensas de carga
+bounty-console-menu-title = Console de recompensas de carga
 bounty-console-label-button-text = Imprimir etiqueta
 bounty-console-skip-button-text = Pular
 bounty-console-time-label = Tempo: [color=orange]{$time}[/color]

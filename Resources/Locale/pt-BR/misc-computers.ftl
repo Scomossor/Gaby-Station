@@ -1,2 +1,2 @@
-radar-console-window-title = Console do scanner de massa
-shuttle-console-window-title = Console da Shuttle
+radar-console-window-title = Console do Radar
+shuttle-console-window-title = Console da Nave

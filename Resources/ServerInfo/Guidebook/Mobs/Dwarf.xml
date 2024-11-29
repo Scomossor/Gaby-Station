@@ -1,11 +1,11 @@
 <Document>
-  # Dwarves
+  # Anões
 
   <Box>
     <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
   </Box>
 
-  Dwarves are similar to humans in most respect, but tolerate alcohol better and are healed by it.
+  Anões são bem parecidos com humanos em todos os aspectos, mas conseguem tolerar melhor o álcool e são curados por ele.
 
 
 </Document>

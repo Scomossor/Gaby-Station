@@ -1,4 +1,4 @@
-﻿nukeops-title = Operativos Nucleares
+nukeops-title = Operativos Nucleares
 nukeops-description = Operativos nucleares estão atacando a estação. Tente impedir que façam o big kaboom na estação protegendo o disco nuclear!
 
 nukeops-welcome =

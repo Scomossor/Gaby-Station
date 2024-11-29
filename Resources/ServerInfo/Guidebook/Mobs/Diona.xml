@@ -14,25 +14,24 @@
   but [color=#ffa500]50% more Heat damage, 20% more Shock damage, and they can easily
   catch on fire when receiving enough Heat damage from *any* source.[/color]
 
-  ## Make Like A Tree And Leave
+  ## Faça Como Uma Arvore e Creça
   <Box>
     <GuideEntityEmbed Entity="FloraTree06" Caption=""/>
   </Box>
-  Being exposed to too much Robust Harvest will cause a Diona to grow out of control, turning into an immobile tree (dropping all their equipment).
-  Cutting down the tree will "restore" the Diona to their mobile state.
+  Ficar esposto a muito Robust Harvest causará um Diona a crescer fora de controle, o transformando em uma árvore imóvel (deixando todos os seus itens no chão).
+  Cortar a árvore vai "restaurar" o Diona para sua forma móvel.
 
-  ## Diona Nymphs
+  ## Ninfas de Diona
   <Box>
     <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
     <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
     <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
   </Box>
-  After death, a Diona can voluntarily destroy their own body, releasing their "internal organs" as three Nymphs,
-  with the player taking control of the Brain Nymph.
-  It can talk but has no hands or inventory, and can't do much.
+  Depois de sua morte, o Diona pode voluntariamente destruir o seu próprio corpo, soltando três ninfas como "orgãos internos", com o jogador controlando a Ninfa que seria o cérebro.
 
-  After 10 minutes, a Nymph can reform into a whole Diona. This will be a new randomised body with a random name,
-  and there will be little to no evidence beyond their word about who they were before.
+  Ela pode falar, mas não tem mãos e nem inventário, e não pode fazer muitas coisas.
 
+  Depois de 10 minutos, uma Ninfa pode reformar o seu próprio corpo em um Diona completo. Esse novo corpo será aleatório e com nome aleatório,
+  e terá quase nenhuma evidencia além de sua palavra sobre quem era antes.
 
 </Document>

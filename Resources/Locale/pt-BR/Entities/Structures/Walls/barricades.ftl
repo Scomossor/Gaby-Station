@@ -1,0 +1,3 @@
+ent-Barricade = barricada
+    .desc = { "" }
+

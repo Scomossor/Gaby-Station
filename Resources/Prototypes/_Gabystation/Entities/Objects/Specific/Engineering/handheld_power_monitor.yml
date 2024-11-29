@@ -5,7 +5,7 @@
   - BaseItem
   - PowerCellSlotSmallItem
   # CE apenas carambolas!! para de dar pros outros / Lá ele
-  id: HandheldPowerMonitor
+  id: HandheldPowerMonitorGs
   description: A hand-held power monitor that display the station powers level.
   components:
   - type: Sprite
@@ -35,7 +35,7 @@
 
 - type: entity # coisa pros admin nerd 🤓 spawnar
   id: HandheldPowerMonitorEmpty
-  parent: HandheldPowerMonitor
+  parent: HandheldPowerMonitorGs
   suffix: Empty
   components:
   - type: ItemSlots

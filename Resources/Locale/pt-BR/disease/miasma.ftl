@@ -1,6 +1,9 @@
 ammonia-smell = Alguma coisa cheira mal aqui..
+
+=======
 ## Perecível
 
+=======
 perishable-1 = [color=green] { CAPITALIZE( POSS-ADJ( $target ) ) } O corpo parece fresco[/color]
 perishable-2 = [color=orangered] { CAPITALIZE( POSS-ADJ( $target ) ) } O corpo parece meio fresco.[/color]
 perishable-3 = [color=red] { CAPITALIZE( POSS-ADJ( $target ) ) } O corpo parece apodrecido.[/color]
