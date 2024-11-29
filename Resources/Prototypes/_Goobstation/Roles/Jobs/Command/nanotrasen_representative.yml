@@ -33,6 +33,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  whitelisted: true
 
 - type: startingGear
   id: NanotrasenRepresentativeGear

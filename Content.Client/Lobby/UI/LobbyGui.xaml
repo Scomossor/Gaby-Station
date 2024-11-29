@@ -76,7 +76,7 @@
                         <Button Name="LeaveButton" Access="Public" StyleClasses="Square"
                                 Text="{Loc 'ui-lobby-leave-button'}" />
                     </BoxContainer>
-                    <controls:HSpacer Spacing="5" />
+                    <controls:HSpacer Spacing="3" />
                     <!-- logo -->
                     <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="LogoContainer" HorizontalAlignment="Center"
                         VerticalAlignment="Center" HorizontalExpand="True" Margin="0 8">
@@ -84,7 +84,7 @@
                     </BoxContainer>
                     <controls:HSpacer Spacing="3" />
                     <!-- Server info -->
-                    <controls:NanoHeading Text="{Loc 'ui-lobby-server-info-block'}" />
+                    <!-- <controls:NanoHeading Text="{Loc 'ui-lobby-server-info-block'}" /> -->
                     <info:ServerInfo Name="ServerInfo" Access="Public" MinSize="0 30" VerticalExpand="false"
                                      Margin="3 3 3 3" MaxWidth="400" HorizontalAlignment="Left" />
                     <Label Name="StationTime" Access="Public" FontColorOverride="{x:Static maths:Color.LightGray}"
