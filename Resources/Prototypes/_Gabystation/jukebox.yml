@@ -51,3 +51,29 @@
   name: Tobu - Candyland
   path:
     path: /Audio/_Gabystation/Jukebox/candyland.ogg
+
+# Atualização de natal - Gabystation
+
+- type: jukebox
+  id: BateOSino
+  name: Bate o Sino Pequenino - Músicas de Natal e canções de Natal
+  path:
+    path: /Audio/_Gabystation/Lobby/bateOSino.ogg
+
+- type: jukebox
+  id: JinglebellRock
+  name: Jingle Bell Rock - Bobby Helms
+  path:
+    path: /Audio/_Gabystation/Lobby/JingleBellRock.ogg
+
+- type: jukebox
+  id: FestaNossa
+  name: Hoje a festa é nossa - Roberto Carlos (Globo fim de ano 2012)
+  path:
+    path: /Audio/_Gabystation/Lobby/festaENossa.ogg
+
+- type: jukebox
+  id: AllXmas
+  name: All I Want For Christmas Is You - Mariah Carey
+  path:
+    path: /Audio/_Gabystation/Lobby/AllXmas.ogg

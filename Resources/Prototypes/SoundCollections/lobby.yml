@@ -5,6 +5,13 @@
     - /Audio/Lobby/robot_holiday.ogg
     - /Audio/Lobby/rocking_around.ogg
     - /Audio/Lobby/are_they_clueless_about_christmas.ogg
-    - /Audio/Lobby/miniscule_christmas.ogg
-    #- /Audio/Lobby/jingle_smells.ogg 1984 durk 
+    #- /Audio/Lobby/miniscule_christmas.ogg
+    - /Audio/Lobby/jingle_smells.ogg #1984 durk
     - /Audio/Lobby/secway_bells.ogg
+
+    # Gabystation
+    - /Audio/_Gabystation/Lobby/AllXmas.ogg
+    - /Audio/_Gabystation/Lobby/JingleBellBrasil.ogg
+    - /Audio/_Gabystation/Lobby/bateOSino.ogg
+    - /Audio/_Gabystation/Lobby/JingleBellRock.ogg
+    - /Audio/_Gabystation/Lobby/festaENossa.ogg
