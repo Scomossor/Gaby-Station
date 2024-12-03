@@ -1,0 +1,13 @@
+- type: entity # Natal 24
+  parent: BasePDA
+  id: SantaClausPDA
+  name: PDA do Santa "clown"
+  description: Ho! Ho! Ho!
+  components:
+  - type: Pda
+    id: SantaClausIDCard
+    state: pda-syndi
+  - type: PdaBorderColor
+    borderColor: "#880808"
+  - type: Icon
+    state: pda-syndi

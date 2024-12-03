@@ -1,0 +1,11 @@
+- type: entity # Natal 24
+  id: SpawnPointSantaClaus
+  parent: SpawnPointJobBase
+  name: SantaClaus
+  components:
+  - type: SpawnPoint
+    job_id: SantaClaus
+  - type: Sprite
+    layers:
+      - state: green
+      - state: clown

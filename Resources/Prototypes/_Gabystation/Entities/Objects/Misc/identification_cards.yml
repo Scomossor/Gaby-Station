@@ -1,0 +1,12 @@
+# Natal 24
+- type: entity
+  parent: IDCardStandard
+  id: SantaClausIDCard
+  name: ID de Papai Noel
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idsantaclaus # parece mais um id comunista KASDKSADK
+  - type: PresetIdCard
+    job: SantaClaus

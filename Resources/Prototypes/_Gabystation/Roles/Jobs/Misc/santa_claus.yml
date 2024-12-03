@@ -1,0 +1,40 @@
+- type: job # Natal 24
+  id: SantaClaus
+  name: Papai Noel
+  description: "Ho! Ho! É natal! - Disponível durante o natal de 2024"
+  playTimeTracker: JobSantaClaus
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 18000 # 5 horas
+  #weight: 20
+  startingGear: SantaClaus
+  icon: "JobIconSantaClaus"
+  #requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-hop
+  canBeAntag: true
+  access: #o que isso faz?!
+  - Service
+  - Maintenance
+  - Bar
+  - Kitchen
+  extendedAccess:
+  - Hydroponics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ SadTromboneImplant ]
+
+
+- type: startingGear
+  id: SantaClaus
+  equipment:
+    jumpsuit: ClothingSimpleUnderwear
+    back: ClothingBackpackSecurity #todo: saco do papai noel
+    shoes: ClothingShoesColorBrown
+    head: ClothingHeadHatSantahat
+    eyes: ClothingEyesGlasses
+    gloves: ClothingHandsGlovesColorWhite
+    outerClothing: ClothingOuterSanta
+    id: SantaClausPDA
+    ears: ClothingHeadsetService
