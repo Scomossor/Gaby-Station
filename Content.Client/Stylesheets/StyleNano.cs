@@ -93,13 +93,13 @@ namespace Content.Client.Stylesheets
         public static readonly Color NanoGold = Color.FromHex("#A88B5E");
         public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
-        public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
+        public static readonly Color DangerousRedFore = Color.FromHex("#c73c55");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color GabyTheme = Color.FromHex("#667C4D");
+        public static readonly Color GabyTheme = Color.FromHex("#adbaba");
 
         public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
-        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
+        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#c73c55");
         public static readonly Color ButtonColorHovered = Color.FromHex("#575b7f");
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
         public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
@@ -114,7 +114,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
 
         // gaby station
-        public static readonly Color ButtonColorDefaultGaby = Color.FromHex("#667C4D");
+        public static readonly Color ButtonColorDefaultGaby = Color.FromHex("#adbaba");
         public static readonly Color ButtonColorHoveredGaby = Color.FromHex("#4C5B39");
 
         //NavMap

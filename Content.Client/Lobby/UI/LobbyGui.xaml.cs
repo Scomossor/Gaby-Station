@@ -26,9 +26,9 @@ namespace Content.Client.Lobby.UI
             Logo.Texture = logoTexture;
 
             AHelpButton.AddStyleClass("ButtonColorGaby");
-            RemarksButton.AddStyleClass("ButtonColorGaby");
+            RemarksButton.AddStyleClass("ButtonColorRed");
             CallVoteButton.AddStyleClass("ButtonColorGaby");
-            OptionsButton.AddStyleClass("ButtonColorGaby");
+            OptionsButton.AddStyleClass("ButtonColorRed");
             LeaveButton.AddStyleClass("ButtonColorGaby");
 
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));

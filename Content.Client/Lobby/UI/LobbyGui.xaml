@@ -91,16 +91,16 @@
                     <Label Name="StationTime" Access="Public" FontColorOverride="{x:Static maths:Color.LightGray}"
                            Margin="3 3 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
-                    <!-- Server Currency -->
-                    <Label Name="Balance" Access="Public" StyleClasses="LabelHeadingBig" VAlign="Center"
-                            HorizontalExpand="True" HorizontalAlignment="Center" />
                     <!-- Gaby line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine Color="{x:Static style:StyleNano.DangerousRedFore}" Thickness="2" Access="Public" />
+                    <!-- Server Currency -->
+                    <Label Name="Balance" Access="Public" StyleClasses="LabelHeading" VAlign="Center"
+                            HorizontalExpand="True" HorizontalAlignment="Center" />
                     <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
                     <!-- Gaby line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine Color="{x:Static style:StyleNano.DangerousRedFore}" Thickness="2" Access="Public" />
                     <controls:HSpacer Spacing="10" />
                     <widgets:ChatBox Name="Chat" Access="Public" VerticalExpand="True" Margin="3 3 3 3" MinHeight="50" />
                 </BoxContainer>
