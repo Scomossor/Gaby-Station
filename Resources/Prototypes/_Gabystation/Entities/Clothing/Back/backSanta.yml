@@ -1,0 +1,27 @@
+- type: entity
+  parent: Clothing
+  id: ClothingBackpackSanta
+  name: Saco de Presentes do Papai Noel
+  description: Possibilidades iliminitadas! (Mas com uso limitado)
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Back/santaBack.rsi
+    state: icon
+  - type: Item
+    size: Huge
+  - type: SantaBag
+    uses: 65
+    spawnEntries:
+      - id: PresentRandom
+        orGroup: present
+      - id: PresentRandomUnsafe
+        orGroup: present
+        prob: 0.50
+      - id: PresentRandomInsane
+        prob: 0.25
+        orGroup: present
+      - id: PresentRandomCoal # lista dos malvados!!
+        prob: 0.15
+        orGroup: present
+  - type: UseDelay
+    delay: 2.0

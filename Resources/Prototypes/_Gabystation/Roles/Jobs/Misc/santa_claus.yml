@@ -24,13 +24,16 @@
   special:
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: Santa
 
 
 - type: startingGear
   id: SantaClaus
   equipment:
     jumpsuit: ClothingSimpleUnderwear
-    back: ClothingBackpackSecurity #todo: saco do papai noel
+    #back: ClothingBackpack #todo: saco do papai noel
     shoes: ClothingShoesColorBrown
     head: ClothingHeadHatSantahat
     eyes: ClothingEyesGlasses
@@ -38,3 +41,4 @@
     outerClothing: ClothingOuterSanta
     id: SantaClausPDA
     ears: ClothingHeadsetService
+    pocket1: ClothingBackpackSanta

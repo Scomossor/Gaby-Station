@@ -7,6 +7,6 @@
   - type: Sprite
     layers:
     - state: default
-    - state: idsantaclaus # parece mais um id comunista KASDKSADK
+    - state: idsantaclaus # parece mais um id comunista
   - type: PresetIdCard
     job: SantaClaus

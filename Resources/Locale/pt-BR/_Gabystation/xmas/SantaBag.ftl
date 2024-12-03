@@ -1,0 +1,3 @@
+gs-santabag-noSanta = Você não é o papai noel!
+gs-santabag-noPresents = O saco está vazio!
+gs-santabag-grabPresent = Você pega um presente do vasto saco...
