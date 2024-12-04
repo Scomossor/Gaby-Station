@@ -1,0 +1,57 @@
+- type: entity
+  name: Alternate
+  description: The pure form of a killing machine, had enough trying to make you end yourself, he's doing it for you. Nothing Is Worth The Risk.
+  parent: MobXeno
+  id: MobAlternate
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Gabystation/Mobs/Demons/alternate.rsi
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      450: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 6
+    baseSprintSpeed: 2 # Basicamente um sprint alternativo
+  - type: MeleeWeapon
+    altDisarm: true
+    soundHit:
+      path: /Audio/_Gabystation/Weapons/Xeno/monster_attack.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 15
+        Structural: 50
+        Piercing: 15
+  - type: Devourer
+    foodPreference: Humanoid
+    shouldStoreDevoured: true
+    chemical: Omnizine
+    healRate: 55.0
+    whitelist:
+      components:
+      - MobState
+      - Door
+      tags:
+      - Wall
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 15500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener

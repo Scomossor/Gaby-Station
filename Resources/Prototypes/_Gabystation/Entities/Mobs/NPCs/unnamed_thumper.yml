@@ -1,0 +1,75 @@
+- type: entity
+  name: '???'
+  suffix: Unnamed, Thumper
+  description: "The manifestation of my being will watch over you, when you sleep in bed, and you wake up, you won't be able to move any part of you."
+  parent: MobXeno
+  id: MobUnnamedThumper
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Gabystation/Mobs/Demons/unnamed_thumper.rsi
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      650: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 0.5
+  - type: MeleeWeapon
+    altDisarm: true
+    soundHit:
+      path: /Audio/_Gabystation/Weapons/Xeno/monster_attack.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 35
+        Structural: 80
+        Piercing: 35
+  - type: Devourer
+    foodPreference: Humanoid
+    shouldStoreDevoured: false
+    chemical: Omnizine
+    healRate: 55.0
+    whitelist:
+      components:
+      - MobState
+      - Door
+      tags:
+      - Wall
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 15500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+  - type: SpamEmitSound
+    sound:
+      params:
+        volume: -7
+      collection: Thumper
+
+- type: soundCollection
+  id: Thumper
+  files:
+    - /Audio/_Gabystation/Voice/Thumper/thumper_1.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_2.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_3.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_4.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_5.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_6.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_7.ogg
+    - /Audio/_Gabystation/Voice/Thumper/thumper_8.ogg

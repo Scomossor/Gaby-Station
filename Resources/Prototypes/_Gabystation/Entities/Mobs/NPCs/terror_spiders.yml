@@ -1,0 +1,364 @@
+﻿# Base
+
+- type: entity
+  save: false
+  parent: [ BaseSimpleMob, MobCombat, MobGiantSpider ]
+  id: BaseMobTerrorSpider
+  suffix: AI, TerrorSpider
+  description: A monstrous terror spider, you won't be wanting to face its hive.
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - TerrorSpider
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound 
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Aliens/TerrorSpiders/terror_spiders.rsi
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Bloodstream
+    bloodReagent: CopperBlood
+    bloodMaxVolume: 105
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
+  - type: Insulated
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 10 
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: Toxin
+          Quantity: 50
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: Body
+    prototype: Animal
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage:
+      types:
+        Heat: 9
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSpider
+      amount: 5
+    - id: EggSpider
+      amount: 1
+      prob: 0.5
+  - type: TypingIndicator
+    proto: spider
+  - type: NoSlip
+  - type: IgnoreSpiderWeb
+
+# Low Tier
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderWhite
+  suffix: Low-Tier
+  name: Terror Spider
+  components:
+  - type: Sprite
+    layers:
+    - state: white_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+      scale: 0.9, 0.9
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: white_alive
+      Dead:
+        Base: white_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Dead
+  - type: MeleeWeapon
+    attackRate: 1.
+    damage:
+      types:
+        Blunt: 2
+        Slash: 3
+        Structural: 4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  - type: PointLight
+    radius: 2.2
+    energy: 1
+    color: "#ffffff"
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderGreen
+  suffix: Low-Tier
+  name: Terror Spider
+  components:
+  - type: Sprite
+    layers:
+    - state: green_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: green_alive
+      Dead:
+        Base: green_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      140: Dead
+  - type: MeleeWeapon
+    attackRate: 1.3
+    damage:
+      types:
+        Blunt: 1
+        Slash: 3
+        Poison: 6
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: PointLight
+    radius: 2.2
+    energy: 1
+    color: "#1aff00"
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderPurple
+  suffix: Low-Tier
+  name: Terror Spider
+  components:
+  - type: Sprite
+    layers:
+    - state: purple_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+      scale: 1.1, 1.1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: purple_alive
+      Dead:
+        Base: purple_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      160: Dead
+  - type: MeleeWeapon
+    attackRate: 1.0
+    damage:
+      types:
+        Blunt: 10
+        Structural: 30
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 2
+  - type: Puller
+  - type: PointLight
+    radius: 2.8
+    energy: 2
+    color: "#a600ff"
+
+# Mid Tier
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderRed
+  suffix: Mid-Tier
+  name: Terror Spider
+  components:
+  - type: Sprite
+    layers:
+    - state: red_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: red_alive
+      Dead:
+        Base: red_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Dead
+  - type: MeleeWeapon
+    attackRate: 1.3
+    damage:
+      types:
+        Blunt: 8
+        Slash: 8
+        Structural: 16
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 3.5
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    color: "#ff0000"
+  - type: Puller
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderYellow
+  suffix: Mid-Tier
+  name: Terror Spider
+  components:
+  - type: Sprite
+    layers:
+    - state: yellow_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: yellow_alive
+      Dead:
+        Base: yellow_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      140: Dead
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletTaser
+    fireCost: 50
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    fireRate: 0.1
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+        Slash: 5
+        Structural: 15
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  - type: PointLight
+    radius: 2.2
+    energy: 3.5
+    color: "#c8ff00"
+  - type: Puller
+
+# Lower Hive Command
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderQueen
+  suffix: Lower Hive Queen
+  name: Terror Queen
+  description: Commands the lower hive alongside her daughter, the Terror Princess.
+  components:
+  - type: Sprite
+    layers:
+    - state: queen_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+      scale: 1.25, 1.25
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: queen_alive
+      Dead:
+        Base: queen_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      350: Dead
+  - type: MeleeWeapon
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 15
+        Slash: 20
+        Poison: 5
+        Structural: 55
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+  - type: PointLight
+    radius: 3.5
+    energy: 3.5
+    color: "#4400ff"
+  - type: Puller
+  - type: Devourer
+    foodPreference: Humanoid
+    shouldStoreDevoured: true
+    chemical: Omnizine
+    healRate: 15.0
+    whitelist:
+      components:
+      - MobState
+      - Door
+      tags:
+      - Wall
+
+- type: entity
+  parent: BaseMobTerrorSpider
+  id: MobTerrorSpiderPrincess
+  suffix: Lower Hive Princess
+  name: Terror Princess
+  description: The cute daughter of the queen, is a speed demon, glass cannon with incredibly venomous fangs.
+  components:
+  - type: Sprite
+    layers:
+    - state: princess_alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+      scale: 0.7, 0.7
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: princess_alive
+      Dead:
+        Base: princess_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Dead
+  - type: MeleeWeapon
+    attackRate: 2.0
+    damage:
+      types:
+        Blunt: 2
+        Slash: 3
+        Poison: 8
+        Structural: 10
+
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 6.5
+  - type: PointLight
+    radius: 3.5
+    energy: 2.5
+    color: "#ff9ef2"

@@ -1,0 +1,76 @@
+- type: entity
+  name: Alternate
+  suffix: Whisperer
+  description: Nothing Is Worth The Risk.
+  parent: MobXeno
+  id: MobAlternateAlt
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Gabystation/Mobs/Demons/alternate.rsi
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      550: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    altDisarm: true
+    soundHit:
+      path: /Audio/_Gabystation/Weapons/Xeno/monster_attack.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 15
+        Structural: 50
+        Piercing: 15
+  - type: Devourer
+    foodPreference: Humanoid
+    shouldStoreDevoured: true
+    chemical: Omnizine
+    healRate: 55.0
+    whitelist:
+      components:
+      - MobState
+      - Door
+      tags:
+      - Wall
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 15500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+  - type: SpamEmitSound
+    sound:
+      params:
+        volume: -8
+      collection: alternate
+
+- type: soundCollection
+  id: alternate
+  files:
+    - /Audio/_Gabystation/Voice/Alternate/alternate_1.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_2.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_3.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_4.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_5.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_6.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_7.ogg
+    - /Audio/_Gabystation/Voice/Alternate/alternate_8.ogg
+

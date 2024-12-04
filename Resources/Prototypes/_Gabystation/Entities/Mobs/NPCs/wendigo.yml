@@ -1,0 +1,68 @@
+- type: entity
+  name: Wendigo
+  description: A manhunter entity of the dark woods. Although its main diet is humanoids, it won't pass a meal at anything that comes across it.
+  parent: MobXeno
+  id: MobWendigo
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Gabystation/Mobs/Demons/wendigo.rsi
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      150: 0.7
+  - type: MovementSpeedModifier
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_Gabystation/Weapons/Xeno/monster_attack.ogg
+    damage:
+     types:
+       Brute: 25
+       Slash: 25
+       Structural: 70
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 15500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - FootstepSound
+    - DoorBumpOpener
+  - type: Devourer
+    foodPreference: Humanoid
+    shouldStoreDevoured: true
+    chemical: Ichor
+    healRate: 25.0
+    whitelist:
+      components:
+      - MobState
+      - Door
+      tags:
+      - Wall
+  - type: Reflect
+    reflectProb: 0.7
+    reflects:
+      - Energy
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepThud
+  - type: PointLight
+    radius: 2
+    energy: 4.5
+    color: "#ff4242"
+    castShadows: false

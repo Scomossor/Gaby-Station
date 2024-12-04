@@ -1,0 +1,12 @@
+- type: npcFaction
+  id: TerrorSpider
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - Xeno
+  - PetsNT
+  - SimpleHostile

@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseMob
+  id: MobObserverLostSoul
+  name: Lost Soul
+  description: A lost soul, cursed to roam the universe aimlessly for eternity.
+  components:
+  - type: CargoSellBlacklist
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Ghosts/lost_soul.rsi
+    layers:
+    - state: lost
+  - type: ContentEye
+    maxZoom: 1.44,1.44
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 15
+        mask:
+        - GhostImpassable
+  - type: Eye
+    drawFov: true
+  - type: Input
+    context: "ghost"
+  - type: Examiner
+    skipChecks: true
+  - type: Ghost
+  - type: GhostHearing
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 2
+    baseWalkSpeed: 1
+  - type: MovementIgnoreGravity
+  - type: IntrinsicRadioReceiver
+  - type: ActiveRadio
+    receiveAllChannels: true
+    globalReceive: true
+  - type: Physics
+    bodyType: KinematicController
+    bodyStatus: InAir
+  - type: CanMoveInAir
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    color: purple
+  - type: TimedDespawn
+    lifetime: 60.0

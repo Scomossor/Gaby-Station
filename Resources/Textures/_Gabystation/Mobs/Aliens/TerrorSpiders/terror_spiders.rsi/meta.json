@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Paradise13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "white_alive",
+      "directions": 4
+    },
+    {
+      "name": "white_dead"
+    },
+    {
+      "name": "green_alive",
+      "directions": 4
+    },
+    {
+      "name": "green_dead"
+    },
+    {
+      "name": "purple_alive",
+      "directions": 4
+    },
+    {
+      "name": "purple_dead"
+    },
+    {
+      "name": "red_alive",
+      "directions": 4
+    },
+    {
+      "name": "red_dead"
+    },
+    {
+      "name": "yellow_alive",
+      "directions": 4
+    },  
+    {
+      "name": "yellow_dead"
+    },
+    {
+      "name": "princess_alive",
+      "directions": 4
+    },  
+    {
+      "name": "princess_dead"
+    },
+    {
+      "name": "queen_alive",
+      "directions": 4
+    },  
+    {
+      "name": "queen_dead"
+    } 
+  ]
+}
