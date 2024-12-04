@@ -9,18 +9,18 @@ game-ticker-pause-start = O início da rodada foi pausado.
 game-ticker-pause-start-resumed = A contagem regressiva para o início da rodada foi retomada.
 game-ticker-player-join-game-message = Bem-vindo à Space Station 14! Se esta é sua primeira vez jogando, leia as regras do jogo e não tenha medo de pedir ajuda no LOOC (OOC local) ou OOC (geralmente disponível apenas entre rodadas).
 game-ticker-get-info-text = > [color=#ADBABA]A rodada atual é: [/color][color=#C73C55]#{$roundId}[/color]
-                            [color=#ADBABA]O número atual de jogadores é: [/color][color=#C73C55]{$playerCount}[/color]
-                            [color=#ADBABA]O mapa atual é: [/color][color=#C73C55]{$mapName}[/color]
-                            [color=#ADBABA]O modo de jogo atual é: [/color][color=#C73C55]{$gmTitle}[/color]
-                            >[color=#ADBABA]{$desc}[/color]
+                            > [color=#ADBABA]O número atual de jogadores é: [/color][color=#C73C55]{$playerCount}[/color]
+                            > [color=#ADBABA]O mapa atual é: [/color][color=#C73C55]{$mapName}[/color]
+                            > [color=#ADBABA]O modo de jogo atual é: [/color][color=#C73C55]{$gmTitle}[/color]
+                            > [color=#ADBABA]{$desc}[/color]
 game-ticker-get-info-preround-text = > [color=#ADBABA]A rodada atual é: [/color][color=#C73C55]#{$roundId}[/color]
-                            [color=#ADBABA]O número atual de jogadores é: [/color][color=#C73C55]{$playerCount}[/color] ([color=#C73C55]{$readyCount}[/color] {$readyCount ->
+                            > [color=#ADBABA]O número atual de jogadores é: [/color][color=#C73C55]{$playerCount}[/color] ([color=#C73C55]{$readyCount}[/color] {$readyCount ->
                                 [one] está
                                 *[other] estão
                             } prontos)
-                            [color=#ADBABA]O mapa atual é: [/color][color=#C73C55]{$mapName}[/color]
-                            [color=#ADBABA]O modo de jogo atual é: [/color][color=#C73C55]{$gmTitle}[/color]
-                            >[color=#ADBABA]{$desc}[/color]
+                            > [color=#ADBABA]O mapa atual é: [/color][color=#C73C55]{$mapName}[/color]
+                            > [color=#ADBABA]O modo de jogo atual é: [/color][color=#C73C55]{$gmTitle}[/color]
+                            > [color=#ADBABA]{$desc}[/color]
 game-ticker-no-map-selected = [color=yellow]Mapa ainda não selecionado![/color]
 game-ticker-player-no-jobs-available-when-joining = Ao tentar entrar no jogo, nenhum cargo estava disponível.
 
