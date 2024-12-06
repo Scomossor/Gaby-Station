@@ -34,4 +34,5 @@
             StationEngineer: [ 1, 2 ]
             Scientist: [ 1, 1 ]
             Passenger: [ -1, -1 ]
+            SantaClaus: [ 1, 1 ]
 

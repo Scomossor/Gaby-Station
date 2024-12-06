@@ -12,3 +12,6 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
+        - type: Weather #natal 24 - gaby station
+          weather:
+            watherData: SnowfallHeavy
