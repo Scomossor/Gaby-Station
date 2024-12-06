@@ -26,7 +26,7 @@ namespace Content.Client.Lobby.UI
             Logo.Texture = logoTexture;
 
             AHelpButton.AddStyleClass("ButtonColorGaby");
-            RemarksButton.AddStyleClass("ButtonColorRed");
+            BalanceButton.AddStyleClass("ButtonColorRed");
             CallVoteButton.AddStyleClass("ButtonColorGaby");
             OptionsButton.AddStyleClass("ButtonColorRed");
             LeaveButton.AddStyleClass("ButtonColorGaby");
@@ -34,7 +34,7 @@ namespace Content.Client.Lobby.UI
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
 
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
-            RemarksButton.OnPressed += _ => _consoleHost.ExecuteCommand("adminremarks");
+            BalanceButton.OnPressed += _ => _consoleHost.ExecuteCommand("balanceui");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
         }
 

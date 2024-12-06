@@ -26,6 +26,8 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage.Components;
 using Content.Shared.Power;
+using Content.Server.Time;
+using Content.Shared.Coordinates;
 
 namespace Content.Server.Light.EntitySystems
 {
@@ -45,6 +47,8 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly PointLightSystem _pointLight = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly DamageOnInteractSystem _damageOnInteractSystem = default!;
+
+        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
         private static readonly TimeSpan ThunkDelay = TimeSpan.FromSeconds(2);
         public const string LightBulbContainer = "light_bulb";
@@ -263,6 +267,9 @@ namespace Content.Server.Light.EntitySystems
                 _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.Empty, appearance);
                 return;
             }
+
+            if (EntityManager.TryGetComponent<LightCycleComponent>(_transformSystem.GetGrid(light.Owner.ToCoordinates()), out var cycle) && cycle.IsEnabled)
+                return;
 
             switch (lightBulb.State)
             {

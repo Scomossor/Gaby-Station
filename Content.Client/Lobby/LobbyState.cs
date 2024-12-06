@@ -41,6 +41,8 @@ namespace Content.Client.Lobby
 
             Lobby = (LobbyGui) _userInterfaceManager.ActiveScreen;
 
+            UpdatePlayerBalance(); // Gabystation - loja
+
             var chatController = _userInterfaceManager.GetUIController<ChatUIController>();
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();

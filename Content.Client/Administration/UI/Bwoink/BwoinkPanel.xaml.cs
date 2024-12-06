@@ -4,22 +4,39 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Client.Administration.Managers;
+using Robust.Client.Console;
 
 namespace Content.Client.Administration.UI.Bwoink
 {
     [GenerateTypedNameReferences]
     public sealed partial class BwoinkPanel : BoxContainer
     {
+        [Dependency] private readonly IClientAdminManager _adminManager = default!;
+        [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+
         private readonly Action<string> _messageSender;
 
         public int Unread { get; private set; } = 0;
         public DateTime LastMessage { get; private set; } = DateTime.MinValue;
         private List<string> PeopleTyping { get; set; } = new();
         public event Action<string>? InputTextChanged;
+        private bool isAdmin = false;
 
         public BwoinkPanel(Action<string> messageSender)
         {
             RobustXamlLoader.Load(this);
+            IoCManager.InjectDependencies(this);
+
+            isAdmin = _adminManager.CanCommand("kick"); //sumir o botão se for admin
+
+            RemarksButton.OnPressed += _ => _consoleHost.ExecuteCommand("adminremarks");
+            if (isAdmin){
+                RemarksButton.SetWidth = 1;
+                RemarksButton.Visible = false;
+                SenderLineEdit.SetWidth = 645;
+                // RemarksButton.Disabled = true;
+            };
 
             var msg = new FormattedMessage();
             msg.PushColor(Color.LightGray);
@@ -37,6 +54,7 @@ namespace Content.Client.Administration.UI.Bwoink
             SenderLineEdit.OnTextEntered += Input_OnTextEntered;
             SenderLineEdit.OnTextChanged += Input_OnTextChanged;
             UpdateTypingIndicator();
+
         }
 
         private void Input_OnTextEntered(LineEdit.LineEditEventArgs args)

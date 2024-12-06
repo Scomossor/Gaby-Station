@@ -264,7 +264,7 @@
 
   ## Crimes Menores
   - Avisos devem ser dados primeiro para ofensas iniciais.
-  - Se múltiplos crimes menores forem cometidos ou a ofensa é repetida, 10 minutos por ofensa é o máximo, com um limite de 20 minutos.
+  - Se múltiplos crimes menores forem cometidos ou o crime é repetida, 5 minutos por crime é o máximo.
   <Table Columns="4">
     <ColorBox>
       <Box>
@@ -411,7 +411,7 @@
   </Table>
 
   ## Crimes Moderados
-  - A sentença máxima para crimes moderados é de 15 minutos.
+  - A sentença máxima para crimes moderados é de 10 minutos. O tempo deve ser dado conforme a gravidade da infração.
   - Dependendo da situação, talvez seja preferível dar um aviso invés de prender.
   <Table Columns="4">
     <ColorBox>
@@ -517,7 +517,7 @@
   </Table>
 
   ## Crimes Maiores
-  - A sentença máxima para crimes maiores é de 30 minutos.
+  - A sentença máxima para crimes maiores é de 15 minutos. O tempo deve ser dado conforme a gravidade da infração.
   - Agressão e Homicídio Culposo são conectados, e não podem ser aplicados juntamente a um criminoso.
   - É recomendado não dar sentenças máximas para criminosos cooperativos.
   <Table Columns="4">
@@ -553,7 +553,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Isso apenas se aplica se alguém estiver sendo fisicamente detido. Pessoas desalgemando ou interrompendo uma detenção também podem ser detidas por isso. 
+        Isso apenas se aplica se alguém estiver sendo fisicamente detido. Pessoas desalgemando ou interrompendo uma detenção também podem ser detidas por isso.
         Violação de Custódia é um crime separado.
       </Box>
     </ColorBox>
@@ -594,7 +594,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        A diferença entre roubo menor e roubo maior é baseada em quão crítico o item roubado é. 
+        A diferença entre roubo menor e roubo maior é baseada em quão crítico o item roubado é.
         O crime de roubo maior é majoritariamente usado para o roubo de itens do Comando, e
         peças insubstituíveis de maquinário importante.
       </Box>
@@ -656,7 +656,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Tentativa de Assassinato e Agressão são duas coisas diferentes; porradaria é muito provavelmente Agressão, 
+        Tentativa de Assassinato e Agressão são duas coisas diferentes; porradaria é muito provavelmente Agressão,
         enquanto um tiroteio seria Tentativa de Assassinato.
       </Box>
     </ColorBox>
@@ -708,7 +708,7 @@
   </Table>
 
   ## Crimes Extremos
-  - A sentença máxima para crimes extremos é de 45 minutos.
+  - A sentença máxima para crimes extremos é de 15 minutos. O tempo deve ser dado conforme a gravidade da infração.
   - Criminosos particularmente problemáticos podem ser postos na perma.
   - Tentativa de Assassinato e Homicídio Doloso são conectados, e não podem ser aplicados juntamente a um criminoso.
   - Criminosos que tentaram assassinar devem receber mais leniência nas penas do que um assassino real.
@@ -816,7 +816,8 @@
   </Table>
 
   ## Crimes Capitais
-  - Crimes Capitais devem, normalmente, serem punidos com execuções ou detenção pelo resto do turno.
+  - Crimes Capitais devem, normalmente, serem punidos com execuções ou prisão perpetua, para isso um julgamento deve ser realizado.
+  - A unica exeção de julgamento é a falha de funcionamento de um Mindshield (quebra do mesmo).
   <Table Columns="4">
     <ColorBox>
       <Box>
@@ -905,12 +906,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Matar três ou mais seres sencientes de forma intencional.
+        Matar cinco ou mais seres sencientes de forma intencional.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Só se aplica quando houver três ou mais assassinatos confirmados, feitos de forma intencional.
+        Só se aplica quando houver cinco ou mais assassinatos confirmados, feitos de forma intencional.
       </Box>
     </ColorBox>
     <ColorBox>

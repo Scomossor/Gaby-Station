@@ -2,9 +2,12 @@
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Orientation="Vertical"
-    HorizontalExpand="True">
+    HorizontalExpand="True" >
     <OutputPanel Name="TextOutput" VerticalExpand="true" />
     <RichTextLabel Name="TypingIndicator" Access="Public" />
-    <HistoryLineEdit Name="SenderLineEdit" />
+    <BoxContainer Name="BwoinkPanelBox">
+        <HistoryLineEdit Name="SenderLineEdit" MinWidth="400" />
+        <Button Visible="True" Name="RemarksButton" Text="{Loc 'admin-aremarks-button'}" StyleClasses="OpenBoth" MaxWidth="80" />
+    </BoxContainer>
     <RichTextLabel Name="RelayedToDiscordLabel" Access="Public" Visible="False" />
 </BoxContainer>

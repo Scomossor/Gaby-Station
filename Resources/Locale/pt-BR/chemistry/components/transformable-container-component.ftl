@@ -1,1 +1,1 @@
-transformable-container-component-glass = copo de {$name}
+transformable-container-component-glass = copo de {$reagent}

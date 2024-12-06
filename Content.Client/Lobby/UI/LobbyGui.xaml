@@ -69,8 +69,8 @@
                     <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Center">
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="Square" />
-                        <Button Name="RemarksButton" Access="Public" StyleClasses="Square"
-                                Text="{Loc 'ui-lobby-remarks-button'}" />
+                        <Button Name="BalanceButton" Access="Public" StyleClasses="Square"
+                                Text="{Loc 'ui-lobby-balance-button'}" />
                         <vote:VoteCallMenuButton Name="CallVoteButton" StyleClasses="Square" />
                         <Button Name="OptionsButton" Access="Public" StyleClasses="Square"
                                 Text="{Loc 'ui-lobby-options-button'}" />
