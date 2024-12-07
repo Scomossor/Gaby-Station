@@ -15,6 +15,8 @@ using Content.Shared.CCVar;
 using FastAccessors;
 using Content.Server.GameTicking;
 using System.Diagnostics;
+using System.Linq;
+using Content.Shared.Light;
 
 namespace Content.Server.Time
 {
@@ -27,6 +29,8 @@ namespace Content.Server.Time
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly PoweredLightSystem? _lightSystem = default!;
+        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+
         private int _currentHour;
         private double _tickCount = 0;
         private string? _hexColor = "#FFFFFF";
@@ -41,6 +45,7 @@ namespace Content.Server.Time
             base.Initialize();
             SubscribeLocalEvent<BecomesStationComponent, ComponentInit>(OnStationInit);
             SubscribeLocalEvent<PoweredLightComponent, ComponentStartup>(OnLightBulbStartup);
+            SubscribeLocalEvent<PoweredLightComponent, ComponentRemove>(OnLightBulbShutdown);
         }
 
         private void OnStationInit(Entity<BecomesStationComponent> ent, ref ComponentInit args)
@@ -58,6 +63,16 @@ namespace Content.Server.Time
             {
                 if (!cycle.BulbList.Contains(ent))
                     cycle.BulbList.Add(ent);
+            }
+        }
+
+        private void OnLightBulbShutdown(Entity<PoweredLightComponent> ent, ref ComponentRemove args)
+        {
+            var station = _transformSystem.GetGrid(ent.Owner);
+            if (EntityManager.TryGetComponent<LightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
+            {
+                if (cycle.BulbList.Contains(ent))
+                    cycle.BulbList.Remove(ent);
             }
         }
 
@@ -101,9 +116,17 @@ namespace Content.Server.Time
                         _isNight = false;
                     }
 
-                    foreach (var light in comp.BulbList)
+                    foreach (var light in comp.BulbList.ToList())
                     {
-                        if (!EntityManager.TryGetComponent<LightBulbComponent>(_lightSystem!.GetBulb(light, light.Comp), out var bulb)
+                        var bulbUid = _lightSystem!.GetBulb(light, light.Comp);
+
+                        if (bulbUid is null)
+                        {
+                            comp.BulbList.Remove(light);
+                            continue;
+                        }
+
+                        if (!EntityManager.TryGetComponent<LightBulbComponent>(bulbUid, out var bulb)
                         || HasComp<RgbLightControllerComponent>(light))
                             continue;
 
@@ -119,13 +142,21 @@ namespace Content.Server.Time
                             }
                             color = System.Drawing.Color.FromArgb(int.Parse(_hexColor!.Replace("#", ""), NumberStyles.HexNumber));
                         }
-                        if (EntityManager.TryGetComponent(light, out PointLightComponent? pointLight))
+
+                        if (EntityManager.TryGetComponent(light, out PointLightComponent? pointLight) && pointLight.Enabled)
                         {
                             _pointLight.SetColor(light, GetCycleColor(comp, color), pointLight);
                             _pointLight.SetEnergy(light, (float) CalculateLightLevel(comp), pointLight);
+                            Dirty(light, pointLight);
+                            if (EntityManager.TryGetComponent<AppearanceComponent>(light, out var appearance))
+                            {
+                                _appearance.SetData(light, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
+                                Dirty(light, appearance);
+                            }
                         }
                     }
                 }
+
                 if (EntityManager.TryGetComponent<MapLightComponent>(comp.Owner, out var map))
                 {
                     if (!_mapColor!.ContainsKey(map.Owner.Id))

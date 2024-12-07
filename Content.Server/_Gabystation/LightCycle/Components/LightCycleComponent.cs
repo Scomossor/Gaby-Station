@@ -30,7 +30,7 @@ namespace Content.Server.Time
         [ViewVariables(VVAccess.ReadWrite), DataField("maxLightLevel")]
         public double MaxLightLevel = 1.2;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipLight")]
-        public double ClipLight = 1;
+        public double ClipLight = 0.95;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipRed")]
         public double ClipRed = 1.05;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipGreen")]
