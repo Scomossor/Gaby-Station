@@ -1,3 +1,3 @@
 lobby-character-preview-panel-header = Personagem
-lobby-character-preview-panel-character-setup-button = Costumizar Personagem
-lobby-character-preview-panel-unloaded-preferences-label = Suas preferencias ainda nao carregaram. Aguarde por favor.
+lobby-character-preview-panel-character-setup-button = Customizar Personagem
+lobby-character-preview-panel-unloaded-preferences-label = Suas preferências ainda não foram carregadas. Aguarde um instante, por favor.
