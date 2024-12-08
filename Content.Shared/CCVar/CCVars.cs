@@ -2498,7 +2498,7 @@ namespace Content.Shared.CCVar
 
         // Tempo inicial
         public static readonly CVarDef<float> InitialTime =
-            CVarDef.Create("light_cycle.initial_time", 1200f, desc: "(float)", flag: CVar.REPLICATED);
+            CVarDef.Create("light_cycle.initial_time", 900f, desc: "(float)", flag: CVar.REPLICATED);
 
         // Multiplicador do tempo (isto é, o quanto ele é acelerado em relação ao tempo normal)
         public static readonly CVarDef<float> TimeScale =

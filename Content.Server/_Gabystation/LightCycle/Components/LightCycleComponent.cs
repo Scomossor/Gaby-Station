@@ -26,11 +26,11 @@ namespace Content.Server.Time
         [ViewVariables(VVAccess.ReadWrite), DataField("nightShiftDuration")]
         public int NightShiftDuration = 9;
         [ViewVariables(VVAccess.ReadWrite), DataField("minLightLevel")]
-        public double MinLightLevel = 0.33;
+        public double MinLightLevel = 0.4;
         [ViewVariables(VVAccess.ReadWrite), DataField("maxLightLevel")]
-        public double MaxLightLevel = 1.2;
+        public double MaxLightLevel = 1.33;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipLight")]
-        public double ClipLight = 0.95;
+        public double ClipLight = 1.2;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipRed")]
         public double ClipRed = 1.05;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipGreen")]
