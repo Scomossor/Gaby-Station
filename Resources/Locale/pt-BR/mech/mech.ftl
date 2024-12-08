@@ -1,18 +1,18 @@
-mech-verb-enter = Enter
-mech-verb-exit = Exit
+mech-verb-enter = Entrar
+mech-verb-exit = Sair
 
-mech-equipment-begin-install = Installing the {THE($item)}...
-mech-equipment-finish-install = Finished installing the {THE($item)}
+mech-equipment-begin-install = Instalando {THE($item)}...
+mech-equipment-finish-install = Terminou de instalar {THE($item)}
 
-mech-equipment-select-popup = {$item} selected
-mech-equipment-select-none-popup = Nothing selected
+mech-equipment-select-popup = {$item} selecionado
+mech-equipment-select-none-popup = Não selecionado
 
-mech-ui-open-verb = Open control panel
+mech-ui-open-verb = Abrir painel de controle
 
-mech-menu-title = mech control panel
+mech-menu-title = Painel de controle do Mecha
 
-mech-integrity-display = Integrity: {$amount}%
-mech-energy-display = Energy: {$amount}%
-mech-slot-display = Open Slots: {$amount}
+mech-integrity-display = Integridade: {$amount}%
+mech-energy-display = Energia: {$amount}%
+mech-slot-display = Slots abertos: {$amount}
 
 mech-no-enter = Você não consegue pilotar isso.

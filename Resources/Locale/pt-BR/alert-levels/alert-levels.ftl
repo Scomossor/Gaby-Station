@@ -1,7 +1,7 @@
 alert-level-announcement = Atenção! O nível de alerta da Estação foi mudado para: {$name}! {$announcement}
 
-alert-level-unknown = Unknown.
-alert-level-unknown-instructions = Unknown.
+alert-level-unknown = Desconhecido.
+alert-level-unknown-instructions = Desconhecido.
 
 alert-level-green = Verde
 alert-level-green-announcement = Está tudo bem! Já podem voltar a atividades normais.
@@ -24,13 +24,13 @@ alert-level-yellow-announcement = Há dano estrutural na estação. Acionando a 
 alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = O Comando Central ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = O Comando Central ordenou o nível de alerta Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 alert-level-gamma-instructions = todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
 alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulantes são aconselhados a ouvir os chefes de departamento para obter ordens e mais informações sobre o ocorrido.
-alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
+alert-level-delta-instructions = Os tripulantes são aconselhados a ouvir os chefes de departamento para obter mais informações.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = O Comando Central ordenou o nível de segurança Epsilon na estação. Considerem todos os contratos expirados.
-alert-level-epsilon-instructions = Considerem todos os contratos expirados.
+alert-level-epsilon-announcement = O Comando Central ordenou o nível de alerta Epsilon na estação. Considerem todos os contratos expirados.
+alert-level-epsilon-instructions = Considerem todos os contratos encerrados.

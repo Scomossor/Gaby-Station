@@ -2,7 +2,7 @@
 roles-antag-syndicate-agent-name = Traidor
 roles-antag-syndicate-agent-objective = Complete seus objetivos sem ser pego.
 
-roles-antag-syndicate-agent-sleeper-name = Agente dormente do Sindicato
+roles-antag-syndicate-agent-sleeper-name = Agente Dormente do Sindicato
 roles-antag-syndicate-agent-sleeper-objective = Uma forma de traidor que pode ser ativada a qualquer momento durante o turno.
 
 roles-antag-initial-infected-name = Infectado Inicial

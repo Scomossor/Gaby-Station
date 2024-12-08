@@ -1,12 +1,12 @@
 machine-insert-item = Você insere {THE($item)} na {THE($machine)}.
 
 machine-upgrade-examinable-verb-text = Upgrades
-machine-upgrade-examinable-verb-message = Examine the machine upgrades.
-machine-upgrade-increased-by-percentage = [color=yellow]{CAPITALIZE($upgraded)}[/color] increased by {$percent}%.
-machine-upgrade-decreased-by-percentage = [color=yellow]{CAPITALIZE($upgraded)}[/color] decreased by {$percent}%.
-machine-upgrade-increased-by-amount = [color=yellow]{CAPITALIZE($upgraded)}[/color] increased by {$difference}.
-machine-upgrade-decreased-by-amount = [color=yellow]{CAPITALIZE($upgraded)}[/color] decreased by {$difference}.
-machine-upgrade-not-upgraded = [color=yellow]{CAPITALIZE($upgraded)}[/color] not upgraded.
+machine-upgrade-examinable-verb-message = Examine as atualizações da máquina.
+machine-upgrade-increased-by-percentage = [color=yellow]{CAPITALIZE($upgraded)}[/color] aumentado em {$percent}%.
+machine-upgrade-decreased-by-percentage = [color=yellow]{CAPITALIZE($upgraded)}[/color] diminuiu em {$percent}%.
+machine-upgrade-increased-by-amount = [color=yellow]{CAPITALIZE($upgraded)}[/color] aumentado em {$difference}.
+machine-upgrade-decreased-by-amount = [color=yellow]{CAPITALIZE($upgraded)}[/color] diminuiu em {$difference}.
+machine-upgrade-not-upgraded = [color=yellow]{CAPITALIZE($upgraded)}[/color] não atualizado.
 
 machine-part-name-capacitor = Capacitor
 machine-part-name-manipulator = Micromanipulador

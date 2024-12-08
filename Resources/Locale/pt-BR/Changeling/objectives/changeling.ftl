@@ -4,4 +4,4 @@ objective-condition-absorb-description = Eu devo absorver {$count} humanoides. I
 objective-condition-stealdna-title = Extraia {$count} genomas compativeis.
 objective-condition-stealdna-description = Eu devo extrair {$count} genomas únicos.
 
-objective-condition-escape-identity-title = Escape on the evacuation shuttle alive and unrestrained while being {$targetName}, {CAPITALIZE($job)}.
+objective-condition-escape-identity-title = Fuja no ônibus de evacuação vivo e sem ser pego enquanto for {$targetName}, {CAPITALIZE($job)}.
