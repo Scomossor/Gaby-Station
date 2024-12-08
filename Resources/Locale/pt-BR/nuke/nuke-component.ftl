@@ -8,7 +8,7 @@ nuke-component-doafter-warning = Você começa a mexer nos fios para desativar a
 # Nuke UI
 nuke-user-interface-title = Explosivo de fissão nuclear
 nuke-user-interface-arm-button = LIGAR
-nuke-user-interface-disarm-button = DISARMAR
+nuke-user-interface-disarm-button = DESARMAR
 nuke-user-interface-anchor-button = ANCORAR
 nuke-user-interface-eject-button = EJETAR
 
@@ -36,11 +36,11 @@ nuke-label-syndicate = SYN-{$serial}
 
 # Codes
 nuke-codes-message = [color=red]TOP SECRET![/color]
-nuke-codes-list = {$name} code: {$code}
-nuke-codes-fax-paper-name = nuclear authentication codes
+nuke-codes-list = {$name} Código: {$code}
+nuke-codes-fax-paper-name = Códigos de Autenticação Nuclear
 
 # Nuke disk slot
-nuke-slot-component-slot-name-disk = Disk
+nuke-slot-component-slot-name-disk = Disco
 
 ## Examine
 nuke-examine-armed = Aí, porquê aquela [color=red]luz vermelha[/color] tá piscando?

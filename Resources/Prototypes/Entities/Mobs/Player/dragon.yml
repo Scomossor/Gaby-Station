@@ -2,8 +2,8 @@
   parent: [ SimpleSpaceMobBase, FlyingMobBase ]
   id: BaseMobDragon
   suffix: ""
-  name: space dragon
-  description: A flying leviathan, loosely related to space carps.
+  name: Dragão Espacial
+  description: Um leviatã voador, vagamente relacionado às carpas espaciais.
   abstract: true
   components:
   - type: Bloodstream
@@ -169,8 +169,8 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   id: DragonsBreathGun
-  name: dragon's lung
-  description: For dragon's breathing.
+  name: pulmão de dragão
+  description: para respiração do dragão.
   components:
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 5
@@ -215,8 +215,8 @@
 
 - type: entity
   id: ActionSpawnRift
-  name: Summon Carp Rift
-  description: Summons a carp rift that will periodically spawns carps.
+  name: Criar uma Fenda de Carpas
+  description: Invoca uma fenda de carpa que gera carpas periodicamente.
   components:
   - type: InstantAction
     icon:
@@ -228,8 +228,8 @@
 
 - type: entity
   id: ActionDevour
-  name: "[color=red]Devour[/color]"
-  description: Attempt to break a structure with your jaws or swallow a creature.
+  name: "[color=red]Devorar[/color]"
+  description: Tente quebrar uma estrutura com suas mandíbulas ou engolir uma criatura.
   components:
   - type: EntityTargetAction
     icon: { sprite : Interface/Actions/devour.rsi, state: icon }
@@ -239,8 +239,8 @@
 
 - type: entity
   id: ActionDragonsBreath
-  name: "[color=orange]Dragon's Breath[/color]"
-  description: Spew out flames at anyone foolish enough to attack you!
+  name: "[color=orange]Respiração do Dragão[/color]"
+  description: Jogue chamas em qualquer um tolo o suficiente para atacar você!
   components:
   - type: WorldTargetAction
     # TODO: actual sprite

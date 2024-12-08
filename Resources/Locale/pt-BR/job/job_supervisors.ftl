@@ -11,5 +11,5 @@ job-supervisors-engineering = Engenheiros, Técnicos Atmosféricos, e o Engenhir
 job-supervisors-medicine = Médicos, Paramédicos, Químicos, e o Médico Chefe
 job-supervisors-security = Oficiais de Segurança, Carcereiro, e o(a) Chefe de Segurança
 job-supervisors-science = Cientistas e o(a) Diretor(a) de Pesquisa
-job-supervisors-hire = Quem te contrata
+job-supervisors-hire = Quem te contratar
 job-supervisors-everyone = Absolutamente todo mundo

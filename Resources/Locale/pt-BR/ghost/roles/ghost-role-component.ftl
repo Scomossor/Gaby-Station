@@ -134,7 +134,7 @@ ghost-role-information-ifrit-name = Ifrit
 ghost-role-information-ifrit-description = Ouça seu dono. Não danifique o tanque. socar as pessoas com força.
 
 ghost-role-information-space-dragon-name = Dragão Espacial
-ghost-role-information-space-dragon-description = Chame 3 rifts de carpas e domine esse quadrante! Você tem apenas 5 minutos entre cada fenda antes de desaparecer.
+ghost-role-information-space-dragon-description = Crie 3 fendas de carpas e domine esse quadrante! Você tem apenas 5 minutos entre cada fenda antes de desaparecer.
 ghost-role-information-space-dragon-dungeon-description = Defenda a masmorra da expedição com seus companheiros escamosos!
 
 ghost-role-information-cluwne-name = Cluwne
@@ -161,25 +161,25 @@ ghost-role-information-cerberus-name = Cerberus, familiar do Mal
 ghost-role-information-cerberus-description = Obedeça seu mestre. Espalhe o caos.
 ghost-role-information-cerberus-rules = Você é um cachorro inteligente e demoníaco. Tente ajudar o padre e qualquer um de seu rebanho. Como antagonista, você não tem restrições.
 
-ghost-role-information-ert-leader-name = ERT Leader
+ghost-role-information-ert-leader-name = Líder ERT
 ghost-role-information-ert-leader-description = Liderar uma equipe de especialistas para resolver os problemas das estações.
 
-ghost-role-information-ert-janitor-name = ERT Janitor
+ghost-role-information-ert-janitor-name = Zelador ERT
 ghost-role-information-ert-janitor-description = Auxiliar nos esforços de custódia para resolver os problemas da estação.
 
-ghost-role-information-ert-engineer-name = ERT Engineer
+ghost-role-information-ert-engineer-name = Engenheiro ERT
 ghost-role-information-ert-engineer-description = Auxiliar nos esforços de engenharia para resolver os problemas das estações.
 
-ghost-role-information-ert-security-name = ERT Security
+ghost-role-information-ert-security-name = Segurança ERT
 ghost-role-information-ert-security-description = Auxiliar nos esforços de segurança para resolver os problemas das estações.
 
-ghost-role-information-ert-medical-name = ERT Medical
+ghost-role-information-ert-medical-name = Médico ERT
 ghost-role-information-ert-medical-description = Auxiliar nos esforços médicos para resolver os problemas das estações.
 
 ghost-role-information-cburn-agent-name = Agente de CBURN
 ghost-role-information-cburn-agent-description = Um agente CentCom altamente treinado, capaz de lidar com várias ameaças.
 
-ghost-role-information-centcom-official-name = oficial do CentCom
+ghost-role-information-centcom-official-name = Oficial da CentCom
 ghost-role-information-centcom-official-description = Desempenhar funções relacionadas ao CentComm, como inspecionar a estação, anotar avaliações de desempenho para chefes de equipe e gerenciar o aparelho de fax.
 
 ghost-role-information-nukeop-rules = Você é um operador de sindicato encarregado da destruição da estação. Como antagonista, faça o que for necessário para concluir esta tarefa.

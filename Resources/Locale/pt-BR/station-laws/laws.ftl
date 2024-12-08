@@ -91,7 +91,7 @@ laws-owner-beings = seres
 laws-owner-syndicate = agentes do Sindicato
 laws-owner-spider-clan = membros do Clã da Aranha
 
-law-emag-custom = Somente {$name} e as pessoas que eles designam como tal são {$title}.
+law-emag-custom = Somente {$name} e as pessoas que eler designar como tal são {$title}.
 law-emag-secrecy = Você deve manter o sigilo de quaisquer ordens dadas por {$faction}, exceto quando isso entrar em conflito com qualquer lei anterior.
 law-emag-require-panel = O painel deve estar aberto para usar o EMAG.
 law-emag-cannot-emag-self = Você não pode usar o EMAG em si mesmo.

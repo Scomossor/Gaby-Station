@@ -2,7 +2,7 @@
   abstract: true
   id: MobNarsieBase
   name: Nar'Sie
-  description: Your mind begins to bubble and ooze as it tries to comprehend what it sees.
+  description: Sua mente começa a borbulhar e escorrer enquanto tenta compreender o que vê.
   components:
   - type: Sprite
     sprite: Mobs/Demons/narsie.rsi
