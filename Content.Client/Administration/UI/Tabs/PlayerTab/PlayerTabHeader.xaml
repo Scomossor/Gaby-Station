@@ -39,5 +39,12 @@
                Text="{Loc player-tab-playtime}"
                MouseFilter="Pass"
                ToolTip="{Loc player-tab-entry-tooltip}"/>
+        <Label Name="CountryLabel"
+               SizeFlagsStretchRatio="0.8"
+               HorizontalExpand="True"
+               ClipText="True"
+               Text="{Loc player-tab-country}"
+               MouseFilter="Pass"
+               ToolTip="{Loc player-tab-country-tooltip}"/>
     </BoxContainer>
 </Control>
