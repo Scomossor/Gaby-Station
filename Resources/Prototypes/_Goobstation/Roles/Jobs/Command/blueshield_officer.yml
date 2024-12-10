@@ -58,7 +58,6 @@
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
   storage:
     back:
-    - BoxSurvivalSlots
     - Flash
     - BluespaceLifelineImplanter
     - SecHypo

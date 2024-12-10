@@ -2520,5 +2520,11 @@ namespace Content.Shared.CCVar
             CVarDef.Create("light_cycle.update_per_tick", 3, desc: "(integer)", flag: CVar.SERVERONLY);
 
         #endregion
+
+        /// <summary>
+        ///     Goobstation: The amount of time between NPC Silicons draining their battery in seconds.
+        /// </summary>
+        public static readonly CVarDef<float> SiliconNpcUpdateTime =
+            CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
     }
 }

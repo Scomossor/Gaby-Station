@@ -75,7 +75,7 @@
     - secret2
   name: gamemode-dynamic-title
   description: gamemode-dynamic-description
-  showInVote: true
+  showInVote: false # Gabystation - retira dynamic ate ser arrumado
   rules:
     - Dynamic
     - BasicStationEventSchedulerNoAntag

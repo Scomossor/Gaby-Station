@@ -92,10 +92,10 @@
                            Margin="3 3 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
                     <!-- Server Currency -->
-                    <Label Name="Balance" Access="Public" StyleClasses="LabelHeadingBig" VAlign="Center"
+                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <Label Name="Balance" Access="Public" StyleClasses="HeadingBig" VAlign="Center"
                             HorizontalExpand="True" HorizontalAlignment="Center" />
                     <!-- Gaby line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
                     <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
