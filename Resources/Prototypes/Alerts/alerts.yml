@@ -165,7 +165,7 @@
   id: HumanCrit
   category: Health
   icons:
-  - sprite: /Textures/Interface/Alerts/human_critical.rsi
+  - sprite: /Textures/_Gabystation/Interface/Alerts/human_critical.rsi
     state: critical
   name: alerts-crit-name
   description: alerts-crit-desc
@@ -481,7 +481,7 @@
 - type: alert
   id: Debug6
   icons:
-  - sprite: /Textures/Interface/Alerts/human_critical.rsi
+  - sprite: /Textures/_Gabystation/Interface/Alerts/human_critical.rsi
     state: critical
   name: Debug6
   description: Debug
