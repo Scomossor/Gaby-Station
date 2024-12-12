@@ -5,6 +5,7 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: StationAiWhitelist #Gabystation
     - type: AtmosDevice
     - type: Tag
       tags:

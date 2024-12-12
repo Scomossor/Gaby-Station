@@ -36,6 +36,12 @@ namespace Content.Client.Lobby.UI
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             BalanceButton.OnPressed += _ => _consoleHost.ExecuteCommand("balanceui");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
+            ShowMOTD.OnPressed += _ =>
+            {
+                ShowMOTD.Visible = false;
+                MOTDBuletin.Visible = true;
+            };
+            MOTDBuletin.ShowMOTDButton = ShowMOTD;
         }
 
         public void SwitchState(LobbyGuiState state)

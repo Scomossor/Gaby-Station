@@ -1,0 +1,12 @@
+<Control xmlns="https://spacestation14.io" MinWidth="100" MinHeight="150">
+    <PanelContainer StyleClasses="windowPanel" />
+    <BoxContainer Orientation="Vertical" SeparationOverride="0">
+        <PanelContainer Name="WindowHeader" StyleClasses="windowHeader">
+            <Label Margin="5 0 0 0" HorizontalExpand="False" Name="TitleLabel" StyleIdentifier="foo" ClipText="False"
+                    Text="{Loc 'lobby-buletin-motd-title'}" VAlign="Center" StyleClasses="windowTitle" HorizontalAlignment="Left" />
+            <TextureButton Name="CloseButton" StyleClasses="windowCloseButton" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </PanelContainer>
+        <RichTextLabel Name="MOTDLabel" Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalExpand="True" Margin="5 0 5 0"
+            HorizontalExpand="False" />
+    </BoxContainer>
+</Control>

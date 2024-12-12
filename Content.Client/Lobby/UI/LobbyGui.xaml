@@ -51,11 +51,16 @@
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
-                    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                        <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
-                        <PanelContainer StyleClasses="AngleRect">
-                            <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
-                        </PanelContainer>
+                    <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                            <Button Name="ShowMOTD" Margin="5 5 5 5" Visible="False" Text="{Loc 'lobby-buletin-motd-title'}"
+                                HorizontalExpand="True" VerticalExpand="True" MinWidth="50" Access="Public" />
+                        <lobbyUi:LobbyBuletin Name="MOTDBuletin" Margin="3 3 3 3" Access="Public"/>
+                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                            <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
+                            <PanelContainer StyleClasses="AngleRect">
+                                <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
+                            </PanelContainer>
+                        </BoxContainer>
                     </BoxContainer>
                 </Control>
                 <!-- Character setup state -->
@@ -94,6 +99,7 @@
                     <!-- Gaby line -->
                     <controls:HLine Color="{x:Static style:StyleNano.DangerousRedFore}" Thickness="2" Access="Public" />
                     <!-- Server Currency -->
+                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
                     <Label Name="Balance" Access="Public" StyleClasses="LabelHeading" VAlign="Center"
                             HorizontalExpand="True" HorizontalAlignment="Center" />
                     <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />

@@ -9,3 +9,5 @@ cmd-set-motd-hint-cont = [ ...message... ]
 cmd-set-motd-cleared-motd-message = Limpou a Mensagem do Dia.
 cmd-set-motd-set-motd-message = Setou a Mensagem do Dia para "{$motd}".
 motd-wrap-message = Mensagem do Dia: {$motd}
+lobby-buletin-motd-title = Mensagem do Dia
+lobby-buletin-motd-default-motd = Divirta-se!

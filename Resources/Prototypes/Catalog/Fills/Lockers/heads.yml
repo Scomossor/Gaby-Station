@@ -19,6 +19,7 @@
     - id: RubberStampQm
     - id: SalvageShuttleConsoleCircuitboard
     - id: AstroNavCartridge
+    - id: PrinterDocFlatpack # Gabystation [port corvax]
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -136,6 +137,7 @@
     - id: RubberStampHop
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
+    - id: PrinterDocFlatpack # Gabystation [port corvax]
 
 - type: entity
   id: LockerHeadOfPersonnelFilled

@@ -1998,6 +1998,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> MOTD =
             CVarDef.Create("chat.motd", "", CVar.SERVER | CVar.SERVERONLY | CVar.ARCHIVE, "A message broadcast to each player that joins the lobby.");
 
+
+        /// <summary>
+        /// If the message of the day lobby widget should be displayed.
+        /// </summary>
+        public static readonly CVarDef<bool> MOTDBuletinEnable =
+            CVarDef.Create("chat.motd_buletin_enable", true, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE, "If the MOTD buletin appears in lobby");
+
         /*
          * AFK
          */
@@ -2520,5 +2527,11 @@ namespace Content.Shared.CCVar
             CVarDef.Create("light_cycle.update_per_tick", 3, desc: "(integer)", flag: CVar.SERVERONLY);
 
         #endregion
+
+        /// <summary>
+        ///     Goobstation: The amount of time between NPC Silicons draining their battery in seconds.
+        /// </summary>
+        public static readonly CVarDef<float> SiliconNpcUpdateTime =
+            CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
     }
 }

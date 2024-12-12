@@ -188,7 +188,9 @@ namespace Content.Client.Lobby
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
             }
 
+
             UpdatePlayerBalance(); // Goobstation - Goob Coin
+            Lobby!.MOTDBuletin.RequestMOTD();
         }
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)

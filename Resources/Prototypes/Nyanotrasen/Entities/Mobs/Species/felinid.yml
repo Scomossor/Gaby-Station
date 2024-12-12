@@ -73,6 +73,7 @@
     - DoorBumpOpener
     - FelinidEmotes
   - type: FootPrints # WD EDIT
+  - type: Wagging # DeltaV + Einstein-Engine
 
 - type: entity
   save: false

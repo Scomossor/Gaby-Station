@@ -11,6 +11,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.MOTD;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
@@ -22,6 +23,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -30,6 +32,7 @@ namespace Content.Client.Lobby;
 public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
 {
     [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
+    [Dependency] private readonly IClientNetManager _netManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IFileDialogManager _dialogManager = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
@@ -76,6 +79,32 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshProfileEditor());
 
         _configurationManager.OnValueChanged(CCVars.GameRoleWhitelist, _ => RefreshProfileEditor());
+
+        _configurationManager.OnValueChanged(CCVars.MOTDBuletinEnable, _ => RefreshLobbyBuletin());
+
+        _netManager.RegisterNetMessage<MsgMOTD>(ReloadLobbyBuletin, NetMessageAccept.Client);
+        _netManager.RegisterNetMessage<MsgMOTDRequest>(null, NetMessageAccept.Server);
+
+    }
+
+    private void ReloadLobbyBuletin(MsgMOTD msg)
+    {
+        if (_stateManager.CurrentState is LobbyState lobby)
+        {
+            lobby.Lobby?.MOTDBuletin.RefreshContent(msg);
+            RefreshLobbyBuletin();
+        }
+    }
+
+    private void RefreshLobbyBuletin()
+    {
+        if (_stateManager.CurrentState is LobbyState lobby)
+        {
+            var enabled = _configurationManager.GetCVar(CCVars.MOTDBuletinEnable);
+            lobby.Lobby!.MOTDBuletin.Visible = enabled;
+            if (!enabled)
+                lobby.Lobby!.ShowMOTD.Visible = enabled;
+        }
     }
 
     private LobbyCharacterPreviewPanel? GetLobbyPreview()
