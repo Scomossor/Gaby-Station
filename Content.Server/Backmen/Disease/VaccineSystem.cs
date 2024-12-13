@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿﻿using System.Linq;
 using Content.Server.Backmen.Disease.Components;
 using Content.Server.Backmen.Disease.Server;
 using Content.Server.DoAfter;
@@ -43,8 +43,6 @@ public sealed class VaccineSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly AudioSystem _audioSystem = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
 
     public override void Initialize()
@@ -177,7 +175,7 @@ public sealed class VaccineSystem : EntitySystem
 
     private void OpenServerList(EntityUid uid, DiseaseVaccineCreatorComponent component, VaccinatorServerSelectionMessage args)
     {
-        _uiSys.TryOpen(uid, ResearchClientUiKey.Key, args.Session);
+        _uiSys.TryOpenUi(uid, ResearchClientUiKey.Key, args.Actor);
     }
 
     private void AfterUIOpen(EntityUid uid, DiseaseVaccineCreatorComponent component, AfterActivatableUIOpenEvent args)
@@ -209,7 +207,7 @@ public sealed class VaccineSystem : EntitySystem
         }
 
         var state = new VaccineMachineUpdateState(biomass, component.BiomassCost, diseases, overrideLocked ?? HasComp<DiseaseMachineRunningComponent>(uid), hasServer);
-        _uiSys.TrySetUiState(uid, VaccineMachineUiKey.Key, state);
+        _uiSys.SetUiState(uid, VaccineMachineUiKey.Key, state);
     }
 
     /// <summary>
@@ -258,14 +256,20 @@ public sealed class VaccineSystem : EntitySystem
     /// past diseases to give them immunity
     /// IF they don't already have the disease.
     /// </summary>
-    public void Vaccinate(DiseaseCarrierComponent carrier, DiseasePrototype disease)
+    public bool Vaccinate(DiseaseCarrierComponent carrier, DiseasePrototype disease)
     {
         foreach (var currentDisease in carrier.Diseases)
         {
             if (currentDisease.ID == disease.ID) //ID because of the way protoypes work
-                return;
+                return false;
+        }
+
+        if (!disease.Infectious)
+        {
+            return false;
         }
         carrier.PastDiseases.Add(disease.ID);
+        return true;
     }
 
     private void OnDoAfter(EntityUid uid, DiseaseVaccineComponent component, VaccineDoAfterEvent args)
