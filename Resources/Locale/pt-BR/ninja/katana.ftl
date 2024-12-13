@@ -1,4 +1,4 @@
-ninja-katana-recalled = Sua Energy Katana se teletransporta para sua mão!
+ninja-katana-recalled = Sua Katana de Energia se teletransporta para sua mão!
 ninja-hands-full = Suas mãos estão ocupadas!
 
 dash-ability-not-held = Você não está segurando sua katana!

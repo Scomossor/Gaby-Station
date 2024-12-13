@@ -1,1 +1,1 @@
-oni-gun-fire = You can't fire guns!
+oni-gun-fire = Você não pode usar armas!
