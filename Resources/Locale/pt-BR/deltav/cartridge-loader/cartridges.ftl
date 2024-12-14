@@ -38,3 +38,10 @@ log-probe-card-number = Cartão: {$number}
 log-probe-recipients = {$count} repientes
 log-probe-recipient-list = Recepientes conhecidos:
 log-probe-message-format = {$sender} → {$recipient}: {$content}
+
+# Cartao de agente
+agent-id-card-current-number = Numero do NanoZap
+
+# Cartridge
+ent-NanoChatCartridge = Cartucho de NanoZap
+    .desc = Seu melhor aplicativo de fake news espacial!
