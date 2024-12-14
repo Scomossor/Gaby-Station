@@ -13,7 +13,7 @@
                   HorizontalExpand="True"
                   VerticalExpand="True">
         <!-- Header with app title and new chat button -->
-        <controls:StripeBack MinSize="48 48"
+        <controls:StripeBack MinSize="40 40"
                              VerticalExpand="False">
             <BoxContainer Orientation="Horizontal"
                           HorizontalExpand="True"
@@ -24,11 +24,11 @@
                              VerticalAlignment="Center"
                              MinSize="32 32"
                              Margin="8 0 0 0" />
-                <Label Text="{Loc nano-chat-title}"
+                <!-- <Label Text="{Loc nano-chat-title}"
                        StyleClasses="LabelHeading"
                        HorizontalExpand="True"
                        Margin="8 0"
-                       VerticalAlignment="Center" />
+                       VerticalAlignment="Center" /> -->
                 <Label Name="OwnNumberLabel"
                        Text="#0000"
                        StyleClasses="LabelSubText"
@@ -78,7 +78,7 @@
         <BoxContainer Orientation="Horizontal"
                       VerticalExpand="True"
                       HorizontalExpand="True"
-                      Margin="0 5 0 0">
+                      Margin="0 2 0 0">
             <!-- Left panel: Chat list -->
             <PanelContainer StyleClasses="AngleRect"
                             VerticalExpand="True"
@@ -91,7 +91,7 @@
                                   Orientation="Vertical"
                                   VerticalExpand="True"
                                   HorizontalExpand="True"
-                                  Margin="4">
+                                  Margin="2">
                         <!-- Chat entries will be added here dynamically -->
                         <Label Name="NoChatsLabel"
                                Text="{Loc nano-chat-no-chats}"

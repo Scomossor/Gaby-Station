@@ -3,7 +3,6 @@
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     HorizontalExpand="True">
     <Button Name="ChatButton"
-            StyleClasses="ButtonSquare"
             HorizontalExpand="True"
             MaxSize="137 64"
             Margin="0 1">

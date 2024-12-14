@@ -36,7 +36,7 @@ log-probe-header-nanochat = Escanear mensagens do NanoZap
 log-probe-label-message = Mensagem
 log-probe-card-number = Cartão: {$number}
 log-probe-recipients = {$count} repientes
-log-probe-recipient-list = Recepientes conhecidos:
+log-probe-recipient-list = Contatos conhecidos:
 log-probe-message-format = {$sender} → {$recipient}: {$content}
 
 # Cartao de agente
