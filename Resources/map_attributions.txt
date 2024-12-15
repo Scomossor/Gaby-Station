@@ -59,4 +59,4 @@
 #These are located in /_Gabystation/Maps/
 
 - files: ["gamma.yml"]
-  authors: Leshiy, CRISOOOOO
+  authors: AgRevol, CRISOOOOO
