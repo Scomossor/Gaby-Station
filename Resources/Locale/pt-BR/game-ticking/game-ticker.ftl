@@ -12,7 +12,7 @@ game-ticker-get-info-text = > [color=#ADBABA]A rodada atual é: [/color][color=#
                             > [color=#ADBABA]O número atual de jogadores é: [/color][color=#C73C55]{$playerCount}[/color]
                             > [color=#ADBABA]O mapa atual é: [/color][color=#C73C55]{$mapName}[/color]
                             > [color=#ADBABA]O modo de jogo atual é: [/color][color=#C73C55]{$gmTitle}[/color]
-                            > [color=#ADBABA]{$desc}[/color]
+                            > [color=#C73C55]{$desc}[/color]
 game-ticker-get-info-preround-text = > [color=#ADBABA]A rodada atual é: [/color][color=#C73C55]#{$roundId}[/color]
                             > [color=#ADBABA]O número atual de jogadores é: [/color][color=#C73C55]{$playerCount}[/color] ([color=#C73C55]{$readyCount}[/color] {$readyCount ->
                                 [one] está
@@ -20,7 +20,7 @@ game-ticker-get-info-preround-text = > [color=#ADBABA]A rodada atual é: [/color
                             } prontos)
                             > [color=#ADBABA]O mapa atual é: [/color][color=#C73C55]{$mapName}[/color]
                             > [color=#ADBABA]O modo de jogo atual é: [/color][color=#C73C55]{$gmTitle}[/color]
-                            > [color=#ADBABA]{$desc}[/color]
+                            > [color=#C73C55]{$desc}[/color]
 game-ticker-no-map-selected = [color=yellow]Mapa ainda não selecionado![/color]
 game-ticker-player-no-jobs-available-when-joining = Ao tentar entrar no jogo, nenhum cargo estava disponível.
 
