@@ -3,6 +3,7 @@
     xmlns:cartridges="clr-namespace:Content.Client.DeltaV.CartridgeLoader.Cartridges"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Orientation="Vertical"
     HorizontalExpand="True"
     VerticalExpand="True"
@@ -29,6 +30,11 @@
                        HorizontalExpand="True"
                        Margin="8 0"
                        VerticalAlignment="Center" /> -->
+                <BoxContainer
+                       HorizontalExpand="True"
+                       Margin="8 0"
+                       VerticalAlignment="Center" />
+
                 <Label Name="OwnNumberLabel"
                        Text="#0000"
                        StyleClasses="LabelSubText"
@@ -108,15 +114,20 @@
             <PanelContainer StyleClasses="AngleRect"
                             VerticalExpand="True"
                             HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+                </PanelContainer.PanelOverride>
+
                 <BoxContainer Orientation="Vertical"
                               VerticalExpand="True"
-                              HorizontalExpand="True">
+                              HorizontalExpand="True"
+                              Margin="5">
                     <!-- Messages area with centered "select chat" label -->
                     <BoxContainer Name="MessageArea"
                                   Orientation="Vertical"
                                   VerticalExpand="True"
                                   HorizontalExpand="True"
-                                  Margin="0 0 0 4">
+                                  Margin="0 0 0 1">
                         <Label Name="CurrentChatName"
                                Text="{Loc nano-chat-select-chat}"
                                HorizontalAlignment="Center"
