@@ -2,7 +2,7 @@
   id: Gamma
   mapName: 'Gamma'
   mapPath: /Maps/_Gabystation/gamma.yml
-  minPlayers: 40
+  minPlayers: 30
   maxPlayers: 120
   stations:
     Gamma:
