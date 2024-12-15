@@ -17,6 +17,7 @@ using Content.Shared.Paper;
 using Content.Shared.Power;
 using Content.Shared.Tools.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -33,6 +34,7 @@ public sealed class DiseaseDiagnosisSystem : EntitySystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _sharedSoundSystem = default!;
+    [Dependency] private readonly SharedTransformSystem _sharedTransform = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
 
     public override void Initialize()
@@ -135,7 +137,7 @@ public sealed class DiseaseDiagnosisSystem : EntitySystem
 
 
         machine.Disease = swab.Disease;
-        QueueDel(args.Used);
+        _sharedTransform.SetCoordinates(args.Used, new EntityCoordinates());
 
         EnsureComp<DiseaseMachineRunningComponent>(uid);
         UpdateAppearance(uid, true, true);
@@ -166,7 +168,7 @@ public sealed class DiseaseDiagnosisSystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString("machine-insert-item", ("machine", uid), ("item", args.Used), ("user", args.User)), uid, args.User);
         var machine = Comp<DiseaseMachineComponent>(uid);
         machine.Disease = swab.Disease;
-        EntityManager.DeleteEntity(args.Used);
+        _sharedTransform.SetCoordinates(args.Used, new EntityCoordinates());
 
         EnsureComp<DiseaseMachineRunningComponent>(uid);
         UpdateAppearance(uid, true, true);

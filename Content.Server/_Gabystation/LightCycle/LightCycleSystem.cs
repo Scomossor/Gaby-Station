@@ -210,15 +210,15 @@ namespace Content.Server.Time
                 {
                     case 0:
                         color_level[i] = Math.Min(comp.ClipRed, CalculateCurve(time, wave_lenght,
-                        Math.Max(0, comp.MaxRedLevel), Math.Max(0, comp.MinRedLevel), 4));
+                        Math.Max(0, comp.MaxRedLevel), Math.Max(0, comp.MinRedLevel), comp.ExponentRed));
                         break;
                     case 1:
                         color_level[i] = Math.Min(comp.ClipGreen, CalculateCurve(time, wave_lenght,
-                        Math.Max(0, comp.MaxGreenLevel), Math.Max(0, comp.MinGreenLevel), 10));
+                        Math.Max(0, comp.MaxGreenLevel), Math.Max(0, comp.MinGreenLevel), comp.ExponentGreen));
                         break;
                     case 2:
                         color_level[i] = Math.Min(comp.ClipBlue, CalculateCurve(time, wave_lenght / 2,
-                        Math.Max(0, comp.MaxBlueLevel), Math.Max(0, comp.MinBlueLevel), 2, wave_lenght / 4));
+                        Math.Max(0, comp.MaxBlueLevel), Math.Max(0, comp.MinBlueLevel), comp.ExponentBlue, wave_lenght / 4));
                         break;
                 }
             }

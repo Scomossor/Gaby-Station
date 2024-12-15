@@ -26,7 +26,7 @@ namespace Content.Server.Time
         [ViewVariables(VVAccess.ReadWrite), DataField("nightShiftDuration")]
         public int NightShiftDuration = 8;
         [ViewVariables(VVAccess.ReadWrite), DataField("minLightLevel")]
-        public double MinLightLevel = 0.33;
+        public double MinLightLevel = 0.6;
         [ViewVariables(VVAccess.ReadWrite), DataField("maxLightLevel")]
         public double MaxLightLevel = 1.2;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipLight")]
@@ -36,19 +36,25 @@ namespace Content.Server.Time
         [ViewVariables(VVAccess.ReadWrite), DataField("clipGreen")]
         public double ClipGreen = 1;
         [ViewVariables(VVAccess.ReadWrite), DataField("clipBlue")]
-        public double ClipBlue = 1.1;
+        public double ClipBlue = 1.05;
         [ViewVariables(VVAccess.ReadWrite), DataField("minRedLevel")]
-        public double MinRedLevel = 0.6;
+        public double MinRedLevel = 0.65;
         [ViewVariables(VVAccess.ReadWrite), DataField("minGreenLevel")]
         public double MinGreenLevel = 0.75;
         [ViewVariables(VVAccess.ReadWrite), DataField("minBlueLevel")]
-        public double MinBlueLevel = 0.55;
+        public double MinBlueLevel = 0.7;
         [ViewVariables(VVAccess.ReadWrite), DataField("maxRedLevel")]
-        public double MaxRedLevel = 2;
+        public double MaxRedLevel = 1.5;
         [ViewVariables(VVAccess.ReadWrite), DataField("maxGreenLevel")]
-        public double MaxGreenLevel = 2;
+        public double MaxGreenLevel = 1.3;
         [ViewVariables(VVAccess.ReadWrite), DataField("maxBlueLevel")]
         public double MaxBlueLevel = 4;
+        [ViewVariables(VVAccess.ReadWrite), DataField("exponentRed")]
+        public double ExponentRed = 2;
+        [ViewVariables(VVAccess.ReadWrite), DataField("exponentGreen")]
+        public double ExponentGreen = 4;
+        [ViewVariables(VVAccess.ReadWrite), DataField("exponentBlue")]
+        public double ExponentBlue = 2;
         public List<Entity<PoweredLightComponent>> BulbList = new List<Entity<PoweredLightComponent>>();
     }
 }
