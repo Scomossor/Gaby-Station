@@ -96,10 +96,8 @@
                     <Label Name="StationTime" Access="Public" FontColorOverride="{x:Static maths:Color.LightGray}"
                            Margin="3 3 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
-                    <!-- Gaby line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.DangerousRedFore}" Thickness="2" Access="Public" />
                     <!-- Server Currency -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine Color="{x:Static style:StyleNano.DangerousRedFore}" Thickness="2" Access="Public" />
                     <Label Name="Balance" Access="Public" StyleClasses="LabelHeading" VAlign="Center"
                             HorizontalExpand="True" HorizontalAlignment="Center" />
                     <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
