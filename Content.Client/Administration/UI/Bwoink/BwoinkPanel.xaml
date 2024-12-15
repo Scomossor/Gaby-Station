@@ -6,7 +6,7 @@
     <OutputPanel Name="TextOutput" VerticalExpand="true" />
     <RichTextLabel Name="TypingIndicator" Access="Public" />
     <BoxContainer Name="BwoinkPanelBox">
-        <HistoryLineEdit Name="SenderLineEdit" MinWidth="400" />
+        <HistoryLineEdit Name="SenderLineEdit" MinWidth="400" HorizontalExpand="True"/>
         <Button Visible="True" Name="RemarksButton" Text="{Loc 'admin-aremarks-button'}" StyleClasses="OpenBoth" MaxWidth="80" />
     </BoxContainer>
     <RichTextLabel Name="RelayedToDiscordLabel" Access="Public" Visible="False" />

@@ -219,8 +219,19 @@
             Caustic: 1
     Gas:
       effects:
+      - !type:ChemMiasmaPoolSource
+        conditions:
+        - !type:OrganType
+          type: Rat
+          shouldHave: false
+        - !type:ReagentThreshold
+          reagent: Ammonia
+          min: 1
       - !type:HealthChange
         conditions:
+        - !type:OrganType # Goobstation - Yowie
+          type: Yowie
+          shouldHave: false
         - !type:OrganType
           type: Rat
           shouldHave: false
@@ -234,6 +245,9 @@
       - !type:ChemVomit
         probability: 0.12
         conditions:
+        - !type:OrganType # Goobstation - Yowie
+          type: Yowie
+          shouldHave: false
         - !type:OrganType
           type: Rat
           shouldHave: false

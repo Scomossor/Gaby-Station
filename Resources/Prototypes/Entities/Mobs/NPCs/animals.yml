@@ -64,6 +64,10 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # Goobstation - Nigthvision
+    isToggle: true
+    color: "#808080"
+    playSoundOn: false
 
 - type: entity
   name: bee
@@ -459,7 +463,7 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Squeak
-    allowedEmotes: ['Chitter', 'Squeak']
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] #flap is from goob
   - type: FaxableObject
     insertingState: inserting_mothroach
   - type: MothAccent
@@ -1788,7 +1792,10 @@
         sprite:
           sprite: Objects/Consumable/Food/skewer.rsi
           state: skewer-rat
-
+  - type: NightVision # Goobstation - Nigthvision
+    isToggle: true
+    color: "#808080"
+    playSoundOn: false
 
 - type: entity
   parent: MobMouse
@@ -2446,6 +2453,10 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: NightVision # Goobstation - Nigthvision
+    isToggle: true
+    color: "#808080"
+    playSoundOn: false
 
 - type: entity
   name: tarantula

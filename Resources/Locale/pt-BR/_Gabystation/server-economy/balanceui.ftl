@@ -10,7 +10,8 @@ gs-balanceui-gift-value-tooltip = Quantia de dinheiro para transferir
 gs-balanceui-shop-label = Loja
 gs-balanceui-shop-empty = Fora de estoque!
 gs-balanceui-shop-buy = Comprar
-gs-balanceui-shop-footer = ⚠ Contacte um administrador para a ultilização da sua compra
+gs-balanceui-shop-footer = ⚠ Contacte um administrador para a ultilização
+                        da sua compra
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titulos
