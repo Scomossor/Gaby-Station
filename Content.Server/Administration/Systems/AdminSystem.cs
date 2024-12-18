@@ -1,4 +1,7 @@
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Forensics;
@@ -32,7 +35,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-
 namespace Content.Server.Administration.Systems;
 
 public sealed class AdminSystem : EntitySystem
@@ -53,7 +55,6 @@ public sealed class AdminSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-
     private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
     /// <summary>
@@ -65,9 +66,56 @@ public sealed class AdminSystem : EntitySystem
     public readonly PanicBunkerStatus PanicBunker = new();
     public readonly BabyJailStatus BabyJail = new();
 
+    private IP2Location.Component IPInfo = new IP2Location.Component();
+    private bool IPInfoAvailable = false;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        var ipBinName = "IP2LOCATION-LITE-DB1.BIN";
+        var ipZipName = ipBinName + ".zip";
+        var ipPath = $"{Directory.GetCurrentDirectory()}/data";
+        var ipBinPath = $"{ipPath}/{ipBinName}";
+        var ipZipPath = $"{ipPath}/{ipZipName}";
+        // Download database.
+        if (!File.Exists(ipBinPath))
+        {
+            var url =
+                "https://www.ip2location.com/download/?token=BbVXMFOS7HT2XmB8F97NyxRHFG0YXm9XUTgiP7v0KkZkdBWFFWhSIm6OYAFNiPoZ&file=DB1LITEBIN";
+
+            try
+            {
+                Log.Warning($"Admin IP Database not found. Downloading {ipZipName} to {ipPath}...");
+                using (var client = new WebClient())
+                {
+                    client.DownloadFile(url, ipZipPath);
+                }
+
+                if (!File.Exists(ipZipPath))
+                {
+                    Log.Error("Couldn't find the downloaded IP database file: " + ipZipPath);
+                }
+                else
+                {
+                    Log.Info($"Extracting database '{ipZipPath}' to {ipPath}...");
+                    ZipFile.ExtractToDirectory(ipZipPath, ipPath);
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error("Couldn't complete admin IP database download: "  + e);
+                IPInfoAvailable = false;
+            }
+        }
+        else
+        {
+            Log.Info($"Admin IP Lookup Database found in {Directory.GetCurrentDirectory()}/{ipZipName}");
+            IPInfoAvailable = true;
+        }
+
+        if (IPInfoAvailable)
+            IPInfo.Open(ipBinPath);
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
         _adminManager.OnPermsChanged += OnAdminPermsChanged;
@@ -255,8 +303,17 @@ public sealed class AdminSystem : EntitySystem
             overallPlaytime = playTime;
         }
 
+        var country = "   ";
+        if (IPInfoAvailable)
+        {
+            var ip = session?.Channel.RemoteEndPoint.Address.ToString();
+            var info = IPInfo.IPQuery(ip);
+            if (info != null)
+                country = info.CountryShort;
+        }
+
         return new PlayerInfo(name, entityName, identityName, startingRole, antag, GetNetEntity(session?.AttachedEntity), data.UserId,
-            connected, _roundActivePlayers.Contains(data.UserId), overallPlaytime);
+            connected, _roundActivePlayers.Contains(data.UserId), overallPlaytime, country);
     }
 
     private void OnPanicBunkerChanged(bool enabled)

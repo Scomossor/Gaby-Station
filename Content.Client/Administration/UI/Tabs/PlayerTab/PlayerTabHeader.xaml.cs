@@ -20,6 +20,7 @@ public sealed partial class PlayerTabHeader : Control
         JobLabel.OnKeyBindDown += JobClicked;
         AntagonistLabel.OnKeyBindDown += AntagonistClicked;
         PlaytimeLabel.OnKeyBindDown += PlaytimeClicked;
+        CountryLabel.OnKeyBindDown += CountryClicked;
     }
 
     public Label GetHeader(Header header)
@@ -31,6 +32,7 @@ public sealed partial class PlayerTabHeader : Control
             Header.Job => JobLabel,
             Header.Antagonist => AntagonistLabel,
             Header.Playtime => PlaytimeLabel,
+            Header.Country => CountryLabel,
             _ => throw new ArgumentOutOfRangeException(nameof(header), header, null)
         };
     }
@@ -42,6 +44,7 @@ public sealed partial class PlayerTabHeader : Control
         JobLabel.Text = Loc.GetString("player-tab-job");
         AntagonistLabel.Text = Loc.GetString("player-tab-antagonist");
         PlaytimeLabel.Text = Loc.GetString("player-tab-playtime");
+        CountryLabel.Text = Loc.GetString("player-tab-country");
     }
 
     private void HeaderClicked(GUIBoundKeyEventArgs args, Header header)
@@ -80,6 +83,11 @@ public sealed partial class PlayerTabHeader : Control
         HeaderClicked(args, Header.Playtime);
     }
 
+    private void CountryClicked(GUIBoundKeyEventArgs args)
+    {
+        HeaderClicked(args, Header.Country);
+    }
+
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
@@ -91,6 +99,7 @@ public sealed partial class PlayerTabHeader : Control
             JobLabel.OnKeyBindDown -= JobClicked;
             AntagonistLabel.OnKeyBindDown -= AntagonistClicked;
             PlaytimeLabel.OnKeyBindDown -= PlaytimeClicked;
+            CountryLabel.OnKeyBindDown -= CountryClicked;
         }
     }
 
@@ -100,6 +109,7 @@ public sealed partial class PlayerTabHeader : Control
         Character,
         Job,
         Antagonist,
-        Playtime
+        Playtime,
+        Country
     }
 }
