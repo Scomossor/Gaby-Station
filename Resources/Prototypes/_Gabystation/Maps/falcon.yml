@@ -1,0 +1,65 @@
+- type: gameMap
+  id: Falcon
+  mapName: 'Falcon'
+  mapPath: /Maps/_Gabystation/falcon.yml
+  minPlayers: 0
+  maxPlayers: 20
+  stations:
+    Falcon:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Falcon {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TC'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/_Gabystation/Shuttles/emergency_strain.yml
+        - type: StationCargoShuttle
+          path: /Maps/_Gabystation/Shuttles/cargo_falcon.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            ServiceWorker: [ 1, 1 ]
+            StationAi: [ 1, 1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 2, 2 ]
+            AtmosphericTechnician: [ 1, 1 ]
+            TechnicalAssistant: [ 1, 1 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 1, 1 ]
+            Chemist: [ 1, 1 ]
+            MedicalIntern: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 2 ]
+            ResearchAssistant: [ 1, 1 ]
+            Borg: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 2, 2 ]
+            SecurityCadet: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            #supply
+            CargoTechnician: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Boxer: [ 1, 1 ]

@@ -60,3 +60,6 @@
 
 - files: ["gamma.yml"]
   authors: AgRevol, CRISOOOOO
+  
+- files: ["falcon.yml"]
+  authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
