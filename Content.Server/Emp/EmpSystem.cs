@@ -1,4 +1,3 @@
-using Content.Shared._Mono.Emp;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
 using Content.Server.SurveillanceCamera;
@@ -11,7 +10,7 @@ using Robust.Shared; // Frontier: EMP Blast PVS
 using Content.Shared.Verbs; // Frontier: examine verb
 using Robust.Shared.Utility; // Frontier: examine verb
 using Content.Server.Examine; // Frontier: examine verb
-using Content.Shared._Mono.Emp; // Mono: EMP Shielding
+using Content.Server._Mono.Emp; // Mono: EMP Shielding
 
 namespace Content.Server.Emp;
 

@@ -1,9 +1,10 @@
-using Content.Shared.Armor;
+using Content.Server.Power.Components;
 using Content.Shared.Examine;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._Mono.Emp;
+namespace Content.Server._Mono.Emp;
+
 
 public sealed class EmpResistanceSystem : EntitySystem
 {
@@ -15,7 +16,10 @@ public sealed class EmpResistanceSystem : EntitySystem
 
     private void OnExamine(Entity<EmpResistanceComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
     {
-        var msg = FormatEmp(ent);
+        if (!TryComp<BatteryComponent>(ent.Owner, out var battery))
+            return;
+
+        var msg = FormatEmp(ent, battery);
 
         _examine.AddDetailedExamineVerb(args, ent.Comp, msg,
             Loc.GetString("battery-examinable-verb-text"),
@@ -23,10 +27,12 @@ public sealed class EmpResistanceSystem : EntitySystem
             Loc.GetString("battery-examinable-verb-message"));
     }
 
-    private FormattedMessage FormatEmp(Entity<EmpResistanceComponent> ent)
+    private FormattedMessage FormatEmp(EmpResistanceComponent res, BatteryComponent battery)
     {
         var msg = new FormattedMessage();
-        msg.AddMarkupOrThrow(Loc.GetString("battery-examine-emp", ("num", MathF.Round((1f - ent.Comp.Coefficient) * 100, 5))));
+        msg.AddMarkupOrThrow(res.Coefficient == 0
+            ? Loc.GetString("battery-examine-emp-null")
+            : Loc.GetString("battery-examine-emp", ("energy", battery.MaxCharge / res.Coefficient)));
         return msg;
     }
 }
