@@ -37,7 +37,6 @@
     startingCharge: 1000
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 50
   - type: AmmoSelector
     prototypes:
       - BulletDisabler
@@ -75,3 +74,88 @@
   - type: StaticPrice
     price: 150
   - type: Multishot
+
+- type: entity
+  name: laser submachine gun
+  parent: [BaseWeaponBattery, BaseSecurityContraband]
+  id: WeaponLaserSMG
+  description: An elaborately designed SMG, firing shots of pure phoron. Amazing for laying down suppressive fire.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Wieldable
+    unwieldOnUse: true
+  - type: Clothing
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 6
+    burstFireRate: 18
+    shotsPerBurst: 6
+    burstCooldown: 0.375
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserHeavy
+    fireCost: 33
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name: laser rifle
+  parent: [WeaponLaserCarbine]
+  id: WeaponLaserRifle
+  description: An ergonomic and light laser weapon favored by NanoTrasen security teams because of its low capacity for structural damage. # Goobstation
+  components:
+  - type: Sprite
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser_wide.rsi
+  - type: Clothing
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser.rsi
+  - type: Item
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser.rsi
+    size: Huge
+    shape:
+    - 0,0,4,2
+  - type: Gun #Starlight - Start
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    # - FullAuto #Gaby - Revert parte do buff de armas lasers
+  - type: Battery
+    maxCharge: 2000 # Eu diminui o max charge e o fire cost juntos pra fazer elas mais fáceis de recarregar mas recarregar mais frequentemente: 25 tiros entre cada recarga.
+    startingCharge: 2000
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 50

@@ -1,0 +1,13 @@
+- type: technology
+  id: EMPShielding
+  name: research-technology-emp-shielding
+  entityIcon: PowerCellCombat
+  discipline: Industrial
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - PowerCellCombat
+  technologyPrerequisites:
+  - PortableFission
+  - SuperParts
+  position: -2, 5
