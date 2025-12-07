@@ -10,8 +10,8 @@ using Robust.Shared.Configuration; // Frontier: EMP Blast PVS
 using Robust.Shared; // Frontier: EMP Blast PVS
 using Content.Shared.Verbs; // Frontier: examine verb
 using Robust.Shared.Utility; // Frontier: examine verb
-using Content.Server.Examine;
-using Content.Shared._Mono.Emp; // Frontier: examine verb
+using Content.Server.Examine; // Frontier: examine verb
+using Content.Shared._Mono.Emp; // Mono: EMP Shielding
 
 namespace Content.Server.Emp;
 
