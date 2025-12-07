@@ -3,4 +3,3 @@ battery-examine-emp = EMP shielding can handle [color=blue]{POWERJOULES($energy)
 battery-examine-emp-null = [color=cyan]EMP shielding can handle any amount of energy absorption, making battery immune to EMPs[/color]
 
 
-[color=blue]EMP[/color] consumption reduced by [color=orange]{$num}%[/color].
