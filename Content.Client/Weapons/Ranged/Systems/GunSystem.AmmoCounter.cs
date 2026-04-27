@@ -10,6 +10,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// <Trauma>
+using System.Linq;
+// </Trauma>
 using System.Numerics;
 using Content.Client.IoC;
 using Content.Client.Items;

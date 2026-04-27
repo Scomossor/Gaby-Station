@@ -1,6 +1,6 @@
 namespace Content.Shared.Weapons.Ranged.Components;
 
-public sealed partial class BatteryAmmoProviderComponent
+public abstract partial class BatteryAmmoProviderComponent
 {
     [DataField]
     public float ShotsFloat;
