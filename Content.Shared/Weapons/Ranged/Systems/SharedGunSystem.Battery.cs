@@ -50,6 +50,8 @@ public abstract partial class SharedGunSystem
 
         component.Shots = state.Shots;
         component.Capacity = state.MaxShots;
+        component.ShotsFloat = state.Shots;
+        component.CapacityFloat = state.MaxShots;
         component.FireCost = state.FireCost;
 
         if (component is HitscanBatteryAmmoProviderComponent hitscan && state.Prototype != null) // Shitmed Change
@@ -81,33 +83,36 @@ public abstract partial class SharedGunSystem
 
     private void OnBatteryTakeAmmo(EntityUid uid, BatteryAmmoProviderComponent component, TakeAmmoEvent args)
     {
-        var shots = Math.Min(args.Shots, component.Shots);
+        var multiplier = Math.Max(args.FireCostMultiplier, 0.001f);
+        var shots = Math.Min(args.Shots, (int) (component.ShotsFloat / multiplier));
 
         // Don't dirty if it's an empty fire.
         if (shots == 0)
             return;
 
-        for (var i = 0; i < shots; i++)
+        if (args.SpawnProjectiles)
         {
-            args.Ammo.Add(GetShootable(component, args.Coordinates));
-            component.Shots--;
+            for (var i = 0; i < shots; i++)
+                args.Ammo.Add(GetShootable(component, args.Coordinates));
         }
 
-        TakeCharge((uid, component));
+        component.ShotsFloat -= shots * multiplier;
+        component.Shots = (int) component.ShotsFloat;
+        TakeCharge((uid, component), shots * multiplier);
         UpdateBatteryAppearance(uid, component);
         Dirty(uid, component);
     }
 
     private void OnBatteryAmmoCount(EntityUid uid, BatteryAmmoProviderComponent component, ref GetAmmoCountEvent args)
     {
-        args.Count = component.Shots;
-        args.Capacity = component.Capacity;
+        args.Count = (int) (component.ShotsFloat / Math.Max(args.FireCostMultiplier, 0.001f));
+        args.Capacity = (int) (component.CapacityFloat / Math.Max(args.FireCostMultiplier, 0.001f));
     }
 
     /// <summary>
     /// Update the battery (server-only) whenever fired.
     /// </summary>
-    protected virtual void TakeCharge(Entity<BatteryAmmoProviderComponent> entity)
+    protected virtual void TakeCharge(Entity<BatteryAmmoProviderComponent> entity, float shots = 1f)
     {
         UpdateAmmoCount(entity, prediction: false);
     }

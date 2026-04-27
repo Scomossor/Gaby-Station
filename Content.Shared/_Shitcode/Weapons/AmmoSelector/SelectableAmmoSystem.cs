@@ -136,6 +136,8 @@ public sealed class SelectableAmmoSystem : EntitySystem
             var fireCostDiff = proto.FireCost / oldFireCost;
             hitscanBattery.Shots = (int) Math.Round(hitscanBattery.Shots / fireCostDiff);
             hitscanBattery.Capacity = (int) Math.Round(hitscanBattery.Capacity / fireCostDiff);
+            hitscanBattery.ShotsFloat /= fireCostDiff;
+            hitscanBattery.CapacityFloat /= fireCostDiff;
             Dirty(uid, hitscanBattery);
             var updateClientAmmoEvent = new UpdateClientAmmoEvent();
             RaiseLocalEvent(uid, ref updateClientAmmoEvent);
@@ -152,6 +154,8 @@ public sealed class SelectableAmmoSystem : EntitySystem
             var fireCostDiff =  proto.FireCost / oldFireCost;
             projectileBattery.Shots = (int) Math.Round(projectileBattery.Shots / fireCostDiff);
             projectileBattery.Capacity = (int) Math.Round(projectileBattery.Capacity / fireCostDiff);
+            projectileBattery.ShotsFloat /= fireCostDiff;
+            projectileBattery.CapacityFloat /= fireCostDiff;
             Dirty(uid, projectileBattery);
             var updateClientAmmoEvent = new UpdateClientAmmoEvent();
             RaiseLocalEvent(uid, ref updateClientAmmoEvent);
