@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 DoutorWhite <68350815+DoutorWhite@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
@@ -5,6 +6,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+=======
+using Content.Client.Graphics;
+>>>>>>> b822e090efe (Update postshaders for multi-shader support (#44735))
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.GameObjects;
@@ -17,9 +21,8 @@ public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
 {
     private static readonly ProtoId<ShaderPrototype> HorizontalCut = "HorizontalCut";
 
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-
-    private EntityQuery<SpriteComponent> _spriteQuery;
+    [Dependency] private EntityQuery<SpriteComponent> _spriteQuery = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -57,18 +60,18 @@ public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
         if (!_spriteQuery.Resolve(sprite.Owner, ref sprite.Comp, false))
             return;
 
-        var shader = _proto.Index(HorizontalCut).Instance();
-
-        if (sprite.Comp.PostShader is not null && sprite.Comp.PostShader != shader)
-            return;
+        var shader = ProtoMan.Index(HorizontalCut).Instance();
 
         if (enabled)
         {
-            sprite.Comp.PostShader = shader;
+            _sprite.SetPostShader(sprite, new SpriteComponent.PostShaderArgs(ContentPostShaderIds.FloorOcclusion, shader)
+            {
+                Before = ContentPostShaderIds.BeforeOutlines,
+            });
         }
         else
         {
-            sprite.Comp.PostShader = null;
+            _sprite.RemovePostShader(sprite, ContentPostShaderIds.FloorOcclusion);
         }
     }
 }
