@@ -1,6 +1,7 @@
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Prayer;
+using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Database;
 using Content.Shared.Genetics;
@@ -11,6 +12,7 @@ namespace Content.Server.MindCommunication;
 
 public sealed class MindCommunicationGenSystem : EntitySystem
 {
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly IAdminLogManager _admin = default!;
     [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
@@ -41,12 +43,17 @@ public sealed class MindCommunicationGenSystem : EntitySystem
 
         args.Handled = true;
 
-        RaiseNetworkEvent(new MindCommunicationMenuOpenedEvent(GetNetEntity(ent)));
+        RaiseNetworkEvent(new MindCommunicationMenuOpenedEvent(GetNetEntity(ent)), ent);
     }
 
-    private void OnTargetSelected(MindCommunicationTargetSelectedEvent args)
+    private void OnTargetSelected(MindCommunicationTargetSelectedEvent args, EntitySessionEventArgs sessionArgs)
     {
-        var sender = GetEntity(args.Sender);
+        if (sessionArgs.SenderSession.AttachedEntity is not { } sender)
+            return;
+
+        if (!HasComp<MindCommunicationGenComponent>(sender) || !_actionBlocker.CanInteract(sender, null))
+            return;
+
         var target = GetEntity(args.Target);
 
         if (!TryComp<ActorComponent>(sender, out var senderActor) ||
@@ -66,8 +73,19 @@ public sealed class MindCommunicationGenSystem : EntitySystem
                 if (string.IsNullOrWhiteSpace(message))
                     return;
 
+                if (sessionArgs.SenderSession.AttachedEntity != sender)
+                    return;
+
+                if (!HasComp<MindCommunicationGenComponent>(sender) || !_actionBlocker.CanInteract(sender, null))
+                    return;
+
+                if (!TryComp<ActorComponent>(target, out var alvoAtual)
+                    || alvoAtual.PlayerSession != targetActor.PlayerSession
+                    || HasComp<PsyResistGenComponent>(target))
+                    return;
+
                 var popupMessage = Loc.GetString("mind-communication-message", ("message", message));
-                _prayerSystem.SendSubtleMessage(targetActor.PlayerSession, targetActor.PlayerSession, string.Empty, popupMessage);
+                _prayerSystem.SendSubtleMessage(alvoAtual.PlayerSession, alvoAtual.PlayerSession, string.Empty, popupMessage);
 
                 _admin.Add(LogType.Chat, LogImpact.Low,
                     $"{ToPrettyString(sender):user} sent mind message to {ToPrettyString(target):target}: {message}");
