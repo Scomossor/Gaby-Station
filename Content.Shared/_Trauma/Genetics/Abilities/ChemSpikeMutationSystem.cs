@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Trauma.Shared.Genetics;
+using Robust.Shared.Network;
 using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -18,7 +20,7 @@ public sealed partial class ChemSpikeMutationSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private MutationSystem _mutation = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
-    [Dependency] private BloodstreamSystem _blood = default!;
+    [Dependency] private GeneticsBloodstreamSystem _blood = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedProjectileSystem _projectile = default!;
 

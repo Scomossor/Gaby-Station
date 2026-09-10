@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Trauma.Shared.Genetics;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Systems;
@@ -9,7 +10,7 @@ namespace Content.Trauma.Shared.Genetics.Abilities;
 
 public sealed partial class BleedingMutationSystem : EntitySystem
 {
-    [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private GeneticsBloodstreamSystem _bloodstream = default!;
     [Dependency] private EntityQuery<BloodstreamComponent> _bloodstreamQuery = default!;
 
     public override void Initialize()

@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Trauma.Shared.Genetics;
+using Robust.Shared.Prototypes;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
@@ -14,7 +16,7 @@ public sealed partial class InjectChemicalsActionSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private MutationSystem _mutation = default!;
-    [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private GeneticsBloodstreamSystem _bloodstream = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()

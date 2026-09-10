@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Network;
+using Robust.Shared.Serialization;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chat;
+using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;

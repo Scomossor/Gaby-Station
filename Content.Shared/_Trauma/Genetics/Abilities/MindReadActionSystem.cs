@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Network;
 using Content.Goobstation.Common.Religion;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;

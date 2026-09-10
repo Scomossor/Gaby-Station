@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
 using Content.Shared.Body;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Forensics;
 using Content.Shared.Forensics.Components;
