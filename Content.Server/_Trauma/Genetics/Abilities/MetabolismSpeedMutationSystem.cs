@@ -1,20 +1,23 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Body;
-using Content.Shared.Metabolism;
+using Content.Server.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Trauma.Shared.Genetics.Abilities;
 using Content.Trauma.Shared.Genetics.Mutations;
 
-namespace Content.Trauma.Shared.Genetics.Abilities;
+namespace Content.Trauma.Server.Genetics.Abilities;
 
-public sealed partial class MetabolismSpeedMutationSystem : EntitySystem
+public sealed partial class MetabolismSpeedMutationSystem : SharedMetabolismSpeedMutationSystem
 {
-    [Dependency] private BodySystem _body = default!;
-    [Dependency] private EntityQuery<MetabolizerComponent> _query = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+
+    private EntityQuery<MetabolizerComponent> _query;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _query = GetEntityQuery<MetabolizerComponent>();
 
         SubscribeLocalEvent<MetabolismSpeedMutationComponent, MutationAddedEvent>(OnAdded);
         SubscribeLocalEvent<MetabolismSpeedMutationComponent, MutationRemovedEvent>(OnRemoved);
@@ -39,10 +42,10 @@ public sealed partial class MetabolismSpeedMutationSystem : EntitySystem
             Dirty(uid, mobComp);
         }
 
-        foreach (var organ in _body.GetOrgans<MetabolizerComponent>(uid))
+        foreach (var organ in _body.GetBodyOrganEntityComps<MetabolizerComponent>(uid))
         {
-            organ.Comp.UpdateIntervalMultiplier += add;
-            Dirty(organ);
+            organ.Comp1.UpdateIntervalMultiplier += add;
+            Dirty(organ.Owner, organ.Comp1);
         }
     }
 }

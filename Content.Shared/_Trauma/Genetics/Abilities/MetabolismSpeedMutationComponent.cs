@@ -8,7 +8,7 @@ namespace Content.Trauma.Shared.Genetics.Abilities;
 /// <summary>
 /// Mutation component that increases mob's flat metabolism rate when active.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(MetabolismSpeedMutationSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedMetabolismSpeedMutationSystem))]
 public sealed partial class MetabolismSpeedMutationComponent : Component
 {
     [DataField(required: true)]

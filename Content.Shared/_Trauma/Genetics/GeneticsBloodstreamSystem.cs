@@ -2,6 +2,7 @@
 
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 
@@ -9,6 +10,7 @@ namespace Content.Trauma.Shared.Genetics;
 
 public sealed class GeneticsBloodstreamSystem : EntitySystem
 {
+    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
     public void SetRefreshAmount(Entity<BloodstreamComponent> ent, FixedPoint2 amount)
@@ -27,11 +29,5 @@ public sealed class GeneticsBloodstreamSystem : EntitySystem
     }
 
     public bool TryAddToBloodstream(Entity<BloodstreamComponent?> ent, Solution solution)
-    {
-        if (!Resolve(ent, ref ent.Comp, false)
-            || !_solution.ResolveSolution(ent.Owner, ent.Comp.ChemicalSolutionName, ref ent.Comp.ChemicalSolution))
-            return false;
-
-        return _solution.TryAddSolution(ent.Comp.ChemicalSolution.Value, solution);
-    }
+        => _bloodstream.TryAddToChemicals(ent, solution);
 }
