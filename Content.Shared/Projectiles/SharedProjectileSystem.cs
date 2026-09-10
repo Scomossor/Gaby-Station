@@ -181,6 +181,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
+        var embeddedInto = component.EmbeddedIntoUid; // Trauma
+
         if (component.EmbeddedIntoUid is not null)
         {
             if (TryComp<EmbeddedContainerComponent>(component.EmbeddedIntoUid.Value, out var embeddedContainer))
@@ -215,6 +217,13 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             projectile.ProjectileSpent = false;
 
             Dirty(uid, projectile);
+        }
+
+        // Trauma
+        if (embeddedInto is { } wasEmbeddedInto)
+        {
+            var detachEv = new EmbedDetachEvent(user, wasEmbeddedInto);
+            RaiseLocalEvent(uid, ref detachEv);
         }
 
         if (user != null)
