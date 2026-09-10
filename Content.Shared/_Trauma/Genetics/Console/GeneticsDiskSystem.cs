@@ -2,7 +2,6 @@
 
 using Robust.Shared.Prototypes;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Kitchen;
 using Content.Trauma.Shared.Genetics.Mutations;
 
 namespace Content.Trauma.Shared.Genetics.Console;
@@ -14,14 +13,7 @@ public sealed partial class GeneticsDiskSystem : EntitySystem
     [Dependency] private EntityQuery<GeneticsDiskComponent> _query = default!;
     [Dependency] private EntityQuery<GeneticsDiskSlotComponent> _slotQuery = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<GeneticsDiskComponent, BeingMicrowavedEvent>(OnMicrowaved);
-    }
-
-    private void OnMicrowaved(Entity<GeneticsDiskComponent> ent, ref BeingMicrowavedEvent args)
+    public void Wipe(Entity<GeneticsDiskComponent> ent)
     {
         SetMutation(ent, null);
         SetEnzymes(ent, null);

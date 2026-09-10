@@ -73,7 +73,7 @@ public sealed partial class GeneticsConsoleSystem
         var targetIdentity = Identity.Entity(target, EntityManager);
         var you = Loc.GetString("genetics-console-linking-you", ("scanner", ent), ("user", userIdentity));
         var others = Loc.GetString("genetics-console-linking-others", ("scanner", ent), ("user", userIdentity), ("target", targetIdentity));
-        _popup.PopupEntity(you, others, user, target);
+        _popup.PopupPredicted(you, others, user, target);
         var doAfterArgs = new DoAfterArgs(
             EntityManager,
             user,

@@ -8,7 +8,7 @@ namespace Content.Trauma.Shared.Genetics.Abilities;
 /// <summary>
 /// Runs entity effects when this mutation is added or removed.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(EffectsMutationSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedEffectsMutationSystem))]
 public sealed partial class EffectsMutationComponent : Component
 {
     /// <summary>

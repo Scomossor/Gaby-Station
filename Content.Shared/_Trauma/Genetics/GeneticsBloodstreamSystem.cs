@@ -14,10 +14,7 @@ public sealed class GeneticsBloodstreamSystem : EntitySystem
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
     public void SetRefreshAmount(Entity<BloodstreamComponent> ent, FixedPoint2 amount)
-    {
-        ent.Comp.BloodRefreshAmount = amount;
-        Dirty(ent);
-    }
+        => _bloodstream.TrySetBloodRefreshAmount(ent.AsNullable(), amount);
 
     public Solution? FlushChemicals(Entity<BloodstreamComponent?> ent, FixedPoint2 quantity)
     {

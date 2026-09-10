@@ -8,7 +8,7 @@ namespace Content.Trauma.Shared.Genetics.Abilities;
 /// <summary>
 /// Adds an offset to cold and/or heat damage thresholds.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(TemperatureDamageMutationSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedTemperatureDamageMutationSystem))]
 public sealed partial class TemperatureDamageMutationComponent : Component
 {
     [DataField]

@@ -14,8 +14,8 @@ public sealed class ArmorMutationSystem : EntitySystem
         SubscribeLocalEvent<ArmorMutationComponent, DamageModifyEvent>(OnDamageModify);
     }
 
-    private void OnDamageModify(Entity<ArmorMutationComponent> ent, ref DamageModifyEvent args)
+    private void OnDamageModify(EntityUid uid, ArmorMutationComponent comp, DamageModifyEvent args)
     {
-        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, ent.Comp.Modifiers);
+        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, comp.Modifiers);
     }
 }

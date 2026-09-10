@@ -2,7 +2,7 @@
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<controls:FancyWindow xmlns="https://spacestation14.io" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Content.Trauma.Client.Genetics.UI.GeneticsScannerWindow"
         xmlns:controls="using:Content.Client.UserInterface.Controls"
         xmlns:genetics="clr-namespace:Content.Trauma.Client.Genetics.UI"
         Title="{Loc 'genetics-scanner-window-title'}"

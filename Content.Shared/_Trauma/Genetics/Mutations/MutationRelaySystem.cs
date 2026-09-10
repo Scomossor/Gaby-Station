@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Body.Events;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage;
 using Content.Shared.Flash;
 using Content.Shared.Mobs;
 using Content.Shared.Speech;
@@ -21,9 +21,10 @@ public sealed class MutationRelaySystem : EntitySystem
         SubscribeLocalEvent<MutatableComponent, AfterFlashedEvent>(RelayEvent);
         SubscribeLocalEvent<MutatableComponent, MobStateChangedEvent>(RelayEvent);
         SubscribeLocalEvent<MutatableComponent, BleedModifierEvent>(RelayEvent);
-        SubscribeLocalEvent<MutatableComponent, DamageModifyEvent>(RelayEvent);
         SubscribeLocalEvent<MutatableComponent, GetUserMeleeDamageEvent>(RelayEvent);
         SubscribeLocalEvent<MutatableComponent, AccentGetEvent>(RelayEvent);
+
+        SubscribeLocalEvent<MutatableComponent, DamageModifyEvent>(RelayEventByValue);
     }
 
     public void RelayEvent<T>(Entity<MutatableComponent> ent, ref T args) where T: notnull
@@ -31,6 +32,14 @@ public sealed class MutationRelaySystem : EntitySystem
         foreach (var uid in ent.Comp.Mutations.Values)
         {
             RaiseLocalEvent(uid, ref args);
+        }
+    }
+
+    private void RelayEventByValue<T>(EntityUid mob, MutatableComponent comp, T args) where T: notnull
+    {
+        foreach (var uid in comp.Mutations.Values)
+        {
+            RaiseLocalEvent(uid, args);
         }
     }
 }

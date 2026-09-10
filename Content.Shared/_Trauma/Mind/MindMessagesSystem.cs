@@ -2,7 +2,6 @@
 
 using Content.Shared.Chat;
 using Content.Shared.Mind.Components;
-using Content.Trauma.Common.Mind;
 
 namespace Content.Trauma.Shared.Mind;
 
@@ -22,12 +21,6 @@ public sealed partial class MindMessagesSystem : EntitySystem
     private void OnSpoke(Entity<MindMessagesComponent> ent, ref EntitySpokeEvent args)
     {
         AddMessage(ent.Comp, args.Message);
-    }
-
-    [SubscribeLocalEvent]
-    private void OnGetPlayerInfo(Entity<MindMessagesComponent> ent, ref RoundEndGetPlayerInfoEvent args)
-    {
-        args.LastWords = GetMessage(ent.Comp, ent.Comp.Messages.Length - 1);
     }
 
     public void AddMessage(MindMessagesComponent comp, string message)

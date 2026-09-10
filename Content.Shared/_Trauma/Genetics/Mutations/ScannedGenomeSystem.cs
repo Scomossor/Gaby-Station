@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
 using Content.Shared.Polymorph;
 using Robust.Shared.Random;

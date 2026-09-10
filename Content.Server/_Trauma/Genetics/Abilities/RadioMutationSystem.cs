@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Radio.Components;
+using Content.Server.Radio.Components;
+using Content.Trauma.Shared.Genetics.Abilities;
 using Content.Trauma.Shared.Genetics.Mutations;
 
-namespace Content.Trauma.Shared.Genetics.Abilities;
+namespace Content.Trauma.Server.Genetics.Abilities;
 
-public sealed class RadioMutationSystem : EntitySystem
+public sealed class RadioMutationSystem : SharedRadioMutationSystem
 {
     public override void Initialize()
     {

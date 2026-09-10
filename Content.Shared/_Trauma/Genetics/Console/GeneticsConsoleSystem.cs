@@ -110,7 +110,7 @@ public sealed partial class GeneticsConsoleSystem : EntitySystem
 
         _adminLog.Add(LogType.Genetics, LogImpact.High, $"Scrambled genome of {mob:target} by {args.Actor:user} using console {ent.Owner:console}");
 
-        _damage.ChangeDamage(mob, ent.Comp.ScrambleDamage);
+        _damage.TryChangeDamage(mob, ent.Comp.ScrambleDamage);
 
         ent.Comp.NextScramble = now + ent.Comp.ScrambleCooldown;
         DirtyField(ent.AsNullable(), nameof(GeneticsConsoleComponent.NextScramble));
@@ -303,7 +303,7 @@ public sealed partial class GeneticsConsoleSystem : EntitySystem
             return;
         }
 
-        _damage.ChangeDamage(mob, ent.Comp.CombineDamage);
+        _damage.TryChangeDamage(mob, ent.Comp.CombineDamage);
 
         Speak(ent, "combined");
 
@@ -406,8 +406,8 @@ public sealed partial class GeneticsConsoleSystem : EntitySystem
             var you = Loc.GetString("genetics-console-damages-you");
             var others = Loc.GetString("genetics-console-damages-others");
             _audio.PlayPvs(ent.Comp.SequenceFailSound, ent);
-            _popup.PopupEntity(you, others, ent, mob, PopupType.LargeCaution);
-            _damage.ChangeDamage(mob, ent.Comp.SequenceFailDamage);
+            _popup.PopupPredicted(you, others, ent, mob, PopupType.LargeCaution);
+            _damage.TryChangeDamage(mob, ent.Comp.SequenceFailDamage);
             return false;
         }
 

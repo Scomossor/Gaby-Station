@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Utility;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
 using Content.Shared.Body;
+using Content.Shared.Body.Systems;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage;
@@ -34,6 +36,7 @@ public sealed partial class MutationSystem : CommonMutationSystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private StatusEffectsSystem _status = default!;
     [Dependency] private EntityQuery<ActionComponent> _actionQuery = default!;
+    [Dependency] private EntityQuery<DamageableComponent> _damageableQuery = default!;
     [Dependency] private EntityQuery<DnaComponent> _dnaQuery = default!;
     [Dependency] private EntityQuery<MutatableComponent> _mutatableQuery = default!;
     [Dependency] private EntityQuery<MutationComponent> _query = default!;
@@ -77,7 +80,7 @@ public sealed partial class MutationSystem : CommonMutationSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MutatableComponent, MapInitEvent>(OnMapInit, after: new[] { typeof(BodySystem) });
+        SubscribeLocalEvent<MutatableComponent, MapInitEvent>(OnMapInit, after: new[] { typeof(SharedBodySystem) });
         SubscribeLocalEvent<MutatableComponent, PolymorphedEvent>(OnPolymorphed);
         SubscribeLocalEvent<MutatableComponent, DnaScrambledEvent>(OnDnaScrambled);
 
@@ -658,8 +661,10 @@ public sealed partial class MutationSystem : CommonMutationSystem
     /// </summary>
     public int? GetGeneticDamage(EntityUid mob)
     {
-        var damage = _damageable.GetAllDamage(mob);
-        return damage.DamageDict.TryGetValue(Cellular, out var value)
+        if (!_damageableQuery.TryComp(mob, out var damageable))
+            return null;
+
+        return damageable.Damage.DamageDict.TryGetValue(Cellular, out var value)
             ? value.Int()
             : 0;
     }

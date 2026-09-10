@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Temperature.Components;
+using Content.Server.Temperature.Components;
+using Content.Trauma.Shared.Genetics.Abilities;
 using Content.Trauma.Shared.Genetics.Mutations;
 
-namespace Content.Trauma.Shared.Genetics.Abilities;
+namespace Content.Trauma.Server.Genetics.Abilities;
 
-public sealed partial class TemperatureDamageMutationSystem : EntitySystem
+public sealed class TemperatureDamageMutationSystem : SharedTemperatureDamageMutationSystem
 {
-    [Dependency] private EntityQuery<TemperatureDamageComponent> _query = default!;
+    [Dependency] private readonly EntityQuery<TemperatureComponent> _query = default!;
 
     public override void Initialize()
     {

@@ -10,7 +10,7 @@ namespace Content.Trauma.Server.Genetics.Abilities;
 public sealed partial class PolymorphMutationSystem : EntitySystem
 {
     [Dependency] private PolymorphSystem _polymorph = default!;
-    [Dependency] private EntityQuery<HumanoidProfileComponent> _humanoidQuery = default!;
+    [Dependency] private EntityQuery<HumanoidAppearanceComponent> _humanoidQuery = default!;
 
     public override void Initialize()
     {

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Prototypes;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Trauma.Shared.Genetics.Mutations;
