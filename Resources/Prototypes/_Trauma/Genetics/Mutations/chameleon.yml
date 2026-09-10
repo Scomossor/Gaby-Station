@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMutation
+  id: MutationChameleon
+  name: Chameleon
+  description: A genome that causes the holder's skin to become transparent over time.
+  components:
+  - type: Mutation
+    instability: 35
+    difficulty: 16
+    rarity: Rare
+  - type: ComponentMutation
+    added:
+    - type: Stealth
+      enabledOnCrit: false
+      enabledOnDeath: false
+      maxVisibility: 2
+    - type: StealthOnMove
+      movementVisibilityRate: 1 # immediately revealed
+      passiveVisibilityRate: -0.5 # adapt fairly quick when still

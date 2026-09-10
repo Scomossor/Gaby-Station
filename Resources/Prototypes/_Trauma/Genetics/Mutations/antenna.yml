@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMutation
+  id: MutationAntenna
+  name: Antenna
+  description: The affected person sprouts an antenna. This is known to allow them to access common radio channel passively.
+  components:
+  - type: Mutation
+    instability: 10
+  - type: RadioMutation
+    channels:
+    - Common
+  # TODO: add sprite layer with antenna
+
+- type: entity
+  parent: BaseMutation
+  id: MutationMindReader
+  name: Mind Reader
+  description: The affected person can look into the recent memories of others.
+  components:
+  - type: Mutation
+    instability: 10
+  - type: RemovesMutation
+    removes:
+    - MutationAntenna
+    # keep your paranoia :)
+  - type: ActionMutation
+    action: ActionMutationMindRead
+
+- type: entity
+  parent: BaseMutationAction
+  id: ActionMutationMindRead
+  name: Mindread
+  description: Read the target's mind.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Actions/mutations.rsi
+    layers:
+    - state: mindread
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 5
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:MindReadActionEvent
+    whitelist:
+      components:
+      - MindContainer
+  - type: MindReadAction
