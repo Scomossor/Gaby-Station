@@ -1,0 +1,88 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: polymorph
+  id: MutationMonkey
+  configuration:
+    entity: MobMonkey
+    transferName: true
+    stripNameModifier: false # keep it when going monkey -> human -> monkey
+    componentsToTransfer: [] # no language chud
+    forced: true
+    revertOnCrit: false
+    revertOnDeath: false
+    revertOnDelete: false
+    inventory: Transfer
+    polymorphSound: /Audio/Animals/monkey_scream.ogg
+
+- type: polymorph
+  id: MutationHuman
+  configuration:
+    entity: MobHumanRandom
+    transferName: false
+    stripNameModifier: false
+    # yes language so monkey is still forced to speak monkey
+    forced: true
+    revertOnCrit: false
+    revertOnDeath: false
+    revertOnDelete: false
+    inventory: Transfer
+    polymorphSound: /Audio/Voice/Human/malescream_1.ogg
+
+- type: polymorph
+  id: MutationKobold
+  configuration:
+    entity: MobKobold
+    transferName: true
+    stripNameModifier: false # keep it when going monkey -> human -> monkey
+    componentsToTransfer: [] # no language chud
+    forced: true
+    revertOnCrit: false
+    revertOnDeath: false
+    revertOnDelete: false
+    inventory: Transfer
+    polymorphSound: /Audio/Animals/monkey_scream.ogg
+
+- type: polymorph
+  id: MutationReptilian
+  configuration:
+    entity: MobReptilianRandom
+    transferName: false
+    stripNameModifier: false
+    # yes language so monkey is still forced to speak monkey
+    forced: true
+    revertOnCrit: false
+    revertOnDeath: false
+    revertOnDelete: false
+    inventory: Transfer
+    polymorphSound: /Audio/Voice/Reptilian/reptilian_scream.ogg
+
+- type: polymorph
+  id: MutationMouse
+  configuration:
+    entity: MobMouse
+    transferName: true
+    componentsToTransfer: [] # no language chud
+    forced: true
+    revertOnCrit: false
+    revertOnDeath: false
+    revertOnDelete: false
+    inventory: Drop
+    polymorphSound: /Audio/Animals/mouse_squeak.ogg
+
+- type: polymorph
+  id: TongueSpike
+  configuration:
+    entity: TongueSpike
+    forced: true
+    makeSentient: false
+    polymorphPopup: null
+    exitPolymorphPopup: MutationTongueSpike-popup-revert
+
+- type: polymorph
+  id: TongueSpikeChem
+  configuration:
+    entity: TongueSpikeChem
+    forced: true
+    makeSentient: false
+    polymorphPopup: null
+    exitPolymorphPopup: MutationTongueSpike-popup-revert
