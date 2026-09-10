@@ -140,15 +140,18 @@ public sealed class StealthSystem : SharedStealthSystem
             _sprite.RemovePostShader((uid, sprite), ContentPostShaderIds.Stealth);
         }
 
-        if (!enabled)
+        if (enabled)
+        {
+            component.HadOutline = RemCompDeferred<InteractionOutlineComponent>(uid);
+        }
+        else
         {
             if (component.HadOutline && !TerminatingOrDeleted(uid))
+            {
                 EnsureComp<InteractionOutlineComponent>(uid);
-            return;
+                component.HadOutline = false;
+            }
         }
-
-        if (HasComp<InteractionOutlineComponent>(uid))
-            component.HadOutline = true;
     }
 
     private void OnStartup(EntityUid uid, StealthComponent component, ComponentStartup args)
