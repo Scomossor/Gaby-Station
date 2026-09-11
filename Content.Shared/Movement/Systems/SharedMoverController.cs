@@ -147,6 +147,7 @@ using Content.Shared.Physics;
 using Content.Shared._vg.TileMovement;
 using Content.Shared.Standing; // Goobstation - kil mofs
 using Content.Goobstation.Common.MomentumSteering; // Goobstation - also kil mofs
+using Content.Trauma.Common.Movement; // Trauma
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 
 namespace Content.Shared.Movement.Systems;
@@ -535,6 +536,11 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
+
+                // <Trauma>
+                var stepEv = new FootStepEvent(uid, wishDir.ToWorldAngle());
+                RaiseLocalEvent(uid, ref stepEv);
+                // </Trauma>
             }
         }
     }
@@ -921,6 +927,11 @@ public abstract partial class SharedMoverController : VirtualController
                     tileMovement,
                     movementSpeed))
                 {
+                    // <Trauma>
+                    var dir = targetTransform.LocalPosition - tileMovement.Destination;
+                    var stepEv = new FootStepEvent(uid, dir.ToWorldAngle());
+                    RaiseLocalEvent(uid, ref stepEv);
+                    // </Trauma>
                     EndSlide(uid, tileMovement);
 
                     // After ending the slide, check for immediately starting a new slide.
