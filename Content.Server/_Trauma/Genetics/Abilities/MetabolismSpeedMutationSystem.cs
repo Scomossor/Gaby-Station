@@ -9,7 +9,7 @@ namespace Content.Trauma.Server.Genetics.Abilities;
 
 public sealed partial class MetabolismSpeedMutationSystem : SharedMetabolismSpeedMutationSystem
 {
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private SharedBodySystem _body = default!;
 
     private EntityQuery<MetabolizerComponent> _query;
 

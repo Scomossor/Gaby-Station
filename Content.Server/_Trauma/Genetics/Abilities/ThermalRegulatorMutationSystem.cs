@@ -9,7 +9,7 @@ namespace Content.Trauma.Server.Genetics.Abilities;
 
 public sealed partial class ThermalRegulatorMutationSystem : EntitySystem
 {
-    [Dependency] private readonly ThermalRegulatorSystem _regulator = default!;
+    [Dependency] private ThermalRegulatorSystem _regulator = default!;
 
     [Dependency] private EntityQuery<ThermalRegulatorComponent> _query = default!;
 

@@ -5,9 +5,9 @@ using Content.Trauma.Shared.Genetics.Console;
 
 namespace Content.Trauma.Server.Genetics.Console;
 
-public sealed class GeneticsDiskMicrowaveSystem : EntitySystem
+public sealed partial class GeneticsDiskMicrowaveSystem : EntitySystem
 {
-    [Dependency] private readonly GeneticsDiskSystem _disk = default!;
+    [Dependency] private GeneticsDiskSystem _disk = default!;
 
     public override void Initialize()
     {

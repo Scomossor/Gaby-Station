@@ -12,8 +12,8 @@ namespace Content.Trauma.Server.Genetics.Abilities;
 /// </summary>
 public sealed partial class EffectsMutationSystem : SharedEffectsMutationSystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedEntityEffectSystem _effects = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedEntityEffectSystem _effects = default!;
 
     [SubscribeLocalEvent]
     private void OnAdded(Entity<EffectsMutationComponent> ent, ref MutationAddedEvent args)

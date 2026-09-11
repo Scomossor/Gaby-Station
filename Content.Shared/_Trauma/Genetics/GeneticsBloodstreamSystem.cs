@@ -8,10 +8,10 @@ using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Trauma.Shared.Genetics;
 
-public sealed class GeneticsBloodstreamSystem : EntitySystem
+public sealed partial class GeneticsBloodstreamSystem : EntitySystem
 {
-    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
 
     public void SetRefreshAmount(Entity<BloodstreamComponent> ent, FixedPoint2 amount)
         => _bloodstream.TrySetBloodRefreshAmount(ent.AsNullable(), amount);

@@ -10,13 +10,13 @@ using Content.Trauma.Shared.Actions;
 
 namespace Content.Trauma.Server.Actions;
 
-public sealed class ShootOrganActionSystem : SharedShootOrganActionSystem
+public sealed partial class ShootOrganActionSystem : SharedShootOrganActionSystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly PolymorphSystem _polymorph = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private PolymorphSystem _polymorph = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
 
     public override void Initialize()
     {
