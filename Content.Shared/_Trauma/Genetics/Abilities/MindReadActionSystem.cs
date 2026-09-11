@@ -11,6 +11,7 @@ using Content.Shared.Popups;
 using Content.Trauma.Shared.Mind;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Trauma.Shared.Popups;
 
 namespace Content.Trauma.Shared.Genetics.Abilities;
 
@@ -24,7 +25,7 @@ public sealed partial class MindReadActionSystem : EntitySystem
     [Dependency] private MobStateSystem _mob = default!;
     [Dependency] private SharedCombatModeSystem _combatMode = default!;
     [Dependency] private SharedMindSystem _mind = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
     [Dependency] private EntityQuery<ActorComponent> _actorQuery = default!;
 
     private List<string> _recent = new();

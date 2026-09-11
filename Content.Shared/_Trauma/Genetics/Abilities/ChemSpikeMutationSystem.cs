@@ -9,6 +9,7 @@ using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Trauma.Shared.Actions;
 using Content.Trauma.Shared.Genetics.Mutations;
+using Content.Trauma.Shared.Popups;
 
 namespace Content.Trauma.Shared.Genetics.Abilities;
 
@@ -21,7 +22,7 @@ public sealed partial class ChemSpikeMutationSystem : EntitySystem
     [Dependency] private MutationSystem _mutation = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private GeneticsBloodstreamSystem _blood = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
     [Dependency] private SharedProjectileSystem _projectile = default!;
 
     public override void Initialize()

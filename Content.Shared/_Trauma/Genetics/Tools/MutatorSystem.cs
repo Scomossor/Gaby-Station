@@ -12,6 +12,7 @@ using Content.Shared.Tag;
 using Content.Trauma.Shared.Genetics.Console;
 using Content.Trauma.Shared.Genetics.Mutations;
 using Robust.Shared.Timing;
+using Content.Trauma.Shared.Popups;
 
 namespace Content.Trauma.Shared.Genetics.Tools;
 
@@ -21,7 +22,7 @@ public sealed partial class MutatorSystem : EntitySystem
     [Dependency] private MutationSystem _mutation = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
     [Dependency] private TagSystem _tag = default!;
 
     private static readonly ProtoId<TagPrototype> TrashTag = "Trash";
@@ -101,7 +102,7 @@ public sealed partial class MutatorSystem : EntitySystem
         var userName = Identity.Name(user, EntityManager);
         var you = Loc.GetString("mutator-mutating-you", ("user", userName), ("item", ent));
         var others = Loc.GetString("mutator-mutating-others", ("user", userName), ("target", targetName), ("item", ent));
-        _popup.PopupPredicted(you, others, ent, target);
+        _popup.PopupEntity(you, others, ent, target);
     }
 
     private void OnDoAfter(Entity<MutatorComponent> ent, ref MutatorDoAfterEvent args)

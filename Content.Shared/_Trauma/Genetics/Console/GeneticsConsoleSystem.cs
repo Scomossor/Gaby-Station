@@ -18,6 +18,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Text;
+using Content.Trauma.Shared.Popups;
 
 namespace Content.Trauma.Shared.Genetics.Console;
 
@@ -35,7 +36,7 @@ public sealed partial class GeneticsConsoleSystem : EntitySystem
     [Dependency] private SharedChatSystem _chat = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedMaterialStorageSystem _material = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
     [Dependency] private SharedPowerReceiverSystem _power = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
     [Dependency] private EntityQuery<MaterialStorageComponent> _materialQuery = default!;
@@ -406,7 +407,7 @@ public sealed partial class GeneticsConsoleSystem : EntitySystem
             var you = Loc.GetString("genetics-console-damages-you");
             var others = Loc.GetString("genetics-console-damages-others");
             _audio.PlayPvs(ent.Comp.SequenceFailSound, ent);
-            _popup.PopupPredicted(you, others, ent, mob, PopupType.LargeCaution);
+            _popup.PopupEntity(you, others, ent, mob, PopupType.LargeCaution);
             _damage.TryChangeDamage(mob, ent.Comp.SequenceFailDamage);
             return false;
         }

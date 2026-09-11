@@ -23,6 +23,7 @@ using Content.Trauma.Common.Genetics.Mutations;
 using Robust.Shared.Containers;
 using Robust.Shared.Random;
 using System.Text;
+using Content.Trauma.Shared.Popups;
 
 namespace Content.Trauma.Shared.Genetics.Mutations;
 
@@ -33,7 +34,7 @@ public sealed partial class MutationSystem : CommonMutationSystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private MobStateSystem _mob = default!;
     [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
     [Dependency] private StatusEffectsSystem _status = default!;
     [Dependency] private EntityQuery<ActionComponent> _actionQuery = default!;
     [Dependency] private EntityQuery<DamageableComponent> _damageableQuery = default!;

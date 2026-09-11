@@ -9,6 +9,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Popups;
 using Content.Trauma.Shared.Genetics.Mutations;
 using Robust.Shared.Timing;
+using Content.Trauma.Shared.Popups;
 
 namespace Content.Trauma.Shared.Genetics.Abilities;
 
@@ -17,7 +18,7 @@ public sealed partial class InjectChemicalsActionSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private MutationSystem _mutation = default!;
     [Dependency] private GeneticsBloodstreamSystem _bloodstream = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
 
     public override void Initialize()
     {
