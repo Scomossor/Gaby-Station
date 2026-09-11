@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectMutedMutation
+  name: muted
+  components:
+  - type: StatusEffectAlert
+    alert: Muted
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: Muted
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectPressureImmunityMutation
+  name: pressure immunity
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: PressureImmunity
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectClumsyMutation
+  name: clumsy
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: Clumsy
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectBlurryVision
+  name: blurry vision
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: BlurryVision
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectBlindness
+  name: temporary blindness
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+      - Blindable
+      requireAll: true
+  - type: TemporaryBlindness

@@ -28,6 +28,12 @@ namespace Content.Shared.EntityEffects.Effects
         [DataField]
         public PopupRecipients Type = PopupRecipients.Local;
 
+        /// <summary>
+        /// Trauma - use PopupCoordinates in case the entity will be deleted while the popup is shown.
+        /// </summary>
+        [DataField]
+        public PopupMethod Method = PopupMethod.PopupEntity;
+
         [DataField]
         public PopupType VisualType = PopupType.Small;
 
@@ -55,6 +61,18 @@ namespace Content.Shared.EntityEffects.Effects
                 };
             }
 
+            // <Trauma>
+            if (Method == PopupMethod.PopupCoordinates)
+            {
+                var coords = args.EntityManager.GetComponent<TransformComponent>(args.TargetEntity).Coordinates;
+                if (Type == PopupRecipients.Local)
+                    popupSys.PopupCoordinates(Loc.GetString(msg, msgArgs), coords, args.TargetEntity, VisualType);
+                else if (Type == PopupRecipients.Pvs)
+                    popupSys.PopupCoordinates(Loc.GetString(msg, msgArgs), coords, VisualType);
+                return;
+            }
+            // </Trauma>
+
             if (Type == PopupRecipients.Local)
                 popupSys.PopupEntity(Loc.GetString(msg, msgArgs), args.TargetEntity, args.TargetEntity, VisualType);
             else if (Type == PopupRecipients.Pvs)
@@ -66,5 +84,12 @@ namespace Content.Shared.EntityEffects.Effects
     {
         Pvs,
         Local
+    }
+
+    // Trauma
+    public enum PopupMethod : byte
+    {
+        PopupEntity,
+        PopupCoordinates,
     }
 }

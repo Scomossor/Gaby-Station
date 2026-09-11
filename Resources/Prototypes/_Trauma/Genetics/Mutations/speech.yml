@@ -10,15 +10,15 @@
     added:
     - type: StutteringAccent
 
-- type: entity
-  parent: BaseFreeMutation
-  id: MutationWacky
-  name: Wacky
-  description: You are not a clown. You are the entire circus.
-  components:
-  - type: SpeechFontOverride
-    font: LDFComicSans
-    sourceOnly: false
+#- type: entity
+#  parent: BaseFreeMutation
+#  id: MutationWacky
+#  name: Wacky
+#  description: You are not a clown. You are the entire circus.
+#  components:
+#  - type: SpeechFontOverride
+#    font: LDFComicSans
+#    sourceOnly: false
 
 - type: entity
   parent: BaseFreeMutation
@@ -79,8 +79,7 @@
   name: Chav
   description: Unknown
   components:
-  - type: SimpleAccent
-    accent: British
+  - type: BritishAccent
 
 - type: entity
   parent: [ BaseFreeMutation, BaseTriggerMutation ]

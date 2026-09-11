@@ -1,0 +1,67 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityEffect
+  id: MakeFelinid
+  guidebookText: entity-effect-guidebook-make-felinid
+  conditions:
+  - !type:NestedCondition # for debug effect stick
+    proto: IsHumanoid
+  - !type:WhitelistCondition
+    blacklist:
+      components:
+      - Felinid
+  effects:
+  - !type:AddMarking
+    marking: FelinidEarsBasic
+  - !type:AddMarking
+    marking: FelinidTailBasic
+  - !type:RelayOrgans
+    whitelist:
+      components:
+      - Metabolizer
+    effects:
+    - !type:RemoveMetabolizerType
+      type: Human
+    - !type:AddMetabolizerType
+      type: Animal
+  - !type:PopupMessage
+    type: Pvs
+    visualType: LargeCaution
+    messages:
+    - entity-effect-popup-make-felinid
+  - !type:AddComponents
+    components:
+    - type: Felinid
+
+- type: entityEffect
+  id: RevertFelinid
+  guidebookText: entity-effect-guidebook-revert-felinid
+  conditions:
+  - !type:NestedCondition # for debug effect stick
+    proto: IsHumanoid
+  - !type:WhitelistCondition
+    whitelist:
+      components:
+      - Felinid
+  effects:
+  - !type:RemoveMarking
+    marking: FelinidEarsBasic
+  - !type:RemoveMarking
+    marking: FelinidTailBasic
+  - !type:RelayOrgans
+    whitelist:
+      components:
+      - Metabolizer
+    effects:
+    - !type:RemoveMetabolizerType
+      type: Animal
+    - !type:AddMetabolizerType
+      type: Human # fuck you, lizard with human metabolism! yamlmaxxing!
+  - !type:PopupMessage
+    type: Pvs
+    visualType: MediumCaution
+    messages:
+    - entity-effect-popup-revert-felinid
+  - !type:RemoveComponents
+    components:
+    - type: Felinid

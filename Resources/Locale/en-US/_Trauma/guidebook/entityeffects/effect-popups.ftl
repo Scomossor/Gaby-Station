@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+entity-effect-popup-seizure = {CAPITALIZE($entity)} starts having a seizure!
+entity-effect-popup-acidic-flesh-bubbles = Your acid flesh bubbles...
+entity-effect-popup-acidic-flesh-pops = {$entity}'s skin bubbles and pops!
+entity-effect-popup-spasm-leg = Your leg spasms!
+entity-effect-popup-spasm-fingers = Your fingers spasm!
+entity-effect-popup-spasm-arm = Your arm spasms!
+entity-effect-popup-feet-trip = You trip over your own feet.
+entity-effect-popup-head-removed = {$entity}'s head splatters with a sickening crunch!
+entity-effect-popup-head-regrown = {$entity}'s head returns with a sickening crunch!
+entity-effect-popup-autotomy-failed = You can't shed any more limbs!
+entity-effect-popup-martyrdom-blinded = You are blinded by a shower of blood!
+entity-effect-popup-martyrdom-borg-disabled = Your sensors are disabled by a shower of blood!
+entity-effect-popup-tiredness = You should sit down and take a rest...

@@ -106,6 +106,21 @@ public sealed partial record PolymorphConfiguration
     [DataField(serverOnly: true)]
     public bool TransferName;
 
+    // <Trauma>
+    /// <summary>
+    /// Whether to strip name modifier if transferring name.
+    /// Can be disabled if you want the modifier suffix to be transferred.
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public bool StripNameModifier = true;
+
+    /// <summary>
+    /// Lets you disable making the new entity sentient, for non-mob polymorphs.
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public bool MakeSentient = true;
+    // </Trauma>
+
     // ADT-Geras-Tweak-Start
     /// <summary>
     /// Whether or not the entity transfers its knowledge of languages between forms.

@@ -473,7 +473,7 @@
     instability: 25
     difficulty: 24
   - type: MobThresholdMutation
-    removed: SoftCrit
+    removed: SoftCritical # Dumont: o SoftCrit do Trauma. Cuidado: o Critical do Trauma e o HardCritical daqui
 
 - type: entity
   parent: BaseMutation

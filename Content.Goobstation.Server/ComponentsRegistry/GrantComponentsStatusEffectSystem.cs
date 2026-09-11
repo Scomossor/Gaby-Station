@@ -20,13 +20,25 @@ public sealed partial class GrantComponentsStatusEffectSystem : EntitySystem
         SubscribeLocalEvent<GrantComponentsStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemove);
     }
 
+    // Dumont
     private void OnStatusEffectApply(Entity<GrantComponentsStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        EntityManager.AddComponents(args.Target, ent.Comp.Components);
+        ent.Comp.Added.Clear();
+        foreach (var name in ent.Comp.Components.Keys)
+        {
+            if (!HasComp(args.Target, Factory.GetRegistration(name).Type))
+                ent.Comp.Added.Add(name);
+        }
+
+        EntityManager.AddComponents(args.Target, ent.Comp.Components, removeExisting: false);
     }
 
     private void OnStatusEffectRemove(Entity<GrantComponentsStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
-        EntityManager.RemoveComponents(args.Target, ent.Comp.Components);
+        foreach (var name in ent.Comp.Added)
+        {
+            RemComp(args.Target, Factory.GetRegistration(name).Type);
+        }
+        ent.Comp.Added.Clear();
     }
 }

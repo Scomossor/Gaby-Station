@@ -36,7 +36,7 @@
     added:
     - type: SpecialHighTempImmunity
     - type: FireImmunity
-    - type: AshStormImmune
+    - type: WeatherImmune # Dumont: equivale ao AshStormImmune do Trauma, usado nos mesmos mobs de lavaland
 
 - type: entity
   parent: BaseMutation
