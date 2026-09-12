@@ -81,7 +81,7 @@ public sealed partial class TelekinesisSystem : EntitySystem
     // can't use your mind powers if you fucking die
     private void OnMobStateChanged(Entity<TelekinesisComponent> ent, ref MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Alive)
+        if (args.NewMobState == MobState.Alive) // Dumont - no Trauma a checagem estava invertida
             return;
 
         if (_tetherGunQuery.TryComp(ent, out var gun))
