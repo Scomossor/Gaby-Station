@@ -37,15 +37,11 @@ public sealed partial class MetabolismSpeedMutationSystem : SharedMetabolismSpee
     {
         // some shitcode mobs like dragon have metabolizer on the mob itself not organs, check edge case
         if (_query.TryComp(uid, out var mobComp))
-        {
             mobComp.UpdateIntervalMultiplier += add;
-            Dirty(uid, mobComp);
-        }
 
         foreach (var organ in _body.GetBodyOrganEntityComps<MetabolizerComponent>(uid))
         {
             organ.Comp1.UpdateIntervalMultiplier += add;
-            Dirty(organ.Owner, organ.Comp1);
         }
     }
 }

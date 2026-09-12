@@ -28,6 +28,7 @@ public sealed class GeneticsCycleTest
     private const string MobMuitasDormentes = "TestCycleMobManyDormant";
     private const string MobTresDormentes = "TestCycleMobThreeDormant";
     private static readonly EntProtoId<MutationComponent> BracosElasticos = "MutationElasticArms";
+    private static readonly EntProtoId<MutationComponent> Acelerado = "MutationStimmed";
     private static readonly ProtoId<EntityEffectPrototype> Felinizar = "MakeFelinid";
     private static readonly ProtoId<EntityEffectPrototype> Desfelinizar = "RevertFelinid";
     private const string Orelha = "FelinidEarsBasic";
@@ -388,4 +389,49 @@ public sealed class GeneticsCycleTest
     }
 
     #endregion
+
+    [Test]
+    public async Task MetabolismoMudaOMultiplicadorDosOrgaos()
+    {
+        var (pair, map) = await Par();
+        var entMan = pair.Server.ResolveDependency<IEntityManager>();
+        var mutation = entMan.System<MutationSystem>();
+        var corpo = entMan.System<SharedBodySystem>();
+
+        var mob = await Spawn(pair, Mob, map);
+
+        List<float> antes = new();
+        await pair.Server.WaitAssertion(() =>
+        {
+            antes = corpo.GetBodyOrganEntityComps<MetabolizerComponent>(mob)
+                .Select(o => o.Comp1.UpdateIntervalMultiplier).ToList();
+            Assert.That(antes, Is.Not.Empty, "o mob da montagem não tem órgão que metaboliza");
+        });
+
+        await pair.Server.WaitPost(() => Assert.That(mutation.AddMutation(mob, Acelerado), "a mutação não entrou"));
+        await pair.Server.WaitAssertion(() =>
+        {
+            var depois = corpo.GetBodyOrganEntityComps<MetabolizerComponent>(mob)
+                .Select(o => o.Comp1.UpdateIntervalMultiplier).ToList();
+            Assert.That(depois, Has.Count.EqualTo(antes.Count), "o número de órgãos mudou, então a comparação não vale");
+            for (var i = 0; i < depois.Count; i++)
+            {
+                Assert.That(depois[i], Is.GreaterThan(antes[i]), "ganhar a mutação não mexeu no multiplicador do órgão");
+            }
+        });
+
+        await pair.Server.WaitPost(() => Assert.That(mutation.RemoveMutation(mob, Acelerado), "a mutação não saiu"));
+        await pair.Server.WaitAssertion(() =>
+        {
+            var voltou = corpo.GetBodyOrganEntityComps<MetabolizerComponent>(mob)
+                .Select(o => o.Comp1.UpdateIntervalMultiplier).ToList();
+            for (var i = 0; i < voltou.Count; i++)
+            {
+                Assert.That(voltou[i], Is.EqualTo(antes[i]).Within(0.001f), "perder a mutação não devolveu o multiplicador");
+            }
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
 }
