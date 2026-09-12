@@ -11,10 +11,10 @@ namespace Content.IntegrationTests.Tests._Trauma.Actions;
 [TestFixture]
 public sealed class EffectActionTest
 {
-    private static readonly EntProtoId NaAcao = "TestEffectActionOnAction";
-    private static readonly EntProtoId SemFlag = "TestEffectActionWithoutFlag";
-    private static readonly EntProtoId NoAlvo = "TestEffectActionTarget";
-    private static readonly EntProtoId NoAlvoEEmQuemUsa = "TestEffectActionTargetOnPerformed";
+    private const string NaAcao = "TestEffectActionOnAction";
+    private const string SemFlag = "TestEffectActionWithoutFlag";
+    private const string NoAlvo = "TestEffectActionTarget";
+    private const string NoAlvoEEmQuemUsa = "TestEffectActionTargetOnPerformed";
 
     [TestPrototypes]
     private const string Prototypes = @"

@@ -24,9 +24,9 @@ namespace Content.IntegrationTests.Tests._Trauma.Genetics;
 [TestFixture]
 public sealed class GeneticsCycleTest
 {
-    private static readonly EntProtoId Mob = "TestCycleMob";
-    private static readonly EntProtoId MobMuitasDormentes = "TestCycleMobManyDormant";
-    private static readonly EntProtoId MobTresDormentes = "TestCycleMobThreeDormant";
+    private const string Mob = "TestCycleMob";
+    private const string MobMuitasDormentes = "TestCycleMobManyDormant";
+    private const string MobTresDormentes = "TestCycleMobThreeDormant";
     private static readonly EntProtoId<MutationComponent> BracosElasticos = "MutationElasticArms";
     private static readonly ProtoId<EntityEffectPrototype> Felinizar = "MakeFelinid";
     private static readonly ProtoId<EntityEffectPrototype> Desfelinizar = "RevertFelinid";

@@ -10,7 +10,7 @@ namespace Content.IntegrationTests.Tests._Trauma.Genetics;
 public sealed class GrantComponentsStatusEffectTest
 {
     private static readonly EntProtoId Desastrado = "StatusEffectClumsyMutation";
-    private static readonly EntProtoId OutraFonte = "TestGrantClumsyOther";
+    private const string OutraFonte = "TestGrantClumsyOther";
 
     [TestPrototypes]
     private const string Prototypes = @"
