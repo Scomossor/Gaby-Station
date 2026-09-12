@@ -95,3 +95,59 @@
     exitPolymorphSound: /Audio/Magic/ethereal_exit.ogg
     duration: 10
     effectProto: EffectDesynchronizer # TODO: make a more evil one
+
+- type: polymorph
+  id: Corgi
+  configuration:
+    entity: MobCorgi
+    forced: false
+    inventory: Drop
+    transferName: true
+    componentsToTransfer: []
+    revertOnCrit: false
+    revertOnDeath: false
+
+- type: polymorph
+  id: Snail
+  configuration:
+    entity: MobSnail
+    forced: false
+    inventory: Drop
+    transferName: true
+    componentsToTransfer: []
+    revertOnCrit: false
+    revertOnDeath: false
+    allowRepeatedMorphs: false
+
+- type: polymorph
+  id: Crab
+  configuration:
+    entity: MobCrab
+    forced: false
+    inventory: Drop
+    transferName: true
+    componentsToTransfer: []
+    revertOnCrit: false
+    revertOnDeath: false
+    allowRepeatedMorphs: false
+
+- type: polymorph
+  id: Slime
+  configuration:
+    entity: MobAdultSlimes
+    forced: false
+    inventory: Drop
+    transferName: true
+    componentsToTransfer: []
+    revertOnCrit: false
+    revertOnDeath: false
+
+- type: polymorph
+  id: Skeleton
+  configuration:
+    entity: MobSkeletonPerson
+    forced: false
+    inventory: Drop
+    transferName: false
+    revertOnCrit: false
+    revertOnDeath: false

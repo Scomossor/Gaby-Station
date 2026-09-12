@@ -58,4 +58,38 @@
   components:
   - type: StatusEffectEffectsApply
     effectsOnRemoval:
+    - !type:NestedEffect
+      conditions:
+      - !type:DnaUnstableCondition
+      proto: SomethingHorrible
     - !type:ScrambleDna
+
+- type: entity
+  parent: StatusEffectBase
+  id: DecloningStatusEffect
+  name: decloning
+
+- type: entity
+  parent: StatusEffectBase
+  id: LookingUpStatusEffect
+  name: looking up
+  components:
+  - type: StatusEffectEffectsApply
+    effectsOnRemoval:
+    - !type:PopupMessage
+      type: Pvs
+      messages:
+      - entity-effect-popup-eyes-melt
+    - !type:RelayOrgan
+      category: Eyes
+      guidebookText: entity-effect-guidebook-melts-eyes
+      effects:
+      - !type:Delete
+    - !type:RelayOrgan
+      category: Brain
+      guidebookText: entity-effect-guidebook-melts-brain
+      effects:
+      - !type:AddComponents
+        guidebookText: entity-effect-guidebook-melts-brain
+        components:
+        - type: TimedDespawn

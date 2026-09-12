@@ -45,6 +45,16 @@ Pense antes de dar hulk para todo assistente que aparecer, porque depois não so
 
 Em vez de mutadone, dá para imprimir um limpador na aba de armazenamento usando o disco da mutação que você quer tirar. Injetou, a mutação foi embora.
 
+# Instabilidade
+
+Cada mutação carrega um valor de instabilidade, e ele só é cobrado quando a mutação é estranha ao paciente, ou seja quando ela não estava na lista de dormentes dele. Ativar uma dormente com o ativador custa zero.
+
+Chegando a 100, o genoma começa a derreter, e o console avisa. A partir daí é corrida contra o tempo: tirando mutação e baixando da marca antes de o derretimento acabar, o paciente escapa e leva só um embaralhamento do DNA.
+
+Quem não conserta a tempo paga. Em sete de cada dez vezes o desfecho é fatal: virar pó, virar esqueleto, explodir, ou aquele em que a pessoa olha para cima. Nas outras três, vira macaco, corgi, caramujo, lesma, caranguejo, perde as pernas, ou tem sorte e não acontece quase nada.
+
+O embaralhamento acontece nos dois casos, de propósito, senão daria para entrar e sair da instabilidade de graça a cada poucos minutos.
+
 # Embaralhando o DNA
 
 Se macaco estiver em falta e a sorte não ajudar, o botão [bold]Embaralhar DNA[/bold] sorteia de novo as mutações dormentes do paciente.
