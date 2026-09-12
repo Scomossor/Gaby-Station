@@ -20,4 +20,10 @@ public sealed partial class ExtraReachComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float Bonus;
+
+    /// <summary>
+    /// Dumont - body this part's bonus is currently added to.
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? AppliedTo;
 }
