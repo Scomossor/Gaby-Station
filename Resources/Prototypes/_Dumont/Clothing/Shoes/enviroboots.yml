@@ -1,8 +1,8 @@
-#Base
+#region Base
 
 - type: entity
   abstract: true
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesBase
   id: ClothingShoesEnvirobootsBase
   components:
   - type: Armor
@@ -206,9 +206,48 @@
     reduction: 0.4
   - type: PressureArmorChange
 
-#Dignitary
+#region Dignitary
 
-#Engineering
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCentcommCommandContraband]
+  id: ClothingShoesEnvirobootsGSO
+  name: greenshield officer enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Dignitary/gso.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Dignitary/gso.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.3
+      OrganDamage: 0.3
+      BoneDamage: 0.3
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.65
+        Heat: 0.65
+        Radiation: 0.6
+        Caustic: 0.6
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCentcommCommandContraband]
+  id: ClothingShoesEnvirobootsNTR
+  name: nanotrasen representative enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Dignitary/ntr.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Dignitary/ntr.rsi
+
+#region Engineering
 
 - type: entity
   parent: [ClothingShoesEnvirobootsBase, BaseEngineeringContraband, ClothingShoesBootsMagBase]
@@ -292,15 +331,154 @@
   - type: ToggleClothingPrefix
     prefixOn: on
 
-#Heads
+#region Heads
 
-#Medical
+- type: entity
+  parent: ClothingShoesEnvirobootsBase
+  id: ClothingShoesEnvirobootsCap
+  name: captain enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/cap.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/cap.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.65
+        Heat: 0.6
+        Radiation: 0.15
+        Caustic: 0.6
 
-#Science
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband,BaseEngineeringContraband, ClothingShoesBootsMagBase]
+  id: ClothingShoesEnvirobootsCE
+  name: chief engineer enviroboots
+  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/ce.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/ce.rsi
+  - type: FireProtection
+    reduction: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.4
+        Radiation: 0.0
+        Caustic: 0.7
+        Shock: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ItemTogglePrefix
+    prefixOn: on
+  - type: ToggleClothingPrefix
+    prefixOn: on
 
-#Security
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsCMO
+  name: chief medical officer enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/cmo.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/cmo.rsi
 
-#Service
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
+  id: ClothingShoesEnvirobootsHOP
+  name: head of personnel enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hop.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hop.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityCommandContraband]
+  id: ClothingShoesEnvirobootsHOS
+  name: head of security enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hos.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hos.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.60
+        Heat: 0.6
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
+  id: ClothingShoesEnvirobootsQM
+  name: quartermaster enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/qm.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/qm.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
+  id: ClothingShoesEnvirobootsRD
+  name: research director enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/rd.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/rd.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.85
+        Piercing: 0.95
+        Heat: 0.4
+        Shock: 0.85
+        Radiation: 0.05
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.15
+
+#region Medical
+
+#region Science
+
+#region Security
+
+#region Service
 
 - type: entity
   parent: ClothingShoesEnvirobootsBase
@@ -461,4 +639,6 @@
   - type: Clothing
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/zookeeper.rsi
 
-#Others
+#region Syndicate
+
+#region Others

@@ -1,4 +1,4 @@
-#Base
+#region Base
 
 - type: entity
   abstract: true
@@ -46,7 +46,7 @@
   - type: Fiber
     fiberColor: fibers-black
 
-#Cargo
+#region Cargo
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
@@ -221,9 +221,57 @@
     reduction: 0.4
   - type: PressureArmorChange
 
-#Dignitary
+#region Dignitary
 
-#Engineering
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCentcommCommandContraband]
+  id: ClothingHandsGlovesEnviroglovesGSO
+  name: greenshield officer envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/gso.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/gso.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+      - state: equipped-HAND-unshaded
+        shader: unshaded
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.3
+      OrganDamage: 0.3
+      BoneDamage: 0.3
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.65
+        Heat: 0.65
+        Radiation: 0.6
+        Caustic: 0.6
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCentcommCommandContraband]
+  id: ClothingHandsGlovesEnviroglovesNTR
+  name: nanotrasen representative envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/ntr.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/ntr.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
+#region Engineering
 
 - type: entity
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseEngineeringContraband]
@@ -407,15 +455,167 @@
         Caustic: 0.7
         Radiation: 0.15
 
-#Heads
+#region Heads
 
-#Medical
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
+  id: ClothingHandsGlovesEnviroglovesCap
+  name: captain envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/cap.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/capt.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-black
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.65
+        Heat: 0.6
+        Radiation: 0.15
+        Caustic: 0.6
 
-#Science
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband ,BaseEngineeringContraband]
+  id: ClothingHandsGlovesEnviroglovesCE
+  name: chief engineer envirogloves
+  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/ce.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/ce.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-silver
+  - type: Insulated
+  - type: FireProtection
+    reduction: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.4
+        Radiation: 0.0
+        Caustic: 0.7
+        Shock: 0.5
 
-#Security
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesCMO
+  name: chief medical officer envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/cmo.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/cmo.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
 
-#Service
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
+  id: ClothingHandsGlovesEnviroglovesHOP
+  name: head of personnel envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/hop.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/hop.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.8
+        Piercing: 0.95
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseSecurityCommandContraband]
+  id: ClothingHandsGlovesEnviroglovesHOS
+  name: head of security envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/hos.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/hos.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.60
+        Heat: 0.6
+        Radiation: 0.5
+        Caustic: 0.5
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband, BaseCargoContraband]
+  id: ClothingHandsGlovesEnviroglovesQM
+  name: quartermaster envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/qm.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/qm.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband, BaseScienceContraband]
+  id: ClothingHandsGlovesEnviroglovesRD
+  name: research director envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/rd.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/rd.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.85
+        Piercing: 0.95
+        Heat: 0.4
+        Shock: 0.85
+        Radiation: 0.05
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.15
+  - type: Insulated
+
+#region Medical
+
+#region Science
+
+#region Security
+
+#region Service
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
@@ -606,4 +806,6 @@
   - type: Fiber
     fiberColor: fibers-brown
 
-#Others
+#region Syndicate
+
+#region Others
