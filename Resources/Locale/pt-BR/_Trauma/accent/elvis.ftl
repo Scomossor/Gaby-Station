@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+MutationElvis-popup-dance-1 = {$entity} manda uns passos gingados!
+MutationElvis-popup-dance-2 = {$entity} manda uns passos chiques!
+MutationElvis-popup-dance-3 = {$entity} manda uns passos estilosos!
+MutationElvis-popup-dance-4 = {$entity} manda uns passos do século 20!
+MutationElvis-popup-dance-5 = {$entity} manda uns passos requebrados!
+MutationElvis-popup-dance-6 = {$entity} manda uns passos de rock and roll!
+MutationElvis-popup-dance-7 = {$entity} manda uns passos maneiros!
+MutationElvis-popup-dance-8 = {$entity} manda uns passos indecentes!
+MutationElvis-popup-dance-9 = {$entity} manda uns passos arrasadores!
+MutationElvis-popup-dance-10 = {$entity} manda uns passos de matar!
+MutationElvis-popup-move-1 = {$entity} sacode o quadril!
+MutationElvis-popup-move-2 = {$entity} roda o quadril!
+MutationElvis-popup-move-3 = {$entity} rebola o quadril!
+MutationElvis-popup-move-4 = {$entity} bate o pé no chão!
+MutationElvis-popup-move-5 = {$entity} dança uma música imaginária!
+MutationElvis-popup-move-6 = {$entity} sacode as pernas!
+MutationElvis-popup-move-7 = {$entity} estala os dedos!
+accent-elvis-words-1 = não sou
+accent-elvis-words-replace-1 = num sou
+accent-elvis-words-2 = moça
+accent-elvis-words-replace-2 = meu bem
+accent-elvis-words-3 = cara
+accent-elvis-words-replace-3 = meu chapa
+accent-elvis-words-4 = fora de
+accent-elvis-words-replace-4 = fora dessa
+accent-elvis-words-5-a = obrigado
+accent-elvis-words-5-b = valeu
+accent-elvis-words-replace-5 = obrigado, muito obrigado mesmo
+accent-elvis-words-6 = o que você está
+accent-elvis-words-replace-6 = o que cê tá
+accent-elvis-words-7 = sim
+accent-elvis-words-replace-7 = sim senhor
+accent-elvis-words-8 = meus valids
+accent-elvis-words-replace-8 = meus sapatos
