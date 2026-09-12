@@ -152,34 +152,34 @@
     guides:
     - Forensics
 
-- type: entity
-  parent: ClothingHandsGlovesEnviroglovesBase
-  id: ClothingHandsGlovesEnviroglovesRoboticist
-  name: roboticist envirogloves
-  description: Covers up those scandalous boney hands.
-  components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#932500"
-  - type: Item
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#932500"
-      right:
-      - state: inhand-right
-        color: "#932500"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#932500"
-  - type: Fiber
-    fiberColor: fibers-orange
+#- type: entity
+#  parent: ClothingHandsGlovesEnviroglovesBase
+#  id: ClothingHandsGlovesEnviroglovesRoboticist
+#  name: roboticist envirogloves
+#  description: Covers up those scandalous boney hands.
+#  components:
+#  - type: Sprite
+#    sprite: Clothing/Hands/Gloves/Color/color.rsi
+#    layers:
+#    - state: icon
+#      color: "#932500"
+#  - type: Item
+#    sprite: Clothing/Hands/Gloves/Color/color.rsi
+#    inhandVisuals:
+#      left:
+#      - state: inhand-left
+#        color: "#932500"
+#      right:
+#      - state: inhand-right
+#        color: "#932500"
+#  - type: Clothing
+#    sprite: Clothing/Hands/Gloves/Color/color.rsi
+#    clothingVisuals:
+#      gloves:
+#      - state: equipped-HAND
+#        color: "#932500"
+#  - type: Fiber
+#    fiberColor: fibers-orange
 
 #- type: entity
 #  parent: ClothingHandsGlovesEnviroglovesBase

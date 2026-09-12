@@ -964,6 +964,75 @@
 
 #region Science
 
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
+  id: ClothingOuterEnvirosuitGeneticist
+  name: geneticist envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/geneticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/geneticist.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.85
+        Radiation: 0.01
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
+  id: ClothingOuterEnvirosuitResearchAssistant
+  name: research assistant envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/research_assistant.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/research_assistant.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
+  id: ClothingOuterEnvirosuitRoboticist
+  name: roboticist envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/roboticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/roboticist.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
+  id: ClothingOuterEnvirosuitResearchScientist
+  name: scientist envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/scientist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/scientist.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
 #region Security
 
 #region Service

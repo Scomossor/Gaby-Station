@@ -554,6 +554,55 @@
 
 #region Science
 
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
+  id: ClothingShoesEnvirobootsGeneticist
+  name: geneticist enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/geneticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/geneticist.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.85
+        Radiation: 0.01
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
+  id: ClothingShoesEnvirobootsResearchAssistante
+  name: research assistant enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/research_assistant.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/research_assistant.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
+  id: ClothingShoesEnvirobootsRoboticist
+  name: roboticist enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/roboticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/roboticist.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
+  id: ClothingShoesEnvirobootsScientist
+  name: scientist enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/scientist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/scientist.rsi
+
 #region Security
 
 #region Service

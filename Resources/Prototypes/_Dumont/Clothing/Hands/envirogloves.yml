@@ -703,6 +703,63 @@
 
 #region Science
 
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
+  id: ClothingHandsGlovesEnviroglovesGeneticist
+  name: geneticist envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/geneticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/geneticist.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.85
+        Radiation: 0.01
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
+  id: ClothingHandsGlovesEnviroglovesResearchAssistant
+  name: research assistant envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/research_assistant.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/research_assistant.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
+  id: ClothingHandsGlovesEnviroglovesRoboticist
+  name: roboticist envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/roboticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/roboticist.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
+  id: ClothingHandsGlovesEnviroglovesScientist
+  name: scientist envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/scientist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Science/scientist.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
 #region Security
 
 #region Service

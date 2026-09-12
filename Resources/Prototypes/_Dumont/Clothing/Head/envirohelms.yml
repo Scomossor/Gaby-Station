@@ -1514,6 +1514,62 @@
 
 #region Science
 
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseScienceContraband]
+  id: ClothingHeadEnvirohelmetGeneticist
+  name: geneticist envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/geneticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/geneticist.rsi
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Heat: 0.85
+        Radiation: 0.01
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseScienceContraband]
+  id: ClothingHeadEnvirohelmetResearchAssistant
+  name: research assistant envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/research_assistant.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/research_assistant.rsi
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseScienceContraband]
+  id: ClothingHeadEnvirohelmetRoboticist
+  name: roboticist envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/roboticist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/roboticist.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseScienceContraband]
+  id: ClothingHeadEnvirohelmetScientist
+  name: scientist envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/scientist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Science/scientist.rsi
+
 #region Security
 
 #region Service
