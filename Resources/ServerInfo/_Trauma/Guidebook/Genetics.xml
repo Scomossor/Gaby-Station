@@ -1,0 +1,70 @@
+<Document>
+# Genética
+
+A genética da Dumont é baseada na do /tg/station, com algumas diferenças de jogo.
+
+Todas as mutações do tg estão aqui.
+
+# Discos
+
+<Box>
+  <GuideEntityEmbed Entity="GeneticsDisk"/>
+</Box>
+
+O console não guarda mutação sozinho: cada mutação fica gravada em um disco de genética. Um rotulador salva a sua vida aqui.
+
+O seu armário vem com uma caixa de discos, e dá para imprimir mais no protolathe.
+
+# Sequenciamento
+
+Para sequenciar uma mutação, liberando ela e podendo ativar no paciente, resolva o quebra-cabeça do gene deixando cada A junto de um T, e cada C junto de um G.
+
+Quando falta uma base só, é fácil. Quando falta o par inteiro, você vai precisar pensar. Ou tentar na força bruta e torturar os seus pobres macacos.
+
+Todo palpite errado no sequenciamento estraga bastante o genoma do paciente. Pegue remédio na química, ou mais cubos de macaco, antes de começar.
+
+# Resolvendo par de base que falta
+
+<Box>
+  <GuideEntityEmbed Entity="HandheldGeneticsScanner"/>
+</Box>
+
+Não existe botão de coringa. Saia do laboratório e escaneie gente, ou o Pun Pun, com o [bold]scanner de genoma portátil[/bold]. Dá para deduzir as bases que faltam achando várias pessoas com a mesma mutação dormente.
+
+Toda mutação recebe um número sorteado a cada rodada, e esse número é o mesmo em todos os pacientes que tiverem aquela mutação.
+
+Por exemplo: se o macaco do laboratório tem um genoma com o primeiro par desconhecido, e você escaneia alguém que tem a mesma mutação com o primeiro par conhecido, aquele par fecha a sequência.
+
+# Biomassa
+
+A biomassa é o que paga a impressão de mutadores, ativadores e limpadores. Pegue na botânica, em corpo largado por aí, e ponha no console.
+
+Pense antes de dar hulk para todo assistente que aparecer, porque depois não sobra biomassa para imprimir mais nada.
+
+# Tirando mutação
+
+Em vez de mutadone, dá para imprimir um limpador na aba de armazenamento usando o disco da mutação que você quer tirar. Injetou, a mutação foi embora.
+
+# Embaralhando o DNA
+
+Se macaco estiver em falta e a sorte não ajudar, o botão [bold]Embaralhar DNA[/bold] sorteia de novo as mutações dormentes do paciente.
+
+Ele toma bastante dano nisso, então tenha remédio por perto.
+
+# Combinando
+
+Combinar mutação usa uma mutação catalisadora, gravada no disco que está no console, mais alguma mutação que o paciente já tem.
+
+Acertando a combinação, a mutação nova aparece, mas ela não vem sequenciada. Para as mutações complexas você vai precisar combinar em vários pacientes até juntar base suficiente.
+
+# Pesquisa
+
+Uma das maiores diferenças para o tg é que [bold]a genética contribui com a pesquisa de verdade[/bold]. Sequenciar rende cerca de 8 mil pontos na maioria das mutações, e mais nas mais complexas.
+
+# Enzimas únicas
+
+O disco também guarda as [bold]enzimas únicas[/bold] de uma pessoa, e com elas dá para copiar nome, sexo, digitais e cor de olho e de pele para outro paciente.
+
+Isso não copia o DNA nem o cabelo. Pegue uma tesoura e monte uma barbearia.
+
+</Document>
