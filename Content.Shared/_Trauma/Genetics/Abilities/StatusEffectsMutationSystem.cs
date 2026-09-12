@@ -10,7 +10,14 @@ public sealed partial class StatusEffectsMutationSystem : EntitySystem
 {
     [Dependency] private StatusEffectsSystem _status = default!;
 
-    [SubscribeLocalEvent]
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<StatusEffectsMutationComponent, MutationAddedEvent>(OnAdded);
+        SubscribeLocalEvent<StatusEffectsMutationComponent, MutationRemovedEvent>(OnRemoved);
+    }
+
     private void OnAdded(Entity<StatusEffectsMutationComponent> ent, ref MutationAddedEvent args)
     {
         foreach (var effect in ent.Comp.StatusEffects)
@@ -19,7 +26,6 @@ public sealed partial class StatusEffectsMutationSystem : EntitySystem
         }
     }
 
-    [SubscribeLocalEvent]
     private void OnRemoved(Entity<StatusEffectsMutationComponent> ent, ref MutationRemovedEvent args)
     {
         foreach (var effect in ent.Comp.StatusEffects)

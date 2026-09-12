@@ -15,7 +15,14 @@ public sealed partial class EffectsMutationSystem : SharedEffectsMutationSystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedEntityEffectSystem _effects = default!;
 
-    [SubscribeLocalEvent]
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<EffectsMutationComponent, MutationAddedEvent>(OnAdded);
+        SubscribeLocalEvent<EffectsMutationComponent, MutationRemovedEvent>(OnRemoved);
+    }
+
     private void OnAdded(Entity<EffectsMutationComponent> ent, ref MutationAddedEvent args)
     {
         if (args.Automatic && ent.Comp.IgnoreAutomatic)
@@ -24,7 +31,6 @@ public sealed partial class EffectsMutationSystem : SharedEffectsMutationSystem
         ApplyEffects(args.Target, ent.Comp.Added);
     }
 
-    [SubscribeLocalEvent]
     private void OnRemoved(Entity<EffectsMutationComponent> ent, ref MutationRemovedEvent args)
     {
         if (args.Automatic && ent.Comp.IgnoreAutomatic)

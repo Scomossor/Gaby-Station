@@ -9,7 +9,14 @@ public sealed partial class MindMessagesSystem : EntitySystem
 {
     [Dependency] private EntityQuery<MindMessagesComponent> _query = default!;
 
-    [SubscribeLocalEvent]
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<MindContainerComponent, EntitySpokeEvent>(OnContainerSpoke);
+        SubscribeLocalEvent<MindMessagesComponent, EntitySpokeEvent>(OnSpoke);
+    }
+
     private void OnContainerSpoke(Entity<MindContainerComponent> ent, ref EntitySpokeEvent args)
     {
         // relay event to the mind, other systems can use it too
@@ -17,7 +24,6 @@ public sealed partial class MindMessagesSystem : EntitySystem
             RaiseLocalEvent(mind, args);
     }
 
-    [SubscribeLocalEvent]
     private void OnSpoke(Entity<MindMessagesComponent> ent, ref EntitySpokeEvent args)
     {
         AddMessage(ent.Comp, args.Message);

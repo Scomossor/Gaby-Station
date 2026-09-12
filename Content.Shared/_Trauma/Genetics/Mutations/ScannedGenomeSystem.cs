@@ -18,7 +18,15 @@ public sealed partial class ScannedGenomeSystem : EntitySystem
 
     private StringBuilder _builder = new();
 
-    [SubscribeLocalEvent]
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<ScannedGenomeComponent, PolymorphedEvent>(OnPolymorphed);
+        SubscribeLocalEvent<ScannedGenomeComponent, MutationAddedEvent>(OnMutationAdded);
+        SubscribeLocalEvent<ScannedGenomeComponent, MutationRemovedEvent>(OnMutationRemoved);
+    }
+
     private void OnPolymorphed(Entity<ScannedGenomeComponent> ent, ref PolymorphedEvent args)
     {
         var target = args.NewEntity;
@@ -30,7 +38,6 @@ public sealed partial class ScannedGenomeSystem : EntitySystem
         TransferSequences(ent, (target, comp));
     }
 
-    [SubscribeLocalEvent]
     private void OnMutationAdded(Entity<ScannedGenomeComponent> ent, ref MutationAddedEvent args)
     {
         if (ent.Owner != args.Target.Owner || args.Automatic)
@@ -40,7 +47,6 @@ public sealed partial class ScannedGenomeSystem : EntitySystem
         TryAddSequence(ent.AsNullable(), args.Id);
     }
 
-    [SubscribeLocalEvent]
     private void OnMutationRemoved(Entity<ScannedGenomeComponent> ent, ref MutationRemovedEvent args)
     {
         // check just incase you are VERY evil and have a mutation that is a mob or something crazy
