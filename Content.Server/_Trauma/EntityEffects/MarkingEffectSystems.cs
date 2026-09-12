@@ -18,9 +18,13 @@ public sealed partial class AddMarkingEffectSystem : TraumaEntityEffectSystem<Hu
         if (!_markingManager.Markings.TryGetValue(effect.Marking, out var proto))
             return;
 
+        if (ent.Comp.MarkingSet.TryGetMarking(proto.MarkingCategory, effect.Marking, out _))
+            return;
+
         var colors = MarkingColoring.GetMarkingLayerColors(proto, ent.Comp.SkinColor, ent.Comp.EyeColor, ent.Comp.MarkingSet);
         _humanoid.SetLayerVisibility(ent.AsNullable(), proto.BodyPart, true);
         _humanoid.AddMarking(ent, effect.Marking, colors, sync: true, forced: true, ent.Comp);
+        EnsureComp<AddedMarkingsComponent>(ent).Markings.Add(effect.Marking);
     }
 }
 
@@ -30,6 +34,11 @@ public sealed partial class RemoveMarkingEffectSystem : TraumaEntityEffectSystem
 
     protected override void Effect(Entity<HumanoidAppearanceComponent> ent, RemoveMarking effect, EntityEffectBaseArgs args)
     {
+        if (!TryComp<AddedMarkingsComponent>(ent, out var added) || !added.Markings.Remove(effect.Marking))
+            return;
+
         _humanoid.RemoveMarking(ent, effect.Marking, sync: true, ent.Comp);
+        if (added.Markings.Count == 0)
+            RemComp(ent, added);
     }
 }

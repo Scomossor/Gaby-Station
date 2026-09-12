@@ -20,6 +20,8 @@
       components:
       - Metabolizer
     effects:
+    - !type:SaveMetabolizerTypes
+      key: Felinid
     - !type:RemoveMetabolizerType
       type: Human
     - !type:AddMetabolizerType
@@ -53,10 +55,8 @@
       components:
       - Metabolizer
     effects:
-    - !type:RemoveMetabolizerType
-      type: Animal
-    - !type:AddMetabolizerType
-      type: Human # fuck you, lizard with human metabolism! yamlmaxxing!
+    - !type:RestoreMetabolizerTypes
+      key: Felinid
   - !type:PopupMessage
     type: Pvs
     visualType: MediumCaution

@@ -8,6 +8,7 @@ namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
 /// Adds a marking to the target humanoid, colored the same way the add-marking surgery does.
+/// Does nothing if the humanoid already has it.
 /// </summary>
 public sealed partial class AddMarking : EventEntityEffect<AddMarking>
 {
@@ -19,7 +20,8 @@ public sealed partial class AddMarking : EventEntityEffect<AddMarking>
 }
 
 /// <summary>
-/// Removes a marking from the target humanoid.
+/// Removes a marking that an <see cref="AddMarking"/> put on the target humanoid.
+/// Markings the humanoid already had are left alone.
 /// </summary>
 public sealed partial class RemoveMarking : EventEntityEffect<RemoveMarking>
 {

@@ -22,3 +22,29 @@ public sealed partial class RemoveMetabolizerTypeEffectSystem : TraumaEntityEffe
         ent.Comp.MetabolizerTypes?.Remove(effect.Type);
     }
 }
+
+public sealed partial class SaveMetabolizerTypesEffectSystem : TraumaEntityEffectSystem<MetabolizerComponent, SaveMetabolizerTypes>
+{
+    protected override void Effect(Entity<MetabolizerComponent> ent, SaveMetabolizerTypes effect, EntityEffectBaseArgs args)
+    {
+        var saved = EnsureComp<SavedMetabolizerTypesComponent>(ent);
+        if (saved.Saved.ContainsKey(effect.Key))
+            return;
+
+        saved.Saved[effect.Key] = ent.Comp.MetabolizerTypes is {} types ? new(types) : null;
+    }
+}
+
+public sealed partial class RestoreMetabolizerTypesEffectSystem : TraumaEntityEffectSystem<MetabolizerComponent, RestoreMetabolizerTypes>
+{
+    protected override void Effect(Entity<MetabolizerComponent> ent, RestoreMetabolizerTypes effect, EntityEffectBaseArgs args)
+    {
+        if (!TryComp<SavedMetabolizerTypesComponent>(ent, out var saved) ||
+            !saved.Saved.Remove(effect.Key, out var types))
+            return;
+
+        ent.Comp.MetabolizerTypes = types is null ? null : new(types);
+        if (saved.Saved.Count == 0)
+            RemComp(ent, saved);
+    }
+}

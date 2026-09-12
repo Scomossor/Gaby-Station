@@ -467,3 +467,30 @@ public sealed partial class RemoveMetabolizerType : EventEntityEffect<RemoveMeta
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => null;
 }
+
+/// <summary>
+/// Dumont - saves the target organ's metabolizer types under a key, so a later
+/// <see cref="RestoreMetabolizerTypes"/> with the same key puts them back exactly.
+/// Does nothing if the key was already saved, so the first state is the one kept.
+/// </summary>
+public sealed partial class SaveMetabolizerTypes : EventEntityEffect<SaveMetabolizerTypes>
+{
+    [DataField(required: true)]
+    public string Key = string.Empty;
+
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
+}
+
+/// <summary>
+/// Dumont - restores the metabolizer types saved under a key by <see cref="SaveMetabolizerTypes"/>.
+/// Does nothing if nothing was saved under that key.
+/// </summary>
+public sealed partial class RestoreMetabolizerTypes : EventEntityEffect<RestoreMetabolizerTypes>
+{
+    [DataField(required: true)]
+    public string Key = string.Empty;
+
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
+}
