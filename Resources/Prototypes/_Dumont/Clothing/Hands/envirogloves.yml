@@ -484,7 +484,7 @@
         Caustic: 0.6
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband ,BaseEngineeringContraband]
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesCE
   name: chief engineer envirogloves
   description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
@@ -513,7 +513,7 @@
         Shock: 0.5
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband, BaseMedicalContraband]
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesCMO
   name: chief medical officer envirogloves
   description: Covers up those scandalous boney hands.
@@ -546,7 +546,7 @@
         Piercing: 0.95
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseSecurityCommandContraband]
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesHOS
   name: head of security envirogloves
   description: Covers up those scandalous boney hands.
@@ -571,7 +571,7 @@
         Caustic: 0.5
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband, BaseCargoContraband]
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesQM
   name: quartermaster envirogloves
   description: Covers up those scandalous boney hands.
@@ -584,7 +584,7 @@
     fiberColor: fibers-black
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband, BaseScienceContraband]
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesRD
   name: research director envirogloves
   description: Covers up those scandalous boney hands.
@@ -610,6 +610,96 @@
   - type: Insulated
 
 #region Medical
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesMedicalIntern
+  name: medical intern envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/intern.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/intern.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesChemist
+  name: chemist envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/chemist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/chemist.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesMedic
+  name: medic envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/medic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/medic.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesParamedic
+  name: paramedic envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/paramedic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/paramedic.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.9
+        Radiation: 0.75
+        Caustic: 0.5
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesPsychologist
+  name: psychologist envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/psychologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/psychologist.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
+  id: ClothingHandsGlovesEnviroglovesVirologist
+  name: virologist envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/virologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/virologist.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
 
 #region Science
 

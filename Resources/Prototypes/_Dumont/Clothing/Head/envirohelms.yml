@@ -1094,7 +1094,7 @@
         Caustic: 0.65
 
 - type: entity
-  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseEngineeringContraband, BaseCommandContraband]
+  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCommandContraband]
   id: ClothingHeadEnvirohelmetCE
   name: chief engineer envirohelmet
   description: An engineering envirohelmet designed for working in low-pressure, highly radioactive environments.
@@ -1172,7 +1172,7 @@
       - type: EyeProtection
 
 - type: entity
-  parent: [ClothingHeadEnvirohelmetBase, BaseCommandContraband, BaseMedicalContraband]
+  parent: [ClothingHeadEnvirohelmetBase, BaseCommandContraband]
   id: ClothingHeadEnvirohelmetCMO
   name: chief medical officer envirohelmet
   description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -1195,7 +1195,7 @@
     sprite: _Dumont/Clothing/Head/Envirohelms/Heads/hop.rsi
 
 - type: entity
-  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseSecurityCommandContraband]
+  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCommandContraband]
   id: ClothingHeadEnvirohelmetHOS
   name: head of security envirohelmet
   description: An engineering envirohelmet designed for working in low-pressure, highly radioactive environments.
@@ -1281,7 +1281,7 @@
             Caustic: 0.5
 
 - type: entity
-  parent: [ClothingHeadEnvirohelmetBase, BaseCommandContraband, BaseCargoContraband]
+  parent: [ClothingHeadEnvirohelmetBase, BaseCommandContraband]
   id: ClothingHeadEnvirohelmetQM
   name: quartermaster envirohelmet
   description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -1292,7 +1292,7 @@
     sprite: _Dumont/Clothing/Head/Envirohelms/Heads/qm.rsi
 
 - type: entity
-  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCommandContraband, BaseScienceContraband]
+  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCommandContraband]
   id: ClothingHeadEnvirohelmetRD
   name: research director envirohelmet
   description: An engineering envirohelmet designed for working in low-pressure, highly radioactive environments.
@@ -1380,6 +1380,137 @@
       - type: FlashImmunity
 
 #region Medical
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
+  id: ClothingHeadEnvirohelmetAssistantChemist
+  name: chemist envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/chemist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/chemist.rsi
+  - type: DiseaseProtection
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
+  id: ClothingHeadEnvirohelmetAssistantMedicalIntern
+  name: medical intern envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/intern.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/intern.rsi
+  - type: DiseaseProtection
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
+  id: ClothingHeadEnvirohelmetAssistantMedic
+  name: medic envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/medic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/medic.rsi
+  - type: DiseaseProtection
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetToggleableBase, BaseMedicalContraband]
+  id: ClothingHeadEnvirohelmetParamedic
+  name: paramedic envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/paramedic.rsi
+  - type: Item
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/paramedic.rsi
+    heldPrefix: closed
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Dignitary/paramedic.rsi
+    equippedPrefix: closed
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.9
+        Radiation: 0.75
+        Caustic: 0.5
+  - type: PointLight
+    enabled: false
+    color: "#b3fbff"
+  - type: EnvirohelmetToggle
+    isActive: false
+    components:
+      - type: PressureProtection
+        highPressureMultiplier: 1
+        lowPressureMultiplier: 1
+      - type: Armor
+        coverage:
+        - Head
+        traumaDeductions:
+          Dismemberment: 0.2
+          OrganDamage: 0.2
+          BoneDamage: 0.2
+          VeinsDamage: 0
+          NerveDamage: 0
+        modifiers:
+          coefficients:
+            Blunt: 0.90
+            Slash: 0.90
+            Piercing: 0.90
+            Heat: 0.90
+            Radiation: 0.95
+            Caustic: 0.90
+    closedComponents:
+      - type: PressureProtection
+        highPressureMultiplier: 0.525
+        lowPressureMultiplier: 1000
+      - type: Armor
+        coverage:
+        - Head
+        modifiers:
+          coefficients:
+            Blunt: 0.90
+            Slash: 0.90
+            Piercing: 0.90
+            Heat: 0.9
+            Radiation: 0.75
+            Caustic: 0.5
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
+  id: ClothingHeadEnvirohelmetAssistantPsychologist
+  name: psychologist envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/psychologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/psychologist.rsi
+  - type: DiseaseProtection
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
+  id: ClothingHeadEnvirohelmetAssistantVirologist
+  name: virologist envirohelmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/virologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/Medical/virologist.rsi
+  - type: DiseaseProtection
 
 #region Science
 

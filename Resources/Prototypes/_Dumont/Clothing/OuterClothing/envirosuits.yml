@@ -678,7 +678,7 @@
     knockdownTimeDelta: -2
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband, BaseEngineeringContraband]
+  parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitCE
   name: chief engineer envirosuit
   description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -723,7 +723,7 @@
     - type: ContainmentFieldIgnore
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband, BaseMedicalContraband]
+  parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitCMO
   name: chief medical officer envirosuit
   description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -755,7 +755,7 @@
         shader: unshaded
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityCommandContraband]
+  parent: [ClothingOuterEnvirosuitBaseCombat, BaseCommandContraband]
   id: ClothingOuterEnvirosuitHOS
   name: head of security envirosuit
   description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -800,7 +800,7 @@
     damageCoefficient: 0.5
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband, BaseCargoContraband]
+  parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitQM
   name: quartermaster envirosuit
   description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -816,7 +816,7 @@
         shader: unshaded
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseSecurityCommandContraband, BaseScienceContraband]
+  parent: [ClothingOuterEnvirosuitBase, BaseSecurityCommandContraband]
   id: ClothingOuterEnvirosuitRD
   name: research director envirosuit
   description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
@@ -851,6 +851,116 @@
     damageCoefficient: 0.65
 
 #region Medical
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
+  id: ClothingOuterEnvirosuitChemist
+  name: chemist envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/chemist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/chemist.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
+  id: ClothingOuterEnvirosuitMedicalIntern
+  name: medical intern envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/intern.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/intern.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
+  id: ClothingOuterEnvirosuitMedic
+  name: medic envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/medic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/medic.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
+  id: ClothingOuterEnvirosuitParamedic
+  name: paramedic envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/paramedic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/paramedic.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.9
+        Radiation: 0.75
+        Caustic: 0.5
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
+  id: ClothingOuterEnvirosuitPsychologist
+  name: psychologist envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/psychologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/psychologist.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
+  id: ClothingOuterEnvirosuitVirologist
+  name: virologist envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/virologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/virologist.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
 
 #region Science
 

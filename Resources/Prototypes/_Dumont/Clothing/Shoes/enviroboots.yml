@@ -334,7 +334,7 @@
 #region Heads
 
 - type: entity
-  parent: ClothingShoesEnvirobootsBase
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsCap
   name: captain enviroboots
   description: Covers up those scandalous boney feet.
@@ -356,7 +356,7 @@
         Caustic: 0.6
 
 - type: entity
-  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband,BaseEngineeringContraband, ClothingShoesBootsMagBase]
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsCE
   name: chief engineer enviroboots
   description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
@@ -388,7 +388,7 @@
     prefixOn: on
 
 - type: entity
-  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband, BaseMedicalContraband]
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsCMO
   name: chief medical officer enviroboots
   description: Covers up those scandalous boney feet.
@@ -410,7 +410,7 @@
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hop.rsi
 
 - type: entity
-  parent: [ClothingShoesEnvirobootsBase, BaseSecurityCommandContraband]
+  parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsHOS
   name: head of security enviroboots
   description: Covers up those scandalous boney feet.
@@ -473,6 +473,84 @@
     damageCoefficient: 0.15
 
 #region Medical
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsMedicalIntern
+  name: medical intern enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/intern.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/intern.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsChemist
+  name: chemist enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/chemist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/chemist.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsMedic
+  name: medic enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/medic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/medic.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsParamedic
+  name: paramedic enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/paramedic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/paramedic.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.9
+        Radiation: 0.75
+        Caustic: 0.5
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsPsychologist
+  name: psychologist enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/psychologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/psychologist.rsi
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
+  id: ClothingShoesEnvirobootsVirologist
+  name: virologist enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/virologist.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/virologist.rsi
 
 #region Science
 
