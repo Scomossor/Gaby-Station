@@ -58,6 +58,8 @@ public sealed partial class MutationSystem : CommonMutationSystem
     /// </summary>
     public HashSet<EntProtoId<MutationComponent>> UnlockedMutations = new();
 
+    private readonly List<EntProtoId<MutationComponent>> _dormantCandidates = new();
+
     /// <summary>
     /// Per-round data for each mutation, e.g. its bases.
     /// Server only as clients knowing every mutation would be silly.
@@ -568,12 +570,20 @@ public sealed partial class MutationSystem : CommonMutationSystem
             return;
 
         // add enough random dormant mutations so there will be enough sequences.
-        while (ent.Comp.Dormant.Count < ent.Comp.MaxDormant)
+        _dormantCandidates.Clear();
+        foreach (var id in UnlockedMutations)
         {
-            var picked = _random.Pick(UnlockedMutations);
-            if (!ent.Comp.Dormant.Contains(picked))
-                ent.Comp.Dormant.Add(picked);
+            if (!ent.Comp.Dormant.Contains(id))
+                _dormantCandidates.Add(id);
         }
+
+        while (ent.Comp.Dormant.Count < ent.Comp.MaxDormant && _dormantCandidates.Count > 0)
+        {
+            ent.Comp.Dormant.Add(_random.PickAndTake(_dormantCandidates));
+        }
+
+        if (ent.Comp.Dormant.Count < ent.Comp.MaxDormant)
+            Log.Warning($"{ToPrettyString(ent)} ficou com {ent.Comp.Dormant.Count} mutacoes dormentes de {ent.Comp.MaxDormant}, nao ha mais mutacoes liberadas");
 
         // don't have dormant mutation as first item
         _random.Shuffle(ent.Comp.Dormant);
