@@ -110,13 +110,16 @@ public sealed class DoorSystem : SharedDoorSystem
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
-       var doorSpriteStates = ent.Comp.State == DoorState.Open ? ent.Comp.OpenSpriteStates : ent.Comp.ClosedSpriteStates;
-       
-       foreach (var (layer, layerState) in doorSpriteStates)
-       {
-          _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
-          _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
-       }
+        if (ent.Comp.State is not (DoorState.Open or DoorState.Closed))
+            return;
+
+        var doorSpriteStates = ent.Comp.State == DoorState.Open ? ent.Comp.OpenSpriteStates : ent.Comp.ClosedSpriteStates;
+
+        foreach (var (layer, layerState) in doorSpriteStates)
+        {
+            _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
+            _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
+        }
     }
 
     private void OnAppearanceChange(Entity<DoorComponent> entity, ref AppearanceChangeEvent args)
@@ -140,82 +143,65 @@ public sealed class DoorSystem : SharedDoorSystem
         switch (state)
         {
             case DoorState.Open:
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
-                    return;
-
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
-                {
-                    _animationSystem.Stop(entity.Owner, DoorComponent.CloseKey);
-                    _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.OpenKey);
-                }
-
-                foreach (var (layer, layerState) in entity.Comp.OpenSpriteStates)
-                {
-                    // Allow animations to play while it's open (e.g., pinion);
-                    // the animation unsets this so we gotta set it again.
-                    _sprite.LayerSetAutoAnimated((entity.Owner, sprite), layer, true);
-                    _sprite.LayerSetRsiState((entity.Owner, sprite), layer, layerState);
-                }
-
-                return;
             case DoorState.Closed:
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
+                var opening = state == DoorState.Open;
+                var key = opening ? DoorComponent.OpenKey : DoorComponent.CloseKey;
+                var oppositeKey = opening ? DoorComponent.CloseKey : DoorComponent.OpenKey;
+
+                if (_animationSystem.HasRunningAnimation(entity, key))
                     return;
 
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
-                {
-                    _animationSystem.Stop(entity.Owner, DoorComponent.OpenKey);
-                    _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.CloseKey);
-                }
+                if (_animationSystem.HasRunningAnimation(entity, oppositeKey))
+                    TryPlayAnimation(entity, opening ? entity.Comp.OpeningAnimation : entity.Comp.ClosingAnimation, key, oppositeKey);
 
-                foreach (var (layer, layerState) in entity.Comp.ClosedSpriteStates)
-                {
-                    _sprite.LayerSetAutoAnimated((entity.Owner, sprite), layer, true);
-                    _sprite.LayerSetRsiState((entity.Owner, sprite), layer, layerState);
-                }
+                SetSpriteStates(entity, sprite, opening ? entity.Comp.OpenSpriteStates : entity.Comp.ClosedSpriteStates);
 
                 return;
             case DoorState.Opening:
                 if (entity.Comp.OpeningAnimationTime == 0.0)
                     return;
 
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
-                    return;
-
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
-                    _animationSystem.Stop(entity.Owner, DoorComponent.CloseKey);
-
-                _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.OpenKey);
+                TryPlayAnimation(entity, entity.Comp.OpeningAnimation, DoorComponent.OpenKey, DoorComponent.CloseKey);
 
                 return;
             case DoorState.Closing:
                 if (entity.Comp.ClosingAnimationTime == 0.0)
                     return;
 
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
-                    return;
-
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
-                    _animationSystem.Stop(entity.Owner, DoorComponent.OpenKey);
-
-                _animationSystem.Play(entity, (Animation)entity.Comp.ClosingAnimation, DoorComponent.CloseKey);
+                TryPlayAnimation(entity, entity.Comp.ClosingAnimation, DoorComponent.CloseKey, DoorComponent.OpenKey);
 
                 return;
             case DoorState.Denying:
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.DenyKey))
-                    return;
-
-                _animationSystem.Play(entity, (Animation)entity.Comp.DenyingAnimation, DoorComponent.DenyKey);
+                TryPlayAnimation(entity, entity.Comp.DenyingAnimation, DoorComponent.DenyKey);
 
                 return;
             case DoorState.Emagging:
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.EmagKey))
-                    return;
-
-                _animationSystem.Play(entity, (Animation)entity.Comp.EmaggingAnimation, DoorComponent.EmagKey);
+                TryPlayAnimation(entity, entity.Comp.EmaggingAnimation, DoorComponent.EmagKey);
 
                 return;
         }
+    }
+
+    private void SetSpriteStates(Entity<DoorComponent> ent, SpriteComponent sprite, List<(Enum, string)> states)
+    {
+        foreach (var (layer, layerState) in states)
+        {
+            // Allow animations to play while it's open (e.g., pinion);
+            // the animation unsets this so we gotta set it again.
+            _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
+            _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
+        }
+    }
+
+    private void TryPlayAnimation(Entity<DoorComponent> ent, object animation, string key, string? oppositeKey = null)
+    {
+        if (_animationSystem.HasRunningAnimation(ent, key))
+            return;
+
+        if (oppositeKey != null && _animationSystem.HasRunningAnimation(ent, oppositeKey))
+            _animationSystem.Stop(ent.Owner, oppositeKey);
+
+        _animationSystem.Play(ent, (Animation)animation, key);
     }
 
     private void UpdateSpriteLayers(Entity<SpriteComponent> sprite, string targetProto)
