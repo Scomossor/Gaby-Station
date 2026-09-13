@@ -21,6 +21,7 @@ using Content.Shared.PDA;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.Kitchen.Components;
 
 namespace Content.Server._DV.NanoChat;
 
@@ -72,6 +73,13 @@ public sealed class NanoChatSystem : SharedNanoChatSystem
 
         if (!TryComp<MicrowaveComponent>(args.Microwave, out var micro) || micro.Broken)
             return;
+
+        // DeltaV: only works with irradiation (actual microwaves)
+        if (!args.BeingIrradiated)
+        {
+            return;
+        }
+        // End DeltaV
 
         var randomPick = _random.NextFloat();
 

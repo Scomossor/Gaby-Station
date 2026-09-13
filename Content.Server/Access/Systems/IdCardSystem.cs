@@ -51,6 +51,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.Kitchen.EntitySystems;
+using Content.Shared.Kitchen.Components;
 
 namespace Content.Server.Access.Systems;
 
@@ -97,7 +98,7 @@ public sealed class IdCardSystem : SharedIdCardSystem
             // then continue like normal -Space
 
             // if really unlucky, burn card
-            if (randomPick <= 0.10f)
+            if (args.BeingHeated && randomPick <= 0.15f) // Frontier: if not being heated, don't destroy the ID
             {
                 TryComp(uid, out TransformComponent? transformComponent);
                 if (transformComponent != null)
@@ -112,6 +113,12 @@ public sealed class IdCardSystem : SharedIdCardSystem
                 QueueDel(uid);
                 return;
             }
+        // Frontier: ID accesses only change with radiation
+            if (!args.BeingIrradiated)
+            {
+                return;
+            }
+            // End Frontier
 
 
             // If they're unlucky, brick their ID

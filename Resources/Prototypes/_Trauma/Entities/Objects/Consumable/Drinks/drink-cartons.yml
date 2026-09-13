@@ -1,0 +1,14 @@
+- type: entity
+  parent: [DrinkBaseMaterialPlastic, DrinkCartonBaseFull]
+  id: DrinkFullFatCarton
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 200
+        reagents:
+        - ReagentId: FullFatOils
+          Quantity: 200
+  - type: Sprite
+    sprite: _Trauma/Objects/Consumable/Drinks/Containers/fullfatContainer.rsi
+    state: icon

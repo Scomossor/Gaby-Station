@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
+using Content.Shared.DeepFryer;
 
 namespace Content.Client.Guidebook.Controls;
 
@@ -51,14 +52,22 @@ public sealed partial class GuideMicrowaveGroupEmbed : BoxContainer, IDocumentTa
 
     private void CreateEntries(string group)
     {
-        var prototypes = _prototype.EnumeratePrototypes<FoodRecipePrototype>()
+        var microwaveRecipes = _prototype.EnumeratePrototypes<FoodRecipePrototype>()
             .Where(p => p.Group.Equals(group))
             .OrderBy(p => p.Name);
 
-        foreach (var recipe in prototypes)
+        foreach (var recipe in microwaveRecipes)
         {
-            var embed = new GuideMicrowaveEmbed(recipe);
-            AddChild(embed);
+            AddChild(new GuideMicrowaveEmbed(recipe));
+        }
+
+        var fryerRecipes = _prototype.EnumeratePrototypes<DeepFryerRecipePrototype>()
+            .Where(p => p.Group.Equals(group))
+            .OrderBy(p => p.Name);
+
+        foreach (var recipe in fryerRecipes)
+        {
+            AddChild(new GuideMicrowaveEmbed(recipe));
         }
     }
 }

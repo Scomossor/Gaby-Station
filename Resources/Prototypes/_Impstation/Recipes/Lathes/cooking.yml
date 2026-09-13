@@ -1,0 +1,6 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: DrinkDisposableCup
+  result: DrinkDisposableCup
+  materials:
+    Cardboard: 25

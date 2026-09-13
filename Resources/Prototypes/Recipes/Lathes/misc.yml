@@ -182,29 +182,29 @@
     Plastic: 300
     Glass: 100
 
-- type: latheRecipe
-  id: BoomboxRed
-  result: BoomboxRed
-  completetime: 4
-  materials:
-    Steel: 100
-    Plastic: 300
+# - type: latheRecipe
+#   id: BoomboxRed
+#   result: BoomboxRed
+#   completetime: 4
+  # materials:
+  #   Steel: 100
+  #   Plastic: 300
 
-- type: latheRecipe
-  id: BoomboxGreen
-  result: BoomboxGreen
-  completetime: 4
-  materials:
-    Steel: 100
-    Plastic: 300
+# - type: latheRecipe
+#   id: BoomboxGreen
+#   result: BoomboxGreen
+#   completetime: 4
+#   materials:
+#     Steel: 100
+#     Plastic: 300
 
-- type: latheRecipe
-  id: BoomboxBlue
-  result: BoomboxBlue
-  completetime: 4
-  materials:
-    Steel: 100
-    Plastic: 300
+# - type: latheRecipe
+#   id: BoomboxBlue
+#   result: BoomboxBlue
+#   completetime: 4
+#   materials:
+#     Steel: 100
+#     Plastic: 300
 
 - type: latheRecipe
   id: PushHorn
@@ -423,4 +423,3 @@
     Steel: 200
     Plastic: 200
     Gold: 50
-

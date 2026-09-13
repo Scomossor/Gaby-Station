@@ -1,0 +1,30 @@
+# Fragile plastic
+- type: entity
+  abstract: true
+  id: DrinkBaseMaterialPlastic
+  components:
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalCrunch # TODO a plastic break collection
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnLand
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 2
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25

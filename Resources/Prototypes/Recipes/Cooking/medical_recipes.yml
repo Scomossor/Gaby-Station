@@ -13,6 +13,7 @@
   group: Medicinal
   solids:
     FoodAloe: 1
+  recipeType: MedicalAssembler # Delta V - Frontier cooking port
 
 - type: microwaveMealRecipe
   id: RecipeMedicatedSuture
@@ -27,6 +28,7 @@
   reagents:
     TranexamicAcid: 20
     Cryptobiolin: 20
+  recipeType: MedicalAssembler # Delta V - Frontier cooking port
 
 - type: microwaveMealRecipe
   id: RecipeRegenerativeMesh
@@ -40,4 +42,5 @@
     MaterialCloth1: 1
   reagents:
     Sigynate: 20
-    Dermaline: 20
+    Oxandrolone: 20 # Funkychem - dermaline -> oxandrolone for advanced topicals
+  recipeType: MedicalAssembler # Delta V - Frontier cooking port
