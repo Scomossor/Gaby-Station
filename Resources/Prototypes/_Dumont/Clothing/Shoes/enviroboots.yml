@@ -605,6 +605,189 @@
 
 #region Security
 
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
+  id: ClothingShoesEnvirobootsBrigmedic
+  name: brigmedic enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/brigmedic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/brigmedic.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.7
+        Heat: 0.75
+        Radiation: 0.4
+        Caustic: 0.4
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
+  id: ClothingShoesEnvirobootsCadet
+  name: cadet enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/cadet.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/cadet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.90
+        Radiation: 0.95
+        Caustic: 0.90
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
+  id: ClothingShoesEnvirobootsDetective
+  name: detective enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/detective.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/detective.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.85
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
+  id: ClothingShoesEnvirobootsPrisonGuard
+  name: prison guard enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/prison_guard.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/prison_guard.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.85
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
+- type: entity
+  parent: ClothingShoesEnvirobootsBase
+  id: ClothingShoesEnvirobootsPrisoner
+  suffix: SelfUnremovable
+  name: prisoner enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/prisoner.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/prisoner.rsi
+  - type: SelfUnremovableClothing
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
+  id: ClothingShoesEnvirobootsSecurity
+  name: security officer enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/security.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/security.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.8
+        Caustic: 0.7
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
+- type: entity
+  parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
+  id: ClothingShoesEnvirobootsWarden
+  name: warden enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/warden.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/warden.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.5
+        Heat: 0.7
+        Caustic: 0.7
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+
 #region Service
 
 - type: entity
@@ -768,4 +951,26 @@
 
 #region Syndicate
 
+- type: entity
+  parent: ClothingShoesEnvirobootsBase
+  id: ClothingShoesEnvirobootsTacticool
+  name: tacticool enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Syndicate/tacticool.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Syndicate/tacticool.rsi
+
 #region Others
+
+- type: entity
+  parent: ClothingShoesEnvirobootsBase
+  id: ClothingShoesEnvirobootsAdminAssistant
+  name: admin assistant enviroboots
+  description: Covers up those scandalous boney feet.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/admin.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/admin.rsi

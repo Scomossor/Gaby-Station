@@ -11,61 +11,9 @@
         "name": "icon"
     },
     {
-        "name": "icon-flash"
-    },
-    {
-        "name": "equipped-HELMET",
-        "directions": 4
-    },
-    {
-        "name": "equipped-HELMET-matrix",
-        "directions": 4,
+        "name": "icon-flash",
         "delays": [
             [
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1
-            ],
-            [
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1
-            ],
-            [
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1
-            ],
-            [
-                0.1,
-                0.1,
                 0.1,
                 0.1,
                 0.1,
@@ -80,16 +28,58 @@
         ]
     },
     {
+        "name": "equipped-HELMET",
+        "directions": 4
+    },
+    {
         "name": "equipped-HELMET-light",
-        "directions": 4
+        "directions": 4,
+        "delays": [
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ],
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ],
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ],
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ]
+        ]
     },
     {
-        "name": "inhand-left",
-        "directions": 4
+      "name": "inhand-left",
+      "directions": 4
     },
     {
-        "name": "inhand-right",
-        "directions": 4
+      "name": "inhand-right",
+      "directions": 4
     }
   ]
 }

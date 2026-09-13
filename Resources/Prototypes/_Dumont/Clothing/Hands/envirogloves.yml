@@ -381,7 +381,7 @@
     damageCoefficient: 0.5
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseEngineeringContraband]
+  parent: ClothingHandsGlovesEnviroglovesEngineerV1
   id: ClothingHandsGlovesEnviroglovesEngineerV2
   name: engineer envirogloves
   description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
@@ -399,7 +399,7 @@
         shader: unshaded
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseEngineeringContraband]
+  parent: ClothingHandsGlovesEnviroglovesEngineerV1
   id: ClothingHandsGlovesEnviroglovesEngineerV3
   name: engineer envirogloves
   description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
@@ -415,7 +415,7 @@
       - state: V3-equipped-HAND
 
 - type: entity
-  parent: [ClothingHandsGlovesEnviroglovesBase, BaseEngineeringContraband]
+  parent: ClothingHandsGlovesEnviroglovesEngineerV1
   id: ClothingHandsGlovesEnviroglovesEngineerV4
   name: engineer envirogloves
   description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
@@ -762,6 +762,208 @@
 
 #region Security
 
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesBrigmedic
+  name: brigmedic envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/brigmedic.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/brigmedic.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.7
+        Heat: 0.75
+        Radiation: 0.4
+        Caustic: 0.4
+  - type: Insulated
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesCadet
+  name: cadet envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/cadet.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/cadet.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.90
+        Radiation: 0.95
+        Caustic: 0.90
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesDetective
+  name: detective envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/detective.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/detective.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.85
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesPrisonGuard
+  name: prison guard envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/prison_guard.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/prison_guard.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.85
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesPrisoner
+  suffix: SelfUnremovable
+  name: prisoner envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/prisoner.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/prisoner.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+      - state: equipped-HAND-unshaded
+        shader: unshaded
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: SelfUnremovableClothing
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseSecurityContraband]
+  id: ClothingHandsGlovesEnviroglovesSecurityV1
+  name: security officer envirogloves
+  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
+    layers:
+      - state: V1-icon
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
+    clothingVisuals:
+      gloves:
+      - state: V1-equipped-HAND
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
+  - type: Insulated
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.8
+        Caustic: 0.7
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesSecurityV1
+  id: ClothingHandsGlovesEnviroglovesSecurityV2
+  name: security officer envirogloves
+  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
+    layers:
+      - state: V2-icon
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
+    clothingVisuals:
+      gloves:
+      - state: V2-equipped-HAND
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesSecurityV1
+  id: ClothingHandsGlovesEnviroglovesSecurityV3
+  name: security officer envirogloves
+  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
+    layers:
+      - state: V3-icon
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
+    clothingVisuals:
+      gloves:
+      - state: V3-equipped-HAND
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesBase, BaseSecurityContraband]
+  id: ClothingHandsGlovesEnviroglovesWarden
+  name: warden envirogloves
+  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/warden.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Security/warden.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
+  - type: Insulated
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.5
+        Heat: 0.7
+        Caustic: 0.7
+
 #region Service
 
 - type: entity
@@ -955,4 +1157,33 @@
 
 #region Syndicate
 
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesTacticool
+  name: tacticool envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Syndicate/tacticool.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Syndicate/tacticool.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
+  - type: Insulated
+
 #region Others
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesAdminAssistant
+  name: admin assistant envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/admin.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/admin.rsi
+  - type: Fiber
+    fiberColor: fibers-brown
+    fiberMaterial: fibers-cardboard
