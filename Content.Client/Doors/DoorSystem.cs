@@ -110,27 +110,13 @@ public sealed class DoorSystem : SharedDoorSystem
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
-        switch (ent.Comp.State)
-        {
-            case DoorState.Open:
-
-                foreach (var (layer, layerState) in ent.Comp.OpenSpriteStates)
-                {
-                    _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
-                    _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
-                }
-
-                break;
-            case DoorState.Closed:
-
-                foreach (var (layer, layerState) in ent.Comp.ClosedSpriteStates)
-                {
-                    _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
-                    _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
-                }
-
-                break;
-        }
+       var doorSpriteStates = ent.Comp.State == DoorState.Open ? ent.Comp.OpenSpriteStates : ent.Comp.ClosedSpriteStates;
+       
+       foreach (var (layer, layerState) in doorSpriteStates)
+       {
+          _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
+          _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
+       }
     }
 
     private void OnAppearanceChange(Entity<DoorComponent> entity, ref AppearanceChangeEvent args)
