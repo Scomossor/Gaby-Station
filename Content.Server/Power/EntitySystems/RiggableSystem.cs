@@ -14,6 +14,7 @@ using Content.Server.Kitchen.Components;
 using Content.Server.Power.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
+using Content.Shared.Kitchen.Components;
 using Content.Shared.Rejuvenate;
 
 namespace Content.Server.Power.EntitySystems;
@@ -41,6 +42,12 @@ public sealed class RiggableSystem : EntitySystem
 
     private void OnMicrowaved(Entity<RiggableComponent> entity, ref BeingMicrowavedEvent args)
     {
+
+        // Frontier: don't do anything if machine doesn't heat or irradiate.
+        if (!args.BeingHeated && !args.BeingIrradiated)
+            return;
+        // End Frontier
+
         if (TryComp<BatteryComponent>(entity, out var batteryComponent))
         {
             if (batteryComponent.CurrentCharge == 0)

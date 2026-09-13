@@ -18,3 +18,6 @@ reagent-desc-torpedo-juice = The joys of drinking and unrestricted submarine war
 
 reagent-name-bees-knees = bee’s knees
 reagent-desc-bees-knees = BEEEEEEEEEEEEEEES!!! Has a stingy smell.
+
+reagent-name-pumpkin-spice-latte = spiced pumpkin latte
+reagent-desc-pumpkin-spice-latte = It's autumn somewhere. Smells like cinnamon and cloves.

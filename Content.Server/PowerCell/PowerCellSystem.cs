@@ -105,6 +105,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Popups;
 using ActivatableUISystem = Content.Shared.UserInterface.ActivatableUISystem;
+using Content.Shared.Kitchen.Components;
 
 namespace Content.Server.PowerCell;
 

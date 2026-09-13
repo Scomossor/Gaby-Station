@@ -4039,3 +4039,19 @@ Entries:
       message: adicionado a central de notificações do pda
   id: 477
   time: '2026-09-08T17:14:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado novas máquinas para o cozinheiro.
+    - type: Add
+      message: Adiciona máquina de café para o Barman (reagente)
+    - type: Add
+      message: Nova planta de café para os botanicos
+  id: 478
+  time: '2026-09-12T01:08:48.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Remove
+      message: boombox desativado
+  id: 479
+  time: '2026-09-13T01:27:47.0000000+00:00'

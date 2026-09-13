@@ -278,6 +278,9 @@
           Quantity: 100
   - type: Sprite
     sprite: Objects/Consumable/Drinks/milk.rsi
+  - type: Tag
+    tags:
+      - CoffeeDispensable
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseLargeFull]
@@ -293,6 +296,9 @@
           Quantity: 100
   - type: Sprite
     sprite: Objects/Consumable/Drinks/soymilk.rsi
+  - type: Tag
+    tags:
+      - CoffeeDispensable
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseLargeFull]

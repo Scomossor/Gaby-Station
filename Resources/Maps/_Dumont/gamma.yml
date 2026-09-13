@@ -36583,34 +36583,34 @@ entities:
     - type: Transform
       pos: 76.69582,-35.27263
       parent: 2
-- proto: BoomboxGreen
-  entities:
-  - uid: 1835
-    components:
-    - type: Transform
-      pos: -36.488106,62.35532
-      parent: 2
-- proto: BoomboxPurple
-  entities:
-  - uid: 1836
-    components:
-    - type: Transform
-      pos: 85.50176,-11.390983
-      parent: 2
-- proto: BoomboxRed
-  entities:
-  - uid: 1837
-    components:
-    - type: Transform
-      pos: 89.68063,-59.225246
-      parent: 2
-- proto: BoomboxSlav
-  entities:
-  - uid: 1838
-    components:
-    - type: Transform
-      pos: 76.48916,16.14538
-      parent: 2
+# - proto: BoomboxGreen
+#   entities:
+#   - uid: 1835
+#     components:
+#     - type: Transform
+#       pos: -36.488106,62.35532
+#       parent: 2
+# - proto: BoomboxPurple
+#   entities:
+#   - uid: 1836
+#     components:
+#     - type: Transform
+#       pos: 85.50176,-11.390983
+#       parent: 2
+# - proto: BoomboxRed
+#   entities:
+#   - uid: 1837
+#     components:
+#     - type: Transform
+#       pos: 89.68063,-59.225246
+#       parent: 2
+# - proto: BoomboxSlav
+#   entities:
+#   - uid: 1838
+#     components:
+#     - type: Transform
+#       pos: 76.48916,16.14538
+#       parent: 2
 - proto: BoozeDispenser
   entities:
   - uid: 1839
