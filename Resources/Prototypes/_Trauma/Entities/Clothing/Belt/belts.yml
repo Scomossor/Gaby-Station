@@ -1,4 +1,16 @@
 - type: entity
+  abstract: true
+  parent: [ ClothingBeltBase, ClothingSlotBase ]
+  id: BaseClothingBeltSheath
+  components:
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    smartEquip: true
+  - type: Appearance
+
+
+- type: entity
   parent: [ ClothingBeltStorageBase, BaseRevMajorContraband ]
   id: ClothingBeltRevWebbing
   name: chest rig
@@ -8,3 +20,42 @@
     sprite: Clothing/Belt/mercwebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/mercwebbing.rsi
+
+- type: entity
+  parent: [ BaseClothingBeltSheath, BaseSecurityContraband ]
+  id: ClothingBeltSheathKatana
+  name: katana sheath
+  description: A sheath designed to hold an officer's blade.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Clothing/Belt/sec_katana_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Trauma/Clothing/Belt/sec_katana_sheath.rsi
+  - type: ItemSlots
+    slots:
+      item:
+        name: Katana
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Katana
+  - type: ItemMapper
+    mapLayers:
+      sheath-katana:
+        whitelist:
+          tags:
+          - Katana
+
+- type: entity
+  id: ClothingBeltSheathKatanaFilled
+  parent: ClothingBeltSheathKatana
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SecurityKatana

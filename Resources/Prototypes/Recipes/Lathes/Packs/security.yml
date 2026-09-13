@@ -98,6 +98,7 @@
   - PowerCageSmall
   - TelescopicShield
   - ClothingBackpackHarmpack
+  - InducerSec # Dumont edit - Lasersec
 
 - type: latheRecipePack
   id: SecurityBoards

@@ -2,12 +2,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Goobstation.Common.Effects;
 using Content.Server.Construction.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Orion.Power.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Contraband;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -50,6 +52,12 @@ public sealed class InducerSystem : EntitySystem
             return;
         }
 
+        if (!CanTransferTo(component, target))
+        {
+            _popup.PopupEntity(Loc.GetString("inducer-target-contraband"), uid, args.User);
+            return;
+        }
+
         if (!_itemSlots.TryGetSlot(uid, component.PowerCellSlotId, out var slot) || slot.Item == null || !TryComp<BatteryComponent>(slot.Item.Value, out var sourceBattery))
         {
             _popup.PopupEntity(Loc.GetString("inducer-no-power-cell"), uid, args.User);
@@ -89,6 +97,9 @@ public sealed class InducerSystem : EntitySystem
         var target = args.Target.Value;
 
         if (!TryComp<BatteryComponent>(target, out var targetBattery))
+            return;
+
+        if (!CanTransferTo(component, target))
             return;
 
         if (!_itemSlots.TryGetSlot(uid, component.PowerCellSlotId, out var slot) || slot.Item == null)
@@ -205,5 +216,12 @@ public sealed class InducerSystem : EntitySystem
         return HasComp<ApcComponent>(target)
                || HasComp<MachineComponent>(target)
                || HasComp<WallMountComponent>(target);
+    }
+
+    private bool CanTransferTo(InducerComponent component, EntityUid target)
+    {
+        return component.CombatInducer
+               || !TryComp<ContrabandComponent>(target, out var contraband)
+             || !contraband.AllowedDepartments.Any(department => department == "Security");
     }
 }

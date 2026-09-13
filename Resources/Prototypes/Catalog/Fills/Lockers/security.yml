@@ -143,6 +143,7 @@
     - id: BoxEncryptionKeyPrisoner #Delta-V
     - id: SecApartmentTablet # Corvax-SecApartment
     - id: SOSCartridge # Dumont edit
+    - id: InducerSecBattery
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -438,12 +439,16 @@
         tableId: FillGunSafeLaserCarbine
 
 - type: entityTable
-  id: FillGunSafeLaserCarbine
+  id: FillGunSafeLaserCarbine # Dumont changes - Lasersec
   table: !type:AllSelector
     children:
     - id: WeaponLaserCarbine
       amount: 3
-    - id: WeaponTemperatureGun # Goobstation
+    - id: WeaponLaserSMG
       amount: 2
-    - id: WeaponEnergyIonRifle # Goobstation
-      amount: 2
+    - id: WeaponLaserRifle
+      amount: 1
+    - id: WeaponTemperatureGun
+      amount: 1
+    - id: WeaponEnergyIonRifle
+      amount: 1

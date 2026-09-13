@@ -567,6 +567,7 @@
     - id: SecurityMegaphone
     - id: SOSCartridge # Dumont edit
     - id: SecureLockboxHoSFilled # Dumont
+    - id: InducerSecBattery
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

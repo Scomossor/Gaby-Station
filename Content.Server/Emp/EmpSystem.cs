@@ -3,7 +3,7 @@ using Content.Server.Radio;
 using Content.Server.SurveillanceCamera;
 using Content.Shared.Emp;
 using Robust.Shared.Map;
-using Content.Shared._NF.Emp.Components; // Frontier
+using Content.Server._Mono.Emp; // Mono: EMP resistance
 using Robust.Server.GameStates; // Frontier: EMP Blast PVS
 using Robust.Shared.Configuration; // Frontier: EMP Blast PVS
 using Robust.Shared; // Frontier: EMP Blast PVS
@@ -90,7 +90,7 @@ public sealed class EmpSystem : SharedEmpSystem
         if (ev.Affected)
             Spawn(EmpDisabledEffectPrototype, Transform(uid).Coordinates);
 
-        if (!ev.Disabled)
+        if (!ev.Disabled || HasComp<EmpResistanceComponent>(uid))
             return;
 
         var disabled = EnsureComp<EmpDisabledComponent>(uid);

@@ -1,0 +1,36 @@
+
+- type: entity
+  name: heavy laser bolt
+  id: BulletLaserMainWeapon
+  parent: BulletLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 20
+
+- type: entity
+  name: heavy laser bolt
+  id: BulletLaserSubmachineGun
+  parent: BulletLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 12
+
+- type: entity
+  name: heavy laser bolt
+  id: BulletLaserPistol
+  parent: BulletLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 15

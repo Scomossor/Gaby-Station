@@ -20,6 +20,9 @@ public sealed partial class InducerComponent : Component
     [DataField, AutoNetworkedField]
     public List<int> AvailableTransferRates = new();
 
+    [DataField, AutoNetworkedField]
+    public bool CombatInducer;
+
     [DataField]
     public float TransferDelay;
 

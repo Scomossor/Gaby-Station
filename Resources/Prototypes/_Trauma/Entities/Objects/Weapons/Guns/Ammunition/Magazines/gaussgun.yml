@@ -1,0 +1,34 @@
+- type: entity
+  parent: [ BaseItem, BaseSecurityContraband ]
+  id: BaseMagazineGaussgun
+  name: gauss magazine
+  suffix: Full
+  description:  15 round magazine for Gaussguns, can contain a variety of ammo types.
+  components:
+  - type: Tag
+    tags:
+    - MagazineGaussgun
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeGaussgun
+    proto: CartridgeBallBearing
+    capacity: 15
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Trauma/Objects/Weapons/Guns/Ammunition/Magazine/gaussgun.rsi
+    state: icon
+
+- type: entity
+  parent: [ BaseMagazineGaussgun ]
+  id: MagazineGaussgun
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+

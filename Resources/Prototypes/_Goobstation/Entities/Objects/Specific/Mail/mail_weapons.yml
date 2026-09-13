@@ -13,8 +13,8 @@
     contents:
     - id: KukriKnife
       orGroup: Knife
-    - id: Machete # A little large for an envelope but "we'll live"
-      orGroup: Knife
+   # - id: Machete # Dumont edit armory weapon now.
+   #   orGroup: Knife
     - id: CombatKnife
       orGroup: Knife
     - id: SurvivalKnife
@@ -30,9 +30,9 @@
     - id: FoamCutlass
       orGroup: Sword
       prob: 0.95
-    - id: Katana
-      orGroup: Sword
-      prob: 0.5
+  #  - id: Katana Dumont edit this was crashing the game idk, also cohesion
+  #    orGroup: Sword
+  #    prob: 0.5
     - id: CaneSheathFilled
       orGroup: Sword
       prob: 0.3

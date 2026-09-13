@@ -123,6 +123,7 @@
   cost: 7500
   recipeUnlocks:
   # Orion-Start
+  - InducerSec # Dumont edit - Lasersec
   - InducerScientific
   - InducerEngineering
   - MegaCellSuper

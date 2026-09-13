@@ -33,8 +33,8 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+    maxCharge: 500
+    startingCharge: 500
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
   - type: AmmoSelector
@@ -79,8 +79,11 @@
   name: laser submachine gun
   parent: [BaseWeaponBattery, BaseSecurityContraband]
   id: WeaponLaserSMG
-  description: An elaborately designed SMG, firing shots of pure phoron. Amazing for laying down suppressive fire.
+  description: Designed for maximum damage output, suffers from a small battery.
   components:
+  - type: Battery
+    maxCharge: 900
+    startingCharge: 900
   - type: Sprite
     sprite: _Trauma/Objects/Weapons/Guns/Battery/laser_carbine.rsi
     layers:
@@ -117,8 +120,8 @@
     minAngle: -19
     maxAngle: -16
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletLaserHeavy
-    fireCost: 33
+    proto: BulletLaserSubmachineGun
+    fireCost: 30
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -131,7 +134,7 @@
   name: laser rifle
   parent: [WeaponLaserCarbine]
   id: WeaponLaserRifle
-  description: An ergonomic and light laser weapon favored by NanoTrasen security teams because of its low capacity for structural damage. # Goobstation
+  description: Made for long fights, has a larger, EMP resistant battery at the cost of fire rate.
   components:
   - type: Sprite
     sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser_wide.rsi
@@ -143,11 +146,14 @@
     shape:
     - 0,0,4,2
   - type: Gun #Starlight - Start
-    fireRate: 2
+    burstFireRate: 5
+    shotsPerBurst: 2
+    burstCooldown: 1
+    fireRate: 1.2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    # - FullAuto #Gaby - Revert parte do buff de armas lasers
+    - Burst
   - type: Battery
     maxCharge: 2000 # Eu diminui o max charge e o fire cost juntos pra fazer elas mais fáceis de recarregar mas recarregar mais frequentemente: 25 tiros entre cada recarga.
     startingCharge: 2000
@@ -156,6 +162,10 @@
     steps: 5
     zeroVisible: false
   - type: Appearance
-  - type: HitscanBatteryAmmoProvider
-    proto: RedLaser
-    fireCost: 50
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserMainWeapon
+    fireCost: 40
+  - type: StaticPrice
+    price: 500
+  - type: EmpResistance
+    coefficient: 0.01

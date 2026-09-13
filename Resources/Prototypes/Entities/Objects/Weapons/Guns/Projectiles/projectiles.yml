@@ -145,8 +145,8 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: omnilaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: energy
 
 - type: entity
   parent: MuzzleFlashEffect
@@ -159,8 +159,22 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: heavylaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: energy
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectDisabler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.15, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: energystun
 
 # One bullet to bring them all into the darkness and bind them
 - type: entity
@@ -391,9 +405,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+    - state: mediumstun
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -407,6 +421,7 @@
         - Opaque # Goobstation
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
   - type: StaminaDamageOnCollide
     damage: 20 # Goob edit
   - type: Projectile
@@ -430,9 +445,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+    - state: lightsynd
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1309,9 +1324,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+    - state: lightstun
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1325,6 +1340,7 @@
         - Opaque # Goobstation
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
   - type: StaminaDamageOnCollide
     damage: 12 # Goob edit
   - type: Projectile
@@ -1351,9 +1367,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: heavylaser
+    - state: heavy
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1377,9 +1393,9 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectHeavyLaser
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: heavylaser
+    - state: heavy
       shader: unshaded
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
@@ -1394,11 +1410,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Ammo
-    muzzleFlash: MuzzleFlashEffectOmnilaser
+    muzzleFlash: MuzzleFlashEffectDisabler
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+    - state: heavystun
       shader: unshaded
   - type: StaminaDamageOnCollide
     damage: 30
@@ -1462,9 +1478,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: heavylaser
+    - state: medium
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1478,6 +1494,7 @@
         - Opaque # Goob edit
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:

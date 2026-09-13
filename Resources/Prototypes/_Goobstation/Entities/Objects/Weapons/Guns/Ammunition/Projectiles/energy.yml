@@ -12,7 +12,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: entity 
+- type: entity
   name: Rifle energy bolt #yes it X-01 projectile modified for rifle usage-Creatorbot
   id: RifleBulletEnergyGunLethal
   parent: BaseBullet
@@ -46,11 +46,11 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 17 
+        Heat: 17
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity 
+- type: entity
   name: Rifle ion bolt
   id: RifleBulletEnergyGunIon
   parent: BaseBullet
@@ -90,7 +90,7 @@
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity 
+- type: entity
   name: Rifle disabler bolt
   id: RifleBulletEnergyGunDisabler
   parent: BaseBullet
@@ -130,7 +130,7 @@
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity 
+- type: entity
   name: ashified energy bolt #oh dear me
   suffix: DEBUG
   id: RifleBulletEnergyGunAsh
@@ -165,11 +165,11 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 99999 
+        Heat: 99999
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity 
+- type: entity
   name: overcharge rifle energy bolt #nukie killer projectile part uh i lost count
   id: RifleBulletEnergyGunOverchargeLethal
   parent: BaseBulletIncendiary
@@ -207,3 +207,39 @@
         Heat: 25
     soundHit:
       collection: MeatLaserImpact
+
+- type: entity
+  id: BulletXraySMG
+  name: SMG X-ray bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
+    layers:
+    - state: omnilaser-green
+      shader: unshaded
+  - type: Projectile
+    penetrationThreshold: 100
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 9
+        Radiation: 2

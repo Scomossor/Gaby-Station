@@ -28,9 +28,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: heavylaser
+    - state: light
       shader: unshaded
   - type: Ammo
   - type: Physics
@@ -47,7 +47,7 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 15 # Slightly more damage than the 17heat from the Captain's Hitscan lasgun - Goobstation: Nerfed to 15 damage, to keep it less powerful than caps Lasgun
+        Heat: 15
     soundHit:
       collection: MeatLaserImpact
 
