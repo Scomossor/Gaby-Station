@@ -108,7 +108,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared._DV.CosmicCult.Components; // DeltaV
 
 // Shitmed Change
 using Content.Shared._Shitmed.Targeting;
@@ -235,13 +234,6 @@ public sealed class RespiratorSystem : EntitySystem
 
             if (!CanBreathe(uid, respirator)) // Goobstation edit
             {
-                // DeltaV: Cosmic Cult - One line change but a refactor would be better. this is kinda cringe.
-                // Makes cultists gasp and respirate but not asphyxiate in space.
-                if (TryComp<CosmicCultComponent>(uid, out var cultComponent)
-                    && !cultComponent.Respiration
-                    && !_mobState.IsIncapacitated(uid))
-                    return;
-
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
                     respirator.LastGaspEmoteTime = _gameTiming.CurTime;
