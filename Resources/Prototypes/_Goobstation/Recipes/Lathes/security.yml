@@ -248,6 +248,7 @@
   result: MagazineSmart
   materials:
     Steel: 550
+    Plasma: 200 # dumont edit Yes we have gunpowder, but by this weapon's description it sounds like it uses a more controlled propellant for the gyrojets, so we use plasma instead
 
 # Mech Weapons
 - type: latheRecipe
