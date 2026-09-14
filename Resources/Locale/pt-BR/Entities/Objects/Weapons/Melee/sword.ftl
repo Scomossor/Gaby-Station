@@ -8,7 +8,7 @@ ent-Katana = katana
      .desc = Artesanato antigo feito com plasteel não tão antigo.
 
 ent-Machete = facão
-     .desc = Uma lâmina grande e de aparência cruel.
+     .desc = Tipo uma faca, mas maior. Usado famosamente para cortar galhos de árvore em selvas densas. Se você tivesse uma dessas em cada mão, poderia atacar com elas super rápido!
 
 ent-Claymore = claymore
      .desc = Uma antiga lâmina de guerra.

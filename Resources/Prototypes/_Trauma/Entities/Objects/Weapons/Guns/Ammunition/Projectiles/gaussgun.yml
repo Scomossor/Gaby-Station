@@ -112,12 +112,12 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 35
   - type: Sprite
     state: bullet
 
 - type: entity
-  parent: PelletShotgun
+  parent: GaussgunShard
   id: GaussgunShardSpread
   categories: [ HideSpawnMenu ]
   components:
@@ -135,8 +135,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-      armorPenetration: -10
+        Piercing: 6.5
+      armorPenetration: -0.5
   - type: Sprite
     state: shard
 
@@ -149,8 +149,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
-        Slash: 5
+        Piercing: 19
+        Slash: 9
       armorPenetration: 0.1
   - type: Sprite
     state: disk

@@ -2,7 +2,7 @@ ent-WeaponLaserGun = arma laser retrô
      .desc = Arma que utiliza luz amplificada pela emissão estimulada de radiação.
 
 ent-WeaponLaserCarbine = arma laser
-     .desc = Preferido pelas equipes de segurança da NanoTrasen por ser barata e fácil de usar.
+     .desc = O Sistema de Projétil de Calor Tipo 5, desenvolvido diretamente pela NanoTrasen. A arma confiável das forças de segurança da NanoTrasen.
 
 ent-WeaponPulsePistol = pistola de pulso
      .desc = Uma pistola de energia de última geração, preferida como arma secundária pelos agentes do NT-ERT.

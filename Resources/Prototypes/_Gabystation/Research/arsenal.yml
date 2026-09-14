@@ -54,6 +54,23 @@
   - AdvancedRiotControl
   position: 2,3
 
+- type: technology
+  id: CombatBatteries
+  name: research-technology-combat-batteries
+  icon:
+    sprite: _Mono/Objects/Power/power_cells.rsi
+    state: combat
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - InducerSec
+  - PowerCellCombat
+  technologyPrerequisites:
+  - OptimizedMicrogalvanism
+  - WeaponizedLaserManipulation
+  position: 2,-1
+
 #Mover os oculos de visão térmica para aqui
 - type: technology
   id: NightVisionTech

@@ -637,7 +637,7 @@
   description: uplink-emp-grenade-desc
   productEntity: EmpGrenade
   cost:
-    Telecrystal: 4 # goob - implanter is 10 and infintely better lmao
+    Telecrystal: 10
   categories:
   - UplinkExplosives
   conditions: # Goob, two times cheaper for nukies
@@ -1698,7 +1698,7 @@
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
   productEntity: EmpImplanter
   cost:
-    Telecrystal: 10 # goob
+    Telecrystal: 20 # Dumont - Lasersec
   categories:
     - UplinkImplants
 

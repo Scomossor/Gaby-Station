@@ -38,6 +38,7 @@
   materials:
     Steel: 100
     Plastic: 100
+    Gunpowder: 50
 
 - type: latheRecipe
   id: HoloprojectorSecurityAdvanced
@@ -541,6 +542,7 @@
   result: MagazinePistolCaselessRifle
   materials:
     Steel: 145
+    Gunpowder: 50
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -548,6 +550,7 @@
   result: MagazineLowCaliberM7S
   materials:
     Steel: 700
+    Gunpowder: 300
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -555,6 +558,7 @@
   result: MagazineBoxCaselessRifle
   materials:
     Steel: 720
+    Gunpowder: 150
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -569,6 +573,7 @@
   result: MagazineLightRifleBox
   materials:
     Steel: 1600
+    Gunpowder: 1000
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -583,6 +588,7 @@
   result: MagazineHighCaliber
   materials:
     Steel: 325
+    Gunpowder: 500
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -590,6 +596,7 @@
   result: MagazineBoxHighCaliber
   materials:
     Steel: 600
+    Gunpowder: 1000
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -604,6 +611,7 @@
   result: MagazineMagnum
   materials:
     Steel: 165
+    Gunpowder: 100
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -618,6 +626,7 @@
   result: MagazineShotgunLeverRifle
   materials:
     Steel: 240
+    Gunpowder: 250
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -625,6 +634,7 @@
   result: MagazineBoxShotgunHighCaliber
   materials:
     Steel: 480
+    Gunpowder: 500
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -633,6 +643,7 @@
   materials:
     Steel: 480
     Plastic: 160
+    Gunpowder: 500
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -641,6 +652,7 @@
   materials:
     Steel: 160
     Plastic: 320
+    Gunpowder: 750
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -649,6 +661,7 @@
   materials:
     Plastic: 640
     Uranium: 480
+    Gunpowder: 500
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -657,6 +670,7 @@
   materials:
     Steel: 320
     Plastic: 240
+    Gunpowder: 300
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -664,6 +678,7 @@
   result: MagazineBoxShotgunPracticeHighCaliber
   materials:
     Steel: 160
+    Gunpowder: 250
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -685,6 +700,7 @@
   result: MagazineCaselessRifle
   materials:
     Steel: 400
+    Gunpowder: 75
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -692,6 +708,7 @@
   result: MagazineBoxAntiMateriel
   materials:
     Steel: 1500
+    Gunpowder: 750
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -706,11 +723,25 @@
   result: MagazinePistolHighCapacity
   materials:
     Steel: 285
+    Gunpowder: 70
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: PowerCellBluespaceRevolver
   result: PowerCellBluespaceRevolver
+  materials:
+    Steel: 300
+    Gold: 200
+    Glass: 300
+    Plasma: 500
+    Uranium: 400
+    BSCrystal: 100
+
+# Dumont edit - Pulse lasers
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: PowerCellPulseRevolver
+  result: PowerCellPulseRevolver
   materials:
     Steel: 300
     Gold: 200
@@ -743,8 +774,30 @@
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
+  id: PowerCellPulseSniper
+  result: PowerCellPulseSniper
+  materials:
+    Steel: 600
+    Gold: 300
+    Glass: 600
+    Plasma: 1500
+    BSCrystal: 100
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
   id: PowerCellBluespaceSMG
   result: PowerCellBluespaceSMG
+  materials:
+    Steel: 400
+    Gold: 200
+    Glass: 400
+    Plasma: 1000
+    BSCrystal: 100
+# Dumont edit - Pulse lasers
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: PowerCellPulseSMG
+  result: PowerCellPulseSMG
   materials:
     Steel: 400
     Gold: 200
@@ -756,6 +809,17 @@
   parent: BaseAmmoRecipe
   id: EnergyMagRifleBluespaceLethal
   result: EnergyMagRifleBluespaceLethal
+  materials:
+    Steel: 1500
+    Gold: 200
+    Glass: 800
+    Plasma: 1000
+    BSCrystal: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: EnergyMagRiflePulse
+  result: EnergyMagRiflePulse
   materials:
     Steel: 1500
     Gold: 200

@@ -248,11 +248,12 @@
 
 - type: material
   id: Gunpowder
+  stackEntity: MaterialGunpowder
   name: materials-gunpowder
   unit: materials-unit-piece
   icon: { sprite: Objects/Misc/reagent_fillings.rsi, state: powderpile }
   color: "#A9A9A9"
-  price: 0
+  price: 0.5 # Dumont edit - Weapons now need gunpowder to create, make it actually worth something.
   properties: # FH edit
     electrical: 3
     flammable: 8

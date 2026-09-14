@@ -164,7 +164,7 @@
   - type: Appearance
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserMainWeapon
-    fireCost: 40
+    fireCost: 33.3
   - type: StaticPrice
     price: 500
   - type: EmpResistance

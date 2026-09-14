@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-
 - type: entity
   id: CrateArmoryPhasers
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
@@ -13,3 +12,73 @@
     contents:
     - id: WeaponEnergyGunPhaser
       amount: 2
+
+- type: entity
+  id: CrateArmoryLaserSMG
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: laser SMGs crate
+  description: Contains two standard NT laser SMGs.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLaserSMG
+      amount: 2
+# a
+- type: entity
+  id: CrateArmoryLaserRifle
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: laser rifles crate
+  description: Contains two standard NT laser rifles.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLaserRifle
+      amount: 2
+
+- type: entity
+  id: CrateArmoryGauss
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: gauss guns crate
+  description: Contains two gauss guns.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponGaussgun
+      amount: 2
+    - id: BaseMagazineGaussgun
+      amount: 2
+    - id: PowerCellHigh
+      amount: 2
+
+- type: entity
+  id: CrateArmoryBreachingHammers
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: breaching hammers crate
+  description: Contains two breaching hammers.
+  components:
+  - type: StorageFill
+    contents:
+    - id: SecBreachingHammer
+      amount: 2
+
+- type: entity
+  id: CrateArmoryKatanas
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: katanas crate
+  description: Contains two officer katanas.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingBeltSheathKatanaFilled
+      amount: 2
+
+- type: entity
+  id: CrateArmoryMachetes
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: machetes crate
+  description: Contains four machetes.
+  components:
+  - type: StorageFill
+    contents:
+    - id: Machete
+      amount: 4

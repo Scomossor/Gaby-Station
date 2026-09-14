@@ -38,6 +38,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: PrisonGuardPDA
     ears: ClothingHeadsetPrisonGuard # begin DeltaV
+    pocket1: WeaponEnergyGunPhaser
   storage:
     back:
     - Flash

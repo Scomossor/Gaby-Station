@@ -132,8 +132,8 @@
   - EnergyMagRifleDisabler
   - EnergyMagRifleLethal
   technologyPrerequisites:
-  - WaveParticleHarnessing
-  position: 1,0
+  - WeaponizedLaserManipulation
+  position: 2,0
 
 # Tier 3
 
@@ -237,11 +237,15 @@
   tier: 3
   cost: 25000
   recipeUnlocks:
-  - PowerCellBluespaceRevolver
-  - PowerCellBluespaceSMG
-  - PowerCellBluespaceSniper
-  - MilitaryPowerCellBluespaceLMG
-  - EnergyMagRifleBluespaceLethal
+#  - PowerCellBluespaceRevolver
+#  - PowerCellBluespaceSMG
+#  - PowerCellBluespaceSniper
+#  - MilitaryPowerCellBluespaceLMG
+#  - EnergyMagRifleBluespaceLethal
+  - PowerCellPulseRevolver
+  - PowerCellPulseSMG
+  - PowerCellPulseSniper
+  - EnergyMagRiflePulse
   technologyPrerequisites:
   - WeaponLaserCellLMGTech
   - WeaponLaserCellSniperTech

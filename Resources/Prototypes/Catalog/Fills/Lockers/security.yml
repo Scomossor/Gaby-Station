@@ -137,6 +137,7 @@
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
     - id: SecurityMegaphone # goob - loudspeakers
+# Dumont edit start
     - id: BoxTapeRecorder # Gabystation
       prob: 0.5
     - id: ATMFlatpack # Gabystation
@@ -144,6 +145,7 @@
     - id: SecApartmentTablet # Corvax-SecApartment
     - id: SOSCartridge # Dumont edit
     - id: InducerSecBattery
+    - id: MaterialGunpowder30
 
 - type: entityTable
   id: FillLockerWardenHarduit

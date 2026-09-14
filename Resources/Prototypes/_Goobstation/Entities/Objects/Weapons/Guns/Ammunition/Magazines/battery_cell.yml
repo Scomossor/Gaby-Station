@@ -107,7 +107,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_overcharge.rsi
   - type: ProjectileBatteryAmmoProvider
     proto: BulletSMGOverclocked
-    fireCost: 60 # 15 shots
+    fireCost: 60 # 16 shots
 # bluespace smg power cell
 - type: entity
   name: bluespace SMG power cell
@@ -117,8 +117,8 @@
   parent: BaseMilitaryPowerCellSMG
   components:
   - type: Battery
-    maxCharge: 1500
-    startingCharge: 1500
+    maxCharge: 1000
+    startingCharge: 1000
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_bluespace.rsi
   - type: ProjectileBatteryAmmoProvider
@@ -239,7 +239,7 @@
 - type: entity
   name: pulse sniper power cell
   description: A militarized power cell compatible with laser snipers that fires pulse beams.
-  id: PowerCellPulseSniper # Dumont note this is unused, im not even gonna bother change it
+  id: PowerCellPulseSniper
   suffix: Full
   parent: BaseMilitaryPowerCellSniper
   components:
@@ -275,8 +275,8 @@
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_revolver.rsi
   - type: Battery
-    maxCharge: 500
-    startingCharge: 500
+    maxCharge: 750
+    startingCharge: 750
   - type: BatteryDrinkerSource
     maxAmount: 100
   - type: Tag
@@ -314,8 +314,8 @@
           False:
             state: lethal
             shader: null
-  - type: HitscanBatteryAmmoProvider
-    proto: RevolverRedLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserPistol
     fireCost: 62.5
 # x-ray revolver power cell
 - type: entity
@@ -340,8 +340,8 @@
           False:
             state: xray
             shader: null
-  - type: HitscanBatteryAmmoProvider
-    proto: RevolverXrayLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletGammaRayRevolver
     fireCost: 62.5
 # overclocked revolver power cell
 - type: entity
@@ -366,8 +366,8 @@
           False:
             state: overcharge
             shader: null
-  - type: HitscanBatteryAmmoProvider
-    proto: RevolverOverchargedLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletRevolverOverclocked
     fireCost: 125
 # bluespace revolver power cell
 - type: entity
@@ -399,6 +399,37 @@
     proto: RevolverBluespaceLaser
     fireCost: 62.5
 # ion revolver power cell
+
+# Dumont edit - Pulse power cell
+- type: entity
+  name: pulse revolver power cell
+  description: A militarized power cell compatible with laser revolvers that fires pulse beams that bypass few inches of armor.
+  id: PowerCellPulseRevolver
+  suffix: Full
+  parent: BaseMilitaryPowerCellRevolver
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "base" ]
+      state: bluespace_charge
+      shader: unshaded
+  - type: Battery
+    maxCharge: 750
+    startingCharge: 750
+  - type: GenericVisualizer
+    visuals:
+      enum.AmmoVisuals.HasAmmo:
+        base:
+          True:
+            state: bluespace_charge
+            shader: unshaded
+          False:
+            state: bluespace
+            shader: null
+  - type: HitscanBatteryAmmoProvider
+    proto: RevolverPulseLaser
+    fireCost: 62.5
+# ion revolver power cell
 - type: entity
   name: ion revolver power cell
   description: A militarized power cell compatible with laser revolvers that fires ion beams.
@@ -421,8 +452,8 @@
           False:
             state: ion
             shader: null
-  - type: HitscanBatteryAmmoProvider
-    proto: RevolverIonLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletRevolverIon
     fireCost: 62.5
 # endregion Revolver Power Cells
 
@@ -451,8 +482,8 @@
     startingCharge: 3000
   - type: BatteryDrinkerSource
     maxAmount: 500
-  - type: HitscanBatteryAmmoProvider
-    proto: LMGLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserHeavy
     fireCost: 15
   - type: Tag
     tags:

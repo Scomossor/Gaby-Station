@@ -76,7 +76,6 @@
   id: PowerCells
   recipes:
   - PowerCellMicroreactor
-  - PowerCellCombat # Mono edit
   - PowerCellHigh
   - PowerCellHyper
 

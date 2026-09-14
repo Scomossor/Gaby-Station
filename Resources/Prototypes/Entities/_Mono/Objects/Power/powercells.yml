@@ -14,7 +14,13 @@
       state: o2
       shader: unshaded
   - type: EmpResistance
-    coefficient: 0.0001
+    coefficient: 0.005
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: HitscanBatteryAmmoProvider 
+    proto: RedLaser
+    fireCost: 187 # 8 shots
 
 
 - type: entity
@@ -31,5 +37,5 @@
         shader: unshaded
         visible: false
   - type: Battery
-    maxCharge: 1080
+    maxCharge: 1500
     startingCharge: 0

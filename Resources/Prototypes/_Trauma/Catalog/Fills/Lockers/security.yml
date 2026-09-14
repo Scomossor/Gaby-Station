@@ -50,3 +50,24 @@
       amount: 4
     - id: ClothingBeltSheathKatanaFilled
       amount: 1
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeGauss
+  name: gauss safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeGauss
+
+- type: entityTable
+  id: FillGunSafeGauss
+  table: !type:AllSelector
+    children:
+    - id: WeaponGaussgun
+      amount: 2
+    - id: BaseMagazineGaussgun
+      amount: 2 
+    - id: PowerCellHigh
+      amount: 2

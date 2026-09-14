@@ -88,8 +88,9 @@
   id: SMGLaserPulse
   damage:
     types:
-      Heat: 14
-    armorPenetration: 1
+      Blunt: 3
+      Heat: 6
+    armorPenetration: 0.4
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_pulse
@@ -186,8 +187,9 @@
   id: SniperPulseLaser
   damage:
     types:
-      Heat: 35
-    armorPenetration: 1
+      Blunt: 7
+      Heat: 38
+    armorPenetration: 0.4
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_pulse
@@ -302,6 +304,24 @@
   damage:
     types:
       Heat: 11.5
+    armorPenetration: 0.4
+  muzzleFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: muzzle_beam_light_pulse
+  travelFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: beam_light_pulse
+  impactFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: impact_beam_light_pulse
+
+# Dumont edit: Pulse laser
+- type: hitscan
+  id: RevolverPulseLaser
+  damage:
+    types:
+      Blunt: 3
+      Heat: 7
     armorPenetration: 0.4
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi

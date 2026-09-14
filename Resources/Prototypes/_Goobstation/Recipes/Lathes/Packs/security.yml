@@ -97,11 +97,16 @@
   - PowerCellXraySniper
   - PowerCellOverchargedSniper
   - MilitaryPowerCellLMG
-  - PowerCellBluespaceRevolver
-  - PowerCellBluespaceSMG
-  - PowerCellBluespaceSniper
-  - MilitaryPowerCellBluespaceLMG
-  - EnergyMagRifleBluespaceLethal #Dumontstation
+# Dumont station edit start
+#  - PowerCellBluespaceRevolver
+#  - PowerCellBluespaceSMG
+#  - PowerCellBluespaceSniper
+#  - MilitaryPowerCellBluespaceLMG
+#  - EnergyMagRifleBluespaceLethal
+  - PowerCellPulseRevolver
+  - PowerCellPulseSMG
+  - PowerCellPulseSniper
+  - EnergyMagRiflePulse
 
 - type: latheRecipePack
   id: SecurityEquipmentDynamicGoob

@@ -1,14 +1,62 @@
 # SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
+- type: cargoProduct
+  id: CrateArmoryGauss
+  icon:
+    sprite: _Trauma/Objects/Weapons/Guns/Gaussguns/gaussgun.rsi
+    state: icon
+  product: CrateArmoryGauss
+  cost: 4000
+  category: cargoproduct-category-name-armory
+  group: market
 
 - type: cargoProduct
-  id: CrateArmoryPhaser
+  id: CrateArmoryLaserRifle
   icon:
-    sprite: _Trauma/Objects/Weapons/Guns/Battery/phaser.rsi
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser_wide.rsi
     state: icon
-  product: CrateArmoryPhasers
+  product: CrateArmoryLaserRifle
+  cost: 6000
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: CrateArmoryLaserSMG
+  icon:
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    state: icon
+  product: CrateArmoryLaserSMG
   cost: 4000
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: CrateArmoryBreachingHammers
+  icon:
+    sprite: _Trauma/Objects/Weapons/Melee/breaching_hammer.rsi
+    state: icon
+  product: CrateArmoryBreachingHammers
+  cost: 5000
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: CrateArmoryKatanas
+  icon:
+    sprite: _Trauma/Objects/Weapons/Melee/sec_katana.rsi
+    state: icon
+  product: CrateArmoryKatanas
+  cost: 6000
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: CrateArmoryMachetes
+  icon:
+    sprite: Objects/Weapons/Melee/machete.rsi
+    state: icon
+  product: CrateArmoryMachetes
+  cost: 3000
   category: cargoproduct-category-name-armory
   group: market

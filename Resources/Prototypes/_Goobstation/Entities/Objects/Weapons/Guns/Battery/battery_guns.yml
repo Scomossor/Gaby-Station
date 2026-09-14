@@ -475,6 +475,8 @@
   - type: Construction # Gabystation Lawbringer Skins
     graph: LawbringerSkinChange
     node: start
+  - type: EmpResistance #dumont edit - Lasersec
+    coefficient: 0.005
 
 - type: entity
   name: Ion Rifle

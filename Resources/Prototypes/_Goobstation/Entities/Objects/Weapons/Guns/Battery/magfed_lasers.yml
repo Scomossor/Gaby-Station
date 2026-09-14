@@ -141,7 +141,7 @@
     - Sidearm
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 2.5 # Dumontstation
+    fireRate: 2.0 # Dumontstation
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -227,7 +227,7 @@
     maxAngle: 20
     angleIncrease: -5
     angleDecay: -80
-    fireRate: 10
+    fireRate: 8
     selectedMode: FullAuto
     availableModes:
       - FullAuto

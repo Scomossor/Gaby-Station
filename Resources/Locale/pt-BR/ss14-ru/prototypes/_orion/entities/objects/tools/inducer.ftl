@@ -26,9 +26,17 @@ ent-InducerEngineeringWhiteBattery = { ent-BaseInducer }
     .suffix = Bateria, Engenheiro Chefe
 
 ent-InducerCombat = indutor de combate
-    .desc = { ent-BaseInducer.desc }
+    .desc = Um dispositivo para transferir energia sem fio de uma bateria para outros dispositivos. Essa versão é feita para ser compátivel com armas laser, para recarregamento em combate.
     .suffix = Vazio, Combate
 
 ent-InducerCombatBattery = { ent-InducerCombat }
     .desc = { ent-InducerCombat.desc }
     .suffix = Bateria, Combate
+
+ent-InducerSec = indutor de combate
+    .desc = { ent-InducerCombat.desc }
+    .suffix = Vazio, Sec
+
+ent-InducerSecBattery = indutor de combate
+    .desc = { ent-InducerCombat.desc }
+    .suffix = Bateria, Sec

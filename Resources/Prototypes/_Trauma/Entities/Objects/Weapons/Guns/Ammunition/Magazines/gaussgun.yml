@@ -1,7 +1,7 @@
 - type: entity
   parent: [ BaseItem, BaseSecurityContraband ]
   id: BaseMagazineGaussgun
-  name: gauss magazine
+  name: gauss magazine (bearings)
   suffix: Full
   description:  15 round magazine for Gaussguns, can contain a variety of ammo types.
   components:
@@ -25,8 +25,9 @@
     state: icon
 
 - type: entity
+  name: gauss magazine (any)
   parent: [ BaseMagazineGaussgun ]
-  id: MagazineGaussgun
+  id: MagazineGaussgun 
   suffix: Empty
   components:
   - type: BallisticAmmoProvider

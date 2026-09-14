@@ -87,13 +87,31 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_pulse
 
+# Dumont edit - Pulse lasers
+- type: hitscan
+  id: LaserPulseEnergyRifle
+  damage:
+    types:
+      Heat: 12
+      Blunt: 4
+    armorPenetration: 0.4
+  muzzleFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: muzzle_beam_light_pulse
+  travelFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: beam_light_pulse
+  impactFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: impact_beam_light_pulse
+
 - type: hitscan
   id: BulletChesterRifleTrace
   parent: BulletTrace
   damage:
     types:
-      Piercing: 40 
-    armorPenetration: 0.15 
+      Piercing: 40
+    armorPenetration: 0.15
 
 - type: hitscan
   id: BulletChesterRiflePracticeTrace

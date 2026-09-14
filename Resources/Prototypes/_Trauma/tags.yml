@@ -97,3 +97,6 @@
 
 - type: Tag
   id: AmmoGaussgun
+
+- type: Tag
+  id: Gunpowder

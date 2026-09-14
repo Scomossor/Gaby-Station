@@ -38,7 +38,7 @@
   - type: MultiMagazineAmmoProvider
     slots:
       gun_magazine: null # Use ammo provied by gun magazine
-      gun_magazine_cell: 0.34 # Don't use battery projectiles, multiply fire cost by 0.34 (45 shots for high-cap cell)
+      gun_magazine_cell: 0.175 # Don't use battery projectiles, 45 shots (3 mags) for high capacity cell
   - type: MagazineVisuals
     magState: mag
     steps: 1

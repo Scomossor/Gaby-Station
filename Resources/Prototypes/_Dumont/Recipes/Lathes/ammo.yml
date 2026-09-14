@@ -8,6 +8,7 @@
   result: MagazineBoxWatson
   materials:
     Steel:  240
+    Gunpowder: 500
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -15,6 +16,7 @@
   result: MagazineBoxWatsonPractice
   materials:
     Steel: 50
+    Gunpowder: 250
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -22,6 +24,7 @@
   result: MagazineBoxWatsonIncendiary
   materials:
     Plastic: 240
+    Gunpowder: 750
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -30,6 +33,7 @@
   materials:
     Plastic: 240
     Uranium: 180
+    Gunpowder: 500
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -44,6 +48,7 @@
   result: SpeedLoaderWatson
   materials:
     Steel: 190
+    Gunpowder: 125
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -52,6 +57,7 @@
   materials:
     Steel: 50
     Plastic: 150
+    Gunpowder: 190
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -59,6 +65,7 @@
   result: SpeedLoaderWatsonPractice
   materials:
     Steel: 90
+    Gunpowder: 62
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -68,3 +75,4 @@
     Steel: 50
     Plastic: 150
     Uranium: 110
+    Gunpowder: 125
