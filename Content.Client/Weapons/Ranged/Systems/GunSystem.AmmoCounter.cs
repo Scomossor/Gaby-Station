@@ -80,25 +80,28 @@ public sealed partial class GunSystem
         UpdateAmmoCount(uid, component);
     }
 
+    public void RefreshAmmoCount(EntityUid uid)
+    {
+        RefreshControl(uid);
+    }
+
     private void UpdateAmmoCount(EntityUid uid, AmmoCounterComponent component)
     {
         if (component.Control == null)
             return;
 
-        // <Trauma>
         if (component.Control is BoxContainer container)
         {
             foreach (var child in container.Children)
             {
-                var childEv = new UpdateAmmoCounterEvent()
+                var childEv = new UpdateAmmoCounterEvent
                 {
-                    Control = child
+                    Control = child,
                 };
 
                 RaiseLocalEvent(uid, childEv);
             }
         }
-        // </Trauma>
 
         var ev = new UpdateAmmoCounterEvent()
         {
@@ -188,7 +191,7 @@ public sealed partial class GunSystem
                     }),
                     (_ammoCount = new Label
                     {
-                        StyleClasses = { StyleClass.ItemStatus },
+                        StyleClasses = { StyleNano.StyleClassItemStatus },
                         HorizontalAlignment = HAlignment.Right,
                         VerticalAlignment = VAlignment.Bottom
                     }),

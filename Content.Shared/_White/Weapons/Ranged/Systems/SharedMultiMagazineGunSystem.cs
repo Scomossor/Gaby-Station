@@ -7,6 +7,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Trauma.Shared.Weapons.Ranged.Components;
+using Content.Shared.Wieldable.Components;
 using Robust.Shared.Containers;
 
 namespace Content.Trauma.Shared.Weapons.Ranged.Systems;
@@ -53,6 +54,9 @@ public abstract class SharedMultiMagazineGunSystem : EntitySystem
 
     private void OnMagazineUse(Entity<MultiMagazineAmmoProviderComponent> ent, ref UseInHandEvent args)
     {
+        if (TryComp<WieldableComponent>(ent, out var wieldable) && !wieldable.Wielded)
+            return;
+
         var list = new List<EntityUid>();
 
         foreach (var magEnt in GetMagazineEntities(ent).Values)
@@ -132,42 +136,39 @@ public abstract class SharedMultiMagazineGunSystem : EntitySystem
 
     private void OnMagazineAmmoCount(Entity<MultiMagazineAmmoProviderComponent> ent, ref GetAmmoCountEvent args)
     {
-        var list = GetMagazineEntities(ent).ToList();
-        for (var i = 0; i < list.Count; i++)
+        var count = int.MaxValue;
+        var capacity = int.MaxValue;
+
+        foreach (var (slot, magEnt) in GetMagazineEntities(ent))
         {
-            var kvp = list[i];
-            if (kvp.Value is not { } e)
+            if (magEnt is not { } uid)
             {
                 args.Count = 0;
-                continue;
+                args.Capacity = 0;
+                return;
             }
 
-            var multiplier = ent.Comp.Slots[kvp.Key] ?? 1f;
+            var multiplier = ent.Comp.Slots[slot] ?? 1f;
 
             var ev = new GetAmmoCountEvent()
             {
                 FireCostMultiplier = multiplier,
             };
 
-            if (i == 0)
-            {
-                RaiseLocalEvent(e, ref ev);
-                args.Count = ev.Count;
-                args.Capacity = ev.Capacity;
-                continue;
-            }
-
-            RaiseLocalEvent(e, ref ev);
-            args.Count = Math.Min(ev.Count, args.Count);
-            args.Capacity = Math.Min(ev.Capacity, args.Capacity);
+            RaiseLocalEvent(uid, ref ev);
+            count = Math.Min(count, ev.Count);
+            capacity = Math.Min(capacity, ev.Capacity);
         }
+
+        args.Count = count == int.MaxValue ? 0 : count;
+        args.Capacity = capacity == int.MaxValue ? 0 : capacity;
     }
 
     private void OnMagazineTakeAmmo(Entity<MultiMagazineAmmoProviderComponent> ent, ref TakeAmmoEvent args)
     {
-        var ev = new GetAmmoCountEvent();
-        RaiseLocalEvent(ent, ref ev);
-        if (ev.Count < 1)
+        var countEv = new GetAmmoCountEvent();
+        RaiseLocalEvent(ent, ref countEv);
+        if (countEv.Count < 1)
             return;
 
         foreach (var (slot, magEnt) in GetMagazineEntities(ent))

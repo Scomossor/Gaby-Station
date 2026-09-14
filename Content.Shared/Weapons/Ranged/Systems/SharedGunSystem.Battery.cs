@@ -50,8 +50,8 @@ public abstract partial class SharedGunSystem
 
         component.Shots = state.Shots;
         component.Capacity = state.MaxShots;
-        component.ShotsFloat = state.Shots;
-        component.CapacityFloat = state.MaxShots;
+        component.ShotsFloat = state.ShotsFloat;
+        component.CapacityFloat = state.CapacityFloat;
         component.FireCost = state.FireCost;
 
         if (component is HitscanBatteryAmmoProviderComponent hitscan && state.Prototype != null) // Shitmed Change
@@ -66,6 +66,8 @@ public abstract partial class SharedGunSystem
         {
             Shots = component.Shots,
             MaxShots = component.Capacity,
+            ShotsFloat = component.ShotsFloat,
+            CapacityFloat = component.CapacityFloat,
             FireCost = component.FireCost,
         };
 
@@ -146,6 +148,8 @@ public abstract partial class SharedGunSystem
     {
         public int Shots;
         public int MaxShots;
+        public float ShotsFloat;
+        public float CapacityFloat;
         public float FireCost;
         public string? Prototype; // Shitmed Change
     }

@@ -106,10 +106,10 @@
   - type: Gun
     minAngle: 21
     maxAngle: 32
-    fireRate: 6
-    burstFireRate: 18
-    shotsPerBurst: 6
-    burstCooldown: 0.375
+    fireRate: 5
+    burstFireRate: 12
+    shotsPerBurst: 5
+    burstCooldown: 1
     selectedMode: FullAuto
     availableModes:
     - FullAuto
