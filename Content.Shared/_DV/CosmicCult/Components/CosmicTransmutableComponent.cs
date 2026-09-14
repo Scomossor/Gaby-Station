@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.CosmicCult.Components;
 
 /// <summary>
 /// Indicates that an entity can be transmuted into the given prototype by a cosmic cultist
 /// </summary>
-
-using Robust.Shared.Prototypes;
 [RegisterComponent]
 public sealed partial class CosmicTransmutableComponent : Component
 {

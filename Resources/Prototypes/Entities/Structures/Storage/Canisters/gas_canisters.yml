@@ -69,6 +69,11 @@
   name: gas canister
   description: A canister that can contain any type of gas. It can be attached to connector ports using a wrench.
   components:
+    # Dumont changes start
+    - type: CosmicTransmutable
+      transmuteTo: CosmicVacuousSpire
+      requiresEmpowerment: true
+    # Dumont end
     - type: Animateable
     - type: InteractionOutline
     - type: Transform

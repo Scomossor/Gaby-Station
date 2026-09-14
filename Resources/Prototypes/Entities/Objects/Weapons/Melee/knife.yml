@@ -139,6 +139,10 @@
   id: BaseKnife
   abstract: true
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: SwordCosmicCult
+  # Dumont end
   - type: Tag
     tags:
     - Knife

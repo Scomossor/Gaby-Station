@@ -1,14 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._DV.CosmicCult.Prototypes;
 
 /// <summary>
 /// An influence that can be purchased from the monument
 /// </summary>
-
-using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 [Prototype]
 public sealed partial class InfluencePrototype : IPrototype
 {

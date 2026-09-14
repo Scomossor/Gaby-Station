@@ -7,8 +7,6 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-  - type: Sprite
-    sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
 
 - type: entity
   parent: [ BaseCosmicAction, BaseMentalAction ]
@@ -16,9 +14,10 @@
   name: Attune Influence
   description: Spend gathered entropy to unlock new powers, or view the Cult's progress.
   components:
-  - type: Sprite
-    layers:
-    - state: shop
+  - type: Action
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: shop
   - type: InstantAction
     event: !type:CosmicShopEvent
   - type: UserInterface
@@ -33,11 +32,11 @@
   name: Siphon Entropy
   description: Silently siphon entropy from your target.
   components:
-  - type: Sprite
-    layers:
-    - state: siphon
   - type: Action
     useDelay: 30
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: siphon
   - type: TargetAction
   - type: EntityTargetAction
     whitelist:
@@ -56,9 +55,9 @@
   components:
   - type: Action
     useDelay: 120
-  - type: Sprite
-    layers:
-    - state: blank
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: blank
   - type: TargetAction
   - type: EntityTargetAction
     canTargetSelf: false
@@ -78,9 +77,9 @@
   components:
   - type: Action
     useDelay: 1
-  - type: Sprite
-    layers:
-    - state: monument
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: monument
   - type: InstantAction
     event: !type:CosmicPlaceMonumentEvent
   - type: MonumentPlacementAction
@@ -94,9 +93,9 @@
   - type: Action
     checkCanInteract: false
     useDelay: 0
-  - type: Sprite
-    layers:
-    - state: return
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: return
   - type: InstantAction
     event: !type:CosmicReturnEvent
 
@@ -108,9 +107,9 @@
   components:
   - type: Action
     useDelay: 24
-  - type: Sprite
-    layers:
-    - state: lapse
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: lapse
   - type: TargetAction
   - type: EntityTargetAction
     canTargetSelf: true
@@ -128,9 +127,9 @@
   - type: Action
     useDelay: 30
     checkCanInteract: false
-  - type: Sprite
-    layers:
-    - state: glare
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: glare
   - type: InstantAction
     event: !type:CosmicGlareEvent
   - type: Tag
@@ -145,9 +144,9 @@
   components:
   - type: Action
     useDelay: 15
-  - type: Sprite
-    layers:
-    - state: ingress
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: ingress
   - type: TargetAction
   - type: EntityTargetAction
     whitelist:
@@ -165,9 +164,9 @@
   - type: Action
     useDelay: 80
     checkCanInteract: false
-  - type: Sprite
-    layers:
-    - state: entropic
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: entropic
   - type: InstantAction
     event: !type:CosmicImpositionEvent
 
@@ -179,9 +178,9 @@
   components:
   - type: Action
     useDelay: 60
-  - type: Sprite
-    layers:
-    - state: nova
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: nova
   - type: TargetAction
     checkCanAccess: false
     range: 0
@@ -196,9 +195,9 @@
   components:
   - type: Action
     useDelay: 25
-  - type: Sprite
-    layers:
-    - state: corruption
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: corruption
   - type: TargetAction
   - type: EntityTargetAction
     whitelist:
@@ -215,10 +214,9 @@
   components:
   - type: Action
     useDelay: 666
-  - type: Sprite
-    sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
-    layers:
-    - state: shatter
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: shatter
   - type: TargetAction
   - type: EntityTargetAction
     canTargetSelf: false
@@ -239,9 +237,9 @@
   components:
   - type: Action
     useDelay: 120
-  - type: Sprite
-    layers:
-    - state: absorb
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: absorb
   - type: TargetAction
   - type: EntityTargetAction
     canTargetSelf: false
@@ -259,9 +257,9 @@
   - type: Action
     useDelay: 20
     itemIconStyle: NoItem
-  - type: Sprite
-    layers:
-    - state: transmute
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: transmute
   - type: InstantAction
     event: !type:CosmicTransmutationEvent
 
@@ -274,9 +272,9 @@
   - type: Action
     useDelay: 50
     checkCanInteract: false
-  - type: Sprite
-    layers:
-    - state: stride
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: stride
   - type: InstantAction
     event: !type:CosmicStrideEvent
 
@@ -291,9 +289,9 @@
   - type: Action
     useDelay: 20
     itemIconStyle: NoItem
-  - type: Sprite
-    layers:
-    - state: sunder
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: sunder
   - type: TargetAction
     range: 7
   - type: WorldTargetAction
@@ -307,9 +305,9 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-  - type: Sprite
-    layers:
-    - state: ingress
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: ingress
   - type: TargetAction
     range: 2
   - type: EntityTargetAction
@@ -327,9 +325,9 @@
   - type: Action
     useDelay: 180
     checkCanInteract: false
-  - type: Sprite
-    layers:
-    - state: slumber
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: slumber
   - type: ConfirmableAction
     popup: cosmicability-hibernate-confirm
     confirmDelay: 0.1
@@ -345,8 +343,8 @@
   components:
   - type: Action
     useDelay: 999
-  - type: Sprite
-    layers:
-    - state: nova
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: nova
   - type: InstantAction
     event: !type:CosmicColossusEffigyEvent

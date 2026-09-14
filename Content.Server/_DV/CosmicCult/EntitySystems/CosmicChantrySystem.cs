@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Antag;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
@@ -151,7 +152,9 @@ public sealed partial class CosmicChantrySystem : EntitySystem
     private void TransformVictim(Entity<CosmicChantryComponent> ent)
     {
         if (ent.Comp.Victim is not { } victim) return;
-        if (!_mind.TryGetMind(victim, out var mindEnt, out var mind))
+        // Dumont changes start
+        if (!TryGetVictimMind(victim, out var mindEnt, out var mind))
+        // Dumont end
         {
             MakeVictimGhostRole(victim);
             return;
@@ -175,6 +178,19 @@ public sealed partial class CosmicChantrySystem : EntitySystem
 
         QueueDel(ent);
     }
+
+    // Dumont changes start
+    private bool TryGetVictimMind(EntityUid victim, out EntityUid mindEnt, [NotNullWhen(true)] out MindComponent? mind)
+    {
+        if (_mind.TryGetMind(victim, out mindEnt, out mind))
+            return true;
+
+        if (TryComp<BorgChassisComponent>(victim, out var borgComp) && borgComp.BrainEntity is { } brain)
+            return _mind.TryGetMind(brain, out mindEnt, out mind);
+
+        return false;
+    }
+    // Dumont end
 
     /// <summary>
     /// If the borg has no mind for whatever reason, make the borg brain a ghost role.

@@ -88,6 +88,10 @@
   description: A small miniature.
   abstract: true
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: ToyFigurineCosmicCultist
+  # Dumont end
   - type: Sprite
     sprite: Objects/Fun/figurines.rsi
   - type: PhysicalComposition

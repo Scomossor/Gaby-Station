@@ -148,6 +148,10 @@
   id: BaseSword
   abstract: true
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: SwordCosmicCult
+  # Dumont end
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0

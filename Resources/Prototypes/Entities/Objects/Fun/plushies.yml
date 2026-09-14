@@ -5,6 +5,10 @@
   parent: [BaseItem, BaseStash]
   id: BasePlushie
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: PlushieCosmicCult
+  # Dumont end
   - type: EmitSoundOnUse
     sound: &BasePlushieSound
       collection: ToySqueak

@@ -3,6 +3,7 @@
 using System.Linq;
 using Content.Shared.Actions;
 using Content.Shared.Antag;
+using Content.Shared.Body.Events;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement.Components;
@@ -38,6 +39,14 @@ public abstract partial class SharedCosmicCultSystem : EntitySystem
     [Dependency] protected SharedActionsSystem Actions = default!;
     [Dependency] protected IGameTiming Timing = default!;
     [Dependency] private MobStateSystem _mobState = default!;
+
+    [SubscribeLocalEvent]
+    private void OnSuffocationBefore(Entity<CosmicNonRespiratingComponent> ent, ref SuffocationBeforeEvent args)
+    {
+        // Makes cultists gasp and respirate but not asphyxiate in space.
+        if (ent.Comp.Enabled && (ent.Comp.EnableWhenCritical && _mobState.IsIncapacitated(ent) || ent.Comp.EnableWhenAlive && _mobState.IsAlive(ent)))
+            args.Cancelled = true;
+    }
 
     [SubscribeLocalEvent]
     private void OnUseInHand(Entity<CosmicEntropyMoteComponent> ent, ref UseInHandEvent args)

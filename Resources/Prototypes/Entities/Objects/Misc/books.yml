@@ -100,6 +100,10 @@
   id: BookBase
   description: A hardcover book.
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: BookCosmicCult
+  # Dumont end
    # Goobstation edit start
   - type: EmitSoundOnPickup
     sound:
@@ -184,6 +188,10 @@
   abstract: true
   suffix: guidebook
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: BookCosmicCult
+  # Dumont end
   - type: Sprite
     sprite: Objects/Misc/books.rsi
   - type: Tag

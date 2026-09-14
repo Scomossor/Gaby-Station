@@ -58,6 +58,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <ProjectReference Include="..\Content.Goobstation.Shared\Content.Goobstation.Shared.csproj" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
+  <!-- Dumont changes start -->
+  <Import Project="..\RobustToolbox\MSBuild\Robust.EntitySystemSubscriptionsGenerator.targets" />
+  <!-- Dumont end -->
 
   <Import Project="..\RobustToolbox\Imports\Lidgren.props" />
   <Import Project="..\RobustToolbox\Imports\Server.props" />

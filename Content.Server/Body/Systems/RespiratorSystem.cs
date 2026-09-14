@@ -234,6 +234,13 @@ public sealed class RespiratorSystem : EntitySystem
 
             if (!CanBreathe(uid, respirator)) // Goobstation edit
             {
+                // Dumont changes start
+                var suffocationEv = new SuffocationBeforeEvent();
+                RaiseLocalEvent(uid, ref suffocationEv);
+                if (suffocationEv.Cancelled)
+                    continue;
+                // Dumont end
+
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
                     respirator.LastGaspEmoteTime = _gameTiming.CurTime;
