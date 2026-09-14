@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CosmicVoidspawner
+  parent: MarkerBase
+  name: wisp spawn point
+  components:
+    - type: Sprite
+      sprite: Markers/cross.rsi
+      layers:
+        - state: red
+        - sprite: Mobs/Species/Human/parts.rsi
+          state: full
+    - type: CosmicVoidSpawn

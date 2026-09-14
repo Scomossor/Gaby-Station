@@ -1,0 +1,21 @@
+<Document>
+  # Deconversion
+  <Box>
+    <GuideEntityEmbed Entity="Bible" Caption=""/>
+  </Box>
+
+  When mounting an effort to thwart the [color=#4cabb3]Cosmic Cult[/color], there are several methods the crew might employ to ensure their survival and safety. One of these methods is [color=Yellow]Deconversion[/color].
+
+  Unfortunately deconverting a cosmic cultist is [color=Red]impossible[/color] with the tools available to the crew. If you were to capture a cultist, the best decision is to deliver them to CentComm in handcuffs, where they can be "processed" appropriately.
+
+  ## Cosmic Servants
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter" Caption=""/>
+  </Box>
+
+  However, the cultists themselves aren't the only threat: any crewmember without a [color=Yellow]mind shield implant[/color] can be brainwashed by the cult and forced to do their bidding.
+
+  Locating brainwashed crewmembers is rather simple, as their eyes glow with unnatural energy. Be careful, though, as this glow is easily concealed by clothing.
+
+  If a brainwashed crewmember is discovered, simply installing a [color=Yellow]mind shield implant[/color] will free them from the cult's influence. This, however, will not suffice for actual cultists – malign power within them is strong enough to fry the implant's circuitry, rendering it useless.
+</Document>

@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseGameRule
+  id: CosmicCult
+  components:
+  - type: CosmicCultRule
+  - type: LoadMapRule
+    mapPath: /Maps/_DV/Nonstations/cosmicvoid.yml
+  - type: GameRule
+    minPlayers: 25
+    chaosScore: 1200
+    delay:
+      min: 60
+      max: 120
+  - type: AntagObjectives
+    objectives:
+    - CosmicFinalityObjective
+    - CosmicMonumentObjective
+    - CosmicEntropyObjective
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CosmicAntagCultist ]
+      min: 5
+      max: 8
+      playerRatio: 7
+      jobBlacklist: [ Chaplain ]
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+        - BibleUser
+      components:
+      - type: CosmicCult
+      mindRoles:
+      - MindRoleCosmicCult

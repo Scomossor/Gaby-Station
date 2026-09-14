@@ -1,0 +1,23 @@
+<Document>
+  ## Beckoning the Unknown
+  <Box>
+    <GuideEntityEmbed Entity="MonumentCosmicCult" Caption=""/>
+  </Box>
+
+  Should you attain enough power, you will be able to call forth The Monument. Use the respective action to mark a spot, upon which the majority of the cult must agree for The Monument to appear.
+
+  Once the Monument is placed, it can be used to [bold]Beckon [color=#4cabb3]the Unknown[/bold][/color]. Any cultist may do so by interacting with the Monument.
+
+  Be prepared to defend the Monument during the Beckoning, as just one waylaid action from a single disruptive soul will bring this ritual to a sudden, unceremonious halt.
+
+  ## Fracturing
+  <Box>
+    <GuideEntityEmbed Entity="MobCosmicShatteredForm" Caption="Shattered Form"/>
+  </Box>
+
+  As long as the monument is active, you can bring crewmembers (or even fellow cultists) in critical condition close to The monument to [color=#4cabb3]fracture[/color] their physical form and accelerate the Beckoning.
+
+  Doing so binds their mind and body to The Monument. They will stop suffocating, and their mind will be ripped out of their body, able to wander around the station. A rare act of mercy before the End.
+
+  Should the Beckoning be interrupted, they will immediately return back to normal, though their wounds will still be present.
+</Document>

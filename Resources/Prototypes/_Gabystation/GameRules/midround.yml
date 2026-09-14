@@ -125,6 +125,8 @@
         - BibleUser
       lateJoinAdditional: true
       jobBlacklist: [ Chaplain ]
+      components:
+      - type: CosmicCult
       mindRoles:
       - MindRoleCosmicCult
   - type: Tag

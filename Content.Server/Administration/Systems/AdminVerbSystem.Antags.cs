@@ -87,6 +87,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._DV.CosmicCult.Components;
 using Content.Server._Goobstation.Wizard.Components;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
@@ -306,6 +307,22 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(wizard);
 
+        // Dumont changes start
+        var cosmicCultName = Loc.GetString("admin-verb-text-make-cosmiccultist");
+        Verb cosmiccult = new()
+        {
+            Text = cosmicCultName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_DV/CosmicCult/Icons/antag_icons.rsi"), "CosmicCult"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CosmicCultRuleComponent>(targetPlayer, "CosmicCult");
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", cosmicCultName, Loc.GetString("admin-verb-make-cosmiccultist")),
+        };
+        args.Verbs.Add(cosmiccult);
+        // Dumont end
 
         // Funkystation - Malfunctioning AI
         Verb malfAi = new()

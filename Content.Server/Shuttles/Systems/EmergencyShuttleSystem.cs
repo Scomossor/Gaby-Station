@@ -551,6 +551,11 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
 
         _commsConsole.UpdateCommsConsoleInterface();
+
+        // Dumont changes start
+        var ev = new EmergencyShuttleDockedEvent();
+        RaiseLocalEvent(ref ev);
+        // Dumont end
     }
 
     private void SetupEmergencyShuttle()

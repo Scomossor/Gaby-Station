@@ -1,0 +1,226 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseCosmicCultStructure
+  abstract: true
+  components:
+  - type: CosmicCorruptible
+    convertTo: null
+  - type: CosmicCultExamine
+
+- type: entity
+  name: malign settee
+  id: CosmicChair
+  parent: [ SeatBase, BaseCosmicCultStructure ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicchair.rsi
+    state: chair
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: Inorganic
+  - type: Anchorable
+  - type: Rotatable
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: [ BaseStructure, BaseCosmicCultStructure ]
+  id: CosmicObelisk
+  name: malign obelisk
+  description: A mysterious-yet-inert structure. Unsettling.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmicpillar.rsi
+    offset: 0, 0.5
+    layers:
+      - state: icon
+    drawdepth: Mobs
+    noRot: true
+  - type: SpriteFade
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.1,0.2,0.375"
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: Inorganic
+- type: entity
+  id: CosmicLamp
+  description: A mote of un-light shimmers within.
+  suffix: Always Powered
+  name: malign light
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Transform
+  - type: CosmicCultExamine
+    cultistText: cosmic-examine-text-forthecult
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmiclight.rsi
+    drawdepth: Mobs
+    layers:
+      - state: base
+      - state: glow
+        shader: unshaded
+  - type: PointLight
+    color: "#42a4ae" # 5000K color temp
+    energy: 2
+    radius: 8
+    softness: 1
+    offset: "0, -0.5"
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: Inorganic
+  - type: RCDDeconstructable
+    deconstructable: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+
+- type: entity
+  id: AltarCosmic
+  parent: AltarNanotrasen
+  name: cosmic altar
+  description: Altar of.. Something.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/altar.rsi
+    layers:
+    - state: cosmic
+    - state: cosmic_light
+      shader: unshaded
+  - type: Icon
+    sprite: _DV/CosmicCult/Tileset/altar.rsi
+    state: cosmic
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    color: "#42a4ae"
+
+- type: entity
+  parent: [ CounterBase, BaseCosmicCultStructure ]
+  id: CosmicTable
+  name: malign table
+  description: Unfathomably, cosmically.. Square.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/cosmictable.rsi
+  - type: Icon
+    sprite: _DV/CosmicCult/Tileset/cosmictable.rsi
+    state: full
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    key: cosmictable
+    base: state_
+
+
+- type: entity
+  parent: [ Bed, BaseCosmicCultStructure ]
+  id: CosmicBed
+  name: malign bed
+  description: This is used to lie in... okay, maybe not.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/furniture.rsi
+    state: bed
+
+- type: entity
+  parent: [ Rack, BaseCosmicCultStructure ]
+  id: CosmicRack
+  name: corrupted rack
+  description: An eerie rack for storing eerie things on.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/furniture.rsi
+    state: rack
+
+- type: entity
+  parent: [ Railing, BaseCosmicCultStructure ]
+  id: CosmicRailing
+  name: malign railing
+  description: Unnerving railing meant to protect idiots like you from falling into endless void.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/railing.rsi
+    state: side
+
+- type: entity
+  parent: [ RailingCorner, BaseCosmicCultStructure ]
+  id: CosmicRailingCorner
+  name: malign railing
+  description: Unnerving railing meant to protect idiots like you from falling into endless void.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/railing.rsi
+    state: corner
+
+- type: entity
+  parent: [ RailingCornerSmall, BaseCosmicCultStructure ]
+  id: CosmicRailingCornerSmall
+  name: malign railing
+  description: Unnerving railing meant to protect idiots like you from falling into endless void.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/railing.rsi
+    state: corner_small
+
+- type: entity
+  parent: [ RailingRound, BaseCosmicCultStructure ]
+  id: CosmicRailingRound
+  name: malign railing
+  description: Unnerving railing meant to protect idiots like you from falling into endless void.
+  components:
+  - type: Sprite
+    sprite: _DV/CosmicCult/Tileset/railing.rsi
+    state: round
