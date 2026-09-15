@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobOni" Caption=""/>
   </Box>
 
-  Pessoas grandes com uma variedade de cores que possuem chifres. Sua precisão com armas de fogo é terrível, mas sua força física os traz benefícios tanto dentro quanto fora de combate.
+  Onis são meio-demônios humanoides grandes com uma variedade de cores que possuem chifres. São conhecidos por sua força e resistência, mas também pela sua incapacidade de utilizar armas de fogo convencionais.
 
   ## Dieta
   - Praticamente qualquer coisa. Até mesmo varias coisas cruas.
@@ -24,10 +24,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## Benefícios
   - Tomam [color=#1e90ff]15% menos Contundente, Perfurante and Cortante.[/color].
   - Causam mais dano corpo a corpo; 25% mais de dano Contundente, Cortante, Perfurante, Estamina, e Estrutural.
+  - Eles são capazes de curar dano bruto com a ingestão de álcool, além de maior resistência a efeitos de embriaguez. [color=red]Ingerir álcool em excesso ainda provocará envenenamento por Etanol![/color]
   - Devido ao seu maior tamanho, eles podem facilmente carregar e puxar quaisquer outras especies.
 
   ## Malefícios
-  - Onis são incapazes de atirar com precisão. Pode acontecer de até as balas sairem pelas suas costas.
+  - Onis são incapazes de atirar com armas de fogo convencionais, seus dedos são tão fortes que acabam quebrando o gatilho das armas!
   - Eles são mais dificeis de carregar e puxar.
   - Eles são maiores que humanos, fazendo com que eles sejam mais faceis de ser atingidos.
 
