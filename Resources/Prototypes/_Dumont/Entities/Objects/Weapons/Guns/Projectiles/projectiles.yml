@@ -43,7 +43,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 17
+        Heat: 16
 
 - type: entity
   name: overcharged laser bolt
@@ -55,7 +55,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 26
+        Heat: 27
 
 - type: entity
   name: laser cannon bolt

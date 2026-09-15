@@ -320,8 +320,8 @@
   id: RevolverPulseLaser
   damage:
     types:
-      Blunt: 3
-      Heat: 7
+      Blunt: 4
+      Heat: 8
     armorPenetration: 0.4
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi

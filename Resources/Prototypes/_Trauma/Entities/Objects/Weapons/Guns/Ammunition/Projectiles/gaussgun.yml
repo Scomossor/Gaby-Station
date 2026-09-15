@@ -123,8 +123,8 @@
   components:
   - type: ProjectileSpread
     proto: GaussgunShard
-    count: 10
-    spread: 25
+    count: 5
+    spread: 20
 
 - type: entity
   parent: BaseGaussgunAmmo
@@ -135,7 +135,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6.5
+        Piercing: 10
       armorPenetration: -0.5
   - type: Sprite
     state: shard
@@ -151,7 +151,7 @@
       types:
         Piercing: 19
         Slash: 9
-      armorPenetration: 0.1
+      armorPenetration: 0.15
   - type: Sprite
     state: disk
 

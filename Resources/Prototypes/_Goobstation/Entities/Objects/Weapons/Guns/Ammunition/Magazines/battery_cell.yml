@@ -107,7 +107,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_overcharge.rsi
   - type: ProjectileBatteryAmmoProvider
     proto: BulletSMGOverclocked
-    fireCost: 60 # 16 shots
+    fireCost: 100 # 10 shots
 # bluespace smg power cell
 - type: entity
   name: bluespace SMG power cell
@@ -198,8 +198,8 @@
     fireCost: 125
 # x-ray sniper power cell
 - type: entity
-  name: x-ray sniper power cell
-  description: A militarized power cell compatible with laser snipers that fires x-rays.
+  name: gamma ray sniper power cell
+  description: A militarized power cell compatible with laser snipers that fires gamma rays.
   id: PowerCellXraySniper
   suffix: Full
   parent: BaseMilitaryPowerCellSniper
@@ -319,8 +319,8 @@
     fireCost: 62.5
 # x-ray revolver power cell
 - type: entity
-  name: x-ray revolver power cell
-  description: A militarized power cell compatible with laser revolvers that fires x-rays.
+  name: gamma ray revolver power cell # dumont edit
+  description: A militarized power cell compatible with laser revolvers that fires gamma rays.
   id: PowerCellXrayRevolver
   suffix: Full
   parent: BaseMilitaryPowerCellRevolver

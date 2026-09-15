@@ -82,6 +82,15 @@
         Ion: 15
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectDisabler
+  - type: TriggerOnCollide
+    fixtureID: projectile
+    maxTriggers: 1
+  - type: EmpOnTrigger
+    range: 0.5
+    energyConsumption: 50
+    disableDuration: 0.3
+# that's so loud im removing it from the prints
+
 
 - type: entity
   id: BulletSMGBluespace
@@ -154,7 +163,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 20
+        Heat: 25
 
 - type: entity
   id: BulletRevolverIon
@@ -171,9 +180,16 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Ion: 18
+        Ion: 21
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectDisabler
+  - type: TriggerOnCollide
+    fixtureID: projectile
+    maxTriggers: 1
+  - type: EmpOnTrigger
+    range: 0.5
+    energyConsumption: 100
+    disableDuration: 0.5
 
 - type: entity
   id: BulletGammaRayRevolver
@@ -191,7 +207,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 12
+        Heat: 14
 
 
 # Sniper bolts
@@ -241,7 +257,7 @@
     - state: mediumgold
       shader: unshaded
   - type: Projectile
-    penetrationThreshold: 150
+    penetrationThreshold: 150 # gets more for being a sniper
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
@@ -257,9 +273,9 @@
     fixtureID: projectile
     maxTriggers: 1
   - type: EmpOnTrigger
-    range: 2
+    range: 1
     energyConsumption: 300
-    disableDuration: 5
+    disableDuration: 2
   - type: Sprite
     sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:

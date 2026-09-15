@@ -83,7 +83,7 @@
   recipeUnlocks:
   - WeaponLaserCellSMG
   - PowerCellIRSMG
-  - PowerCellIonSMG
+#  - PowerCellIonSMG Dumont edit Too. Fucking. Loud.
   position: 3,-1
   technologyPrerequisites:
   - WeaponizedLaserManipulation

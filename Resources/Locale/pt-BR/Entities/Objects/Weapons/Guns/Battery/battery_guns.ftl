@@ -16,8 +16,8 @@ ent-WeaponPulseRifle = rifle de pulso
 ent-WeaponLaserCannon = canhão laser
      .desc = Uma arma laser resistente e de alta potência.
 
-ent-WeaponXrayCannon = canhão de raios X
-     .desc = Uma arma experimental que usa energia concentrada de raios X contra seu alvo.
+ent-WeaponXrayCannon = canhão de raios gamma
+     .desc = Uma arma experimental que usa energia concentrada de raios gamma contra seu alvo. Atravessa paredes.
 
 ent-WeaponDisabler = atordoador
      .desc = Uma arma de autodefesa que esgota os alvos orgânicos, enfraquecendo-os até entrarem em colapso.

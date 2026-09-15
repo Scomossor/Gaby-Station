@@ -1,5 +1,5 @@
 ent-BaseInducer = indutor
-    .desc = Um dispositivo para transferir energia sem fio de uma bateria para outros dispositivos.
+    .desc = Um dispositivo para transferir energia sem fio de uma bateria para outros dispositivos. Tem um mecanismo de segurança que previne ele de transferir energia para todo tipo de equipamento de segurança produzido em massa.
 
 ent-InducerEngineering = { ent-BaseInducer }
     .desc = { ent-BaseInducer.desc }

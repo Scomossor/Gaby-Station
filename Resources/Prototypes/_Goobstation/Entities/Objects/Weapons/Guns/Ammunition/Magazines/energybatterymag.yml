@@ -75,7 +75,7 @@
       map: [ "enum.GunVisualLayers.Base" ]
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserOvercharge
-    fireCost: 66 #15 shot hopefully
+    fireCost: 83 #12 shots
 
 # Dumontstation, why the fuck did goob forget to add in bluespace ammo for this gun are they stupid
 - type: entity
