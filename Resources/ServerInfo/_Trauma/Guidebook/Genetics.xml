@@ -1,9 +1,9 @@
 <Document>
 # Genética
 
-A genética da Dumont é baseada na do /tg/station, com algumas diferenças de jogo.
+A genética da Dumont é um porte da genética do Trauma Station, que segue a do /tg/station.
 
-Todas as mutações do tg estão aqui.
+O que ainda não funciona: o [bold]Chapado[/bold] não tem efeito e só serve de ingrediente de combinação, e o [bold]Incompreensível[/bold] está bloqueado até ganhar efeito. As mutações de percepção e a de fala maluca não vieram, porque dependem de cone de visão e de fonte de fala que a estação não tem. O [bold]Espinho de Língua[/bold] não dispara, porque os corpos daqui não têm órgão de língua.
 
 # Discos
 
@@ -13,7 +13,7 @@ Todas as mutações do tg estão aqui.
 
 O console não guarda mutação sozinho: cada mutação fica gravada em um disco de genética. Um rotulador salva a sua vida aqui.
 
-O seu armário vem com uma caixa de discos, e dá para imprimir mais no protolathe.
+O seu armário vem com uma caixa de discos, e dá para imprimir mais nos fabricadores médico e de P&D depois da pesquisa de Modificação de DNA.
 
 # Sequenciamento
 
@@ -51,7 +51,7 @@ Cada mutação carrega um valor de instabilidade, e ele só é cobrado quando a 
 
 Chegando a 100, o genoma começa a derreter, e o console avisa. A partir daí é corrida contra o tempo: tirando mutação e baixando da marca antes de o derretimento acabar, o paciente escapa e leva só um embaralhamento do DNA.
 
-Quem não conserta a tempo paga. Em sete de cada dez vezes o desfecho é fatal: virar pó, virar esqueleto, explodir, ou aquele em que a pessoa olha para cima. Nas outras três, vira macaco, corgi, caramujo, lesma, caranguejo, perde as pernas, ou tem sorte e não acontece quase nada.
+Quem não conserta a tempo paga. Em sete de cada dez vezes o desfecho é fatal: virar pó, virar esqueleto, explodir, ou aquele em que a pessoa olha para cima. Nas outras três, vira macaco, corgi, caramujo ou caranguejo, perde as pernas, ou cai num desfecho leve, que pode ser nada, ficar frágil ou virar gosma.
 
 O embaralhamento acontece nos dois casos, de propósito, senão daria para entrar e sair da instabilidade de graça a cada poucos minutos.
 
@@ -69,7 +69,7 @@ Acertando a combinação, a mutação nova aparece, mas ela não vem sequenciada
 
 # Pesquisa
 
-Uma das maiores diferenças para o tg é que [bold]a genética contribui com a pesquisa de verdade[/bold]. Sequenciar rende cerca de 8 mil pontos na maioria das mutações, e mais nas mais complexas.
+[bold]A genética contribui com a pesquisa.[/bold] Sequenciar rende 500 pontos por nível de dificuldade da mutação: 4 mil nas mais simples, e mais nas complexas.
 
 # Enzimas únicas
 

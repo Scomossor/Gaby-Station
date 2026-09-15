@@ -18,15 +18,15 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <BoxContainer Orientation="Horizontal" Align="Center">
         <BoxContainer Orientation="Vertical" Align="Center">
             <GridContainer Columns="2">
-                <Label Text="Current Disk:" MinWidth="250"/>
+                <Label Text="{Loc 'genetics-console-enzymes-disk'}" MinWidth="250"/>
                 <Label Name="DiskLabel" Text="{Loc 'genetics-console-no-disk'}"/>
-                <Label Text="Stored Enyzmes:"/>
+                <Label Text="{Loc 'genetics-console-enzymes-stored'}"/>
                 <Label Name="DiskNameLabel" Text="{Loc 'generic-not-available-shorthand'}"/>
-                <Label Text="Sex:"/>
+                <Label Text="{Loc 'genetics-console-enzymes-sex'}"/>
                 <Label Name="DiskSexLabel" Text="{Loc 'generic-not-available-shorthand'}"/>
-                <Label Text="Eye Color:"/>
+                <Label Text="{Loc 'genetics-console-enzymes-eye'}"/>
                 <Label Name="DiskEyeLabel" Text="{Loc 'generic-not-available-shorthand'}"/>
-                <Label Text="Skin Color:"/>
+                <Label Text="{Loc 'genetics-console-enzymes-skin'}"/>
                 <Label Name="DiskSkinLabel" Text="{Loc 'generic-not-available-shorthand'}"/>
             </GridContainer>
             <controls:StripeBack MaxWidth="250"> <!-- sanabi -->
