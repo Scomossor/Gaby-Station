@@ -1,0 +1,48 @@
+- type: deepFryerRecipe
+  id: RecipeFryFries
+  name: space fries recipe
+  group: Savory
+  time: 15
+  result: FoodMealFries
+  ingredients:
+    FoodPotato: 1
+    FoodCondimentPacketSalt: 1
+
+- type: deepFryerRecipe
+  id: RecipeFriedChiken
+  name: 'fried "chicken" recipe'
+  group: Savory
+  time: 15
+  result: FoodMeatChickenFried
+  ingredients:
+    FoodMeatChicken: 1
+
+- type: deepFryerRecipe
+  id: RecipeCheesyFries
+  name: cheesy fries recipe
+  group: Savory
+  time: 15
+  result: FoodMealFriesCheesy
+  ingredients:
+    FoodPotato: 1
+    FoodCondimentPacketSalt: 1
+    FoodCheeseSlice: 1
+
+- type: deepFryerRecipe
+  id: RecipeCarrotFries
+  name: carrot fries recipe
+  group: Savory
+  time: 15
+  result: FoodMealFriesCarrot
+  ingredients:
+    FoodCarrot: 1
+    FoodCondimentPacketSalt: 1
+
+- type: deepFryerRecipe
+  id: RecipeOnionRings
+  name: onion rings recipe
+  group: Savory
+  time: 15
+  result: FoodOnionRings
+  ingredients:
+    FoodOnionSlice: 1

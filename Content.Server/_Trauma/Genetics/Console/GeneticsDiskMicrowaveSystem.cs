@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Kitchen.Components;
+using Content.Shared.Kitchen.Components;
 using Content.Trauma.Shared.Genetics.Console;
 
 namespace Content.Trauma.Server.Genetics.Console;

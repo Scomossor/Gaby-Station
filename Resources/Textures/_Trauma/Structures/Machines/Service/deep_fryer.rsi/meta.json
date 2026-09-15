@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken in https://wiki.tgstation13.org",
+  "states": [
+    {
+      "name": "deep_fryer_open"
+    },
+    {
+      "name": "deep_fryer_closed_big",
+      "directions": 1,
+      "delays": [
+        [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ]
+      ]
+    },
+    {
+      "name": "deep_fryer_closed",
+      "directions": 1,
+      "delays": [
+        [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ]
+      ]
+    }
+  ]
+}

@@ -9246,20 +9246,20 @@ entities:
     - type: Transform
       pos: -42.5,-14.5
       parent: 2
-- proto: BoomboxPink
-  entities:
-  - uid: 570
-    components:
-    - type: Transform
-      pos: 15.174416,-10.255381
-      parent: 2
-- proto: BoomboxSlav
-  entities:
-  - uid: 571
-    components:
-    - type: Transform
-      pos: 5.52089,3.2003334
-      parent: 2
+# - proto: BoomboxPink
+#   entities:
+#   - uid: 570
+#     components:
+#     - type: Transform
+#       pos: 15.174416,-10.255381
+#       parent: 2
+# - proto: BoomboxSlav
+#   entities:
+#   - uid: 571
+#     components:
+#     - type: Transform
+#       pos: 5.52089,3.2003334
+#       parent: 2
 - proto: BoozeDispenser
   entities:
   - uid: 572

@@ -6,8 +6,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <PanelContainer xmlns="https://spacestation14.io"
-              xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-              Margin="5 5 5 5">
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                Margin="5 5 5 5">
     <PanelContainer.PanelOverride>
         <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
     </PanelContainer.PanelOverride>
@@ -31,6 +31,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                 <Label Text="{Loc 'guidebook-microwave-cook-time-header'}"/>
+                <BoxContainer Name="Machines"/><!-- Frontier: show entities that can cook a recipe. -->
                 <RichTextLabel Name="CookTimeLabel"/>
             </BoxContainer>
         </GridContainer>

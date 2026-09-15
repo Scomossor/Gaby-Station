@@ -1,6 +1,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: flavor
+  id: DeepFried
+  flavorType: Base
+  description: flavor-base-deep-fried
+
+- type: flavor
   id: tiredness
   flavorType: Complex
   description: flavor-complex-tiredness

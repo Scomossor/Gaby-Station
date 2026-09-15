@@ -135,9 +135,9 @@
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
-    - BoomboxRed
-    - BoomboxGreen
-    - BoomboxBlue
+    # - BoomboxRed
+    # - BoomboxGreen
+    # - BoomboxBlue
     - MP3PlayerWhite
     - MP3PlayerBlue
     - MP3PlayerGreen

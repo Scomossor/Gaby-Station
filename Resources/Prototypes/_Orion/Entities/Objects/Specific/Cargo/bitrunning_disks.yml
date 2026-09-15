@@ -39,7 +39,7 @@
       bitrunning-disk-option-pizza-box: FoodBoxPizzaFilled #dumont edit lmao the pizza box didnt come with pizza
       bitrunning-disk-option-medical-beam-gun: MedicalBeamGun
       bitrunning-disk-option-c4: C4
-      bitrunning-disk-option-boombox: BoomboxSlavFull
+      # bitrunning-disk-option-boombox: BoomboxSlavFull
 
 - type: entity
   parent: BaseBitrunningDisk

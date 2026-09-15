@@ -130,6 +130,7 @@ using Content.Shared.Coordinates.Helpers;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Item;
+using Content.Shared.Kitchen.Components;
 using Content.Shared.Maps;
 using Content.Shared.Nuke;
 using Content.Shared.Popups;
@@ -255,6 +256,13 @@ public sealed class NukeSystem : EntitySystem
     {
         if (ent.Comp.TimeModifier != null)
             return;
+
+        // DeltaV: only works with irradiation (actual microwaves)
+        if (!args.BeingIrradiated)
+        {
+            return;
+        }
+        // End DeltaV
 
         var seconds = _random.NextGaussian(ent.Comp.MicrowaveMean.TotalSeconds, ent.Comp.MicrowaveStd.TotalSeconds);
         ent.Comp.TimeModifier = TimeSpan.FromSeconds(seconds);
