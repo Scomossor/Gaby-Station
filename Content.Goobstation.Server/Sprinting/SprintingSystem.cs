@@ -6,7 +6,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Server.Sandevistan;
+using Content.Goobstation.Shared.Sandevistan;
 using Content.Goobstation.Shared.Sprinting;
 using Content.Server.Stunnable;
 using Content.Shared.CombatMode;

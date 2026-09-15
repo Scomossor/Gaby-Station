@@ -1,12 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using Content.Server.Chat.Systems;
 using Content.Goobstation.Common.Barks;
-using Robust.Shared.Configuration;
 using Content.Goobstation.Common.CCVar;
+using Content.Goobstation.Common.Speech;
+using Content.Server.Chat.Systems;
+using Robust.Shared.Configuration;
 using Content.Shared.Chat;
 using Robust.Shared.Player;
 
@@ -14,22 +10,36 @@ namespace Content.Goobstation.Server.Barks;
 
 public sealed class BarkSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private bool _enabled;
 
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<SpeechSynthesisComponent, EntitySpokeEvent>(OnEntitySpoke);
+        Subs.CVar(_cfg, GoobCVars.BarksEnabled, x => _enabled = x, true);
     }
 
     private void OnEntitySpoke(EntityUid uid, SpeechSynthesisComponent comp, EntitySpokeEvent args)
     {
-        if (comp.VoicePrototypeId is null
-            || !args.Language.SpeechOverride.RequireSpeech
-            || !_configurationManager.GetCVar(GoobCVars.BarksEnabled))
+        var ev = new GetBarkSourceEntityEvent();
+        RaiseLocalEvent(uid, ref ev);
+        PlayBark(ev.Ent ?? uid, args);
+    }
+
+    private void PlayBark(Entity<SpeechSynthesisComponent?> ent, EntitySpokeEvent args)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
             return;
 
-        var sourceEntity = GetNetEntity(uid);
-        RaiseNetworkEvent(new PlayBarkEvent(sourceEntity, args.Message, args.IsWhisper), Filter.Pvs(uid));
+        if (ent.Comp.VoicePrototypeId is null
+            || !args.Language.SpeechOverride.RequireSpeech
+            || !_enabled)
+            return;
+
+        var sourceEntity = GetNetEntity(ent);
+        RaiseNetworkEvent(new PlayBarkEvent(sourceEntity, args.Message, args.IsWhisper), Filter.Pvs(ent));
     }
 }

@@ -27,7 +27,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: jump-boots
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-jump-name
   - type: GunUpgradeComponents
     components:
@@ -60,7 +60,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: mag-boots
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-magboot-name
   - type: GunUpgradeComponents
     components:
@@ -90,7 +90,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: clownshoes-boots
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-clownshoes-name
   - type: GunUpgradeComponents
     components:
@@ -117,7 +117,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: drill-hands
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-drill-name
   - type: GunUpgradeComponents
     components:
@@ -151,7 +151,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: diamonddrill-hands
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-diamond-drill-name
   - type: GunUpgradeComponents
     components:
@@ -185,7 +185,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: surgery-hands
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-surgery-name
   - type: GunUpgradeComponents
     components:
@@ -241,7 +241,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: medhud-head
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-medhud-name
   - type: GunUpgradeComponents
     components:
@@ -263,7 +263,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: diagnostichud-head
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-diagnostichud-name
   - type: GunUpgradeComponents
     components:
@@ -287,7 +287,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: sechud-head
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-sechud-name
   - type: GunUpgradeComponents
     components:
@@ -310,7 +310,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: welding-head
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-welding-name
   - type: GunUpgradeComponents
     components:
@@ -331,7 +331,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: antigrav-chest
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-antigrav-name
   - type: GunUpgradeComponents
     components:
@@ -351,7 +351,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: gps-chest
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-gps-name
   - type: GunUpgradeComponents
     components:
@@ -381,7 +381,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: injector-chest
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-injector-name
   - type: GunUpgradeComponents
     components:
@@ -427,7 +427,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: storage-control
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-basic-storage-name
   - type: GunUpgradeComponents
     components:
@@ -452,7 +452,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: storage-control
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-large-storage-name
   - type: GunUpgradeComponents
     components:
@@ -475,7 +475,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: bluespace-control
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-bluespace-storage-name
   - type: GunUpgradeComponents
     components:
@@ -498,7 +498,7 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: syndie-control
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: modsuit-module-large-storage-name #Para não ver o nome ao inspecionar a control unit com isso inserido.
   - type: GunUpgradeComponents
     components:

@@ -80480,7 +80480,7 @@ entities:
     - type: Transform
       pos: -10.776614,43.48699
       parent: 2
-- proto: ClothingNeckMantleCE
+- proto: ClothingNeckMantleWhiteCE
   entities:
   - uid: 12669
     components:

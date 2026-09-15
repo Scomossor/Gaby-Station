@@ -33,7 +33,7 @@
     - LeftFoot
     - RightFoot
   # GabyStation start
-  - type: UpgradeableWeapon # Gaby modulos de modsuit usam o mesmo sistema de upgrades que PKAs
+  - type: ItemUpgradeable # Gaby modulos de modsuit usam o mesmo sistema de upgrades que PKAs
   - type: ContainerContainer
     containers:
       boot_module: !type:ContainerSlot

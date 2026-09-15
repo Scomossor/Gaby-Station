@@ -144,6 +144,7 @@
     - MP3PlayerPink
     - MP3PlayerRed
     - BorgModuleLollypop # Goobstation
+    - CrayonRainbowLarge # Goobstation
   position: 0,2
 
 - type: technology
@@ -204,6 +205,7 @@
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  - CryostasisCigarette # goob cryo cigarette
   # Goobstation R&D Console rework start
   position: 3,5
   technologyPrerequisites:
@@ -330,6 +332,22 @@
   - CritterMechs
   # Goobstation R&D Console rework end
 
+- type: technology  # Goobstation
+  id: ServiceBluespaceChemistry
+  name: research-technology-service-energy-chem
+  icon:
+    sprite: _Goobstation/Structures/Machines/service_dispenser.rsi
+    state: industrial
+  discipline: CivilianServices
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - ServiceEnergyChemMachineCircuitboard
+  position: -4,7
+  technologyPrerequisites:
+  - MeatManipulation
+
+
 # Dumont - Wait until we port this
 #- type: technology  # Goobstation
 #  id: ServiceBluespaceChemistry
@@ -382,10 +400,11 @@
   - SyringeBluespace
   - MedkitCombat # Goobstation - remove medkitcombat from static to research
   - VialBluespace # goob edit - bluespace vials
-  # - DrinkShakerBluespace # Dumont - Wait until we port this
+  - DrinkShakerBluespace # goob
   - EnergyChemDispenserMachineCircuitboard #Goob
   # Goobstation R&D Console rework start
   position: 4,5
   technologyPrerequisites:
   - BiochemicalStasis
   # Goobstation R&D Console rework end
+

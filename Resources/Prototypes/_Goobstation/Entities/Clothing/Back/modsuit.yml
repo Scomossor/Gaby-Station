@@ -33,7 +33,7 @@
     quickEquip: false
     slots:
     - back
-  - type: UpgradeableWeapon # GabyStation
+  - type: ItemUpgradeable # GabyStation
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -118,7 +118,7 @@
     quickEquip: false
     slots:
     - back
-  - type: UpgradeableWeapon # GabyStation
+  - type: ItemUpgradeable # GabyStation
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
