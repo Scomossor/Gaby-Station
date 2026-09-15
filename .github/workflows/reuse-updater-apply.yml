@@ -1,0 +1,91 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Apply REUSE Headers
+
+# workflow_run roda no contexto do repo base, entao aqui tem secret. A diferenca pro
+# pull_request_target antigo e que este job nunca executa codigo do fork: ele so baixa
+# um patch de texto e da git apply. E o push vai pro branch da propria pessoa.
+on:
+  workflow_run:
+    workflows:
+      - Update REUSE Headers
+    types:
+      - completed
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  apply_headers:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download patch
+        id: download
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: reuse-headers-patch
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: reuse
+
+      - name: Read metadata
+        id: meta
+        if: steps.download.outcome == 'success'
+        run: |
+          set -euo pipefail
+          {
+            echo "head_repo=$(jq -r .head_repo reuse/meta.json)"
+            echo "head_ref=$(jq -r .head_ref reuse/meta.json)"
+            echo "head_sha=$(jq -r .head_sha reuse/meta.json)"
+            echo "pr_number=$(jq -r .pr_number reuse/meta.json)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Checkout PR branch
+        if: steps.download.outcome == 'success'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.meta.outputs.head_repo }}
+          ref: ${{ steps.meta.outputs.head_ref }}
+          token: ${{ secrets.BOT_TOKEN }}
+          path: pr
+          # da pra baixar pra 1 aqui, so precisamos do HEAD pra aplicar o patch e
+          # commitar, e clonar o historico todo desse repo demora a beca. nao troquei
+          # junto porque workflow_run so roda depois do merge, entao eu nao tinha como
+          # testar se o push aguenta shallow clone. fica pra quem mexer depois
+          fetch-depth: 0
+
+      - name: Apply patch and push
+        if: steps.download.outcome == 'success'
+        working-directory: pr
+        env:
+          EXPECTED_SHA: ${{ steps.meta.outputs.head_sha }}
+          HEAD_REF: ${{ steps.meta.outputs.head_ref }}
+          PR_NUMBER: ${{ steps.meta.outputs.pr_number }}
+          COMMIT_USER: ${{ vars.CHANGELOG_USER }}
+          COMMIT_EMAIL: ${{ vars.CHANGELOG_EMAIL }}
+        run: |
+          set -euo pipefail
+
+          CURRENT_SHA=$(git rev-parse HEAD)
+          if [ "$CURRENT_SHA" != "$EXPECTED_SHA" ]; then
+            echo "PR #${PR_NUMBER} mudou de $EXPECTED_SHA para $CURRENT_SHA desde que o patch foi gerado."
+            echo "Pulando: a run nova do Update REUSE Headers cuida disso."
+            exit 0
+          fi
+
+          git apply --whitespace=nowarn ../reuse/reuse-headers.patch
+
+          if git diff --quiet; then
+            echo "Patch nao mudou nada, nada a commitar."
+            exit 0
+          fi
+
+          git config user.name "$COMMIT_USER"
+          git config user.email "$COMMIT_EMAIL"
+          git commit -a -m "chore: Automatically update REUSE headers"
+          git push origin "HEAD:$HEAD_REF"
