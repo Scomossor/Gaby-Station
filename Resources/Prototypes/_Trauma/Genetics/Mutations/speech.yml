@@ -55,6 +55,7 @@
   components:
   - type: Mutation
     instability: -30
+    locked: true
     conflicts:
     - MutationMute # can upgrade to Mute
   # TODO
@@ -106,8 +107,7 @@
   parent: BaseFreeMutation
   id: MutationStoner
   name: Stoner
-  description: A common mutation that severely decreases intelligence.
-  # TODO
+  description: Incomplete mutation, it has no effect yet. Only used as an ingredient to combine Rock Absorber.
 
 - type: entity
   parent: BaseFreeMutation
