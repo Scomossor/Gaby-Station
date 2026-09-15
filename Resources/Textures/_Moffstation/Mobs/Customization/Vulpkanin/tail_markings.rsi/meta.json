@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Expie markings created by Kento Da Neko, Davyei (GitHub).",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "expie",
+            "directions": 4
+        },
+        {
+            "name": "expie-tip",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+# Tail Markings
+- type: marking
+  id: VulpTailExpie
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: expie
+  - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: expie-tip

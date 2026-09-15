@@ -1,0 +1,9 @@
+# Ears Markings
+- type: marking
+  id: VulpEarExpie
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Vulpkanin ]
+  sprites:
+  - sprite: _Moffstation/Mobs/Customization/Vulpkanin/ear_markings.rsi
+    state: expie
