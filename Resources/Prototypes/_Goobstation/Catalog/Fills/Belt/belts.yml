@@ -122,7 +122,7 @@
     - id: Handcuffs
     - id: HoloprojectorSecurity
     - id: RadioHandheldSecurity
-    - id: WeaponDisabler #Goobstation
+#    - id: WeaponDisabler # Dumont - lasersec rework
 
 - type: entity
   id: ClothingBeltCorporateJudoFilled
