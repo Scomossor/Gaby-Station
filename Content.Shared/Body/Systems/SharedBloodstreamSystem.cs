@@ -36,6 +36,8 @@ namespace Content.Shared.Body.Systems;
 
 public abstract partial class SharedBloodstreamSystem : EntitySystem
 {
+
+    [Dependency] private readonly SharedBloodTypeSystem BloodType = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -92,6 +94,9 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 TryModifyBloodLevel((uid, bloodstream), bloodstream.BloodRefreshAmount);
             }
 
+            if (BloodType.GetBloodType(uid) is null)
+                BloodType.SetBloodType(uid);
+            BloodType.SetBloodData(uid, ref bloodSolution);
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
             if (bloodstream.BleedAmount > 0)
@@ -101,6 +106,9 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 // Bleed rate is reduced by the bleed reduction amount in the bloodstream component.
                 TryModifyBleedAmount((uid, bloodstream), -bloodstream.BleedReductionAmount);
             }
+
+            if (BloodType.GetForeignBloodAmount(uid, bloodSolution) > 0)
+                BloodType.ApplyBloodTypeDamage(uid);
 
             // deal bloodloss damage if their blood level is below a threshold.
             var bloodPercentage = GetBloodLevelPercentage((uid, bloodstream));
@@ -604,7 +612,6 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         if (currentVolume > 0)
             SolutionContainer.TryAddReagent(ent.Comp.BloodSolution.Value, ent.Comp.BloodReagent, currentVolume, null, GetEntityBloodData(ent));
     }
-
     /// <summary>
     /// Get the reagent data for blood that a specific entity should have.
     /// </summary>
@@ -612,16 +619,21 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     {
         var bloodData = new List<ReagentData>();
         var dnaData = new DnaData();
-
+        var typeData = new BloodTypeData();
+        if (TryComp<BloodTypeComponent>(uid, out var bloodTypeComp) && bloodTypeComp.Type != null)
+        {
+            typeData.Type = bloodTypeComp.Type;
+        }
         if (TryComp<DnaComponent>(uid, out var donorComp) && donorComp.DNA != null)
         {
             dnaData.DNA = donorComp.DNA;
         }
         else
+        {
             dnaData.DNA = Loc.GetString("forensics-dna-unknown");
-
+        }
+        bloodData.Add(typeData);
         bloodData.Add(dnaData);
-
         return bloodData;
     }
 }

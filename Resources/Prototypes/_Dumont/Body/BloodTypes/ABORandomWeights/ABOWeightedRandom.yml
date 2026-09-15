@@ -1,0 +1,136 @@
+
+
+- type: weightedRandom
+  id: HumanTypes
+  weights:
+    O+: 36
+    O-: 7
+    A+: 34
+    A-: 6
+    B+: 8
+    B-: 3
+    AB+: 5
+    AB-: 1
+
+- type: weightedRandom
+  id: ReptilianTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: DwarfTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: HarpyTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: RodentiaTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: VulpkaninTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: FeroxiTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: TajaranTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: YowieTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: OniTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: DaengatiTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: WaddlerTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: FelinidTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: SkeletonTypes
+  parent: HumanTypes
+
+- type: weightedRandom
+  id: PlasmamanTypes
+  parent: HumanTypes
+
+
+- type: weightedRandom
+  id: GingerbreadTypes
+  weights:
+    Xaroposa: 50
+    Cristalizada: 35
+    Caramelizada: 15
+
+- type: weightedRandom
+  id: ResomiTypes
+  weights:
+    Ureica: 45
+    Amoniacal: 40
+    Nitrosa: 15
+
+- type: weightedRandom
+  id: VoxTypes
+  parent: ResomiTypes
+
+- type: weightedRandom
+  id: ShadowkinTypes
+  weights:
+    Estagnada: 45
+    Crepuscular: 40
+    Plena: 15
+
+- type: weightedRandom
+  id: SlimePersonTypes
+  weights:
+    Difusa: 50
+    Coesa: 35
+    Reativa: 15
+
+- type: weightedRandom
+  id: DionaTypes
+  weights:
+    Xilêmica: 50
+    Floêmica: 35
+    Resinosa: 15
+
+- type: weightedRandom
+  id: MothTypes
+  weights:
+    Clara: 55
+    Âmbar: 32
+    Melânica: 13
+
+- type: weightedRandom
+  id: ChitinidTypes
+  parent: MothTypes
+
+- type: weightedRandom
+  id: ArachnidTypes
+  weights:
+    Cuprosa: 50
+    Cúprica: 35
+    "Ferro-Cúprica": 15
+
+- type: weightedRandom
+  id: BananaMenTypes
+  weights:
+    Verde: 45
+    Madura: 40
+    Passada: 15
+
+

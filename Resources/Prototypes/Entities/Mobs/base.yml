@@ -329,6 +329,7 @@
   id: MobBloodstream
   abstract: true
   components:
+  - type: BloodType
   - type: SolutionContainerManager
   - type: InjectableSolution
     solution: chemicals

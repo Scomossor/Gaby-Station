@@ -1,0 +1,300 @@
+
+- type: bloodtype
+  id: O+
+  Compat:
+    - O-
+    - O+
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: O-
+  Compat:
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: A+
+  Compat:
+    - A+
+    - A-
+    - O+
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: A-
+  Compat:
+    - A-
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: B+
+  Compat:
+    - B+
+    - B-
+    - O+
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: B-
+  Compat:
+    - B-
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: AB+
+  Compat:
+    - A+
+    - A-
+    - B+
+    - B-
+    - AB+
+    - AB-
+    - O+
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: AB-
+  Compat:
+    - A-
+    - B-
+    - AB-
+    - O-
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Clara
+  Compat:
+    - Clara
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Âmbar
+  Compat:
+    - Clara
+    - Âmbar
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Melânica
+  Compat:
+    - Clara
+    - Âmbar
+    - Melânica
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Cuprosa
+  Compat:
+    - Cuprosa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Cúprica
+  Compat:
+    - Cuprosa
+    - Cúprica
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: "Ferro-Cúprica"
+  Compat:
+    - Cuprosa
+    - Cúprica
+    - "Ferro-Cúprica"
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Ureica
+  Compat:
+    - Ureica
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Amoniacal
+  Compat:
+    - Ureica
+    - Amoniacal
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Nitrosa
+  Compat:
+    - Ureica
+    - Amoniacal
+    - Nitrosa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Difusa
+  Compat:
+    - Difusa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Coesa
+  Compat:
+    - Difusa
+    - Coesa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Reativa
+  Compat:
+    - Difusa
+    - Coesa
+    - Reativa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Xilêmica
+  Compat:
+    - Xilêmica
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Floêmica
+  Compat:
+    - Xilêmica
+    - Floêmica
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Resinosa
+  Compat:
+    - Xilêmica
+    - Floêmica
+    - Resinosa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Estagnada
+  Compat:
+    - Estagnada
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Crepuscular
+  Compat:
+    - Estagnada
+    - Crepuscular
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Plena
+  Compat:
+    - Estagnada
+    - Crepuscular
+    - Plena
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Xaroposa
+  Compat:
+    - Xaroposa
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Cristalizada
+  Compat:
+    - Xaroposa
+    - Cristalizada
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Caramelizada
+  Compat:
+    - Xaroposa
+    - Cristalizada
+    - Caramelizada
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Verde
+  Compat:
+    - Verde
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Madura
+  Compat:
+    - Verde
+    - Madura
+  DamageList:
+    types:
+      Cellular: 0.2
+
+- type: bloodtype
+  id: Passada
+  Compat:
+    - Verde
+    - Madura
+    - Passada
+  DamageList:
+    types:
+      Cellular: 0.2
+
