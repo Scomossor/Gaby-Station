@@ -80,6 +80,7 @@ entities:
           decals:
             5: 5,5
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

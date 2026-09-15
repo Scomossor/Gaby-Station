@@ -1752,6 +1752,7 @@ entities:
             910: -2.8287728,-0.8417287
             911: -2.3912728,-0.67758083
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         chunkSize: 4

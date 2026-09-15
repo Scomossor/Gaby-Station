@@ -221,6 +221,7 @@ entities:
             56: 4.079912,2.6291122
             57: 3.9705372,3.1447372
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

@@ -86,6 +86,7 @@ entities:
             2: 1.5710351,-4.3071213
             3: 5.6960354,-8.588371
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         chunkSize: 4

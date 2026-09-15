@@ -73,6 +73,9 @@ public sealed class ThrowingSystem : EntitySystem
         Subs.CVar(_configManager, CCVars.AirFriction, value => _airDamping = value, true);
     }
 
+    /// <remarks>
+    ///     If you are foreaching every entity, go get a ProjectileQuery and use TryThrow with EntityQuery<ProjectileComponent> instead.
+    /// </remarks>
     public void TryThrow(
         EntityUid uid,
         EntityCoordinates coordinates,
@@ -109,6 +112,9 @@ public sealed class ThrowingSystem : EntitySystem
     /// <param name="doSpin">Whether spin will be applied to the thrown entity.</param>
     /// <param name="unanchor">If true and the thrown entity has <see cref="AnchorableComponent"/>, unanchor the thrown entity</param>
     /// <param name="throwInAir">WWDP - Whether the thrown entity status will be set to InAir during flight.</param>
+    /// <remarks>
+    ///     If you are foreaching every entity, go get a ProjectileQuery and use TryThrow with EntityQuery<ProjectileComponent> instead.
+    /// </remarks>
     public void TryThrow(EntityUid uid,
         Vector2 direction,
         float baseThrowSpeed = 10.0f,

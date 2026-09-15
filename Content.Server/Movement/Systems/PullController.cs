@@ -229,6 +229,12 @@ public sealed class PullController : VirtualController
 
     private void UpdatePulledRotation(EntityUid puller, EntityUid pulled)
     {
+        var pulledXform = _xformQuery.GetComponent(pulled);
+
+        // Dumont - Prevent pull objects from rotating when anchored.
+        if (pulledXform.Anchored || (_physicsQuery.TryComp(pulled, out var physics) && physics.BodyType == BodyType.Static))
+            return;
+
         // TODO: update once ComponentReference works with directed event bus.
         if (!TryComp(pulled, out RotatableComponent? rotatable))
             return;
@@ -236,7 +242,6 @@ public sealed class PullController : VirtualController
         if (!rotatable.RotateWhilePulling)
             return;
 
-        var pulledXform = _xformQuery.GetComponent(pulled);
         var pullerXform = _xformQuery.GetComponent(puller);
 
         var pullerData = TransformSystem.GetWorldPositionRotation(pullerXform);
@@ -276,7 +281,7 @@ public sealed class PullController : VirtualController
                 continue;
             }
 
-            if (pullable.Puller is not {Valid: true} puller)
+            if (pullable.Puller is not { Valid: true } puller)
                 continue;
 
             var pullerXform = _xformQuery.Get(puller);

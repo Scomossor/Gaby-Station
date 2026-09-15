@@ -170,6 +170,7 @@ entities:
             21: -0.7312583,3.2279847
             22: -0.45000827,4.1498594
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

@@ -27,10 +27,10 @@ namespace Content.Shared.Atmos
     public enum AtmosDirection
     {
         Invalid = 0,                        // 0
-        North   = 1 << 0,                   // 1
-        South   = 1 << 1,                   // 2
-        East    = 1 << 2,                   // 4
-        West    = 1 << 3,                   // 8
+        North = 1 << 0,                   // 1
+        South = 1 << 1,                   // 2
+        East = 1 << 2,                   // 4
+        West = 1 << 3,                   // 8
         // If more directions are added, note that AtmosDirectionHelpers.ToOppositeIndex() expects opposite directions
         // to come in pairs
 
@@ -123,8 +123,8 @@ namespace Content.Shared.Atmos
                 AtmosDirection.East => new Angle(MathHelper.PiOver2),
                 AtmosDirection.North => new Angle(Math.PI),
                 AtmosDirection.West => new Angle(-MathHelper.PiOver2),
-                AtmosDirection.NorthEast => new Angle(Math.PI*3/4),
-                AtmosDirection.NorthWest => new Angle(-Math.PI*3/4),
+                AtmosDirection.NorthEast => new Angle(Math.PI * 3 / 4),
+                AtmosDirection.NorthWest => new Angle(-Math.PI * 3 / 4),
                 AtmosDirection.SouthWest => new Angle(-MathHelper.PiOver4),
                 AtmosDirection.SouthEast => new Angle(MathHelper.PiOver4),
 
@@ -156,7 +156,7 @@ namespace Content.Shared.Atmos
         public static int ToIndex(this AtmosDirection direction)
         {
             // This will throw if you pass an invalid direction. Not this method's fault, but yours!
-            return BitOperations.Log2((uint)direction);
+            return BitOperations.Log2((uint) direction);
         }
 
         public static AtmosDirection WithFlag(this AtmosDirection direction, AtmosDirection other)
@@ -179,14 +179,23 @@ namespace Content.Shared.Atmos
         {
             switch (dir)
             {
+                // I DESPISE THIS SO GODDAMN MUCH.
                 case AtmosDirection.North:
                     return new Vector2i(0, 1);
+                case AtmosDirection.NorthEast:
+                    return new Vector2i(1, 1);
                 case AtmosDirection.East:
                     return new Vector2i(1, 0);
+                case AtmosDirection.SouthEast:
+                    return new Vector2i(1, -1);
                 case AtmosDirection.South:
                     return new Vector2i(0, -1);
+                case AtmosDirection.SouthWest:
+                    return new Vector2i(-1, -1);
                 case AtmosDirection.West:
                     return new Vector2i(-1, 0);
+                case AtmosDirection.NorthWest:
+                    return new Vector2i(-1, 1);
                 default:
                     throw new ArgumentException($"Direction dir {dir} is not a cardinal direction", nameof(dir));
             }

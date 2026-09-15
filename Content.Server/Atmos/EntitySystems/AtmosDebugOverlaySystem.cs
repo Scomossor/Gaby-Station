@@ -119,7 +119,6 @@ namespace Content.Server.Atmos.EntitySystems
                 tile.GridIndices,
                 tile.Air?.Temperature ?? default,
                 tile.Air?.Moles,
-                tile.PressureDirection,
                 tile.LastPressureDirection,
                 tile.AirtightData.BlockedDirections,
                 tile.ExcitedGroup?.GetHashCode(),

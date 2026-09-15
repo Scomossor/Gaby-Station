@@ -1,11 +1,8 @@
 // SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -22,30 +19,29 @@ public sealed partial class CCVars
         CVarDef.Create("atmos.space_wind", false, CVar.SERVERONLY);
 
     /// <summary>
-    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
+    ///     A direct multiplier on how violent space wind is.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindPressureForceDivisorThrow =
-        CVarDef.Create("atmos.space_wind_pressure_force_divisor_throw", 15f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 2.5f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindPressureForceDivisorPush =
-        CVarDef.Create("atmos.space_wind_pressure_force_divisor_push", 2500f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.
+    ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
     ///     Useful to prevent clipping through objects.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindMaxForce =
+        CVarDef.Create("atmos.space_wind_max_force", 200f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
-    ///     A "throwing" atmospheric pressure difference ignores this limit, but not the max. velocity limit.
+    ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxPushForce =
-        CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindMaxAngularVelocity =
+        CVarDef.Create("atmos.space_wind_max_angular_velocity", 3f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     The amount of time (in seconds) for space wind to knock down a player character if they are subjected to space wind.
+    /// </summary>
+    public static readonly CVarDef<float> SpaceWindKnockdownTime =
+        CVarDef.Create("atmos.space_wind_knockdown_time", 0.75f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether monstermos tile equalization is enabled.
@@ -76,13 +72,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AtmosGridImpulse =
         CVarDef.Create("atmos.grid_impulse", false, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     What fraction of air from a spaced tile escapes every tick.
-    ///     1.0 for instant spacing, 0.2 means 20% of remaining air lost each time
-    /// </summary>
-    public static readonly CVarDef<float> AtmosSpacingEscapeRatio =
-        CVarDef.Create("atmos.mmos_spacing_speed", 0.15f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum amount of air allowed on a spaced tile before it is reset to 0 immediately in kPa
@@ -163,7 +152,13 @@ public sealed partial class CCVars
         CVarDef.Create("atmos.max_explosion_range", 26f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     Backmen | Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
+    ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
+    /// </summary>
+    public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
+        CVarDef.Create("atmos.space_wind_allow_knockdown", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWindVisuals =
         CVarDef.Create("atmos.space_wind_visuals", true, CVar.SERVERONLY);

@@ -152,7 +152,7 @@ public sealed partial class EntityStorageComponent : Component, IGasMixtureHolde
     /// Whether or not the container is sealed and traps air inside of it
     /// </summary>
     [DataField]
-    public bool Airtight = true;
+    public bool Airtight;
 
     /// <summary>
     /// Whether or not the entitystorage is open or closed

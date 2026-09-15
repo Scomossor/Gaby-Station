@@ -136,6 +136,9 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Atmos.Components;
+using Content.Shared.Throwing;
+using Content.Shared.Construction.Components;
 
 namespace Content.Shared.Movement.Pulling.Systems;
 
@@ -158,6 +161,7 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly SharedVirtualItemSystem _virtualSystem = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!; // Orion
+    [Dependency] private readonly ThrownItemSystem _thrown = default!; // Dumont
 
     public override void Initialize()
     {
@@ -545,7 +549,8 @@ public sealed class PullingSystem : EntitySystem
 
         if (physics.BodyType == BodyType.Static)
         {
-            return false;
+            if (!HasComp<AnchorableComponent>(pullableUid) || !TryComp<MovedByPressureComponent>(puller, out var moved) || !moved.Throwing) // Dumont - Allows you to pull anchored objects while being caught by the space wind.
+                return false;
         }
 
         if (puller == pullableUid)
@@ -579,7 +584,7 @@ public sealed class PullingSystem : EntitySystem
         if (pullable.Comp.Puller != pullerUid)
             return TryStartPull(pullerUid, pullable, pullableComp: pullable.Comp);
 
-        var grabAttemptEv = new GrabAttemptEvent( pullerUid);
+        var grabAttemptEv = new GrabAttemptEvent(pullerUid);
         RaiseLocalEvent(pullable, ref grabAttemptEv);
         if (grabAttemptEv.Grabbed)
             return true;
@@ -695,7 +700,8 @@ public sealed class PullingSystem : EntitySystem
             var joint = _joints.CreateDistanceJoint(pullableUid, pullerUid,
                     pullablePhysics.LocalCenter, pullerPhysics.LocalCenter,
                     id: pullableComp.PullJointId);
-            joint.CollideConnected = false;
+            joint.CollideConnected = pullablePhysics.BodyType == BodyType.Static; // Dumont - Add collision only to static pull object.
+
             // This maximum has to be there because if the object is constrained too closely, the clamping goes backwards and asserts.
             // Internally, the joint length has been set to the distance between the pivots.
             // Add an additional 15cm (pretty arbitrary) to the maximum length for the hard limit.

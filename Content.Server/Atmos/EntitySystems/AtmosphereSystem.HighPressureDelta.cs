@@ -20,296 +20,213 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
+// All changes made to AtmosphereSystem.HighPressureDelta.cs as well as associated changes to the AtmosphereSystem and adjacent systems made by
+// Tyler Chase Johnson (also known as VMSolidus) are marked CC0 1.0. To view a copy of this mark, visit https://creativecommons.org/publicdomain/zero/1.0/
+// As these changes are done to more files than I am reasonably able to track down in order to mark them all,
+// this notice may be taken in good faith that all code modifications necessary for the functioning of Space Wind V5 may also be considered as CC0 1.0 even without included marks.
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Humanoid;
-using Content.Shared.Physics;
+using Content.Shared.Maps;
+using Content.Shared.Projectiles;
+using Content.Shared.Throwing;
 using Robust.Shared.Audio;
-using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Robust.Shared.Utility;
+using System.Numerics;
 
-namespace Content.Server.Atmos.EntitySystems
+namespace Content.Server.Atmos.EntitySystems;
+
+public sealed partial class AtmosphereSystem
 {
-    public sealed partial class AtmosphereSystem
+    private EntProtoId _spaceWindProto = "SpaceWindVisual";
+    private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
+
+    private void UpdateHighPressure(float frameTime)
     {
-        [ValidatePrototypeId<EntityPrototype>] private const string _spaceWindProto = "SpaceWindVisual"; // Backmen
-
-        private static readonly ProtoId<SoundCollectionPrototype> DefaultSpaceWindSounds = "SpaceWind";
-
-        private const int SpaceWindSoundCooldownCycles = 75;
-
-        private int _spaceWindSoundCooldown = 0;
-
-        [ViewVariables(VVAccess.ReadWrite)]
-        public SoundSpecifier? SpaceWindSound { get; private set; } = new SoundCollectionSpecifier(DefaultSpaceWindSounds, AudioParams.Default.WithVariation(0.125f));
-
-        private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new(8);
-
-        private void UpdateHighPressure(float frameTime)
+        foreach (var ent in _activePressures)
         {
-            var toRemove = new RemQueue<Entity<MovedByPressureComponent>>();
+            if (!ent.Comp.Throwing || _gameTiming.CurTime < ent.Comp.ThrowingCutoffTarget
+                || !TryComp(ent.Owner, out PhysicsComponent? physics))
+                continue;
 
-            foreach (var ent in _activePressures)
+            if (TryComp(ent.Owner, out ThrownItemComponent? thrown))
             {
-                var (uid, comp) = ent;
-                MetaDataComponent? metadata = null;
-
-                if (Deleted(uid, metadata))
-                {
-                    toRemove.Add((uid, comp));
-                    continue;
-                }
-
-                if (Paused(uid, metadata))
-                    continue;
-
-                comp.Accumulator += frameTime;
-
-                if (comp.Accumulator < 2f)
-                    continue;
-
-                // Reset it just for VV reasons even though it doesn't matter
-                comp.Accumulator = 0f;
-                toRemove.Add(ent);
-
-                if (TryComp<PhysicsComponent>(uid, out var body))
-                {
-                    _physics.SetBodyStatus(uid, body, BodyStatus.OnGround);
-                }
-
-                if (TryComp<FixturesComponent>(uid, out var fixtures)
-                    && TryComp<MovedByPressureComponent>(uid, out var component))
-                {
-                    foreach (var (id, fixture) in fixtures.Fixtures)
-                    {
-                        if (component.TableLayerRemoved.Contains(id))
-                        {
-                            _physics.AddCollisionMask(uid, id, fixture, (int)CollisionGroup.TableLayer, manager: fixtures);
-                        }
-                    }
-                }
+                _thrown.LandComponent(ent.Owner, thrown, physics, true);
+                _thrown.StopThrow(ent.Owner, thrown);
             }
 
-            foreach (var comp in toRemove)
+            _physics.SetBodyStatus(ent.Owner, physics, BodyStatus.OnGround);
+            _physics.SetSleepingAllowed(ent.Owner, physics, true);
+
+            ent.Comp.Throwing = false;
+            _activePressures.Remove(ent);
+        }
+    }
+
+    private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere,
+        TileAtmosphere tile,
+        EntityQuery<PhysicsComponent> bodies,
+        EntityQuery<TransformComponent> xforms,
+        EntityQuery<MovedByPressureComponent> pressureQuery,
+        EntityQuery<MetaDataComponent> metas,
+        EntityQuery<ProjectileComponent> projectileQuery,
+        double gravity)
+    {
+        var atmosComp = gridAtmosphere.Comp;
+        var oneAtmos = Atmospherics.OneAtmosphere;
+
+        // No atmos yeets, return early.
+        if (!SpaceWind
+            || !gridAtmosphere.Comp.SpaceWindSimulation // Is the grid marked as exempt from space wind?)
+            || tile.Space) // No Air Checks. Pressure differentials can't exist in a hard vacuum.
+            return;
+
+        var pressure = tile.AirArchived?.Pressure;
+        if (pressure is null
+            || pressure <= atmosComp.PressureCutoff // Below 5kpa(can't throw a base item)
+            || oneAtmos - atmosComp.PressureCutoff <= pressure
+            && pressure <= oneAtmos + atmosComp.PressureCutoff // Check within 5kpa of default pressure.
+            || !TryComp(gridAtmosphere.Owner, out MapGridComponent? mapGrid)
+            || !_mapSystem.TryGetTileRef(gridAtmosphere.Owner, mapGrid, tile.GridIndices, out var tileRef))
+            return;
+
+        var tileDef = (ContentTileDefinition) _tileDefinitionManager[tileRef.Tile.TypeId];
+        if (!tileDef.SimulatedTurf)
+            return;
+
+        var partialFrictionComposition = gravity * tileDef.MobFrictionNoInput ?? 0.2f;
+
+        var pressureVector = GetPressureVectorFromTile(gridAtmosphere, tile);
+        if (!pressureVector.IsValid())
+            return;
+        tile.LastPressureDirection = pressureVector;
+
+        // Calculate this HERE so that we aren't running the square root of a whole Newton vector per item.
+        var pVecLength = pressureVector.Length();
+        if (pVecLength <= 1) // Then guard against extremely small vectors.
+            return;
+
+        pressureVector *= SpaceWindStrengthMultiplier;
+
+        if (SpaceWindVisuals && atmosComp.SpaceWindSoundCooldown == 0)
+        {
+            var location = _mapSystem.GridTileToLocal(gridAtmosphere.Owner, mapGrid, tile.GridIndices);
+            var visualEnt = SpawnAtPosition(_spaceWindProto, location);
+            _transformSystem.SetLocalRotation(visualEnt, pressureVector.ToAngle() - MathF.PI / 2);
+        }
+
+        if (pVecLength > 15 && !tile.Hotspot.Valid && atmosComp.SpaceWindSoundCooldown == 0)
+        {
+            var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
+            var volume = Math.Clamp(pVecLength / atmosComp.SpaceWindSoundDenominator, atmosComp.SpaceWindSoundMinVolume, atmosComp.SpaceWindSoundMaxVolume);
+            _audio.PlayPvs(atmosComp.SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(volume));
+        }
+
+        if (atmosComp.SpaceWindSoundCooldown++ > atmosComp.SpaceWindSoundCooldownCycles)
+            atmosComp.SpaceWindSoundCooldown = 0;
+
+        // TODO: Deprecated for now, it sucks ass and I'm disassembling monstermos because it sucks. This'll be handled by Space Wind after I'm done whiteboarding better equations for it.
+        // - TCJ
+        // HandleDecompressionFloorRip(mapGrid, otherTile, otherTile.PressureDifference);
+
+        _entSet.Clear();
+        _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
+
+        foreach (var entity in _entSet)
+        {
+            // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
+            // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
+            if (!bodies.TryGetComponent(entity, out var body)
+                || !pressureQuery.TryGetComponent(entity, out var pressureComp)
+                || !pressureComp.Enabled
+                || _containers.IsEntityInContainer(entity, metas.GetComponent(entity))
+                || pressureComp.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
+                continue;
+
+            // tl;dr YEET
+            ExperiencePressureDifference(
+                (entity, pressureComp),
+                gridAtmosphere.Comp.UpdateCounter,
+                pressureVector,
+                pVecLength,
+                partialFrictionComposition,
+                projectileQuery,
+                xforms.GetComponent(entity),
+                body);
+        }
+    }
+
+    // Called from AtmosphereSystem.LINDA.cs with SpaceWind CVar check handled there.
+    private void ConsiderPressureDifference(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile) => gridAtmosphere.HighPressureDelta.Add(tile);
+
+    public void ExperiencePressureDifference(Entity<MovedByPressureComponent> ent,
+        int cycle,
+        Vector2 pressureVector,
+        float pVecLength,
+        double partialFrictionComposition,
+        EntityQuery<ProjectileComponent> projectileQuery,
+        TransformComponent? xform = null,
+        PhysicsComponent? physics = null)
+    {
+        var (uid, component) = ent;
+        if (!Resolve(uid, ref physics, false)
+            || !Resolve(uid, ref xform)
+            || physics.BodyType == BodyType.Static
+            || physics.LinearVelocity.Length() >= SpaceWindMaxForce)
+            return;
+
+        var alwaysThrow = partialFrictionComposition == 0 || physics.BodyStatus == BodyStatus.InAir;
+
+        // Coefficient of static friction in Newtons (kg * m/s^2), which might not apply under certain conditions.
+        var coefficientOfFriction = partialFrictionComposition * physics.Mass;
+        coefficientOfFriction *= _standingSystem.IsDown(uid) ? 3 : 1;
+
+        if (TryComp(ent.Owner, out HumanoidAppearanceComponent? humanoidAppearance))
+        {
+            pressureVector *= HumanoidThrowMultiplier;
+
+            if (SpaceWindAllowKnockdown)
             {
-                _activePressures.Remove(comp);
+                // Torque threshold for a humanoid shaped object is 1/3rd mass * height squared. Ignore the 3, it's not a magic number in this context.
+                // Same with 1.75f, we're quick and dirty shorthanding for the standard height of a human (in meters).
+                var heightSquared = MathF.Pow(humanoidAppearance.Height * 1.75f, 2);
+                var knockdownThreshold = heightSquared / 3;
+                if (knockdownThreshold <= pVecLength)
+                    _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), true);
             }
         }
 
-        private void AddMobMovedByPressure(EntityUid uid, MovedByPressureComponent component, PhysicsComponent body)
-        {
-            if (!TryComp<FixturesComponent>(uid, out var fixtures))
-                return;
+        if (!alwaysThrow && pVecLength < coefficientOfFriction)
+            return;
 
-            _physics.SetBodyStatus(uid, body, BodyStatus.InAir);
+        // Yes this technically increases the magnitude by a small amount... I detest having to swap between "World" and "Local" vectors.
+        // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
+        var gridRotation = xform.GridUid != null ? _transformSystem.GetWorldRotation(xform.GridUid.Value) : Angle.Zero;
+        var velocity = gridRotation.RotateVec(pressureVector); // _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
 
-            foreach (var (id, fixture) in fixtures.Fixtures)
-            {
-                // Mark fixtures that have TableLayer removed
-                if ((fixture.CollisionMask & (int)CollisionGroup.TableLayer) != 0)
-                {
-                    component.TableLayerRemoved.Add(id);
-                    _physics.RemoveCollisionMask(uid, id, fixture, (int)CollisionGroup.TableLayer, manager: fixtures);
-                }
-            }
-            // TODO: Make them dynamic type? Ehh but they still want movement so uhh make it non-predicted like weightless?
-            // idk it's hard.
+        _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
+            1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
 
-            component.Accumulator = 0f;
-            _activePressures.Add((uid, component));
-        }
-
-        private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas)
-        {
-            if (tile.PressureDifference < SpaceWindMinimumCalculatedMass * SpaceWindMinimumCalculatedMass)
-                return;
-            // TODO ATMOS finish this
-
-            // Don't play the space wind sound on tiles that are on fire...
-            if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
-            {
-                if (_spaceWindSoundCooldown == 0 && SpaceWindSound != null)
-                {
-                    var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-                    _audio.PlayPvs(SpaceWindSound, coordinates, SpaceWindSound.Params.WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
-                }
-
-                // Backmen-Start | Space Wind Visuals
-                if (SpaceWindVisuals && _spaceWindSoundCooldown == 0)
-                {
-                    var location = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-                    var visualEnt = SpawnAtPosition(_spaceWindProto, location);
-                    var gridRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
-                    var windAngle = tile.PressureDirection.ToAngle() + gridRotation;
-                    _transformSystem.SetLocalRotation(visualEnt, windAngle - MathF.PI / 2);
-                }
-                // Backmen-End
-            }
-
-
-            if (tile.PressureDifference > 100)
-            {
-                // TODO ATMOS Do space wind graphics here!
-            }
-
-            if (_spaceWindSoundCooldown++ > SpaceWindSoundCooldownCycles)
-                _spaceWindSoundCooldown = 0;
-
-            // No atmos yeets, return early.
-            if (!SpaceWind)
-                return;
-
-            // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
-            var gridWorldRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
-
-            // If we're using monstermos, smooth out the yeet direction to follow the flow
-            //TODO This is bad, don't run this. It just makes the throws worse by somehow rounding them to orthogonal
-            if (!MonstermosEqualization)
-            {
-                // We step through tiles according to the pressure direction on the current tile.
-                // The goal is to get a general direction of the airflow in the area.
-                // 3 is the magic number - enough to go around corners, but not U-turns.
-                var curTile = tile;
-                for (var i = 0; i < 3; i++)
-                {
-                    if (curTile.PressureDirection == AtmosDirection.Invalid
-                        || !curTile.AdjacentBits.IsFlagSet(curTile.PressureDirection))
-                        break;
-                    curTile = curTile.AdjacentTiles[curTile.PressureDirection.ToIndex()]!;
-                }
-
-                if (curTile != tile)
-                    tile.PressureSpecificTarget = curTile;
-            }
-
-            _entSet.Clear();
-            _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
-
-            foreach (var entity in _entSet)
-            {
-                // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
-                // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
-                if (!bodies.TryGetComponent(entity, out var body) ||
-                    !pressureQuery.TryGetComponent(entity, out var pressure) ||
-                    !pressure.Enabled)
-                    continue;
-
-                if (_containers.IsEntityInContainer(entity, metas.GetComponent(entity))) continue;
-
-                var pressureMovements = EnsureComp<MovedByPressureComponent>(entity);
-                if (pressure.LastHighPressureMovementAirCycle < gridAtmosphere.Comp.UpdateCounter)
-                {
-                    // tl;dr YEET
-                    ExperiencePressureDifference(
-                        (entity, pressureMovements),
-                        gridAtmosphere.Comp.UpdateCounter,
-                        tile.PressureDifference,
-                        tile.PressureDirection,
-                        tile.PressureSpecificTarget != null ? _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.PressureSpecificTarget.GridIndices) : EntityCoordinates.Invalid,
-                        gridWorldRotation,
-                        xforms.GetComponent(entity),
-                        body);
-                }
-            }
-        }
-
-        // Called from AtmosphereSystem.LINDA.cs with SpaceWind CVar check handled there.
-        private void ConsiderPressureDifference(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, AtmosDirection differenceDirection, float difference)
-        {
-            gridAtmosphere.HighPressureDelta.Add(tile);
-
-            if (difference <= tile.PressureDifference)
-                return;
-
-            tile.PressureDifference = difference;
-            tile.PressureDirection = differenceDirection;
-        }
-
-        //INFO The EE version of this function drops pressureResistanceProbDelta, since it's not needed. If you are for whatever reason calling this function
-        //INFO And if it isn't working, you've probably still got the pressureResistanceProbDelta line included.
-        /// <notes>
-        /// EXPLANATION:
-        /// pressureDifference = Force of Air Flow on a given tile
-        /// physics.Mass = Mass of the object potentially being thrown
-        /// physics.InvMass = 1 divided by said Mass. More CPU efficient way to do division.
-        ///
-        /// Objects can only be thrown if the force of air flow is greater than the SQUARE of their mass or {SpaceWindMinimumCalculatedMass}, whichever is heavier
-        /// This means that the heavier an object is, the exponentially more force is required to move it
-        /// The force of a throw is equal to the force of air pressure, divided by an object's mass. So not only are heavier objects
-        /// less likely to be thrown, they are also harder to throw,
-        /// while lighter objects are yeeted easily, and from great distance.
-        ///
-        /// For a human sized entity with a standard weight of 80kg and a spacing between a hard vacuum and a room pressurized at 101kpa,
-        /// The human shall only be moved if he is either very close to the hole, or is standing in a region of high airflow
-        /// </notes>
-
-        public void ExperiencePressureDifference(
-            Entity<MovedByPressureComponent> ent,
-            int cycle,
-            float pressureDifference,
-            AtmosDirection direction,
-            EntityCoordinates throwTarget,
-            Angle gridWorldRotation,
-            TransformComponent? xform = null,
-            PhysicsComponent? physics = null)
-        {
-            var (uid, component) = ent;
-            if (!Resolve(uid, ref physics, false))
-                return;
-
-            if (!Resolve(uid, ref xform))
-                return;
-
-            if (physics.BodyType != BodyType.Static
-                && !float.IsPositiveInfinity(component.MoveResist))
-            {
-                var moveForce = pressureDifference * MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
-                if (HasComp<HumanoidAppearanceComponent>(ent))
-                    moveForce *= HumanoidThrowMultiplier;
-                if (moveForce > physics.Mass)
-                {
-                    // Grid-rotation adjusted direction
-                    var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
-                    moveForce *= MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
-
-                    //TODO Consider replacing throw target with proper trigonometry angles.
-                    if (throwTarget != EntityCoordinates.Invalid)
-                    {
-                        var pos = throwTarget.ToMap(EntityManager, _transformSystem).Position - xform.WorldPosition + dirVec;
-                        _throwing.TryThrow(uid, pos.Normalized() * MathF.Min(moveForce, SpaceWindMaxVelocity), moveForce);
-                    }
-                    else
-                    {
-                        _throwing.TryThrow(uid, dirVec.Normalized() * MathF.Min(moveForce, SpaceWindMaxVelocity), moveForce);
-                    }
-
-                    component.LastHighPressureMovementAirCycle = cycle;
-                }
-            }
-        }
+        component.LastHighPressureMovementAirCycle = cycle;
+        component.Throwing = true;
+        component.ThrowingCutoffTarget = _gameTiming.CurTime + component.CutoffTime;
+        _activePressures.Add(ent);
     }
 }

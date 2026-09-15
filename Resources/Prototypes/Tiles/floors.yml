@@ -143,7 +143,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteel
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelCheckerLight
@@ -162,7 +161,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteelCheckerLight
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelCheckerDark
@@ -181,7 +179,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteelCheckerDark
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelMini
@@ -200,7 +197,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteelMini
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelPavement
@@ -219,7 +215,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteelPavement
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelDiagonal
@@ -238,7 +233,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteelDiagonal
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelOffset
@@ -251,7 +245,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteelOffset
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelMono
@@ -270,7 +263,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemSteelMono
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelPavementVertical
@@ -289,7 +281,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemSteelPavementVertical
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelHerringbone
@@ -308,7 +299,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemSteelHerringbone
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorSteelDiagonalMini
@@ -327,7 +317,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemSteelDiagonalMini
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorBrassFilled
@@ -340,7 +329,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemBrassFilled
   heatCapacity: 10000
-  tileRipResistance: 220
 
 - type: tile
   id: FloorBrassReebe
@@ -353,7 +341,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemBrassReebe
   heatCapacity: 10000
-  tileRipResistance: 220
 
 - type: tile
   id: FloorPlastic
@@ -372,7 +359,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteel
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWood
@@ -393,7 +379,6 @@
     collection: BarestepWood
   itemDrop: FloorTileItemWood
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhite
@@ -412,7 +397,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhiteMini
@@ -431,7 +415,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMini
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhitePavement
@@ -450,7 +433,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavement
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhiteDiagonal
@@ -469,7 +451,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteDiagonal
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhiteOffset
@@ -482,7 +463,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteOffset
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhiteMono
@@ -501,7 +481,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMono
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhitePavementVertical
@@ -520,7 +499,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavementVertical
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhiteHerringbone
@@ -539,7 +517,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteHerringbone
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhiteDiagonalMini
@@ -558,7 +535,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteDiagonalMini
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorWhitePlastic
@@ -577,7 +553,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorDark
@@ -596,7 +571,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDark
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkMini
@@ -615,7 +589,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMini
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkPavement
@@ -634,7 +607,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavement
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkDiagonal
@@ -653,7 +625,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkDiagonal
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkOffset
@@ -666,7 +637,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkOffset
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkMono
@@ -685,7 +655,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMono
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkPavementVertical
@@ -704,7 +673,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavementVertical
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkHerringbone
@@ -723,7 +691,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkHerringbone
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkDiagonalMini
@@ -742,7 +709,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDarkDiagonalMini
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkPlastic
@@ -761,7 +727,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemDark
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorTechMaint
@@ -774,7 +739,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemTechmaint
   heatCapacity: 10000
-  tileRipResistance: 250
 
 - type: tile
   id: FloorTechMaintDark
@@ -787,7 +751,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemTechmaintDark
   heatCapacity: 10000
-  tileRipResistance: 250
 
 - type: tile
   id: FloorReinforced
@@ -813,7 +776,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemMono
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorLino
@@ -826,7 +788,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemLino
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorSteelDirty
@@ -839,7 +800,6 @@
     collection: FootstepPlating
   itemDrop: FloorTileItemDirty
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorElevatorShaft
@@ -852,7 +812,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemElevatorShaft
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorMetalDiamond
@@ -865,7 +824,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemMetalDiamond
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorRockVault
@@ -878,7 +836,6 @@
     collection: FootstepAsteroid
   itemDrop: FloorTileItemRockVault
   heatCapacity: 10000
-  tileRipResistance:  400
 
 - type: tile
   id: FloorBlue
@@ -891,7 +848,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemBlue
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorSteelLime
@@ -910,7 +866,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemLime
   heatCapacity: 10000
-  tileRipResistance: 4500
 
 - type: tile
   id: FloorMining
@@ -923,7 +878,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemMining
   heatCapacity: 10000
-  tileRipResistance: 250
 
 - type: tile
   id: FloorMiningDark
@@ -936,7 +890,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemMiningDark
   heatCapacity: 10000
-  tileRipResistance: 250
 
 - type: tile
   id: FloorMiningLight
@@ -949,7 +902,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemMiningLight
   heatCapacity: 10000
-  tileRipResistance: 250
 
 # Departamental
 - type: tile
@@ -963,7 +915,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemFreezer
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorShowroom
@@ -976,7 +927,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemShowroom
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorHydro
@@ -989,7 +939,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemHydro
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorBar
@@ -1008,7 +957,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemBar
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorClown
@@ -1021,7 +969,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemClown
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorMime
@@ -1034,7 +981,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemMime
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorKitchen
@@ -1047,7 +993,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemKitchen
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorLaundry
@@ -1060,7 +1005,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemLaundry
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorSteelDamaged
@@ -1080,7 +1024,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteel #This should probably be made null when it becomes possible to make it such, in SS13 prying destroyed tiles wouldn't give you anything.
   heatCapacity: 10000
-  tileRipResistance: 175
 
 - type: tile
   id: FloorSteelBurnt
@@ -1097,7 +1040,6 @@
     collection: FootstepFloor
   itemDrop: FloorTileItemSteel #Same case as FloorSteelDamaged, make it null when possible
   heatCapacity: 10000
-  tileRipResistance: 175
 
 # Concrete
 - type: tile
@@ -1118,7 +1060,6 @@
   itemDrop: FloorTileItemConcrete
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorConcreteMono
@@ -1138,7 +1079,6 @@
   itemDrop: FloorTileItemConcreteMono
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorConcreteSmooth
@@ -1158,7 +1098,6 @@
   itemDrop: FloorTileItemConcreteSmooth
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorGrayConcrete
@@ -1178,7 +1117,6 @@
   itemDrop: FloorTileItemGrayConcrete
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorGrayConcreteMono
@@ -1198,7 +1136,6 @@
   itemDrop: FloorTileItemGrayConcreteMono
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorGrayConcreteSmooth
@@ -1218,7 +1155,6 @@
   itemDrop: FloorTileItemGrayConcreteSmooth
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorOldConcrete
@@ -1238,7 +1174,6 @@
   itemDrop: FloorTileItemOldConcrete
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorOldConcreteMono
@@ -1258,7 +1193,6 @@
   itemDrop: FloorTileItemOldConcreteMono
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 - type: tile
   id: FloorOldConcreteSmooth
@@ -1278,7 +1212,6 @@
   itemDrop: FloorTileItemOldConcreteSmooth
   heatCapacity: 10000
   weather: true
-  tileRipResistance: 300
 
 # Carpets (non smoothing)
 - type: tile
@@ -1295,7 +1228,6 @@
   friction: 1.25
   itemDrop: FloorTileItemArcadeBlue
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorArcadeBlue2
@@ -1311,7 +1243,6 @@
   friction: 1.25
   itemDrop: FloorTileItemArcadeBlue2
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorArcadeRed
@@ -1327,7 +1258,6 @@
   friction: 1.25
   itemDrop: FloorTileItemArcadeRed
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorEighties
@@ -1343,7 +1273,6 @@
   friction: 1.25
   itemDrop: FloorTileItemEighties
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorCarpetClown
@@ -1359,7 +1288,6 @@
   friction: 1.25
   itemDrop: FloorTileItemCarpetClown
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorCarpetOffice
@@ -1375,7 +1303,6 @@
   friction: 1.25
   itemDrop: FloorTileItemCarpetOffice
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorBoxing
@@ -1395,7 +1322,6 @@
   friction: 1.25
   itemDrop: FloorTileItemBoxing
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorGym
@@ -1415,7 +1341,6 @@
   friction: 1.25
   itemDrop: FloorTileItemGym
   heatCapacity: 10000
-  tileRipResistance: 50
 
 # Shuttle
 - type: tile
@@ -1544,8 +1469,6 @@
   itemDrop: FloorTileItemShuttleRed
   heatCapacity: 10000
 
-
-
 # Materials
 - type: tile
   id: FloorGold
@@ -1558,7 +1481,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemGold
   heatCapacity: 10000
-  tileRipResistance: 600
 
 - type: tile
   id: FloorSilver
@@ -1571,7 +1493,6 @@
     collection: FootstepTile
   itemDrop: FloorTileItemSilver
   heatCapacity: 10000
-  tileRipResistance: 500
 
 - type: tile
   id: FloorGlass
@@ -1590,7 +1511,6 @@
     collection: FootstepTile
   itemDrop: SheetGlass1
   heatCapacity: 10000
-  tileRipResistance: 150
 
 - type: tile
   id: FloorRGlass
@@ -1609,7 +1529,6 @@
     collection: FootstepTile
   itemDrop: SheetRGlass1
   heatCapacity: 10000
-  tileRipResistance: 175
 
 - type: tile
   id: FloorMetalFoam
@@ -1638,7 +1557,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemGCircuit
   heatCapacity: 10000
-  tileRipResistance: 225
 
 - type: tile
   id: FloorBlueCircuit
@@ -1651,7 +1569,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemBCircuit
   heatCapacity: 10000
-  tileRipResistance: 225
 
 - type: tile
   id: FloorRedCircuit
@@ -2039,7 +1956,6 @@
   itemDrop: FloorTileItemFlesh
   #friction: 0.25 #slippy Goob station change, no longer slippery
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: tile
   id: FloorTechMaint2
@@ -2052,7 +1968,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemSteelMaint
   heatCapacity: 10000
-  tileRipResistance: 225
 
 - type: tile
   id: FloorTechMaint3
@@ -2071,7 +1986,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemGratingMaint
   heatCapacity: 10000
-  tileRipResistance: 225
 
 - type: tile
   id: FloorWoodTile
@@ -2092,7 +2006,6 @@
     collection: BarestepWood
   itemDrop: FloorTileItemWoodPattern
   heatCapacity: 10000
-  tileRipResistance: 75
 
 - type: tile
   id: FloorBrokenWood
@@ -2116,7 +2029,6 @@
     collection: BarestepWood
   itemDrop: MaterialWoodPlank1
   heatCapacity: 10000
-  tileRipResistance: 60
 
 - type: tile
   id: FloorWebTile
@@ -2131,7 +2043,6 @@
     collection: BarestepCarpet
   itemDrop: FloorTileItemWeb
   heatCapacity: 10000
-  tileRipResistance: 30
 
 - type: tile
   id: FloorChromite
@@ -2163,7 +2074,6 @@
     collection: FootstepHull
   itemDrop: FloorTileItemSteel #probably should not be normally obtainable, but the game shits itself and dies when you try to put null here
   heatCapacity: 10000
-  tileRipResistance: 500
 
 - type: tile
   id: FloorHullReinforced
@@ -2221,7 +2131,6 @@
     collection: FootstepGrass
   itemDrop: FloorTileItemAstroGrass
   heatCapacity: 10000
-  tileRipResistance: 50
 
 - type: tile
   id: FloorMowedAstroGrass
@@ -2231,7 +2140,6 @@
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemMowedAstroGrass
-  tileRipResistance: 50
 
 - type: tile
   id: FloorJungleAstroGrass
@@ -2241,7 +2149,6 @@
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemJungleAstroGrass
-  tileRipResistance: 50
 
 # Ice
 - type: tile
@@ -2256,7 +2163,6 @@
   mobFriction: 0.05
   mobAcceleration: 0.1
   itemDrop: FloorTileItemAstroIce
-  tileRipResistance: 50
 
 - type: tile
   id: FloorAstroSnow
@@ -2266,7 +2172,6 @@
   isSubfloor: false
   deconstructTools: [ Prying ]
   itemDrop: FloorTileItemAstroSnow
-  tileRipResistance: 50
 
 # Asteroid Sand
 - type: tile
@@ -2308,7 +2213,6 @@
     collection: BarestepWood
   itemDrop: FloorTileItemWoodLarge
   heatCapacity: 10000
-  tileRipResistance: 100
 
 - type: tile
   id: FloorDarkSquiggly

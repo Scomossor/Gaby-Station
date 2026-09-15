@@ -24,7 +24,7 @@ namespace Content.Server.Atmos.EntitySystems
         {
             var directions = ConductivityDirections(gridAtmosphere, tile);
 
-            for(var i = 0; i < Atmospherics.Directions; i++)
+            for (var i = 0; i < Atmospherics.Directions; i++)
             {
                 var direction = (AtmosDirection) (1 << i);
                 if (!directions.IsFlagSet(direction))
@@ -36,7 +36,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (adjacent == null || adjacent.ThermalConductivity == 0f)
                     continue;
 
-                if(adjacent.ArchivedCycle < gridAtmosphere.UpdateCounter)
+                if (adjacent.ArchivedCycle < gridAtmosphere.UpdateCounter)
                     Archive(adjacent, gridAtmosphere.UpdateCounter);
 
                 NeighborConductWithSource(gridAtmosphere, adjacent, tile);
@@ -50,9 +50,9 @@ namespace Content.Server.Atmos.EntitySystems
 
         private AtmosDirection ConductivityDirections(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile)
         {
-            if(tile.Air == null)
+            if (tile.Air == null)
             {
-                if(tile.ArchivedCycle < gridAtmosphere.UpdateCounter)
+                if (tile.ArchivedCycle < gridAtmosphere.UpdateCounter)
                     Archive(tile, gridAtmosphere.UpdateCounter);
                 return AtmosDirection.All;
             }
