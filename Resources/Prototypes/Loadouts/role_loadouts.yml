@@ -140,6 +140,7 @@
   - CaptainMask # Goobstation - Lollypops!
   - CaptainBackpack
   - CaptainOuterClothing
+  - CaptainShoes
   - Survival
   - TrinketsCommand #Gabystation
   - Trinkets
@@ -156,9 +157,10 @@
   - CivilianShoes
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - CaptainEnvirohelm
+  - CaptainEnvirohelmet # Dumont
   - CaptainEnvirosuit
   - CaptainEnvirogloves
+  - CaptainEnviroboots # Dumont
 
 - type: roleLoadout
   id: JobHeadOfPersonnel

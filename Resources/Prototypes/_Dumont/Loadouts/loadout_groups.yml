@@ -2,7 +2,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Cargo
+#region Cargo
+
+# Bitrunner
+
 - type: loadoutGroup
   id: BitrunnerJumpsuit
   name: loadout-group-bitrunner-jumpsuit
@@ -33,12 +36,12 @@
   - LaceupShoes
 
 - type: loadoutGroup
-  id: BitrunnerEnvirohelm
+  id: BitrunnerEnvirohelmet
   name: loadout-group-bitrunner-envirohelm
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - BitrunnerEnvirohelm
+  - BitrunnerEnvirohelmet
 
 - type: loadoutGroup
   id: BitrunnerEnvirosuit
@@ -54,9 +57,31 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - BlackEnvirogloves
+  - BitrunnerEnvirogloves
+
+- type: loadoutGroup
+  id: BitrunnerEnviroboots
+  name: loadout-group-bitrunner-enviroboots
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BitrunnerEnviroboots
+
+
+#region Dignitary
+
+#region Engineering
+
+#region Heads
+
+#region Medical
+
+#region Science
+
+#region Security
 
 # Prisoner
+
 - type: loadoutGroup
   id: PrisonerEnvirohelm
   name: loadout-group-prisoner-envirohelm
@@ -80,3 +105,9 @@
   maxLimit: 1
   loadouts:
   - BlackEnvirogloves
+
+#region Service
+
+#region Syndicate
+
+#region Others

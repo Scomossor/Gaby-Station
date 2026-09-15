@@ -134,7 +134,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
   id: ClothingOuterEnvirosuitBitrunner
   name: bitrunner envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for bitrunners.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Cargo/bitrunner.rsi
@@ -150,7 +150,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
   id: ClothingOuterEnvirosuitCargoTech
   name: cargo tech envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for cargo techinicians.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Cargo/cargo_tech.rsi
@@ -166,7 +166,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
   id: ClothingOuterEnvirosuitMailman
   name: mailman envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for mailmen.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Cargo/mailman.rsi
@@ -226,7 +226,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
   id: ClothingOuterEnvirosuitSalvage
   name: salvage envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Cargo/salvage.rsi
@@ -269,7 +269,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
   id: ClothingOuterEnvirosuitSalvageLead
   name: salvage lead envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Cargo/salvlead.rsi
@@ -312,7 +312,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
   id: ClothingOuterEnvirosuitExplorer
   name: explorer envirosuit
-  description: An armoured envirosuit for exploring harsh environments.
+  description: An armoured containment suit for exploring harsh environments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Cargo/shaft_miner.rsi
@@ -349,7 +349,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseCentcommCommandContraband]
   id: ClothingOuterEnvirosuitGSO
   name: greenshield officer envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored containment suit with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for greenshield officers.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Dignitary/gso.rsi
@@ -394,7 +394,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCentcommCommandContraband]
   id: ClothingOuterEnvirosuitNTR
   name: nanotrasen representative envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It was modified to meet the aesthetic standards of the NTR.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Dignitary/ntr.rsi
@@ -412,7 +412,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseEngineeringContraband]
   id: ClothingOuterEnvirosuitAtmosV1
   name: atmospherics envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has thermal shielding.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has thermal shielding.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/atmos.rsi
@@ -463,7 +463,7 @@
   parent: ClothingOuterEnvirosuitAtmosV1
   id: ClothingOuterEnvirosuitAtmosV2
   name: atmospherics envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has thermal shielding.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has thermal shielding.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/atmos.rsi
@@ -487,7 +487,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseEngineeringContraband]
   id: ClothingOuterEnvirosuitEngineerV1
   name: engineer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has radiation shielding.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/engineer.rsi
@@ -536,7 +536,7 @@
   parent: ClothingOuterEnvirosuitEngineerV1
   id: ClothingOuterEnvirosuitEngineerV2
   name: engineer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has radiation shielding.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/engineer.rsi
@@ -560,7 +560,7 @@
   parent: ClothingOuterEnvirosuitEngineerV1
   id: ClothingOuterEnvirosuitEngineerV3
   name: engineer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has radiation shielding.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/engineer.rsi
@@ -584,7 +584,7 @@
   parent: ClothingOuterEnvirosuitEngineerV1
   id: ClothingOuterEnvirosuitEngineerV4
   name: engineer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has radiation shielding.
+  description: A special containment suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/engineer.rsi
@@ -608,7 +608,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseEngineeringContraband]
   id: ClothingOuterEnvirosuitTechAssistant
   name: tech assistant envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It does not protect the user against pressure. Made for techinician assistants.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Engineering/tech_assistant.rsi
@@ -636,7 +636,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseCommandContraband]
   id: ClothingOuterEnvirosuitCap
   name: captain envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Includes pressure protection. Designed for the captain of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/cap.rsi
@@ -681,7 +681,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitCE
   name: chief engineer envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special engineering containment suit designed for working in low-pressure, highly radioactive environments. Contains a mini-singularity generator that powers the suit. Designed for the chief engineer of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/ce.rsi
@@ -726,7 +726,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitCMO
   name: chief medical officer envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the chief medical officer of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/cmo.rsi
@@ -742,7 +742,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitHOP
   name: head of personnel envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the head of personnel of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/hop.rsi
@@ -758,7 +758,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseCommandContraband]
   id: ClothingOuterEnvirosuitHOS
   name: head of security envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored security containment suit designed to handle threats to the station. Built for the station's toughest plasmaman.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/hos.rsi
@@ -803,7 +803,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
   id: ClothingOuterEnvirosuitQM
   name: quartermaster envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A containment suit designed for, in all likelihood, the richest person on the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/qm.rsi
@@ -819,7 +819,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseSecurityCommandContraband]
   id: ClothingOuterEnvirosuitRD
   name: research director envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed to handle anomalies and dangerous experiments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/rd.rsi
@@ -856,7 +856,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
   id: ClothingOuterEnvirosuitChemist
   name: chemist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for chemists.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/chemist.rsi
@@ -872,7 +872,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
   id: ClothingOuterEnvirosuitMedicalIntern
   name: medical intern envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for medical interns.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/intern.rsi
@@ -888,7 +888,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
   id: ClothingOuterEnvirosuitMedic
   name: medic envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for medics
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/medic.rsi
@@ -904,7 +904,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
   id: ClothingOuterEnvirosuitParamedic
   name: paramedic envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for paramedics. It has extra protection to handle situations in space.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/paramedic.rsi
@@ -934,7 +934,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
   id: ClothingOuterEnvirosuitPsychologist
   name: psychologist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for psychologists.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/psychologist.rsi
@@ -950,7 +950,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseMedicalContraband]
   id: ClothingOuterEnvirosuitVirologist
   name: virologist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for virologists.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Medical/virologist.rsi
@@ -968,7 +968,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
   id: ClothingOuterEnvirosuitGeneticist
   name: geneticist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Although plasmamen are unaffected by radiation, this suit provides extra protection against them.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/geneticist.rsi
@@ -989,7 +989,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
   id: ClothingOuterEnvirosuitResearchAssistant
   name: research assistant envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for research assistants.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/research_assistant.rsi
@@ -1005,7 +1005,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
   id: ClothingOuterEnvirosuitRoboticist
   name: roboticist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for roboticists.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/roboticist.rsi
@@ -1021,7 +1021,7 @@
   parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
   id: ClothingOuterEnvirosuitScientist
   name: scientist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for scientists.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Science/scientist.rsi
@@ -1039,7 +1039,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
   id: ClothingOuterEnvirosuitBrigmedic
   name: brigmedic envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored security containment suit designed to handle threats to the station. Designed for the brigmedic, it provides extra protection against diseases.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/brigmedic.rsi
@@ -1073,7 +1073,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
   id: ClothingOuterEnvirosuitCadet
   name: cadet envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored security containment suit designed to handle threats to the station. Designed for the cadets, it offers reduced protection and does not protect the user against pressure.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/cadet.rsi
@@ -1098,7 +1098,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
   id: ClothingOuterEnvirosuitDetective
   name: detective envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored security containment suit designed to handle threats to the station. It does not protect the user against pressure. It has a strong smell of cigarettes and whiskey.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/detective.rsi
@@ -1125,7 +1125,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
   id: ClothingOuterEnvirosuitPrisonGuard
   name: prison guard envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored security containment suit designed to handle threats to the station. Designed for the prison guard. It does not protect the user against pressure.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/prison_guard.rsi
@@ -1153,7 +1153,7 @@
   id: ClothingOuterEnvirosuitPrisoner
   suffix: SelfUnremovable
   name: prisoner envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It was modified to handle plasmaman prisoners. It cannot be removed on one's own, external assistance is required.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/prisoner.rsi
@@ -1170,7 +1170,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
   id: ClothingOuterEnvirosuitSecurityV1
   name: security officer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure environments. Has radiation shielding.
+  description: An armored security containment suit designed to handle threats to the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/security.rsi
@@ -1222,7 +1222,7 @@
   parent: ClothingOuterEnvirosuitSecurityV1
   id: ClothingOuterEnvirosuitSecurityV2
   name: security officer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure envirosnments. Has radiation shielding.
+  description: An armored security containment suit designed to handle threats to the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/security.rsi
@@ -1246,7 +1246,7 @@
   parent: ClothingOuterEnvirosuitSecurityV1
   id: ClothingOuterEnvirosuitSecurityV3
   name: security officer envirosuit
-  description: A special envirosuit that protects against hazardous, low pressure envirosnments. Has radiation shielding.
+  description: An armored security containment suit designed to handle threats to the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/security.rsi
@@ -1270,7 +1270,7 @@
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
   id: ClothingOuterEnvirosuitWarden
   name: warden envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An armored security containment suits designed to handle threats to the station. It is a more robust version of the containment suits issued to security officers. Designed for the station's warden.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Security/warden.rsi
@@ -1305,7 +1305,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitAncient
   name: ancient envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A prototype special containment suit that allows plasma-based lifeforms to safely exist in an oxygenated environment. The suit's age is evident, making you wonder how it still works.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/ancient.rsi
@@ -1321,7 +1321,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitBartender
   name: bartender envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for bartenders.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/bartender.rsi
@@ -1337,7 +1337,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitBotanist
   name: botanist envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for botanists.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/botanist.rsi
@@ -1353,7 +1353,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitBoxer
   name: boxer envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It features padding to cushion impacts.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/boxer.rsi
@@ -1364,12 +1364,17 @@
       - state: equipped-OUTERCLOTHING
       - state: equipped-OUTERCLOTHING-unshaded
         shader: unshaded
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Caustic: 0.9
 
 - type: entity
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitChaplain
   name: chaplain envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It has been blessed to ward off the forces of evil.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/chaplain.rsi
@@ -1385,7 +1390,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitChef
   name: chef envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It features an outer coating that prevents tomato sauce from staining the suit.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/chef.rsi
@@ -1401,7 +1406,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitClown
   name: clown envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: Why didn't the skeleton want to go to the gym to work out his chest? Because he didn't have the guts for it!
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/clown.rsi
@@ -1415,7 +1420,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitJanitor
   name: janitor envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. It features an outer coating to prevent seasonal dirt from getting into the suit.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/janitor.rsi
@@ -1431,7 +1436,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitLawyer
   name: lawyer envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. With a built-in tie to ensure you know what you're doing.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/lawyer.rsi
@@ -1445,7 +1450,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitMime
   name: mime envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Strangely, the suit makes no noise.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/mime.rsi
@@ -1459,7 +1464,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitMusician
   name: musician envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Wearing this makes you want to form an electronic music duo with the radio host.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/musician.rsi
@@ -1473,7 +1478,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitRadio
   name: radio envirosuit
-  description: Radio envirsuit.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Wearing this makes you want to form an electronic music duo with the musician.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/radio.rsi
@@ -1487,7 +1492,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitReporter
   name: reporter envirosuit
-  description: Reporter envirsuit.
+  description: IS!!
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/reporter.rsi
@@ -1503,7 +1508,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitZookeeper
   name: zookeeper envirosuit
-  description: Zookeeper envirsuit.
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. With an extra seal to prevent unwanted bees from entering the suit.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Service/zookeeper.rsi
@@ -1521,7 +1526,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitTacticool
   name: tacticool envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An extremely cool special containment suit that allows only the coolest plasma-based lifeforms to safely exist in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Syndicate/tacticool.rsi
@@ -1539,7 +1544,7 @@
   parent: ClothingOuterEnvirosuitBase
   id: ClothingOuterEnvirosuitAdminAssistant
   name: admin assistant envirosuit
-  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  description: An extremely poorly made, containment suit that allows plasma-based lifeforms to safely exist in an oxygenated environment. Constructed from duct tape and cardboard, which, somehow, still holds together.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/OuterClothing/Envirosuits/Heads/admin.rsi

@@ -34,7 +34,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnviroboots
   name: plasma enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/plain.rsi
@@ -47,7 +47,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCargoContraband]
   id: ClothingShoesEnvirobootsBitrunner
   name: bitrunner enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Cargo/bitrunner.rsi
@@ -58,7 +58,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCargoContraband]
   id: ClothingShoesEnvirobootsCargoTech
   name: cargo tech enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Cargo/cargo_tech.rsi
@@ -69,7 +69,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCargoContraband]
   id: ClothingShoesEnvirobootsMailman
   name: mailman enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Cargo/mailman.rsi
@@ -110,7 +110,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSalvageContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsSalvage
   name: salvage enviroboots
-  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  description: A modified pair of contaiment boots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Cargo/salvage.rsi
@@ -145,7 +145,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSalvageContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsSalvageLead
   name: salvage lead enviroboots
-  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  description: A modified pair of containment boots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Cargo/salvlead.rsi
@@ -180,7 +180,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCargoContraband]
   id: ClothingShoesEnvirobootsExplorer
   name: explorer enviroboots
-  description: An armoured enviroboot for exploring harsh environments.
+  description: An armoured pair of contaiment boots for exploring harsh environments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Cargo/shaft_miner.rsi
@@ -212,7 +212,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCentcommCommandContraband]
   id: ClothingShoesEnvirobootsGSO
   name: greenshield officer enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for greenshield officers.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Dignitary/gso.rsi
@@ -240,7 +240,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCentcommCommandContraband]
   id: ClothingShoesEnvirobootsNTR
   name: nanotrasen representative enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. It was modified to meet the aesthetic standards of the NTR.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Dignitary/ntr.rsi
@@ -253,7 +253,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseEngineeringContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsAtmos
   name: atmospherics enviroboots
-  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  description: A modified pair of containment boots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Engineering/atmos.rsi
@@ -284,7 +284,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseEngineeringContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsEngineer
   name: engineer enviroboots
-  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  description: A modified pair of containment boots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Engineering/engineer.rsi
@@ -315,7 +315,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseEngineeringContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsTechAssistant
   name: tech assistant enviroboots
-  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  description: A modified pair of containment boots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Engineering/tech_assistant.rsi
@@ -337,7 +337,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsCap
   name: captain enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the captain of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/cap.rsi
@@ -359,7 +359,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband, ClothingShoesBootsMagBase]
   id: ClothingShoesEnvirobootsCE
   name: chief engineer enviroboots
-  description: Modified enviroboots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
+  description: A modified pair of contaiment boots for hazardous environments. They feature magnetic soles that ensure the user remains safely attached to the ground.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/ce.rsi
@@ -391,7 +391,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsCMO
   name: chief medical officer enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the chief medical officer of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/cmo.rsi
@@ -402,7 +402,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsHOP
   name: head of personnel enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the head of personnel of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hop.rsi
@@ -413,7 +413,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsHOS
   name: head of security enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. Built for the station's toughest plasmaman.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/hos.rsi
@@ -442,7 +442,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsQM
   name: quartermaster enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of containment boots designed for, in all likelihood, the richest person on the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/qm.rsi
@@ -453,7 +453,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseCommandContraband]
   id: ClothingShoesEnvirobootsRD
   name: research director enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed to handle anomalies and dangerous experiments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/rd.rsi
@@ -478,7 +478,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
   id: ClothingShoesEnvirobootsMedicalIntern
   name: medical intern enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/intern.rsi
@@ -489,7 +489,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
   id: ClothingShoesEnvirobootsChemist
   name: chemist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/chemist.rsi
@@ -500,7 +500,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
   id: ClothingShoesEnvirobootsMedic
   name: medic enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/medic.rsi
@@ -511,7 +511,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
   id: ClothingShoesEnvirobootsParamedic
   name: paramedic enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A special pair of containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for paramedics. It has extra protection to handle situations in space.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/paramedic.rsi
@@ -534,7 +534,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
   id: ClothingShoesEnvirobootsPsychologist
   name: psychologist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/psychologist.rsi
@@ -545,7 +545,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseMedicalContraband]
   id: ClothingShoesEnvirobootsVirologist
   name: virologist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Medical/virologist.rsi
@@ -558,7 +558,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
   id: ClothingShoesEnvirobootsGeneticist
   name: geneticist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/geneticist.rsi
@@ -574,7 +574,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
   id: ClothingShoesEnvirobootsResearchAssistante
   name: research assistant enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/research_assistant.rsi
@@ -585,7 +585,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
   id: ClothingShoesEnvirobootsRoboticist
   name: roboticist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/roboticist.rsi
@@ -596,7 +596,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseScienceContraband]
   id: ClothingShoesEnvirobootsScientist
   name: scientist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Science/scientist.rsi
@@ -609,7 +609,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
   id: ClothingShoesEnvirobootsBrigmedic
   name: brigmedic enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/brigmedic.rsi
@@ -638,7 +638,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
   id: ClothingShoesEnvirobootsCadet
   name: cadet enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/cadet.rsi
@@ -665,7 +665,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
   id: ClothingShoesEnvirobootsDetective
   name: detective enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/detective.rsi
@@ -694,7 +694,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
   id: ClothingShoesEnvirobootsPrisonGuard
   name: prison guard enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/prison_guard.rsi
@@ -724,7 +724,7 @@
   id: ClothingShoesEnvirobootsPrisoner
   suffix: SelfUnremovable
   name: prisoner enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A special pair containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. It was modified to handle plasmaman prisoners. It cannot be removed on one's own, external assistance is required.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/prisoner.rsi
@@ -736,7 +736,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
   id: ClothingShoesEnvirobootsSecurity
   name: security officer enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/security.rsi
@@ -764,7 +764,7 @@
   parent: [ClothingShoesEnvirobootsBase, BaseSecurityContraband]
   id: ClothingShoesEnvirobootsWarden
   name: warden enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of armored containment boots with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Security/warden.rsi
@@ -794,7 +794,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsAncient
   name: ancient enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of prototype containment boots that allows plasma-based lifeforms to safely exist in an oxygenated environment. The gloves age is evident, making you wonder how it still works.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/ancient.rsi
@@ -805,7 +805,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsBartender
   name: bartender enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/bartender.rsi
@@ -816,7 +816,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsBotanist
   name: botanist enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/botanist.rsi
@@ -827,7 +827,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsBoxer
   name: boxer enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/boxer.rsi
@@ -838,7 +838,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsChaplain
   name: chaplain enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. It has been blessed to ward off the forces of evil.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/chaplain.rsi
@@ -849,7 +849,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsChef
   name: chef enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/chef.rsi
@@ -860,7 +860,7 @@
   parent: [ClothingShoesEnvirobootsBase, ClothingShoesClownBase]
   id: ClothingShoesEnvirobootsClown
   name: clown enviroboots
-  description: Covers up those scandalous boney feet.
+  description: Why didn't the skeleton go to the dance? He had nobody to go with.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/clown.rsi
@@ -876,7 +876,7 @@
   parent: [ClothingShoesEnvirobootsBase, ClothingShoesGaloshes]
   id: ClothingShoesEnvirobootsJanitor
   name: janitor enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. It has special soles to provide better grip on the ground, preventing falls.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/janitor.rsi
@@ -887,7 +887,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsLawyer
   name: lawyer enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/lawyer.rsi
@@ -898,7 +898,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsMime
   name: mime enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. You won't even hear him coming.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/mime.rsi
@@ -909,7 +909,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsMusician
   name: musician enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/musician.rsi
@@ -920,7 +920,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsRadio
   name: radio enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/radio.rsi
@@ -931,7 +931,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsReporter
   name: reporter enviroboots
-  description: Covers up those scandalous boney feet.
+  description: TIME!!
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/reporter.rsi
@@ -942,7 +942,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsZookeeper
   name: zookeeper enviroboots
-  description: Covers up those scandalous boney feet.
+  description: A pair of special containment boots that allows plasma-based lifeforms to exist safely in an oxygenated environment. With an extra seal to prevent unwanted bees from entering the suit.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Service/zookeeper.rsi
@@ -955,7 +955,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsTacticool
   name: tacticool enviroboots
-  description: Covers up those scandalous boney feet.
+  description: An extremely cool pair of special containment boots that allows only the coolest plasma-based lifeforms to safely exist in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Syndicate/tacticool.rsi
@@ -968,7 +968,7 @@
   parent: ClothingShoesEnvirobootsBase
   id: ClothingShoesEnvirobootsAdminAssistant
   name: admin assistant enviroboots
-  description: Covers up those scandalous boney feet.
+  description: An extremely poorly made, pair of containment boots that allows plasma-based lifeforms to safely exist in an oxygenated environment. Constructed from duct tape and cardboard, which, somehow, still holds together.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Shoes/Enviroboots/Heads/admin.rsi

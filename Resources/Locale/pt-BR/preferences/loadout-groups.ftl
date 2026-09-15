@@ -46,6 +46,7 @@ loadout-group-captain-jumpsuit = Roupa do capitão
 loadout-group-captain-neck = Pescoço do capitão
 loadout-group-captain-backpack = Mochila do capitão
 loadout-group-captain-outerclothing = Casaco do capitão
+loadout-group-captain-shoes = Sapatos do capitão
 
 loadout-group-hop-head = Chapeu do chefe dos funcionarios
 loadout-group-hop-jumpsuit = Roupa do chefe dos funcionarios

@@ -52,14 +52,10 @@ public sealed partial class EnvirohelmetToggleSystem : EntitySystem
     {
         var (uid, comp) = ent;
         var nextActive = !comp.IsActive;
-
+        _audio.PlayPredicted(ent.Comp.ToggleSound, ent, args.Performer);
         UpdateState(ent, nextActive);
         _actions.SetToggled(comp.ActionEntity, nextActive);
-    }
-
-    public void ToggleComponent(Entity<EnvirohelmetToggleComponent> ent, bool active)
-    {
-        UpdateState(ent, active);
+        args.Handled = true;
     }
 
     private void UpdateState(Entity<EnvirohelmetToggleComponent> ent, bool active)

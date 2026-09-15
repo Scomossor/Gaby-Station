@@ -35,6 +35,12 @@ public sealed partial class EnvirohelmetToggleComponent : Component
 
     [DataField]
     public EntityUid? Target;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? WearerEntity;
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan ActionTime = TimeSpan.FromSeconds(0.5);
 }
 
 public sealed partial class ToggleEnvirohelmetEvent : InstantActionEvent

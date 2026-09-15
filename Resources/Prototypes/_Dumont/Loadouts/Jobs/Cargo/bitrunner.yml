@@ -13,16 +13,34 @@
 - type: loadout
   id: BitrunnerEnvirosuit
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitBitrunner
+    outerClothing: ClothingOuterEnvirosuitBitrunner
   effects:
   - !type:SpeciesLoadoutEffect
     species:
     - Plasmaman
 
 - type: loadout
-  id: BitrunnerEnvirohelm
+  id: BitrunnerEnvirohelmet
   equipment:
-    head: ClothingHeadEnvirohelmBitrunner
+    head: ClothingHeadEnvirohelmetBitrunner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: BitrunnerEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesBitrunner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: BitrunnerEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsBitrunner
   effects:
   - !type:SpeciesLoadoutEffect
     species:

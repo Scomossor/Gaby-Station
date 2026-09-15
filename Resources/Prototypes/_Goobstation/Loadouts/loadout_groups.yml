@@ -1184,12 +1184,12 @@
 # Captain
 
 - type: loadoutGroup
-  id: CaptainEnvirohelm
+  id: CaptainEnvirohelmet
   name: loadout-group-captain-envirohelm
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - CaptainEnvirohelm
+  - CaptainEnvirohelmet
 
 - type: loadoutGroup
   id: CaptainEnvirosuit
@@ -1206,6 +1206,14 @@
   maxLimit: 1
   loadouts:
   - CaptainEnvirogloves
+
+- type: loadoutGroup
+  id: CaptainEnviroboots
+  name: loadout-group-captain-enviroboots
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CaptainEnviroboots
 
 - type: loadoutGroup
   id: CaptainGloves

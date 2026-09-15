@@ -37,7 +37,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnvirogloves
   name: plasma envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/plain.rsi
@@ -52,7 +52,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesBitrunner
   name: bitrunner envirogloves
-  description: Covers up those scandalous boney hands.
+  description: Special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Cargo/bitrunner.rsi
@@ -65,7 +65,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesCargoTech
   name: cargo tech envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Cargo/cargo_tech.rsi
@@ -78,7 +78,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesMailman
   name: mailman envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Cargo/mailman.rsi
@@ -124,7 +124,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesSalvage
   name: salvage envirogloves
-  description: Modified envirogloves for work in hazardous environments.
+  description: A pair of modified containment gloves for work in hazardous environments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Cargo/salvage.rsi
@@ -158,7 +158,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesSalvageLead
   name: salvage lead envirogloves
-  description: Modified envirogloves for work in hazardous environments.
+  description: A pair of modified containment gloves for work in hazardous environments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Cargo/salvlead.rsi
@@ -192,7 +192,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCargoContraband]
   id: ClothingHandsGlovesEnviroglovesExplorer
   name: explorer envirogloves
-  description: An armoured enviroglove for exploring harsh environments.
+  description: A pair of armored containment gloves for exploring harsh environments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Cargo/shaft_miner.rsi
@@ -227,7 +227,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCentcommCommandContraband]
   id: ClothingHandsGlovesEnviroglovesGSO
   name: greenshield officer envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containment gloves with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for greenshield officers.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/gso.rsi
@@ -262,7 +262,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCentcommCommandContraband]
   id: ClothingHandsGlovesEnviroglovesNTR
   name: nanotrasen representative envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. It was modified to meet the aesthetic standards of the NTR.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/ntr.rsi
@@ -277,7 +277,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseEngineeringContraband]
   id: ClothingHandsGlovesEnviroglovesAtmosV1
   name: atmospherics envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has thermal shielding.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/atmos.rsi
@@ -319,7 +319,7 @@
   parent: ClothingHandsGlovesEnviroglovesAtmosV1
   id: ClothingHandsGlovesEnviroglovesAtmosV2
   name: atmospherics envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has thermal shielding.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/atmos.rsi
@@ -346,7 +346,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseEngineeringContraband]
   id: ClothingHandsGlovesEnviroglovesEngineerV1
   name: engineer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/engineer.rsi
@@ -384,7 +384,7 @@
   parent: ClothingHandsGlovesEnviroglovesEngineerV1
   id: ClothingHandsGlovesEnviroglovesEngineerV2
   name: engineer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/engineer.rsi
@@ -402,7 +402,7 @@
   parent: ClothingHandsGlovesEnviroglovesEngineerV1
   id: ClothingHandsGlovesEnviroglovesEngineerV3
   name: engineer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/engineer.rsi
@@ -418,7 +418,7 @@
   parent: ClothingHandsGlovesEnviroglovesEngineerV1
   id: ClothingHandsGlovesEnviroglovesEngineerV4
   name: engineer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/engineer.rsi
@@ -434,7 +434,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesTechAssistant
   name: tech assistant envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that protects against hazardous environments. Has radiation shielding and electric shock protection.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Engineering/tech_assistant.rsi
@@ -461,7 +461,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesCap
   name: captain envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the captain of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/cap.rsi
@@ -487,7 +487,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesCE
   name: chief engineer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of special engineering containment gloves designed for working in low-pressure, highly radioactive environments. Designed for the chief engineer of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/ce.rsi
@@ -516,7 +516,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesCMO
   name: chief medical officer envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for the chief medical officer of the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/cmo.rsi
@@ -529,7 +529,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesHOP
   name: head of personnel envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Even though plasmamen don't bleed, this glove protects against paper cuts.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/hop.rsi
@@ -549,7 +549,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesHOS
   name: head of security envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containment gloves with reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. Built for the station's toughest plasmaman.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/hos.rsi
@@ -574,7 +574,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesQM
   name: quartermaster envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of containment gloves designed for, in all likelihood, the richest person on the station.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/qm.rsi
@@ -587,7 +587,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCommandContraband]
   id: ClothingHandsGlovesEnviroglovesRD
   name: research director envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed to handle anomalies and dangerous experiments.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/rd.rsi
@@ -615,7 +615,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
   id: ClothingHandsGlovesEnviroglovesMedicalIntern
   name: medical intern envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/intern.rsi
@@ -628,7 +628,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
   id: ClothingHandsGlovesEnviroglovesChemist
   name: chemist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/chemist.rsi
@@ -641,7 +641,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
   id: ClothingHandsGlovesEnviroglovesMedic
   name: medic envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/medic.rsi
@@ -654,7 +654,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
   id: ClothingHandsGlovesEnviroglovesParamedic
   name: paramedic envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Designed for paramedics. It has extra protection to handle situations in space.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/paramedic.rsi
@@ -679,7 +679,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
   id: ClothingHandsGlovesEnviroglovesPsychologist
   name: psychologist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/psychologist.rsi
@@ -692,7 +692,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseMedicalContraband]
   id: ClothingHandsGlovesEnviroglovesVirologist
   name: virologist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Medical/virologist.rsi
@@ -707,7 +707,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
   id: ClothingHandsGlovesEnviroglovesGeneticist
   name: geneticist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Science/geneticist.rsi
@@ -725,7 +725,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
   id: ClothingHandsGlovesEnviroglovesResearchAssistant
   name: research assistant envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Science/research_assistant.rsi
@@ -738,7 +738,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
   id: ClothingHandsGlovesEnviroglovesRoboticist
   name: roboticist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Science/roboticist.rsi
@@ -751,7 +751,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
   id: ClothingHandsGlovesEnviroglovesScientist
   name: scientist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Science/scientist.rsi
@@ -766,7 +766,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesBrigmedic
   name: brigmedic envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/brigmedic.rsi
@@ -791,7 +791,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesCadet
   name: cadet envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/cadet.rsi
@@ -813,7 +813,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesDetective
   name: detective envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. Contains traces of cigarettes
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/detective.rsi
@@ -837,7 +837,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesPrisonGuard
   name: prison guard envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/prison_guard.rsi
@@ -862,7 +862,7 @@
   id: ClothingHandsGlovesEnviroglovesPrisoner
   suffix: SelfUnremovable
   name: prisoner envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of armored containement glovesthat allows plasma-based lifeforms to exist safely in an oxygenated environment. It was modified to handle plasmaman prisoners. It cannot be removed on one's own, external assistance is required.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/prisoner.rsi
@@ -881,7 +881,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseSecurityContraband]
   id: ClothingHandsGlovesEnviroglovesSecurityV1
   name: security officer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
@@ -911,7 +911,7 @@
   parent: ClothingHandsGlovesEnviroglovesSecurityV1
   id: ClothingHandsGlovesEnviroglovesSecurityV2
   name: security officer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
@@ -927,7 +927,7 @@
   parent: ClothingHandsGlovesEnviroglovesSecurityV1
   id: ClothingHandsGlovesEnviroglovesSecurityV3
   name: security officer envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/security.rsi
@@ -943,7 +943,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseSecurityContraband]
   id: ClothingHandsGlovesEnviroglovesWarden
   name: warden envirogloves
-  description: A special enviroglove that protects against hazardous environments. Has radiation shielding.
+  description: A pair of armored containement gloveswith reinforced plates that allows plasma-based lifeforms to exist safely in an oxygenated environment. It is a more robust version of the containment gloves issued to security officers. Designed for the station's warden.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Security/warden.rsi
@@ -970,7 +970,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesAncient
   name: ancient envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of prototype containment gloves that allows plasma-based lifeforms to safely exist in an oxygenated environment. The gloves age is evident, making you wonder how it still works.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/ancient.rsi
@@ -983,7 +983,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesBartender
   name: bartender envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/bartender.rsi
@@ -996,7 +996,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesBotanist
   name: botanist envirogloves
-  description: Covers up those scandalous boney hands.
+  description: These leather contaiment gloves protect your boney hands against thorns, barbs, prickles, and spikes.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/botanist.rsi
@@ -1014,7 +1014,7 @@
   parent: [ClothingHandsGlovesEnviroglovesBase, ClothingHandsGlovesBoxingRed]
   id: ClothingHandsGlovesEnviroglovesBoxer
   name: boxer envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves allows plasma-based lifeforms to exist safely in an oxygenated environment. Modified to dish out a beating.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/boxer.rsi
@@ -1028,7 +1028,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesChaplain
   name: chaplain envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. It has been blessed to ward off the forces of evil.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/chaplain.rsi
@@ -1041,7 +1041,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesChef
   name: chef envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/chef.rsi
@@ -1067,7 +1067,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesJanitor
   name: janitor envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Modified to withstand heavy-duty cleaning
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/janitor.rsi
@@ -1081,7 +1081,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesLawyer
   name: lawyer envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/lawyer.rsi
@@ -1094,7 +1094,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesMime
   name: mime envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. Perfect for charades.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/mime.rsi
@@ -1107,7 +1107,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesMusician
   name: musician envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/musician.rsi
@@ -1120,7 +1120,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesRadio
   name: radio envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/radio.rsi
@@ -1133,7 +1133,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesReporter
   name: reporter envirogloves
-  description: Covers up those scandalous boney hands.
+  description: TV!!
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/reporter.rsi
@@ -1146,7 +1146,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesZookeeper
   name: zookeeper envirogloves
-  description: Covers up those scandalous boney hands.
+  description: A pair of special containment gloves that allows plasma-based lifeforms to exist safely in an oxygenated environment. With an extra seal to prevent unwanted bees from entering the suit.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Service/zookeeper.rsi
@@ -1161,7 +1161,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesTacticool
   name: tacticool envirogloves
-  description: Covers up those scandalous boney hands.
+  description: An extremely cool pair of special containment gloves that allows only the coolest plasma-based lifeforms to safely exist in an oxygenated environment.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Syndicate/tacticool.rsi
@@ -1178,7 +1178,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesAdminAssistant
   name: admin assistant envirogloves
-  description: Covers up those scandalous boney hands.
+  description: An extremely poorly made, pair of containment gloves that allows plasma-based lifeforms to safely exist in an oxygenated environment. Constructed from duct tape and cardboard, which, somehow, still holds together.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Hands/Envirogloves/Heads/admin.rsi

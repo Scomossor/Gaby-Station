@@ -401,6 +401,14 @@
   - CaptainJacket # Goobstation
 
 - type: loadoutGroup
+  id: CaptainShoes
+  name: loadout-group-captain-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceUpBoots
+
+- type: loadoutGroup
   id: HoPHead
   name: loadout-group-hop-head
   minLimit: 0
