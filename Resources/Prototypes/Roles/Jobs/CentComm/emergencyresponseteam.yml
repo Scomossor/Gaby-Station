@@ -220,7 +220,6 @@
     components:
     - type: BibleUser # Lets them heal with bibles
     - type: CanEnchant # GoobStation
-    - type: CultResistant # GabyStation -> Port Funky cult
   - !type:AddImplantSpecial
      implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
 

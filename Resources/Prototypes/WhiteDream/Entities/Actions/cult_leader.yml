@@ -1,0 +1,82 @@
+# Dumont
+
+- type: entity
+  parent: BaseAction
+  id: ActionBloodCultFinalReckoning
+  name: Final Reckoning
+  description: "Calls the entire cult to your side. Ten seconds of standing still, and Nar'Sie grants it once: waste it and there will be no other."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: WhiteDream/BloodCult/actions.rsi, state: final_reckoning }
+    itemIconStyle: BigAction
+    useDelay: 30
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: InstantAction
+    event: !type:BloodCultFinalReckoningEvent
+      # Dumont
+      doAfterDuration: 10
+      speech: "Barhah hra zar'garis!"
+  - type: SpeakOnAction
+    sentence: cult-spell-chant-final-reckoning
+  - type: BaseCultSpell
+
+- type: entity
+  parent: BaseAction
+  id: ActionBloodCultMarkTarget
+  name: Mark Target
+  description: Marks one of the uninitiated for the cult. Every acolyte learns their name and where they are.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: WhiteDream/BloodCult/actions.rsi, state: cult_mark }
+    itemIconStyle: BigAction
+    useDelay: 120
+  - type: TargetAction
+    checkCanAccess: false
+    range: 15
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body
+    event: !type:BloodCultMarkTargetEvent
+      duration: 90
+      speech: "Kn'a sh'ala vor'tha!"
+  - type: SpeakOnAction
+    sentence: cult-spell-chant-mark-target
+  # Dumont
+  - type: BaseCultSpell
+    bypassProtection: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionBloodCultEldritchPulse
+  name: Eldritch Pulse
+  description: Takes hold of a cultist or something the cult built and hurls it across space to wherever you point next.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: WhiteDream/BloodCult/actions.rsi, state: eldritch_pulse }
+    itemIconStyle: BigAction
+    useDelay: 120
+  - type: TargetAction
+    checkCanAccess: false
+    range: 15
+    interactOnMiss: true
+  - type: WorldTargetAction
+    event: !type:BloodCultEldritchPulseEvent
+      range: 15
+      speech: "Ver'kaas ni'ka torr!"
+      whitelist:
+        components:
+        - BloodCultist
+        - Construct
+        - Pylon
+        - TimedFactory
+        - RunedDoor
+        - BloodCultBarrier
+  - type: SpeakOnAction
+    sentence: cult-spell-chant-eldritch-pulse

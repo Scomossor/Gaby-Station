@@ -165,6 +165,7 @@ using Content.Shared.Timing;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Content.Shared.Wall;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist; // WhiteDream - Blood Cult
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Input;
@@ -233,6 +234,10 @@ namespace Content.Shared.Interaction
         public const string RateLimitKey = "Interaction";
 
         private static readonly ProtoId<TagPrototype> BypassInteractionRangeChecksTag = "BypassInteractionRangeChecks";
+
+        // WhiteDream - Blood Cult
+        private static readonly ProtoId<TagPrototype> BloodRitesAuraTag = "BloodRitesAura";
+        [Dependency] private EntityQuery<BloodCultistComponent> _bloodCultistQuery = default!;
 
         public delegate bool Ignored(EntityUid entity);
 
@@ -502,6 +507,21 @@ namespace Content.Shared.Interaction
         /// <param name="user">The user interacting in combat mode</param>
         /// <param name="target">The target of the interaction</param>
         /// <returns></returns>
+        /// <summary>
+        ///     WhiteDream - Blood Cult. The blood rites aura is spawned into a cultist's hand and has to keep
+        ///     working while they are in combat mode.
+        ///     UserInteraction runs for every interaction of every player on the station, so the cultist
+        ///     component is the gate and everyone else short-circuits out. The held item cannot be the gate:
+        ///     it can be dropped or taken, and non-cultists would pay for the lookup on every click.
+        ///     (BloodRitesAuraComponent is server-side, so the item check stays on the shared tag.)
+        /// </summary>
+        private bool HoldingBloodRites(EntityUid user)
+        {
+            return _bloodCultistQuery.HasComp(user)
+                   && TryGetUsedEntity(user, out var held, checkCanUse: false)
+                   && _tagSystem.HasTag(held.Value, BloodRitesAuraTag);
+        }
+
         public bool CombatModeCanHandInteract(EntityUid user, EntityUid? target)
         {
             // Always allow attack in these cases
@@ -564,8 +584,10 @@ namespace Content.Shared.Interaction
 
             if (!altInteract && _combatQuery.TryComp(user, out var combatMode) && combatMode.IsInCombatMode)
             {
-                if (!CombatModeCanHandInteract(user, target))
+                // <WhiteDream> - Blood Cult (blood rites aura must work in combat mode)
+                if (!CombatModeCanHandInteract(user, target) && !HoldingBloodRites(user))
                     return;
+                // </WhiteDream>
             }
 
             if (!ValidateInteractAndFace(user, coordinates))

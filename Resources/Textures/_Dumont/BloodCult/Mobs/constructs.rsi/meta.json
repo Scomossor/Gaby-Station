@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Paradise Station and imported from Funky Station at commit 1d33e834c087ba7d481e600de9a45dbbc7684042",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "shade",
+      "directions": 4
+    }
+  ]
+}

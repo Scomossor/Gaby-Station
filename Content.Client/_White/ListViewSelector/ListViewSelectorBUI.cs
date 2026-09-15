@@ -22,11 +22,16 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
     private FancyWindow _window = new();
     private BoxContainer? _itemsContainer;
     private Dictionary<string, object> _metaData = new();
+    private List<ListViewSelectorEntry> _items = new(); // Dumont
 
     protected override void Open()
     {
         _window = FormWindow();
         _window.OnClose += Close;
+
+        // Dumont
+        PopulateWindow(_items);
+
         _window.OpenCentered();
     }
 
@@ -36,8 +41,11 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
         if (state is not ListViewSelectorState listViewSelectorState)
             return;
 
-        PopulateWindow(listViewSelectorState.Items);
+        // Dumont
+        _items = listViewSelectorState.Items;
         _metaData = listViewSelectorState.MetaData;
+
+        PopulateWindow(_items);
     }
 
     protected override void Dispose(bool disposing)

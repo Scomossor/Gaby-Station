@@ -147,11 +147,6 @@
       - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "gloves" ]
       - map: [ "shoes" ]
-      - map: [ "culteyes" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
-        state: "arachnid"
-        shader: unshaded
-        visible: false
       - map: [ "id" ]
       - map: [ "outerClothing" ]
       - map: [ "belt" ] #Goobedit - Belts over outerwear
@@ -177,11 +172,6 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "Effects/creampie.rsi"
         state: "creampie_arachnid"
-        visible: false
-      - map: [ "culthalo" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
-        state: "halo"
-        shader: unshaded
         visible: false
   - type: Inventory
     templateId: arachnid

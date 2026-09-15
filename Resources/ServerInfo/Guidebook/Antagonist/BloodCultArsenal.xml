@@ -1,0 +1,162 @@
+<Document>
+  # Runas, magias e estruturas
+
+  O culto transforma o próprio sangue em ferramentas. Runas controlam o território, magias resolvem emergências e o metal rúnico sustenta uma base inteira.
+
+  [textlink="Voltar à visão geral do Culto de Sangue" link="BloodCult"]
+
+  ## Adaga ritual
+
+  <Box>
+    <GuideEntityEmbed Entity="RitualDagger" Caption="Adaga ritual"/>
+  </Box>
+
+  A adaga é a ferramenta principal de todo cultista:
+
+  - Abre o menu para desenhar runas.
+  - Golpeia não-cultistas com dano perfurante.
+  - Apaga uma runa comum após uma breve canalização.
+  - Remove imediatamente uma barreira do culto.
+
+  Perder a adaga não é definitivo: a magia [bold]Invocar Adaga Ritual[/bold] cria outra.
+
+  ## Runas comuns
+
+  Estas runas podem ser desenhadas por qualquer cultista. As runas ligadas ao fim da rodada ficam na página [textlink="O líder do culto" link="BloodCultLeader"].
+
+  <Box Orientation="Vertical" HorizontalAlignment="Center">
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneOffering" Caption="Runa de oferenda"/>
+    </Box>
+    Converte ou sacrifica quem estiver sobre ela. Um cadáver comum exige um cultista; converter uma pessoa viva exige dois; sacrificar uma pessoa viva, alguém protegido contra conversão ou a oferenda marcada exige três. Cada uso bem-sucedido acrescenta uma carga à runa de rejuvenescimento.
+
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneEmpower" Caption="Runa de fortalecimento"/>
+    </Box>
+    Concede fortalecimento ao cultista. Enquanto durar, ele pode carregar até quatro magias de sangue ao mesmo tempo, desenha runas mais depressa e sofre menos dano ao desenhá-las.
+
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneTeleport" Caption="Runa de teleporte"/>
+    </Box>
+    Recebe um nome ao ser criada e transporta tudo que estiver sobre ela até outra runa de teleporte. A magia Teleportar também usa essas runas como destinos.
+
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneRevive" Caption="Runa de rejuvenescimento"/>
+    </Box>
+    Ressuscita e cura um cultista morto. Cada uso consome uma carga compartilhada, obtida por conversões e sacrifícios na runa de oferenda.
+
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneBarrier" Caption="Runa de barreira"/>
+    </Box>
+    Cria uma barreira que impede a passagem de pessoas, mas deixa projéteis atravessarem. Ela possui [bold]100 de vida[/bold], desaparece após [bold]20 segundos[/bold] e pode ser removida imediatamente com uma adaga ritual.
+
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneSummoning" Caption="Runa de invocação"/>
+    </Box>
+    Exige três cultistas para ser ativada e traz um cultista escolhido até a runa. O alvo não pode estar algemado nem sendo arrastado.
+
+    <Box>
+      <GuideEntityEmbed Entity="CultRuneBloodBoil" Caption="Runa de sangue fervente"/>
+    </Box>
+    Exige três cultistas. Fere quem a invoca e dispara três ondas contra não-cultistas que conseguem ver a runa, causando dano e incendiando as vítimas.
+  </Box>
+
+  ## Magias de sangue
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionBloodCultSelectSpells" Caption="Preparar magias"/>
+    <GuideEntityEmbed Entity="ActionBloodCultRemoveSpells" Caption="Remover magias"/>
+  </Box>
+
+  Preparar uma magia custa sangue e causa dano ao usuário. As magias são de uso único: depois de lançadas, precisam ser preparadas novamente. Sem fortalecimento, um cultista pode carregar apenas uma; com a runa de fortalecimento, o limite sobe para quatro.
+
+  <Box Orientation="Vertical" HorizontalAlignment="Center">
+    <Box>
+      <GuideEntityEmbed Entity="ActionBloodCultStun" Caption="Atordoar"/>
+      <GuideEntityEmbed Entity="ActionBloodCultTeleport" Caption="Teleportar"/>
+    </Box>
+    [bold]Atordoar[/bold] fortalece a mão para incapacitar e emudecer uma vítima. [bold]Teleportar[/bold] envia você ou outro cultista tocado até uma runa de teleporte escolhida.
+
+    <Box>
+      <GuideEntityEmbed Entity="ActionBloodCultEmp" Caption="Pulso eletromagnético"/>
+      <GuideEntityEmbed Entity="ActionBloodCultShadowShackles" Caption="Grilhões das sombras"/>
+    </Box>
+    O [bold]Pulso eletromagnético[/bold] desativa eletrônicos ao redor. Os [bold]Grilhões das sombras[/bold] algemam e emudecem uma vítima ao toque.
+
+    <Box>
+      <GuideEntityEmbed Entity="ActionBloodCultTwistedConstruction" Caption="Construção retorcida"/>
+      <GuideEntityEmbed Entity="ActionBloodCultSummonCombatEquipment" Caption="Equipamento de combate"/>
+    </Box>
+    [bold]Construção retorcida[/bold] converte plasteel em metal rúnico. [bold]Invocar Equipamento de Combate[/bold] cria o conjunto do zelote, uma lâmina eldritch e uma bola do culto.
+
+    <Box>
+      <GuideEntityEmbed Entity="ActionBloodCultSummonRitualDagger" Caption="Invocar adaga"/>
+      <GuideEntityEmbed Entity="ActionBloodCultBloodRites" Caption="Ritos de sangue"/>
+    </Box>
+    [bold]Invocar Adaga Ritual[/bold] substitui uma adaga perdida. [bold]Ritos de Sangue[/bold] absorve sangue para curar aliados ou alimentar ritos avançados.
+  </Box>
+
+  ## Equipamento do zelote
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterArmorCultSummoned" Caption="Mantos do zelote"/>
+    <GuideEntityEmbed Entity="ClothingHeadHelmetCultSummoned" Caption="Capuz do zelote"/>
+    <GuideEntityEmbed Entity="ClothingShoesCultSummoned" Caption="Botas do zelote"/>
+  </Box>
+
+  O conjunto invocado oferece proteção de combate e resistência de estamina. As botas seguram o usuário no chão como coturnos.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyeCultBlindfold" Caption="Venda do zelote"/>
+  </Box>
+
+  A venda produzida nos arquivos concede visão noturna, imunidade a flashes e permite enxergar barras de vida.
+
+  ## Metal rúnico e estruturas
+
+  <Box>
+    <GuideEntityEmbed Entity="RunedMetal" Caption="Metal rúnico"/>
+    <GuideEntityEmbed Entity="CultPylon" Caption="Coletor de sangue"/>
+  </Box>
+
+  Use metal rúnico na mão para abrir o menu de construção. Com ele é possível criar coletores de sangue, altares, forjas, arquivos, vigas e portas do culto.
+
+  O [bold]coletor de sangue[/bold] pode ser ligado ou desligado por um cultista. Quando ativo, corrompe lentamente o piso e cura cultistas vivos próximos. Não-cultistas queimam a mão ao tocá-lo.
+
+  As três fábricas possuem uma recarga própria de quatro minutos:
+
+  <Box>
+    <GuideEntityEmbed Entity="CultFactoryAltar" Caption="Altar"/>
+    <GuideEntityEmbed Entity="CultFactoryForge" Caption="Forja demoníaca"/>
+    <GuideEntityEmbed Entity="CultFactoryArchives" Caption="Arquivos"/>
+  </Box>
+
+  - [bold]Altar:[/bold] produz uma casca de constructo ou uma pedra de amolar do culto.
+  - [bold]Forja demoníaca:[/bold] produz escudo espelhado, espada, armaduras, besta do culto, 10 virotes comuns ou 5 virotes bebedores de sangue.
+  - [bold]Arquivos:[/bold] produzem maldição de nave, venda do zelote, deslocador do véu ou tocha do vazio.
+
+  ## Constructos
+
+  <Box>
+    <GuideEntityEmbed Entity="SoulShard" Caption="Fragmento de alma"/>
+    <GuideEntityEmbed Entity="ConstructShell" Caption="Casca de constructo"/>
+  </Box>
+
+  Sacrifícios deixam a alma da vítima em um fragmento. Ative um fragmento ocupado no chão para manifestar temporariamente seu ocupante como um shade; ative o fragmento novamente para recolhê-lo. Use o fragmento ocupado em uma casca para permitir que seu ocupante escolha uma forma permanente de constructo.
+
+  <Box>
+    <GuideEntityEmbed Entity="ShadeCult" Caption="Shade manifestado"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ConstructArtificer" Caption="Artífice"/>
+    <GuideEntityEmbed Entity="ConstructWraith" Caption="Espectro"/>
+    <GuideEntityEmbed Entity="ConstructJuggernaut" Caption="Juggernaut"/>
+  </Box>
+
+  - [bold]Artífice:[/bold] constrói e produz recursos para o culto.
+  - [bold]Espectro:[/bold] é ofensivo, pode ficar invisível e atravessar paredes e portas durante a mudança de fase.
+  - [bold]Juggernaut:[/bold] é lento e resistente, derruba paredes e cria escudos de força.
+
+  Constructos são aliados do culto, enxergam seus membros, recebem a Comunhão e podem ajudar a ativar runas comuns. Os cânticos especiais do rasgo do véu e da invocação final exigem cultistas humanoides vivos.
+</Document>

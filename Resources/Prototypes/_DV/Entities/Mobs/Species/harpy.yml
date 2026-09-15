@@ -70,12 +70,6 @@
       # Goobstation - changelings
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
-      enum.BloodCultistCommuneUIKey.Key: # funky edit - cultists
-        type: BloodCultCommuneBoundUserInterface
-        requireInputValidation: false
-      enum.SpellsUiKey.Key: # funky edit - cultists
-        type: SpellsBoundUserInterface
-        requireInputValidation: false
       enum.WizardTeleportUiKey.Key: # Goobstation - wizard
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
@@ -111,11 +105,6 @@
       - map: [ "gloves" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
-      - map: [ "culteyes" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
-        state: "human"  # TODO make harpy version
-        shader: unshaded
-        visible: false
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
@@ -129,11 +118,6 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "Effects/creampie.rsi"
         state: "creampie_human"
-        visible: false
-      - map: [ "culthalo" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
-        state: "halo"
-        shader: unshaded
         visible: false
 # Yes, RArm has to be down here
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
@@ -279,11 +263,6 @@
       - map: [ "gloves" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
-      - map: [ "culteyes" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
-        state: "human"  # TODO make harpy version
-        shader: unshaded
-        visible: false
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
@@ -298,11 +277,6 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "Effects/creampie.rsi"
         state: "creampie_human"
-        visible: false
-      - map: [ "culthalo" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
-        state: "halo"
-        shader: unshaded
         visible: false
 # Yes, RArm has to be down here
       - map: [ "enum.HumanoidVisualLayers.RArm" ]

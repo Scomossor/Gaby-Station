@@ -99,6 +99,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Diagnostics.CodeAnalysis; // WhiteDream - Blood Cult
 using Content.Goobstation.Common.Grab;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
@@ -732,6 +733,41 @@ public sealed class PullingSystem : EntitySystem
         RaiseLocalEvent(pullableUid, ref ev);
         return true;
     }
+
+    // <WhiteDream> - Blood Cult
+    public bool TryGetPulledEntity(EntityUid puller,
+        [NotNullWhen(true)] out EntityUid? pulling,
+        PullerComponent? component = null)
+    {
+        pulling = null;
+        if (!Resolve(puller, ref component, false) || !component.Pulling.HasValue)
+            return false;
+
+        pulling = component.Pulling;
+        return true;
+    }
+
+    public bool TryStopPull(EntityUid pullableUid, EntityUid? user = null, bool ignoreGrab = false)
+    {
+        return TryComp<PullableComponent>(pullableUid, out var pullable) &&
+               TryStopPull(pullableUid, pullable, user, ignoreGrab);
+    }
+
+    /// <summary>
+    ///     Copies compatible datafields of <see cref="PullerComponent"/> onto the target entity.
+    /// </summary>
+    public void CopyPullerComponent(Entity<PullerComponent?> source, EntityUid target)
+    {
+        if (!Resolve(source, ref source.Comp))
+            return;
+
+        var targetComp = EnsureComp<PullerComponent>(target);
+        targetComp.ThrowCooldown = source.Comp.ThrowCooldown;
+        targetComp.NeedsHands = source.Comp.NeedsHands;
+        targetComp.PullingAlert = source.Comp.PullingAlert;
+        Dirty(target, targetComp);
+    }
+    // </WhiteDream>
 
     public bool TryStopPull(EntityUid pullableUid, PullableComponent pullable, EntityUid? user = null, bool ignoreGrab = false)
     {

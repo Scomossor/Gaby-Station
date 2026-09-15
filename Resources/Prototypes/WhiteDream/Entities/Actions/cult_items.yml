@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseAction
+  id: ActionBloodSpearRecall
+  name: Recall spear
+  description: Recalls your blood spear back to your hand.
+  categories: [ HideSpawnMenu ]
+  components:
+  # Trauma - action icons come from the Sprite component now, as a layer
+  - type: Action
+    icon: { sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_spear.rsi, state: icon }
+    useDelay: 30
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:BloodSpearRecalledEvent

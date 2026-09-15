@@ -468,51 +468,6 @@
     damageCoefficient: 0.6
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
-  id: ClothingOuterRobesBloodCult
-  name: bloodcult robes
-  description: An evil-looking cloth robe, dripping with blood and reinforced with armor plates, with an attached hood.
-  components:
-  - type: Sprite
-    sprite: _Funkystation/BloodCult/Clothing/cult_robes.rsi
-  - type: Clothing
-    sprite: _Funkystation/BloodCult/Clothing/cult_robes.rsi
-  - type: Armor
-    coverage:
-    - Chest
-    - Groin
-    - Arm
-    - Hand
-    - Leg
-    - Foot
-    - Tail
-    traumaDeductions:
-      Dismemberment: 0.5
-      OrganDamage: 0.5
-      BoneDamage: 0.5
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.5
-        Radiation: 0.5
-        Caustic: 0.5
-  - type: ExplosionResistance
-    damageCoefficient: 0.5
-  - type: StaminaResistance
-    damageCoefficient: 0.75
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodBloodCult
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:Container {}
-  - type: GroupExamine
-
-- type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
   id: ClothingOuterArmorHeavy
   name: heavy armor suit

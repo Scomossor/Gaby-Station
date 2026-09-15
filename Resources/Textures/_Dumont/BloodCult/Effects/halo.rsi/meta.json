@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made for Funky Station and imported from commit f5e00a9ec875112e1fc62a4f084706540f41e943",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "halo",
+      "delays": [
+        [0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
+      ]
+    }
+  ]
+}

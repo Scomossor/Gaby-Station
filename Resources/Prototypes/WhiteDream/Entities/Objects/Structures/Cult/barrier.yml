@@ -1,0 +1,72 @@
+- type: entity
+  name: cult barrier
+  description: Blocks the way for a short while. Shots pass straight through it, but the barrier can be broken.
+  id: BloodCultBarrier
+  parent: BaseStructure
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    layers:
+    - sprite: WhiteDream/BloodCult/Entities/Structures/barrier.rsi
+      state: barrier
+      shader: unshaded
+  - type: Appearance
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 75
+        mask:
+        - MachineMask
+        # WhiteDream - blocks bodies, not shots. No Opaque and no BulletImpassable, so lasers and
+        # bullets go straight through it while people still can't walk past.
+        layer:
+        - Impassable
+        - HighImpassable
+        - MidImpassable
+        - LowImpassable
+        - InteractImpassable
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: TimedDespawn
+    lifetime: 20
+  - type: PointLight
+    enabled: false
+    radius: 3
+    color: red
+  - type: BloodCultBarrier
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+
+- type: entity
+  id: WallForceCult
+  parent: WallForce
+  name: glowing wall
+  description: An unholy shield that blocks all attacks.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Structures/cult_shield.rsi
+    layers:
+    - state: icon
+      map: [ "base" ]
+  - type: Icon
+    sprite: WhiteDream/BloodCult/Entities/Structures/cult_shield.rsi
+    state: icon
+  - type: GenericVisualizer
+    visuals:
+      enum.SpawnAnimationVisuals.Spawned:
+        base:
+          True: { state: icon }
+          False: { state: icon }

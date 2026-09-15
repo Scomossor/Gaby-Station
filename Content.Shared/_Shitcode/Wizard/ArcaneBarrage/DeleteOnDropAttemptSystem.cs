@@ -20,6 +20,8 @@ public sealed class DeleteOnDropAttemptSystem : EntitySystem
 
     private void OnExamine(Entity<DeleteOnDropAttemptComponent> ent, ref ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString("delete-on-drop-attempt-comp-examine"));
+        args.PushMarkup(Loc.GetString(ent.Comp.DeleteOnAttempt
+            ? "delete-on-drop-attempt-comp-examine"
+            : "delete-on-drop-attempt-comp-examine-bound")); // WhiteDream - Blood Cult
     }
 }

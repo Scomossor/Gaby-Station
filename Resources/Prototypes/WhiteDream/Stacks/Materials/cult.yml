@@ -1,0 +1,6 @@
+- type: stack
+  id: RunedMetalSheets
+  name: materials-runed-metal
+  icon: { sprite: /Textures/_Dumont/BloodCult/Sheets/metal.rsi, state: runedmetal } # Dumont
+  spawn: RunedMetal1
+  maxCount: 30

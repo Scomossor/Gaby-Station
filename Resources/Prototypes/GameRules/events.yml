@@ -195,7 +195,6 @@
     - id: SleeperAgents
     - id: HereticMidround # Gabystation
 #    - id: CosmicCultMidround # Dumont edit cosmic cult is way too incompatible with other antags
-#    - id: BloodCultMidround # way too incompatible with other antags
 #    - id: RevolutionaryMidround # way too incompatible with other antags
     - id: ZombieOutbreak
     - id: MorphRule # Trauma Port - Gabystation

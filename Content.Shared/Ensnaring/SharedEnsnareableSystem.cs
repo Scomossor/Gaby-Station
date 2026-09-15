@@ -33,6 +33,7 @@ using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Strip.Components;
+using Content.Shared.Whitelist;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -59,6 +60,7 @@ public abstract class SharedEnsnareableSystem : EntitySystem
     [Dependency] private   readonly SharedHandsSystem _hands = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] private   readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private   readonly EntityWhitelistSystem _whitelist = default!; // WhiteDream
 
     public override void Initialize()
     {
@@ -298,6 +300,10 @@ public abstract class SharedEnsnareableSystem : EntitySystem
     /// <param name="component">The ensnaring component</param>
     public bool TryEnsnare(EntityUid target, EntityUid ensnare, EnsnaringComponent component)
     {
+        // WhiteDream
+        if (_whitelist.IsWhitelistPass(component.IgnoredTargets, target))
+            return false;
+
         //Don't do anything if they don't have the ensnareable component.
         if (!TryComp<EnsnareableComponent>(target, out var ensnareable))
             return false;

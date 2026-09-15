@@ -1,0 +1,8 @@
+author: Struater
+changes:
+  - type: Add
+    message: O Culto de Sangue recebeu novos equipamentos, Ritos de Sangue e mecânicas exclusivas para seu líder.
+  - type: Tweak
+    message: A progressão do Culto de Sangue agora usa porcentagens estáveis da tripulação e não avança apenas porque jogadores morreram.
+  - type: Fix
+    message: Corrigidos diversos problemas nas runas, feitiços, objetivos, fragmentos de alma e no ritual final do Culto de Sangue.

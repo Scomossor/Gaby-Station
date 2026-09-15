@@ -1,0 +1,13 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'blood-cult-ui-roundstart-title'}">
+    <BoxContainer Orientation="Vertical" Margin="10">
+        <Label Text="{Loc 'blood-cult-ui-roundstart-text-1'}" Margin="5" Align="Center"/>
+        <Label Text="{Loc 'blood-cult-ui-roundstart-text-2'}" Margin="5" Align="Center"/>
+        <Label Text="{Loc 'blood-cult-ui-roundstart-text-3'}" Margin="5" Align="Center"/>
+        <BoxContainer Orientation="Horizontal" Margin="5" Align="Center">
+            <Button Name="ConfirmButton" Text="{Loc 'blood-cult-ui-popup-confirm'}"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

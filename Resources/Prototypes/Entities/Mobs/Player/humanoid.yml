@@ -336,7 +336,6 @@
   id: ERTChaplain
   parent: ERTLeader
   components:
-    - type: CultResistant # Funky cult
     - type: BibleUser
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
@@ -380,8 +379,6 @@
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
       roleLoadout: [ RoleSurvivalEVA ]
-    - type: CultResistant # Funky cult
-    - type: BibleUser
 
 ## ERT Janitor
 

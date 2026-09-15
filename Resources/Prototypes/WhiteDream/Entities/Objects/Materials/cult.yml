@@ -1,0 +1,77 @@
+- type: entity
+  parent: SheetOtherBase
+  id: RunedMetal
+  name: runic metal
+  description: An unusual sheet of metal with a pulsating rune.
+  suffix: Full
+  components:
+  - type: Sprite
+    sprite: _Dumont/BloodCult/Sheets/metal.rsi # Dumont
+    layers:
+    - state: runedmetal_3 # Dumont
+      map: [ "base" ]
+  - type: Tag
+    tags:
+    - Sheet
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RunedMetal: 100
+  - type: Stack
+    stackType: RunedMetalSheets
+    baseLayer: base
+    layerStates:
+    - runedmetal # Dumont
+    - runedmetal_2 # Dumont
+    - runedmetal_3 # Dumont
+  - type: Appearance
+  - type: Item
+    size: Small
+    sprite: _Dumont/BloodCult/Sheets/metal.rsi # Dumont
+    heldPrefix: runedmetal # Dumont
+  - type: CultItem
+  - type: UserInterface
+    interfaces:
+      enum.BloodCultConstructionUiKey.Key:
+        type: BloodCultConstructionMenuBoundUserInterface
+  - type: ActivatableUI
+    inHandsOnly: true
+    key: enum.BloodCultConstructionUiKey.Key
+  - type: BloodCultConstruction
+    entries:
+    - prototype: CultPylon
+    - prototype: CultFactoryArchives
+    - prototype: CultFactoryForge
+    - prototype: CultFactoryAltar
+    - prototype: CultGirder
+    - prototype: CultDoor
+
+- type: entity
+  parent: RunedMetal
+  id: RunedMetal1
+  suffix: Single
+  components:
+  - type: Sprite
+    state: runedmetal # Dumont
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: RunedMetal
+  id: RunedMetal4
+  suffix: 4
+  components:
+  - type: Sprite
+    state: runedmetal # Dumont
+  - type: Stack
+    count: 4
+
+- type: entity
+  parent: RunedMetal
+  id: RunedMetal20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: runedmetal # Dumont
+  - type: Stack
+    count: 20

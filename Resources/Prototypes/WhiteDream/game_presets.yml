@@ -1,0 +1,33 @@
+- type: gamePreset
+  id: BloodCult
+  alias:
+  - cult
+  - bloodcult
+  name: blood-cult-title
+  description: blood-cult-description
+  showInVote: false
+  minPlayers: 30
+  rules:
+  - DummyNonAntagChance
+  - BloodCult
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretBloodCult
+  alias:
+  - secretbloodcult
+  name: secret-title
+  description: secret-description
+  showInVote: false
+  minPlayers: 30
+  rules:
+  - DummyNonAntagChance
+  - BloodCult
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation

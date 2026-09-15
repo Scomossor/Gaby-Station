@@ -1,0 +1,24 @@
+- type: factionIcon
+  id: BloodCultMember
+  priority: 11
+  locationPreference: left
+  icon:
+    sprite: /Textures/_Dumont/BloodCult/Interface/cult_job_icons.rsi # Dumont
+    state: Cultist # Dumont
+
+- type: factionIcon
+  id: BloodCultLeader
+  priority: 11
+  locationPreference: left
+  icon:
+    sprite: /Textures/WhiteDream/BloodCult/cult_hud.rsi
+    state: cult_leader
+
+# Dumont
+- type: factionIcon
+  id: BloodCultTarget
+  priority: 10
+  locationPreference: right
+  icon:
+    sprite: /Textures/WhiteDream/BloodCult/cult_hud.rsi
+    state: cult_target

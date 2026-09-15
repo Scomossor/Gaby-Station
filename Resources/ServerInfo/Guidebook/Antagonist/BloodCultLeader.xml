@@ -1,0 +1,115 @@
+<Document>
+  # O líder do culto
+
+  [color=#d43a3a]Nar'Sie escolhe uma voz entre seus seguidores, e o culto escolhe quem falará por ela.[/color]
+
+  [textlink="Voltar à visão geral do Culto de Sangue" link="BloodCult"]
+
+  ## Eleição e sucessão
+
+  Cerca de [bold]cinco minutos[/bold] após o início da rodada, Nar'Sie abre uma votação entre os cultistas. Todos os cultistas vivos são candidatos, apenas membros do culto podem votar e a votação dura 45 segundos. Em caso de empate, Nar'Sie escolhe um dos empatados. Se houver apenas um cultista, ele é eleito automaticamente.
+
+  Se o líder morrer ou deixar o culto, os seguidores são avisados e uma nova votação começa aproximadamente 45 segundos depois. As magias e permissões exclusivas acompanham o cargo e passam ao sucessor.
+
+  ## Como identificar um líder
+
+  - [bold]Para o culto:[/bold] o líder possui um ícone próprio no HUD e seu nome aparece em Estudar o véu como “a voz dela entre nós”.
+  - [bold]Antes do pentagrama:[/bold] a tripulação não recebe uma marca exclusiva e confiável para diferenciá-lo dos demais cultistas.
+  - [bold]No estágio de olhos vermelhos:[/bold] os olhos denunciam todos os cultistas sem proteção ocular, não apenas o líder.
+  - [bold]No estágio do pentagrama:[/bold] todos veem uma aura vermelha animada aos pés do líder e uma auréola sobre sua cabeça, substituindo o pentagrama dos demais cultistas.
+
+  ## Magias exclusivas
+
+  Estas ações são concedidas automaticamente ao cultista eleito e removidas quando ele perde o cargo.
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionBloodCultFinalReckoning" Caption="Acerto de Contas Final"/>
+  </Box>
+
+  [bold]Acerto de Contas Final[/bold] transporta todos os cultistas vivos e constructos até o líder. A canalização dura 10 segundos e é interrompida se o líder se mover ou sofrer dano. Uma interrupção não gasta a magia.
+
+  O culto inteiro recebe [bold]apenas um uso bem-sucedido por rodada[/bold], mesmo se um novo líder for eleito. A magia não pode ser usada em um local onde o véu esteja fino o bastante para desenhar uma runa de rasgo dimensional.
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionBloodCultMarkTarget" Caption="Marcar Alvo"/>
+  </Box>
+
+  [bold]Marcar Alvo[/bold] destaca um não-cultista durante 90 segundos. Todo o culto recebe o nome e o local aproximado da vítima e passa a enxergar um ícone sobre ela. A magia alcança até 15 metros e possui 2 minutos de recarga. Escudos mentais não impedem a marca.
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionBloodCultEldritchPulse" Caption="Pulso Eldritch"/>
+  </Box>
+
+  [bold]Pulso Eldritch[/bold] move um cultista, constructo, coletor de sangue, fábrica, porta rúnica ou barreira. Aponte primeiro para o alvo e depois para o destino, ambos dentro do alcance de 15 metros. A recarga de 2 minutos começa quando o alvo é transportado.
+
+  ## Runas especiais e o fim da rodada
+
+  As runas abaixo formam a progressão final. As duas primeiras são desenhadas exclusivamente pelo líder. A runa de invocação final aparece automaticamente com a fenda e pode ser ativada por qualquer cultista.
+
+  ### Rasgar o véu
+
+  <Box>
+    <GuideEntityEmbed Entity="CultRuneDimensionalRending" Caption="Runa de rasgo dimensional"/>
+  </Box>
+
+  A runa de rasgo dimensional só aparece no menu da adaga do líder quando:
+
+  - A oferenda marcada já foi entregue na runa de oferenda.
+  - O culto possui ao menos [bold]20% da tripulação viva[/bold].
+  - O líder está próximo de um dos três locais indicados por Estudar o véu.
+
+  Desenhá-la leva 40 segundos, causa 50 de dano cortante ao líder, consome aquele local e anuncia a posição à estação inteira.
+
+  Para rasgar o véu, mantenha [bold]três cultistas vivos[/bold] sobre qualquer combinação de runas de rasgo na mesma estação. O ritual executa seis cânticos, separados por cinco segundos. Se o número de participantes cair, todo o progresso é perdido.
+
+  Ao completar o ritual, a estação entra em código Delta, o céu fica vermelho e uma fenda da realidade começa a se formar.
+
+  ### Runa do apocalipse
+
+  <Box>
+    <GuideEntityEmbed Entity="CultRuneApocalypse" Caption="Runa do apocalipse"/>
+  </Box>
+
+  A runa do apocalipse só aparece para o líder [bold]depois que o véu foi rasgado[/bold]. Desenhá-la leva 30 segundos e causa 20 de dano cortante. Três cultistas precisam permanecer sobre ela durante uma ativação de 20 segundos, que causa mais dano aos participantes.
+
+  A ativação provoca um EMP de grande alcance, uma falha na rede elétrica e uma explosão solar. Se o culto representar menos de 15% dos jogadores, ela também pode causar um dos seguintes desastres:
+
+  - Três hastes imóveis.
+  - Duas alucinações em massa.
+  - Duas migrações do Rei Rato.
+  - Duas chuvas médias de meteoros.
+  - Três hordas de aranhas.
+  - Quatro anomalias.
+  - Dois crescimentos de kudzu.
+
+  ### A fenda e a runa final
+
+  <Box>
+    <GuideEntityEmbed Entity="BloodCultRift" Caption="Fenda da realidade"/>
+    <GuideEntityEmbed Entity="CultRuneFinalSummoning" Caption="Runa de invocação final"/>
+  </Box>
+
+  Dois minutos após o rasgo do véu, a fenda aparece em um local da estação anunciado ao culto. Ela surge cercada por quatro runas de invocação final, espalha perniculado sanguíneo e produz um único hellspawn para defendê-la.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobHellspawnCult" Caption="Hellspawn"/>
+  </Box>
+
+  Para iniciar o ritual final, reúna três cultistas sobre qualquer combinação das quatro runas e ative uma delas. A pessoa escolhida para dizer o cântico longo será a próxima oferenda.
+
+  O ritual exige três oferendas. Cada vítima retorna como um ceifador e reduz em um o número de cultistas necessário para continuar. A primeira oferenda coloca a estação em código Octarina. Se os participantes abandonarem as runas, o ciclo atual é reiniciado.
+
+  <Box>
+    <GuideEntityEmbed Entity="ConstructHarvester" Caption="Ceifador"/>
+  </Box>
+
+  Após a terceira oferenda, Nar'Sie atravessa o véu e todos os cultistas vivos se tornam ceifadores.
+
+  ## Responsabilidades do líder
+
+  - Consulte Estudar o véu e informe ao culto quais condições ainda faltam.
+  - Escolha quando gastar o único Acerto de Contas Final.
+  - Não comece a desenhar uma runa especial sem defesa: movimento interrompe o desenho.
+  - Coordene os três locais de rasgo e mantenha participantes de reserva.
+  - Lembre que sua morte atrasa o culto até a eleição de um sucessor.
+</Document>

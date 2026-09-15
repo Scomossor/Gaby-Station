@@ -1,0 +1,323 @@
+- type: entity
+  name: eldritch longsword
+  parent: BaseItem
+  id: EldritchLongsword
+  description: A sword humming with unholy energy. It glows with a dim red light.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_blade.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.3333
+    range: 1.65
+    damage:
+      types:
+        Slash: 24
+    heavyStaminaCost: 10
+    angle: 90
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 24
+  - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
+  - type: Item
+    size: Normal
+  - type: Clothing
+    slots:
+    - back
+  - type: DisarmMalus
+  - type: CultItem
+  - type: PointLight
+    color: Red
+    radius: 2
+    softness: 1
+
+- type: entity
+  parent: BaseItem
+  id: BloodSpear
+  name: blood halberd
+  description: A sickening spear composed entirely of crystallized blood.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_spear.rsi
+    state: icon
+  - type: EmbeddableProjectile
+    offset: 0.15,0.15
+  - type: ThrowingAngle
+    angle: 225
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+          - -0.20,-0.10
+          - -0.10,-0.20
+          - 0.40,0.30
+          - 0.30,0.40
+        density: 20
+        mask:
+        - BulletImpassable
+        restitution: 0.3
+        friction: 0.2
+  - type: Sharp
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 26
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    range: 2
+    attackRate: 1.42
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 40
+  - type: Item
+    sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_spear.rsi
+    storedRotation: 44
+    size: Huge
+    shape:
+    - 0,0,5,0
+  - type: Clothing
+    slots:
+    - back
+    - suitStorage
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 10
+  - type: UseDelay
+  - type: DisarmMalus
+  - type: CultItem
+  - type: BloodSpear
+
+- type: entity
+  parent: BaseItem
+  id: BloodRitesAura
+  name: blood rite aura
+  description: Absorbs blood from anything you touch. Touching cultists and constructs can heal them. Use in-hand to cast an advanced rite.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
+    state: icon
+  - type: Item # WhiteDream - inhand sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    heavyStaminaCost: 0
+  - type: BloodRitesAura
+  - type: Tag
+    tags:
+    - BloodRitesAura
+    - BloodRiteBoundItem # Dumont
+  - type: UserInterface
+    interfaces:
+      enum.BloodRitesUiKey.Key:
+        type: BloodRitesUi
+  - type: ActivatableUI
+    key: enum.BloodRitesUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: DeleteOnDropAttempt
+    deleteOnAttempt: false # Dumont
+
+- type: entity
+  parent: ArcaneBarrage
+  id: BloodBoltBarrage
+  name: blood bolt barrage
+  description: A temporary invocation that unleashes twenty-five bolts of crystallized blood.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/arcane_barrage.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+    sprite: WhiteDream/BloodCult/Entities/Items/arcane_barrage.rsi
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileBloodBoltBarrage
+    capacity: 25
+  - type: ArcaneBarrage
+    swapHandsOnShot: false # Dumont
+  - type: Gun
+    projectileSpeed: 28 # Dumont
+  - type: PointLight
+    enabled: true
+    radius: 2
+    energy: 1
+    color: "#b51d1d"
+  - type: BloodRiteChant
+  - type: CultItem
+  - type: Tag
+    tags:
+    - BloodRiteBoundItem # Dumont
+  - type: DeleteOnDropAttempt
+    deleteOnAttempt: false # Dumont
+
+- type: entity
+  parent: BaseItem
+  id: BloodBeamAura
+  name: blood beam
+  description: A devastating rite that channels a fan of blood beams after a long invocation.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
+    state: icon
+    color: "#ff3030"
+  - type: Item
+    size: Ginormous
+    sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    heavyStaminaCost: 0
+  - type: BloodBeam
+  - type: DeleteOnDropAttempt
+    deleteOnAttempt: false # Dumont
+  - type: CultItem
+  - type: Tag
+    tags:
+    - BloodRiteBoundItem # Dumont
+
+# Dumont
+- type: entity
+  parent: BaseItem
+  id: BloodGazeAura
+  name: blood gaze
+  description: A supreme blood rite that focuses a crimson, all-consuming beam after a long invocation.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Heretic/abilities_heretic.rsi
+    color: "#ff3030"
+    layers:
+    - state: gazer_beam_charge
+  - type: Item
+    size: Ginormous
+    sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    heavyStaminaCost: 0
+  - type: BloodGaze
+  - type: Tag
+    tags:
+    - BloodRiteBoundItem # Dumont
+  - type: ContinuousBeamGun
+    userCanFire: false
+    beamScale: 0.5 # Dumont
+    minMaxLaserRange: 1.5, 14
+    laserSpeed: 0.12
+    laserThickness: 0.7
+    beamTime: 10 # Dumont
+    damageTime: 0.25
+    beamSound:
+      path: /Audio/_Goobstation/Heretic/stargazer/beam_loop_one.ogg
+    damage:
+      types:
+        Blunt: 5 # Dumont
+        Structural: 10
+    targetPart: Vital # Dumont
+    splitDamageBehavior: SplitEnsureAll
+    limbDamageCompensation: false # Dumont
+    data:
+      id: bloodgaze
+      startSprite: { sprite: /Textures/_Goobstation/Heretic/Effects/effects96x96.rsi, state: start1 }
+      sprite: { sprite: /Textures/_Goobstation/Heretic/Effects/effects.rsi, state: beam1 }
+      endSprite: { sprite: /Textures/_Goobstation/Heretic/Effects/effects.rsi, state: end1 }
+      color: "#ff2020" # Dumont
+      scale: 1.5, 1.5
+  - type: DeleteOnDropAttempt
+    deleteOnAttempt: false # Dumont
+  - type: CultItem
+
+- type: entity
+  parent: ProjectileArcaneBarrage
+  id: ProjectileBloodBoltBarrage
+  name: blood bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/arcane_barrage.rsi
+    scale: 1.35, 1.35 # Dumont
+    layers:
+    - state: bullet
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Slash: 20
+  - type: Trail
+    color: "#ff2020dd" # Dumont
+    scale: 0.14 # Dumont
+    frequency: 0.01 # Dumont
+    lifetime: 0.45 # Dumont
+    lerpTime: 0.0001
+    alphaLerpAmount: 0.12 # Dumont
+    scaleLerpAmount: 0.05 # Dumont
+    shader: unshaded
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.18,-0.18,0.18,0.18" # Dumont
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+        - Opaque # Dumont
+  - type: Ammo
+    muzzleFlash: null
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    energy: 2 # Dumont
+    color: "#ff2020" # Dumont
+
+- type: entity
+  parent: ProjectileArcaneBarrage
+  id: ProjectileBloodBeam
+  name: blood beam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/arcane_barrage.rsi
+    layers:
+    - state: bullet
+      shader: unshaded
+  - type: Projectile
+    deleteOnCollide: false
+    penetrate: true
+    damage:
+      types:
+        Slash: 45
+  - type: BloodBeamProjectile
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: Trail
+    color: "#ff0000bb"
+    scale: 0.16
+    frequency: 0.01
+    lifetime: 0.45
+    lerpTime: 0.0001
+    alphaLerpAmount: 0.2
+    scaleLerpAmount: 0.05
+    shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 2
+    energy: 2
+    color: "#ff2020"

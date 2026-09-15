@@ -13,4 +13,6 @@ namespace Content.Shared._Goobstation.Wizard.ArcaneBarrage;
 [RegisterComponent]
 public sealed partial class DeleteOnDropAttemptComponent : Component
 {
+    [DataField]
+    public bool DeleteOnAttempt = true; // WhiteDream - Blood Cult
 }

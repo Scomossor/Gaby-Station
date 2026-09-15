@@ -1,0 +1,7 @@
+- type: material
+  id: RunedMetal
+  stackEntity: RunedMetal1
+  name: materials-runed-metal
+  icon: { sprite: /Textures/_Dumont/BloodCult/Sheets/metal.rsi, state: runedmetal } # Dumont
+  color: "#9d2b39"
+  price: 0.05

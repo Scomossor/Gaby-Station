@@ -1,0 +1,11 @@
+shuttle-curse-message-1 = Um técnico de combustível acabou de cortar a própria garganta e implorou pela morte.
+shuttle-curse-message-2 = Uma varredura do tanque de combustível da nave revelou contaminação por uma mistura de vísceras e dentes humanoides.
+shuttle-curse-message-3 = Um incidente de segurança envolvendo um trabalhador da nave em frenesi atacando colegas com um cortador a laser acaba de ser reportado como resolvido pela segurança local.
+shuttle-curse-message-4 = Uma engenheira da nave começou a gritar 'A MORTE NÃO É O FIM' e arrancou fios até um arco elétrico queimar sua carne.
+shuttle-curse-message-5 = Uma engenheira da nave foi vista na cabine, arrumando febrilmente as próprias vísceras no chão em forma de runa antes de expirar.
+shuttle-curse-message-6 = Uma inspetora da nave começou a rir loucamente pelo rádio e então se jogou na turbina do motor.
+shuttle-curse-message-7 = O corpo de um trabalhador não identificado foi encontrado mutilado além do reconhecimento no compartimento principal da nave, com ao menos cinco fontes distintas de sangue na cena.
+shuttle-curse-message-8 = O despachante da nave foi encontrado morto com símbolos sangrentos entalhados na carne.
+shuttle-curse-message-9 = O zelador da nave foi encontrado lavando as janelas com o próprio sangue.
+shuttle-curse-message-10 = A programação de navegação da nave foi substituída por um arquivo contendo apenas duas palavras: ELA VEM.
+shuttle-curse-message-11 = O transponder da nave está emitindo a mensagem codificada 'TEMAM O SANGUE ANTIGO' no lugar do seu sinal de identificação designado.

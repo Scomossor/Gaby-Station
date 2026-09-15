@@ -1,0 +1,11 @@
+- type: cultPowerPool
+  id: BloodCultPowers
+  powers:
+  - ActionBloodCultStun
+  - ActionBloodCultTeleport
+  - ActionBloodCultEmp
+  - ActionBloodCultShadowShackles
+  - ActionBloodCultTwistedConstruction
+  - ActionBloodCultSummonCombatEquipment
+  - ActionBloodCultSummonRitualDagger
+  - ActionBloodCultBloodRites

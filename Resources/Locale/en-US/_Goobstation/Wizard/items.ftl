@@ -8,6 +8,7 @@ ensouled-item-name = ensouled {$item}
 ensouled-item-desc = [color=darkred]A terrible aura surrounds this item, its very existence is offensive to life itself...[/color]
 
 delete-on-drop-attempt-comp-examine = Drop this item to get rid of it.
+delete-on-drop-attempt-comp-examine-bound = This invocation is bound to your hand and cannot be dropped.
 
 enchanted-rifle-guns-left = Guns left: [color=yellow]{$guns}[/color].
 

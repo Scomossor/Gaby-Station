@@ -1,0 +1,84 @@
+- type: entity
+  id: CultPylon
+  parent: BaseStructure
+  name: blood collector
+  description: Collects blood through space-time to heal cultists.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      pylonFix:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.3,0.1,0.3"
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: Sprite
+    noRot: true
+    sprite: _Dumont/BloodCult/Structures/bloodcollector.rsi
+    layers:
+    - state: blood_collector
+      map: [ "enum.PylonVisuals.BaseLayer" ]
+    - state: unshaded
+      shader: unshaded
+      map: [ "enum.PylonVisuals.Layer" ]
+  - type: InteractionOutline
+  - type: Damageable
+    damageModifierSet: Glass
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+  - type: Appearance
+  - type: Pylon
+    healingCooldown: 5 # Dumont
+    bloodRegenerationAmount: 20 # Dumont
+    # WhiteDream - DamageSpecifier lost the `groups` shortcut, so the groups are spelled out.
+    healing:
+      types:
+        Blunt: -5
+        Slash: -5
+        Piercing: -5
+        Heat: -5
+        Shock: -5
+        Cold: -5
+        Caustic: -5
+        Poison: -5
+        Radiation: -5
+        Cellular: -5
+        Asphyxiation: -10
+        Bloodloss: -10
+    damageOnInteract:
+      types:
+        Heat: 5
+  - type: PointLight
+    color: "#FF0000"
+    radius: 2
+    energy: 2
+    enabled: true
+  - type: GenericVisualizer
+    visuals:
+      enum.PylonVisuals.Activated:
+        enum.PylonVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Construction
+    graph: CultPylon
+    node: pylon

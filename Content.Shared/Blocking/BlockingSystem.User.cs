@@ -74,6 +74,13 @@ public sealed partial class BlockingSystem
             if (!_toggle.IsActivated(component.BlockingItem.Value)) // Goobstation
                 return;
 
+            // <WhiteDream> - Blood Cult
+            var beforeBlockEv = new BeforeBlockingEvent(uid, args.Origin);
+            RaiseLocalEvent(component.BlockingItem.Value, beforeBlockEv);
+            if (beforeBlockEv.Cancelled)
+                return;
+            // </WhiteDream>
+
             var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
             blockFraction = Math.Clamp(blockFraction, 0, 1);
             _damageable.TryChangeDamage(component.BlockingItem,

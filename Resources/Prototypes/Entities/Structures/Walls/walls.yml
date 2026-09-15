@@ -431,6 +431,11 @@
     sprite: Structures/Walls/cult.rsi
   - type: Icon
     sprite: Structures/Walls/cult.rsi
+  # <WhiteDream> - Blood Cult
+  - type: Construction
+    graph: CultGirder
+    node: wall
+  # </WhiteDream>
   - type: Destructible
     thresholds:
     - trigger:

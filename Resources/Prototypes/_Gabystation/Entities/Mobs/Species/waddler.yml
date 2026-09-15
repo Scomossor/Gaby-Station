@@ -187,11 +187,6 @@
         visible: false
       - map: [ "shoes" ]
       - map: [ "ears" ]
-      - map: [ "culteyes" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
-        state: "moth"
-        shader: unshaded
-        visible: false
       - map: [ "gloves" ]
       - map: [ "eyes" ]
       - map: [ "id" ]
@@ -213,11 +208,6 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "Effects/creampie.rsi"
         state: "creampie_moth"
-        visible: false
-      - map: [ "culthalo" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
-        state: "halo"
-        shader: unshaded
         visible: false
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
@@ -317,11 +307,6 @@
         visible: false
       - map: [ "shoes" ]
       - map: [ "ears" ]
-      - map: [ "culteyes" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
-        state: "moth"
-        shader: unshaded
-        visible: false
       - map: [ "gloves" ]
       - map: [ "eyes" ]
       - map: [ "id" ]
@@ -343,9 +328,4 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "Effects/creampie.rsi"
         state: "creampie_moth"
-        visible: false
-      - map: [ "culthalo" ] # funky cult
-        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
-        state: "halo"
-        shader: unshaded
         visible: false

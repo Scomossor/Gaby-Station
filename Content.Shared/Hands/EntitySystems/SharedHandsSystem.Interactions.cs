@@ -146,9 +146,11 @@ public abstract partial class SharedHandsSystem : EntitySystem
             && TryGetActiveItem(session.AttachedEntity.Value, out var activeItem))
         {
             // Goobstation start
-            if (_net.IsServer && HasComp<DeleteOnDropAttemptComponent>(activeItem))
+            if (_net.IsServer && TryComp(activeItem, out DeleteOnDropAttemptComponent? deleteOnDrop))
             {
-                QueueDel(activeItem);
+                if (deleteOnDrop.DeleteOnAttempt) // WhiteDream - Blood Cult
+                    QueueDel(activeItem);
+
                 return false;
             }
 

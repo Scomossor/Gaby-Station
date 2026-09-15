@@ -39,6 +39,17 @@ public sealed partial class RadialSelectorEntry
     [DataField]
     public string? Prototype { get; set; }
 
+    // <WhiteDream> - Blood Cult
+    [DataField]
+    public string? Name { get; set; }
+
+    /// <summary>
+    ///     How many copies the server should produce when this entry is selected.
+    /// </summary>
+    [DataField]
+    public int Amount { get; set; } = 1;
+    // </WhiteDream>
+
     [DataField]
     public SpriteSpecifier? Icon { get; set; }
 

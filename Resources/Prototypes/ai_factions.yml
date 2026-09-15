@@ -49,7 +49,7 @@
     - Heretic # goob edit - heretics
     - Blob # Goobstation - Blob
     - Shadowling # Einstein Engines - Shadowlings
-    - BloodCultist # Blood cultists
+    - GeometerOfBlood # WhiteDream - Blood Cult
   friendly: # Goobstation
     - Wizard
     - PirateFaction # goob - pirates
@@ -112,7 +112,7 @@
   - Blob # Goobstation - Blob
   - PirateFaction # goob - pirates
   - Lavafauna # Goob - Lavaland
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
   friendly: # Goobstation
   - Wizard
   - Shadowling # Einstein Engines - Shadowlings
@@ -140,7 +140,7 @@
   - Shadowling # Einstein Engines - Shadowlings
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
   friendly: # DeltaV Nukie hostage ops
   - Hostage
 
@@ -163,7 +163,7 @@
   - PirateFaction # goob - pirates
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
   friendly: # Goobstation
   - Wizard
   - Xeno # Dumont
@@ -190,7 +190,7 @@
   - Xenoborg
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
 
 - type: npcFaction
   id: Revolutionary #made more hostile for trauma
@@ -214,7 +214,7 @@
   - PirateFaction # goob - pirates
   - Xenoborg
   - Lavafauna # Goob - Lavaland
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
   friendly: # Goobstation
   - Revolutionary
 
@@ -241,7 +241,7 @@
   - PirateFaction # goob - pirates
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
 
 # Balloons Factions Edit:
 - type: npcFaction
@@ -334,6 +334,6 @@
   - Shadowling # Einstein Engines - Shadowlings
   - Wizard # goob edit - wizard
   - PirateFaction # goob - pirates
-  - BloodCultist # Blood cultists
+  - GeometerOfBlood # WhiteDream - Blood Cult
   friendly:
   - Dragon

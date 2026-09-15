@@ -1,0 +1,73 @@
+<Document>
+  # Culto de Sangue
+
+  Mesmo num futuro distante, algumas coisas nunca são compreendidas por completo. Na escuridão do espaço se escondem entidades antigas, dispostas a levar a ruína ao universo e refazê-lo à própria imagem.
+
+  A Geômetra de Sangue, Nar'Sie, enviou seus seguidores à Estação Espacial 14. Como cultista, você deve trabalhar com seus irmãos, ampliar o culto, entregar a oferenda marcada e rasgar o véu para trazer sua deusa a esta realidade.
+
+  <Box Orientation="Vertical">
+    [textlink="Runas, magias e estruturas" link="BloodCultArsenal"]
+    [textlink="Arsenal do culto" link="BloodCultEquipment"]
+    [textlink="O líder do culto e o ritual final" link="BloodCultLeader"]
+    [textlink="Desconversão e como impedir conversões" link="BloodCultDeconversion"]
+  </Box>
+
+  ## Objetivos
+
+  O culto compartilha dois objetivos:
+
+  - [bold]Sacrificar a oferenda marcada.[/bold] Nar'Sie escolhe um integrante da Segurança ou do Comando. Se não houver ninguém elegível, ela escolhe outro tripulante. Matar o alvo não basta: o corpo precisa ser entregue sobre uma runa de oferenda.
+  - [bold]Invocar Nar'Sie.[/bold] O líder deve desenhar a runa de rasgo dimensional, o culto deve rasgar o véu e, depois, completar o ritual na fenda da realidade.
+
+  ## A progressão do culto
+
+  O culto avança conforme sua parcela da tripulação viva aumenta. Uma marca já aplicada não desaparece apenas porque o número de cultistas diminuiu.
+
+  - [color=#d43a3a]Estágio inicial[/color] — o culto ainda pode agir sem marcas visíveis. Converta discretamente e prepare uma base.
+  - [color=#d43a3a]Olhos vermelhos[/color] — ao alcançar [bold]10% da tripulação viva[/bold], todos os cultistas recebem um aviso de 1 minuto. Depois disso, seus olhos ficam vermelhos e o detalhe aparece ao examiná-los. Óculos e vendas escondem essa pista.
+  - [color=#d43a3a]Pentagrama[/color] — ao alcançar [bold]20% da tripulação viva[/bold], o culto recebe um aviso de 2 minutos. Em seguida, um pentagrama impossível de esconder aparece sobre cada cultista comum, enquanto o líder recebe uma auréola própria; as luzes piscam e a Central anuncia distúrbios no espaço-tempo.
+
+  No estágio do pentagrama, o líder também passa a ter uma [color=#d43a3a]aura vermelha aos pés[/color] e uma auréola sobre a cabeça, ambas visíveis para todos.
+
+  ## Comunicação e informações
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionBloodCultCommune" Caption="Comunhão"/>
+    <GuideEntityEmbed Entity="ActionBloodCultStudyVeil" Caption="Estudar o véu"/>
+  </Box>
+
+  A [bold]Comunhão[/bold] envia uma mensagem a todos os cultistas e constructos, sem limite de distância. Seu personagem sussurra um encantamento ao usá-la, portanto pessoas próximas podem perceber.
+
+  [bold]Estudar o véu[/bold] mostra o tamanho do culto, o estágio atual, o líder, a oferenda, as condições restantes para o rasgo e os locais onde a realidade está fina. Consulte essa ação antes de decisões importantes.
+
+  ## Primeiros passos
+
+  1. Use a Comunhão para localizar seus aliados sem revelar uma base.
+  2. Escolha um esconderijo e conecte-o com runas de teleporte.
+  3. Prepare magias e produza metal rúnico, equipamentos e constructos.
+  4. Participe da votação do líder, iniciada cerca de cinco minutos após o começo da rodada.
+  5. Converta novos membros e capture a oferenda marcada.
+  6. Entregue a oferenda na runa e reúna pelo menos 20% da tripulação no culto.
+  7. Proteja o líder enquanto ele desenha uma runa de rasgo dimensional em um dos locais indicados pelo véu.
+  8. Mantenha três cultistas sobre as runas de rasgo durante o cântico coletivo.
+  9. Localize a fenda que aparecerá dois minutos depois e conclua o ritual final.
+
+  ## A oferenda
+
+  A oferenda marcada continua sendo o alvo se morrer enquanto o corpo ainda estiver disponível na estação. Se entrar na criogenia ou deixar de existir, Nar'Sie escolhe outra pessoa e atualiza o objetivo de todos os cultistas.
+
+  Na runa de oferenda:
+
+  - Um cultista sacrifica um cadáver comum.
+  - Dois cultistas convertem uma pessoa viva e desprotegida.
+  - Três cultistas sacrificam uma pessoa viva, um alvo protegido contra conversão ou a oferenda marcada, viva ou morta.
+
+  Cada conversão ou sacrifício concede uma carga compartilhada à runa de rejuvenescimento.
+
+  ## Dicas rápidas
+
+  - Apenas cultistas, constructos e fantasmas conseguem identificar e examinar runas normalmente.
+  - Um cultista algemado ou sendo arrastado não pode ser trazido pela runa de invocação.
+  - A adaga ritual apaga runas comuns e remove barreiras do culto.
+  - Use [bold]Estudar o véu[/bold] para evitar tentar o ritual antes de cumprir alguma condição.
+</Document>

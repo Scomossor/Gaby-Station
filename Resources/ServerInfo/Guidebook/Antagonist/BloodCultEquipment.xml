@@ -1,0 +1,81 @@
+<Document>
+  # Arsenal do culto
+
+  O culto possui dois arsenais diferentes: equipamentos temporários invocados por magia e armas permanentes produzidas na forja demoníaca.
+
+  [textlink="Voltar à visão geral do Culto de Sangue" link="BloodCult"]
+
+  ## Forja demoníaca
+
+  <Box>
+    <GuideEntityEmbed Entity="CultFactoryForge" Caption="Forja demoníaca"/>
+  </Box>
+
+  A forja é construída com metal rúnico e possui uma recarga compartilhada de quatro minutos. Cada ativação produz uma das opções abaixo.
+
+  ### Combate corpo a corpo
+
+  <Box>
+    <GuideEntityEmbed Entity="EldritchLongsword" Caption="Espada longa eldritch"/>
+    <GuideEntityEmbed Entity="MirrorShieldCult" Caption="Escudo espelhado"/>
+  </Box>
+
+  - A [bold]espada longa eldritch[/bold] causa dano cortante, possui alcance aumentado e emite uma luz vermelha fraca.
+  - O [bold]escudo espelhado[/bold] bloqueia ataques, pode refletir projéteis de energia e derruba inimigos quando arremessado contra eles.
+
+  ### Armaduras
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterCultArmor" Caption="Armadura endurecida de Nar'Sie"/>
+    <GuideEntityEmbed Entity="ClothingOuterRobesCultTrue" Caption="Vestes do flagelante"/>
+  </Box>
+
+  - A [bold]armadura endurecida[/bold] oferece proteção pesada, resistência de estamina e suporte para ambientes sem pressão. Depois de vestir a armadura, use a ação de alternar peça da roupa para ativar ou recolher o elmo endurecido de Nar'Sie.
+  - As [bold]vestes do flagelante[/bold] aumentam a velocidade do usuário e resistem bem ao fogo, mas deixam o corpo mais vulnerável a dano físico. Depois de vesti-las, a mesma ação permite ativar ou recolher o capuz.
+
+  ## Besta do culto
+
+  <Box>
+    <GuideEntityEmbed Entity="CrossbowBloodCult" Caption="Besta do culto"/>
+    <GuideEntityEmbed Entity="CrossbowBoltCult" Caption="Virote comum"/>
+    <GuideEntityEmbed Entity="CrossbowBoltBloodDrinker" Caption="Virote bebedor de sangue"/>
+  </Box>
+
+  A besta precisa ser carregada com um virote antes de cada disparo. A forja produz:
+
+  - [bold]10 virotes comuns[/bold], que causam 35 de dano perfurante cada.
+  - [bold]5 virotes bebedores de sangue[/bold], que causam dano perfurante, cortante e perda de sangue.
+
+  A besta e seus virotes são reconhecidos como itens do culto e queimam as mãos de não-cultistas que tentarem utilizá-los.
+
+  ## Equipamento invocado
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionBloodCultSummonCombatEquipment" Caption="Invocar equipamento de combate"/>
+    <GuideEntityEmbed Entity="ClothingOuterArmorCultSummoned" Caption="Mantos do zelote"/>
+    <GuideEntityEmbed Entity="EldritchBlade" Caption="Lâmina eldritch"/>
+    <GuideEntityEmbed Entity="CultBola" Caption="Bola do culto"/>
+  </Box>
+
+  A magia [bold]Invocar Equipamento de Combate[/bold] entrega mantos, capuz, botas, uma lâmina eldritch e uma bola. É uma forma rápida de se armar, mas a magia precisa ser preparada novamente depois do uso.
+
+  - Os mantos e o capuz oferecem proteção de combate e resistência de estamina.
+  - As botas impedem que o zelote seja empurrado com facilidade.
+  - A bola serve para derrubar e prender um alvo durante uma captura.
+
+  ## Grandes Ritos de Sangue
+
+  <Box>
+    <GuideEntityEmbed Entity="BloodSpear" Caption="Alabarda de sangue"/>
+    <GuideEntityEmbed Entity="BloodBoltBarrage" Caption="Rajada de raios de sangue"/>
+    <GuideEntityEmbed Entity="BloodBeamAura" Caption="Feixe de sangue"/>
+    <GuideEntityEmbed Entity="BloodGazeAura" Caption="Olhar de sangue"/>
+  </Box>
+
+  Ao usar a aura dos Ritos de Sangue na própria mão, o sangue armazenado pode ser convertido em um destes ritos. A aura e todas as invocações abaixo ficam vinculadas à mão e não podem ser largadas acidentalmente, com exceção da alabarda, que continua podendo ser arremessada.
+
+  - [bold]Alabarda de sangue — 150:[/bold] possui grande alcance, pode ser arremessada e concede ao seu criador uma ação para chamá-la de volta.
+  - [bold]Rajada de raios de sangue — 500:[/bold] cria uma invocação temporária com 25 disparos de sangue cristalizado, causando 20 de dano cada.
+  - [bold]Feixe de sangue — 300:[/bold] exige três segundos de concentração e então dispara 12 feixes em leque. Cada feixe atravessa obstáculos, causa dano pesado, derruba não-cultistas, cura cultistas atingidos e converte pisos, paredes e airlocks atingidos em estruturas do culto. O conjurador fica exausto ao terminar.
+  - [bold]Olhar de sangue — 700:[/bold] durante os nove segundos de invocação, um vórtice vermelho denuncia o ritual. Ao terminar, dispara por dez segundos um enorme feixe vermelho que acompanha a mira, atravessa tudo em sua linha, derruba quem for atingido e causa dano bruto concentrado nas partes vitais. O feixe converte pisos, paredes e airlocks em estruturas do culto e deixa grandes poças de sangue pelo caminho. O raio pode atingir aliados, mas nunca o próprio conjurador; ele derruba as vítimas no lugar, sem arrastá-las junto com o feixe.
+</Document>

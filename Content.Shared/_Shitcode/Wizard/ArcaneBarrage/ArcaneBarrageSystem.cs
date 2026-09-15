@@ -62,7 +62,7 @@ public sealed class ArcaneBarrageSystem : EntitySystem
 
     private void OnBarrageShot(Entity<ArcaneBarrageComponent> ent, ref GunShotEvent args)
     {
-        if (_timing.ApplyingState || !Exists(ent))
+        if (_timing.ApplyingState || !Exists(ent) || !ent.Comp.SwapHandsOnShot) // WhiteDream - Blood Cult
             return;
 
         var user = args.User;

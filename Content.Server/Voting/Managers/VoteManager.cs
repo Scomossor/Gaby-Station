@@ -47,6 +47,7 @@ using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Voting;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist; // WhiteDream
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -486,6 +487,11 @@ namespace Content.Server.Voting.Managers
                     return false;
             }
 
+            // WhiteDream - Blood Cult
+            if (eligibility == VoterEligibility.BloodCult &&
+                !_entityManager.HasComponent<BloodCultistComponent>(player.AttachedEntity))
+                return false;
+
             // Begin DeltaV - Cosmic Cult
             if (eligibility == VoterEligibility.CosmicCult)
                 if (!_entityManager.HasComponent<CosmicCultComponent>(player.AttachedEntity))
@@ -591,6 +597,7 @@ namespace Content.Server.Voting.Managers
             GhostMinimumPlaytime, // Player needs to be a ghost, with a minimum playtime and deathtime as defined by votekick CCvars.
             MinimumPlaytime, //Player needs to have a minimum playtime and deathtime as defined by votekick CCvars.
             CosmicCult, // DeltaV - Player needs to be a cosmic cultist. Used by the cosmic cult gamemode.
+            BloodCult, // WhiteDream - Blood Cult
         }
 
         #endregion

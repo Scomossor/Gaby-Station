@@ -109,13 +109,6 @@
         type: StoreBoundUserInterface
       enum.RadarConsoleUiKey.Key: #goob - contractor
         type: RadarConsoleBoundUserInterface
-      # Funky edit - cultists
-      enum.BloodCultistCommuneUIKey.Key:
-        type: BloodCultCommuneBoundUserInterface
-        requireInputValidation: false
-      enum.SpellsUiKey.Key:
-        type: SpellsBoundUserInterface
-        requireInputValidation: false
       # Shitmed
       enum.SurgeryUIKey.Key:
         type: SurgeryBui

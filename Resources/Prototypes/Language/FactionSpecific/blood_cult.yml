@@ -1,0 +1,5 @@
+# Trauma - intentionally empty.
+# The 'Eldritch' language the blood cult uses already ships with this fork at
+# Resources/Prototypes/_EinsteinEngines/Language/FactionSpecific/blood_cult.yml
+# Keeping a second copy here registers a duplicate LanguagePrototype ID and
+# aborts prototype loading. This file can safely be deleted.

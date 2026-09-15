@@ -38,9 +38,6 @@ reagent-desc-ammonia-blood = Nothing else in the entire galaxy smells quite so a
 reagent-name-zombie-blood = zombie blood
 reagent-desc-zombie-blood = Would not advise eating. Can be used to create an inoculation against the infection.
 
-reagent-name-sanguine-perniculate = sanguine perniculate
-reagent-desc-sanguine-perniculate = Dark crimson blood that seems to writhe with malevolent energy. Touching it feels wrong.
-
 reagent-name-ichor = ichor
 reagent-desc-ichor = An extremely potent regenerative chemical, perfected by space fauna evolution. Produced in the dragon's digestive system, it is seen as an exotic commodity due to the gargantuan effort of hunting for it.
 

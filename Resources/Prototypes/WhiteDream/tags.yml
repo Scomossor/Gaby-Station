@@ -1,0 +1,9 @@
+- type: Tag
+  id: TwistedConstructionTarget
+
+- type: Tag
+  id: BloodRitesAura
+
+# Dumont
+- type: Tag
+  id: BloodRiteBoundItem

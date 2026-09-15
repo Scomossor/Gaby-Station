@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleBloodCultist
+  name: Blood Cultist Role
+  components:
+  - type: MindRole
+    antagPrototype: BloodCultist
+    roleType: TeamAntagonist
+    subtype: role-subtype-blood-cultist
+  - type: BloodCultistRole

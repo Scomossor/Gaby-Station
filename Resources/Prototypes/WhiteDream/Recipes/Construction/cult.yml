@@ -1,0 +1,77 @@
+- type: construction
+  id: CultPylon
+  category: construction-category-structures
+  hide: true
+  graph: CultPylon
+  startNode: start
+  targetNode: pylon
+  objectType: Structure
+  placementMode: AlignPylonConstruction
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CultFactoryAltar
+  category: construction-category-structures
+  hide: true
+  graph: CultFactoryAltar
+  startNode: start
+  targetNode: altar
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CultFactoryForge
+  category: construction-category-structures
+  hide: true
+  graph: CultFactoryForge
+  startNode: start
+  targetNode: forge
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CultFactoryArchives
+  category: construction-category-structures
+  hide: true
+  graph: CultFactoryArchives
+  startNode: start
+  targetNode: archives
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CultDoor
+  category: construction-category-structures
+  hide: true
+  graph: CultDoor
+  startNode: start
+  targetNode: door
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CultGirder
+  category: construction-category-structures
+  hide: true
+  graph: CultGirder
+  startNode: start
+  targetNode: girder
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

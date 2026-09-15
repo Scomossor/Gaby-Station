@@ -1,0 +1,21 @@
+ent-BloodCultBarrier = barreira do culto
+    .desc = Pode ser destruída com a adaga ritual.
+ent-WallForceCult = parede brilhante
+    .desc = Um escudo profano que bloqueia todos os ataques.
+ent-CultFactoryAltar = altar
+    .desc = Um altar manchado de sangue dedicado a Nar'Sie.
+ent-CultFactoryForge = forja demoníaca
+    .desc = Uma forja usada para criar as armas profanas dos exércitos de Nar'Sie.
+ent-CultFactoryArchives = arquivos
+    .desc = Uma escrivaninha coberta de manuscritos arcanos e tomos em línguas desconhecidas. Olhar para o texto faz sua pele arrepiar.
+ent-BloodCultRift = fenda da realidade
+    .desc = O véu se rasga, sangrando essência profana para dentro da realidade. O ar ao redor parece denso de malevolência.
+
+ent-CultTeleportInEffect = Teleporte de entrada
+ent-CultTeleportOutEffect = Teleporte de saída
+ent-CultPylon = coletor de sangue
+    .desc = Coleta sangue através do espaço-tempo para curar cultistas.
+ent-CultDoor = porta rúnica
+ent-CultGirder = viga rúnica
+    .desc = Estrutura feita de um metal estranho e chocantemente frio. Não parece ter nenhum parafuso.
+ent-CultTileSpawnEffect = efeito de piso do culto

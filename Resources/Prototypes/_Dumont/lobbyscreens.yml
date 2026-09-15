@@ -9,3 +9,8 @@
   background: /Textures/_Dumont/LobbyScreens/nukelatuff.webp
   name: Nuke Latuff
   artist: Desconhecido
+- type: lobbyBackground
+  id: bloodcultart
+  background: /Textures/_Dumont/LobbyScreens/bloodcult.png
+  name: Blood Cult
+  artist: Struater

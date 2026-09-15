@@ -12,6 +12,9 @@ namespace Content.Shared._Goobstation.Wizard.ArcaneBarrage;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ArcaneBarrageComponent : Component
 {
+    [DataField]
+    public bool SwapHandsOnShot = true; // WhiteDream - Blood Cult
+
     [ViewVariables(VVAccess.ReadOnly)]
     public bool Unremoveable = true;
 }

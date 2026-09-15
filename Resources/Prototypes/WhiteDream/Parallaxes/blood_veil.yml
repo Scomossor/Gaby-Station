@@ -1,0 +1,49 @@
+# WhiteDream - what the sky looks like once the veil has been torn open.
+# Same layer stack as the stock Default parallax, run through a reddening shader. Reusing the
+# upstream textures means there is nothing new to generate and nothing that can fail to render.
+- type: shader
+  id: BloodParallax
+  kind: source
+  path: "/Textures/WhiteDream/Shaders/blood_parallax.swsl"
+
+- type: parallax
+  id: BloodVeilParallax
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Parallaxes/layer1.png"
+      slowness: 0.998046875
+      scale: "1, 1"
+      shader: BloodParallax
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: "hq_wizard_stars"
+        configPath: "/Prototypes/Parallaxes/parallax_config_stars.toml"
+      slowness: 0.996625
+      shader: BloodParallax
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: "hq_wizard_stars_dim"
+        configPath: "/Prototypes/Parallaxes/parallax_config_stars_dim.toml"
+      slowness: 0.989375
+      shader: BloodParallax
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: "hq_wizard_stars_faster"
+        configPath: "/Prototypes/Parallaxes/parallax_config_stars-2.toml"
+      slowness: 0.987265625
+      shader: BloodParallax
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: "hq_wizard_stars_dim_faster"
+        configPath: "/Prototypes/Parallaxes/parallax_config_stars_dim-2.toml"
+      slowness: 0.984352
+      shader: BloodParallax
+  layersLQ:
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: ""
+        configPath: "/Prototypes/Parallaxes/parallax_config.toml"
+      slowness: 0.875
+      shader: BloodParallax
+  layersLQUseHQ: false

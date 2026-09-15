@@ -154,11 +154,6 @@
         - map: ["shoes"]
         - map: ["ears"]
         - map: ["outerClothing"]
-        - map: [ "culteyes" ] # funky cult
-          sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
-          state: "human"  # TODO make IPC version
-          shader: unshaded
-          visible: false
         - map: ["eyes"]
         - map: ["belt"]
         - map: ["neck"]
@@ -177,11 +172,6 @@
         - map: ["clownedon"] # Dynamically generated
           sprite: "Effects/creampie.rsi"
           state: "creampie_human"
-          visible: false
-        - map: [ "culthalo" ] # funky cult
-          sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
-          state: "halo"
-          shader: unshaded
           visible: false
     - type: CanEnterCryostorage # Goobstation
     - type: StatusIcon # Goobstation
@@ -240,14 +230,6 @@
           clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
             True: { visible: true }
             False: { visible: false }
-        enum.CultHaloVisuals.CultHalo:
-          culthalo:
-            True: { visible: true }
-            False: { visible: false }
-        enum.CultEyesVisuals.CultEyes:
-          culteyes:
-            True: { visible: true }
-            False: { visible: false }
     - type: Cuffable
     - type: AnimationPlayer
     - type: Buckle
@@ -264,12 +246,6 @@
           type: StrippableBoundUserInterface
         enum.StoreUiKey.Key: # Goobstation - changelings
           type: StoreBoundUserInterface
-        enum.BloodCultistCommuneUIKey.Key: # funky edit - cultists
-          type: BloodCultCommuneBoundUserInterface
-          requireInputValidation: false
-        enum.SpellsUiKey.Key: # funky edit - cultists
-          type: SpellsBoundUserInterface
-          requireInputValidation: false
         enum.WizardTeleportUiKey.Key: # Goobstation - wizard
           type: WizardTeleportBoundUserInterface
           requireInputValidation: false

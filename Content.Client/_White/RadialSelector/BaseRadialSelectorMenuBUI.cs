@@ -7,8 +7,8 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Construction;
 using Content.Client.UserInterface.Controls;
-using Content.Shared._White.RadialSelector;
 using Content.Shared.Construction.Prototypes;
+using Content.Shared._White.RadialSelector;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -61,7 +61,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             }
             else if (entry.Prototype != null)
             {
-                var name = GetName(entry.Prototype);
+                var name = entry.Name ?? GetName(entry.Prototype); // WhiteDream - Blood Cult
                 var icon = GetTextures(entry);
                 var button = CreateButton(name, icon);
                 button.OnButtonUp += _ =>
@@ -143,6 +143,10 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             StyleClasses = { "RadialMenuButton" },
             SetSize = ItemSize
         };
+
+        // Dumont
+        if (icons.Count == 0)
+            return button;
 
         var iconScale = ItemSize / icons[0].Size;
         var texture = new LayeredTextureRect

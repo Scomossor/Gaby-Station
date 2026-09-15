@@ -1,0 +1,193 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterCultArmor
+  name: true nar'sien hardened armor
+  description: heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_armor.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_armor.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.6
+        Piercing: 0.5 # WhiteDream - 50%
+        Heat: 0.7
+        Caustic: 0.2
+        Radiation: 0.2
+  - type: StaminaResistance # WhiteDream - 50% stamina resist
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetCultArmor
+  - type: CultItem
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetCultArmor
+  categories: [ HideSpawnMenu ]
+  name: true nar'sien hardened helmet
+  description: A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_helmet.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_helmet.rsi
+    equipSound: /Audio/Effects/rustle1.ogg
+    unequipSound: /Audio/Effects/rustle2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: ClothingOuterRobesCult
+  id: ClothingOuterRobesCultTrue
+  name: flagellant's robe
+  description: Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+  - type: CultItem
+  - type: ClothingSpeedModifier
+    walkModifier: 1.25
+    sprintModifier: 1.25
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.3
+        Slash: 1.3
+        Piercing: 1.3
+        Heat: 0.2 # WhiteDream - 80% heat resist
+  - type: FireProtection # WhiteDream - 80% less fire damage
+    reduction: 0.8
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatHoodCultHoodTrue
+    verbText: toggle-clothing-verb-hood
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:Container { }
+
+- type: entity
+  parent: ClothingHeadHatHoodCulthood
+  id: ClothingHeadHatHoodCultHoodTrue
+  name: flagellant's hood
+  description: A blood-soaked hood infused with dark magic.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+    equipSound: /Audio/Effects/rustle1.ogg
+    unequipSound: /Audio/Effects/rustle2.ogg
+  - type: ClothingSpeedModifier
+    walkModifier: 1.25
+    sprintModifier: 1.25
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.4
+        Slash: 1.4
+        Piercing: 1.4
+        Heat: 1.4
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyeCultBlindfold
+  name: zealot's blindfold
+  description: May Nar'Sie guide you through the darkness and shield you from the light
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: FlashImmunity
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  # WhiteDream - Nar'Sie guides you through the darkness, literally.
+  - type: NightVision
+    isEquipment: true
+    color: "#c99a9a"
+
+
+# WhiteDream - summoned variant of the upstream acolyte armour.
+# Kept separate so the Lavaland necropolis loot version stays untouched.
+- type: entity
+  parent: ClothingOuterArmorCult
+  id: ClothingOuterArmorCultSummoned
+  name: zealot's robes
+  description: Heavy robes woven for those who answered the call. They still reek of the rite that summoned them.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
+    state: icon
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # 40% resist across the board
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+  - type: StaminaResistance # 25% stamina resist
+    damageCoefficient: 0.75
+  - type: CultItem
+
+# WhiteDream - summoned variant of the upstream cult helmet, original left alone.
+- type: entity
+  parent: ClothingHeadHelmetCult
+  id: ClothingHeadHelmetCultSummoned
+  name: zealot's hood
+  description: A hood of the same dark weave, called straight out of the veil.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
+    state: icon
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # 40% resist across the board
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+  - type: CultItem
+
+# WhiteDream - summoned boots. The chapel's ClothingShoesCult is left untouched.
+- type: entity
+  parent: ClothingShoesCult
+  id: ClothingShoesCultSummoned
+  name: zealot's boots
+  description: Boots of the same dark weave. Sure-footed, whatever the floor is covered in.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Clothing/cult_boots.rsi
+    state: icon
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Clothing/cult_boots.rsi
+  - type: CultItem

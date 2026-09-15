@@ -435,7 +435,6 @@
   id: VisitorChaplain
   parent: VisitorCivilian
   components:
-    - type: CultResistant # Funky cult
     - type: BibleUser
     - type: CurseImmune # Goobstation - Wraith
     - type: CanEnchant

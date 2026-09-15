@@ -38,12 +38,12 @@
   - Blob # Goobstation - Blob
   - Wizard # Goobstation - Wizard
   - CosmicCult # DeltaV - Cosmic Cult
-  - BloodCult # Funky Station - Blood Cult
   - NuclearOperatives
   - Zombies
   - Revolutionaries
   - Conspirators # Harmony
   - MinorAntagonists
+  - BloodCult # WhiteDream - Blood Cult
   - SpaceNinja
   - Thieves
   - Abductors # Shitmed - Abductors
@@ -107,3 +107,34 @@
   id: MalfunctioningAI
   name: guide-entry-malfunctioningai
   text: "/ServerInfo/Guidebook/Antagonist/MalfunctioningAI.xml"
+
+# WhiteDream - Blood Cult
+- type: guideEntry
+  id: BloodCult
+  name: guide-entry-blood-cult
+  text: "/ServerInfo/Guidebook/Antagonist/BloodCult.xml"
+  children:
+  - BloodCultArsenal
+  - BloodCultEquipment
+  - BloodCultLeader
+  - BloodCultDeconversion
+
+- type: guideEntry
+  id: BloodCultArsenal
+  name: guide-entry-blood-cult-arsenal
+  text: "/ServerInfo/Guidebook/Antagonist/BloodCultArsenal.xml"
+
+- type: guideEntry
+  id: BloodCultEquipment
+  name: guide-entry-blood-cult-equipment
+  text: "/ServerInfo/Guidebook/Antagonist/BloodCultEquipment.xml"
+
+- type: guideEntry
+  id: BloodCultLeader
+  name: guide-entry-blood-cult-leader
+  text: "/ServerInfo/Guidebook/Antagonist/BloodCultLeader.xml"
+
+- type: guideEntry
+  id: BloodCultDeconversion
+  name: guide-entry-blood-cult-deconversion
+  text: "/ServerInfo/Guidebook/Antagonist/BloodCultDeconversion.xml"

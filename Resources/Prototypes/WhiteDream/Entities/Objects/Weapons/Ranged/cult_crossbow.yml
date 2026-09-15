@@ -1,0 +1,103 @@
+
+- type: entity
+  id: CrossbowBloodCult
+  parent: BaseBow
+  name: blood cult crossbow
+  description: A cruel crossbow shaped by a daemon forge for Nar'Sie's faithful.
+  components:
+  - type: Sprite
+    sprite: _Dumont/BloodCult/Weapons/Crossbow/cult.rsi
+    layers:
+    - state: icon
+      map: [ base ]
+    - state: icon-string
+      map: [ string ]
+    - sprite: _Dumont/BloodCult/Weapons/Crossbow/crossbow_bolts.rsi
+      state: icon-bolt
+      map: [ bolt ]
+      visible: false
+  - type: Item
+    size: Large
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+  - type: ItemSlots
+    slots:
+      projectiles:
+        name: Projectiles
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+        whitelist:
+          tags:
+          - CrossbowBolt
+  - type: Appearance
+  - type: ItemMapper
+    spriteLayers:
+    - bolt
+    mapLayers:
+      bolt:
+        whitelist:
+          tags:
+          - CrossbowBolt
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        string:
+          True: { state: icon-string-drawn }
+          False: { state: icon-string }
+        bolt:
+          True: { sprite: _Dumont/BloodCult/Weapons/Crossbow/crossbow_bolts.rsi, state: icon-bolt-drawn }
+          False: { sprite: _Dumont/BloodCult/Weapons/Crossbow/crossbow_bolts.rsi, state: icon-bolt }
+  - type: CultItem
+
+- type: entity
+  id: CrossbowBoltCult
+  parent: BaseArrow
+  name: cult crossbow bolt
+  description: A heavy, razor-sharp bolt made for a daemon-forged crossbow.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Dumont/BloodCult/Weapons/Crossbow/crossbow_bolts.rsi
+    layers:
+    - state: tail
+      color: "#8b0000"
+    - state: rod
+      color: "#303030"
+    - state: tip
+    - state: solution1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: Tag
+    tags:
+    - CrossbowBolt
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+  - type: CultItem
+
+- type: entity
+  id: CrossbowBoltBloodDrinker
+  parent: CrossbowBoltCult
+  name: blood drinker bolt
+  description: A serrated cult bolt that tears open wounds and drinks deeply.
+  components:
+  - type: Sprite
+    layers:
+    - state: tail
+      color: darkred
+    - state: rod
+      color: black
+    - state: tip
+      color: darkred
+    - state: solution1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+        Slash: 5
+        Bloodloss: 5

@@ -1429,8 +1429,6 @@
         conditions:
         - !type:ReagentThreshold
           min: 10
-      - !type:DeCultify  # funky: TODO, make DeCultify work for both Cosmic and Blood Cult
-        amount: 2.5
 
       #If vampire
       - !type:HealthChange
@@ -1486,18 +1484,6 @@
 #        damage:
 #          types:
 #            Holy: 0.7
-    CultistPurge:
-      methods: [ Touch ]
-      effects:
-      - !type:HealthChange
-        conditions:
-        - !type:IsBloodCultist
-        damage:
-          types:
-            Heat: 8
-            Holy: 5
-      - !type:DeCultify
-        amount: 2.5
   plantMetabolism:
   - !type:PlantAdjustWater
     amount: 1

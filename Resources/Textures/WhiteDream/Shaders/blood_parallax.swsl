@@ -1,0 +1,14 @@
+// WhiteDream - reddens whatever parallax layer it is applied to, so the sky over the station turns
+// to blood once the veil is torn. Keeps the layer's own alpha so star layers stay transparent.
+void fragment() {
+    highp vec4 color = zTexture(UV);
+    highp float lum = zGrayscale(color.rgb);
+
+    highp vec3 blood = vec3(
+        clamp(lum * 2.10, 0.0, 1.0),
+        clamp(lum * 0.34, 0.0, 1.0),
+        clamp(lum * 0.30, 0.0, 1.0)
+    );
+
+    COLOR = vec4(blood, color.a);
+}

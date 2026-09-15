@@ -6,17 +6,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- files: ["cultist_start.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Multiple effects taken from Paradise Station"
-  source: "https://github.com/ParadiseSS13/Paradise/tree/master/sound"
-
 - files: ["malfai_start.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Created by gameplayah on commision"
   source: "https://gpsinform.carrd.co/"
-
-- files: ["tear_of_veil.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Made by Bolgarich for SS13 and allowed with specific attribution as the creator. >I allow you to use it when referring to me as the creator"
-  source: "https://www.youtube.com/watch?v=NqNHKfTAvcw"

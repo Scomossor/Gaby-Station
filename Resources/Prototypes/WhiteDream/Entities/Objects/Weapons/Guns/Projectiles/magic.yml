@@ -1,0 +1,24 @@
+- type: entity
+  id: BloodBoilProjectile
+  parent: BaseBullet
+  name: Concentrated Blood
+  description: Oh no.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Effects/blood_boil.rsi
+    state: bullet
+  - type: Projectile
+    # WhiteDream - DamageSpecifier lost the `groups` shortcut.
+    damage:
+      types:
+        Heat: 5
+        Shock: 5
+        Blunt: 5
+        Slash: 5
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
+    radius: 2.0
+    energy: 7.0
+  - type: BloodBoilProjectile

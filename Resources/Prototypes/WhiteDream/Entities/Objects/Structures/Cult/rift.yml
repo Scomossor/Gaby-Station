@@ -1,0 +1,105 @@
+- type: entity
+  id: BloodCultRift
+  name: reality rift
+  description: The veil tears open, bleeding profane essence into reality. The air around it feels thick with malevolence.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Overdoors
+    sprite: Structures/Specific/Anomalies/liquid_anom.rsi
+    layers:
+    - state: anom
+      map: [ "enum.AnomalyVisualLayers.Base" ]
+      color: "#8B0000"
+      shader: unshaded
+    - state: pulse
+      map: [ "enum.AnomalyVisualLayers.Animated" ]
+      color: "#8B0000"
+      shader: unshaded
+      visible: false
+  - type: AnimationPlayer
+  - type: Appearance
+  - type: PointLight
+    radius: 6.0
+    energy: 4.5
+    color: "#8B0000"
+    castShadows: false
+  - type: AmbientSound
+    range: 8
+    volume: -3
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 1000
+        hard: false
+        layer:
+        - MidImpassable
+  - type: BloodCultRift
+  - type: SolutionContainerManager
+    solutions:
+      sanguine_pool:
+        maxVol: 1500
+  - type: PuddleCreateAnomaly
+    solution: sanguine_pool
+  - type: RefillableSolution
+    solution: sanguine_pool
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+
+# WhiteDream - what crawls out of the wound. The stock MobHellspawn is SimpleHostile, which the cult
+# faction treats as an enemy, so the rift's own brood needs to answer to Nar'Sie instead.
+- type: entity
+  parent: MobHellspawn
+  id: MobHellspawnCult
+  name: hellspawn
+  description: A shape that was never meant to hold together on this side of the veil. It reeks of the rift that vomited it out.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - GeometerOfBlood
+  - type: WeakToHoly
+  - type: GhostRole
+    allowMovement: true
+    makeSentient: true
+    name: ghost-role-information-hellspawn-cult-name
+    description: ghost-role-information-hellspawn-cult-description
+    rules: ghost-role-information-hellspawn-cult-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
+  - type: PointLight
+    radius: 3
+    energy: 5
+    color: "#8B0000"
+    castShadows: false
+  # WhiteDream - the stock hellspawn hits for 150 blunt, which one-shots basically anything. It's
+  # meant to be a wall the crew has to chew through, not an instant kill on contact.
+  - type: MeleeWeapon
+    attackRate: 0.6
+    hidden: true
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Blunt: 50
+        Structural: 70

@@ -1,0 +1,35 @@
+- type: entity
+  id: BloodCult
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 30
+    chaosScore: 1000
+  - type: BloodCultRule
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ BloodCultist ]
+      min: 2
+      max: 4
+      playerRatio: 15
+      jobBlacklist: [ Chaplain ]
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+        - BibleUser
+      briefing:
+        text: blood-cult-role-greeting
+        color: Red
+        sound: /Audio/WhiteDream/BloodCult/blood_cult_greeting.ogg
+      startingGear: BloodCultistGear
+      components:
+      - type: BloodCultist
+      - type: BloodCultSpellsHolder
+      mindRoles:
+      - MindRoleBloodCultist
+  - type: Tag
+    tags:
+    - RoundstartAntag

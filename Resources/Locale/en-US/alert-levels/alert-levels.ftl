@@ -45,6 +45,8 @@ alert-level-delta-instructions = Crewmembers are advised to listen to heads of s
 
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
+alert-level-deltacult = Delta
+alert-level-deltacult-instructions = Crewmembers are advised to arm themselves and follow the guidance of the nearest Chaplain.
 alert-level-epsilon-instructions = Consider all contracts terminated.
 
 alert-level-omicron = Omicron

@@ -1,0 +1,61 @@
+<Document>
+  # Desconversão
+
+  Esta página descreve como a tripulação pode reconhecer o Culto de Sangue, impedir novas conversões e conter alguém que já foi convertido.
+
+  [textlink="Voltar à visão geral do Culto de Sangue" link="BloodCult"]
+
+  ## É possível desconverter um cultista?
+
+  [color=#d43a3a][bold]Não existe atualmente um método comum de desconversão para uma pessoa que já se tornou cultista.[/bold][/color]
+
+  Implantar um escudo mental depois da conversão, golpear com uma Bíblia ou aplicar água benta [bold]não remove[/bold] o vínculo com Nar'Sie. Se um cultista for capturado, mantenha-o algemado, separado de outros cultistas e longe de runas enquanto Comando e Segurança decidem como contê-lo.
+
+  ## Impedindo uma conversão
+
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter" Caption="Implante de escudo mental"/>
+    <GuideEntityEmbed Entity="Bible" Caption="Bíblia"/>
+  </Box>
+
+  A conversão acontece na [bold]runa de oferenda[/bold]. Ela exige a vítima sobre a runa e dois cultistas próximos no momento da ativação.
+
+  - Uma pessoa com [bold]escudo mental funcional[/bold] não pode ser convertida.
+  - Capelães e outras pessoas reconhecidas como usuários de Bíblia também não podem ser convertidos.
+  - Essas proteções não tornam alguém invulnerável: com três cultistas, a runa tenta [bold]sacrificar[/bold] o alvo protegido em vez de convertê-lo.
+  - Um escudo mental precisa estar funcionando [bold]antes[/bold] da tentativa. Implantá-lo em um cultista existente não o desconverte.
+
+  Para interromper uma tentativa em andamento, retire a vítima de cima da runa, afaste ou incapacite um dos invocadores e impeça que dois cultistas permaneçam próximos dela.
+
+  ## Removendo runas
+
+  Um usuário de Bíblia pode usar uma Bíblia diretamente em uma [bold]runa comum[/bold] para apagá-la imediatamente. Isso é especialmente útil contra runas de oferenda escondidas em manutenção.
+
+  As runas de rasgo dimensional, do apocalipse e de invocação final não podem ser apagadas dessa forma. Nesses casos, impeça que o número necessário de cultistas permaneça sobre elas.
+
+  ## Fragmentos de alma e constructos
+
+  <Box>
+    <GuideEntityEmbed Entity="SoulShard" Caption="Fragmento de alma"/>
+    <GuideEntityEmbed Entity="ConstructShell" Caption="Casca de constructo"/>
+  </Box>
+
+  Usar uma Bíblia em um fragmento de alma profano o abençoa. Se esse fragmento for colocado em uma casca, ele produz uma versão purificada do constructo, aliada à tripulação. Isso não transforma diretamente um constructo profano que já esteja montado.
+
+  ## Identificando o culto
+
+  Nenhuma dessas pistas, isoladamente, substitui uma investigação:
+
+  - Depois que o culto alcança 10% da tripulação, os cultistas passam a ter olhos vermelhos. Examine a pessoa sem óculos ou venda para notar a alteração.
+  - Ao alcançar 20%, um pentagrama aparece sobre os cultistas comuns e não pode ser escondido.
+  - Nesse mesmo estágio, o líder possui uma auréola própria sobre a cabeça e uma aura vermelha animada aos pés.
+  - Comunicação por encantamentos sussurrados, desenhos de sangue, metal rúnico e estruturas de aparência profana indicam atividade do culto.
+
+  ## Contenção
+
+  - Separe suspeitos: várias runas dependem da presença de dois ou três cultistas.
+  - Mantenha cultistas algemados ou sob custódia enquanto são arrastados; ambas as condições impedem que sejam resgatados pela runa de invocação.
+  - Procure runas de teleporte e de oferenda nas proximidades antes de permanecer em uma área.
+  - Destrua fábricas, coletores de sangue e reservas de metal rúnico para reduzir a capacidade de recuperação do culto.
+  - Após um anúncio de rasgo dimensional, retire cultistas das runas. Quebrar o número mínimo reinicia o cântico.
+</Document>
