@@ -1,80 +1,90 @@
 <Document>
 # Genética
 
-A genética da Dumont é um porte da genética do Trauma Station, que segue a do /tg/station.
+A genética permite descobrir mutações, ativar poderes e tratar alterações no organismo. O laboratório usa um console ligado a um scanner médico para estudar o paciente. As descobertas podem ser gravadas em discos e aplicadas com injetores.
 
-O que ainda não funciona: o [bold]Chapado[/bold] não tem efeito e só serve de ingrediente de combinação, e o [bold]Incompreensível[/bold] está bloqueado até ganhar efeito. As mutações de percepção e a de fala maluca não vieram, porque dependem de cone de visão e de fonte de fala que a estação não tem. O [bold]Espinho de Língua[/bold] não dispara, porque os corpos daqui não têm órgão de língua.
+# Primeiros passos
 
-# Discos
-
-<Box>
-  <GuideEntityEmbed Entity="GeneticsDisk"/>
-</Box>
-
-O console não guarda mutação sozinho: cada mutação fica gravada em um disco de genética. Um rotulador salva a sua vida aqui.
-
-O seu armário vem com uma caixa de discos, e dá para imprimir mais nos fabricadores médico e de P&D depois da pesquisa de Modificação de DNA.
+1. Confira se o console está energizado e ligado ao scanner médico. Se não reconhecer o scanner, verifique a ligação com uma multiferramenta.
+2. Coloque o paciente no scanner e abra o console.
+3. Escaneie o genoma e escolha uma sequência para estudar.
+4. Complete os pares de bases e inicie o sequenciamento.
+5. Depois de descobrir a mutação, insira um disco de genética e grave a sequência nele.
+6. Na aba de armazenamento, escolha o injetor que deseja imprimir. O console precisa de biomassa.
 
 # Sequenciamento
 
-Para sequenciar uma mutação, liberando ela e podendo ativar no paciente, resolva o quebra-cabeça do gene deixando cada A junto de um T, e cada C junto de um G.
+Cada sequência representa uma mutação. Antes da descoberta, ela aparece identificada por um número. Esse número é o mesmo para todos os pacientes daquela rodada que carregam a mesma mutação.
 
-Quando falta uma base só, é fácil. Quando falta o par inteiro, você vai precisar pensar. Ou tentar na força bruta e torturar os seus pobres macacos.
+Complete as posições desconhecidas, indicadas por X. Os pares são sempre [bold]A com T[/bold] e [bold]C com G[/bold]. Confira as letras uma acima da outra, em cada coluna.
 
-Todo palpite errado no sequenciamento estraga bastante o genoma do paciente. Pegue remédio na química, ou mais cubos de macaco, antes de começar.
+Se uma das letras já estiver preenchida, ela revela a outra. Se o par inteiro estiver desconhecido, há mais de uma possibilidade: comparar a sequência com a de outro paciente ajuda a encontrar a resposta.
 
-# Resolvendo par de base que falta
+[bold]Uma tentativa errada danifica o genoma do paciente.[/bold] Acompanhe a integridade mostrada no console e evite insistir em palpites com um paciente já debilitado.
+
+# Scanner de genoma portátil
 
 <Box>
   <GuideEntityEmbed Entity="HandheldGeneticsScanner"/>
 </Box>
 
-Não existe botão de coringa. Saia do laboratório e escaneie gente, ou o Pun Pun, com o [bold]scanner de genoma portátil[/bold]. Dá para deduzir as bases que faltam achando várias pessoas com a mesma mutação dormente.
+Use o scanner portátil para procurar a mesma mutação em outros pacientes. Uma posição desconhecida no seu paciente pode estar preenchida em outro.
 
-Toda mutação recebe um número sorteado a cada rodada, e esse número é o mesmo em todos os pacientes que tiverem aquela mutação.
+Compare sequências com o mesmo número. Assim, você pode reunir as bases necessárias para completar o sequenciamento sem depender apenas de tentativas.
 
-Por exemplo: se o macaco do laboratório tem um genoma com o primeiro par desconhecido, e você escaneia alguém que tem a mesma mutação com o primeiro par conhecido, aquele par fecha a sequência.
+# Discos e biomassa
 
-# Biomassa
+<Box>
+  <GuideEntityEmbed Entity="GeneticsDisk"/>
+</Box>
 
-A biomassa é o que paga a impressão de mutadores, ativadores e limpadores. Pegue na botânica, em corpo largado por aí, e ponha no console.
+Cada disco guarda uma mutação. Depois de sequenciá-la, selecione-a no console e use a opção de salvar no disco. Na aba de armazenamento, confira se o nome da mutação gravada aparece antes de imprimir.
 
-Pense antes de dar hulk para todo assistente que aparecer, porque depois não sobra biomassa para imprimir mais nada.
+Rotule os discos para identificar suas descobertas. O armário do geneticista fornece uma caixa deles. Após pesquisar [bold]Modificação de DNA[/bold], os fabricadores médico e de P&D podem produzir mais discos e o scanner de genoma portátil.
 
-# Tirando mutação
+Abasteça o console com biomassa para imprimir injetores. Se a impressão não sair, confira o saldo e aguarde o intervalo de cinco segundos entre impressões.
 
-Em vez de mutadone, dá para imprimir um limpador na aba de armazenamento usando o disco da mutação que você quer tirar. Injetou, a mutação foi embora.
+# Injetores
 
-# Instabilidade
+O injetor usa a mutação gravada no disco inserido no console. Há três opções:
 
-Cada mutação carrega um valor de instabilidade, e ele só é cobrado quando a mutação é estranha ao paciente, ou seja quando ela não estava na lista de dormentes dele. Ativar uma dormente com o ativador custa zero.
+- [bold]Mutador, 20 de biomassa:[/bold] aplica a mutação no paciente.
+- [bold]Ativador, 10 de biomassa:[/bold] ativa a mutação se ela já fizer parte do genoma do paciente, sem acrescentar instabilidade.
+- [bold]Limpador, 15 de biomassa:[/bold] remove aquela mutação do paciente.
 
-Chegando a 100, o genoma começa a derreter, e o console avisa. A partir daí é corrida contra o tempo: tirando mutação e baixando da marca antes de o derretimento acabar, o paciente escapa e leva só um embaralhamento do DNA.
+Cada injetor tem uma única carga. A aplicação leva três segundos em si mesmo e seis em outra pessoa; espere a ação terminar.
 
-Quem não conserta a tempo paga. Em sete de cada dez vezes o desfecho é fatal: virar pó, virar esqueleto, explodir, ou aquele em que a pessoa olha para cima. Nas outras três, vira macaco, corgi, caramujo ou caranguejo, perde as pernas, ou cai num desfecho leve, que pode ser nada, ficar frágil ou virar gosma.
+# Mutações dormentes e instabilidade
 
-O embaralhamento acontece nos dois casos, de propósito, senão daria para entrar e sair da instabilidade de graça a cada poucos minutos.
+Uma mutação dormente faz parte do genoma, mas ainda não está ativa. Ativá-la não acrescenta instabilidade. Ao aplicar uma mutação que não pertence ao genoma do paciente, seu valor de instabilidade entra na conta.
 
-# Embaralhando o DNA
+Algumas mutações reduzem a instabilidade, mas trazem efeitos indesejados. Removê-las também remove essa redução. [bold]Confira a instabilidade antes e depois de cada tratamento.[/bold]
 
-Se macaco estiver em falta e a sorte não ajudar, o botão [bold]Embaralhar DNA[/bold] sorteia de novo as mutações dormentes do paciente.
+Ao atingir 100 de instabilidade, o paciente entra em risco de derretimento genético. Reduza a instabilidade rapidamente. As consequências podem incluir alterações de identidade, perda de mutações, transformações, danos graves e morte.
 
-Ele toma bastante dano nisso, então tenha remédio por perto.
+# Embaralhar DNA
 
-# Combinando
+A opção [bold]Embaralhar DNA[/bold] renova as mutações dormentes do paciente, permitindo procurar outras sequências.
 
-Combinar mutação usa uma mutação catalisadora, gravada no disco que está no console, mais alguma mutação que o paciente já tem.
+O procedimento danifica o paciente. Verifique suas condições antes de repetir e tenha atendimento médico disponível.
 
-Acertando a combinação, a mutação nova aparece, mas ela não vem sequenciada. Para as mutações complexas você vai precisar combinar em vários pacientes até juntar base suficiente.
+# Combinações
+
+Algumas mutações são obtidas combinando duas outras. Coloque no console um disco com uma das mutações necessárias e use a aba de combinação para combiná-la com uma sequência do paciente.
+
+O resultado ainda precisa ser sequenciado. Pode ser necessário repetir a combinação em outros pacientes para reunir as bases que faltam.
+
+[bold]Chapado[/bold] serve como ingrediente: combinado com Comedor de Pedra, permite obter o Absorvedor de Pedra.
 
 # Pesquisa
 
-[bold]A genética contribui com a pesquisa.[/bold] Sequenciar rende 500 pontos por nível de dificuldade da mutação: 4 mil nas mais simples, e mais nas complexas.
+Descobrir uma mutação contribui com pontos para a pesquisa da estação quando o console está conectado à rede de pesquisa.
+
+A recompensa é de [bold]500 pontos por nível de dificuldade[/bold]. Uma mutação de dificuldade 8 rende 4.000 pontos. Repetir uma descoberta já registrada não concede a recompensa novamente.
 
 # Enzimas únicas
 
-O disco também guarda as [bold]enzimas únicas[/bold] de uma pessoa, e com elas dá para copiar nome, sexo, digitais e cor de olho e de pele para outro paciente.
+Na aba de enzimas únicas, é possível guardar no disco dados de um paciente e aplicá-los em outro: nome, sexo, impressões digitais e cores dos olhos e da pele.
 
-Isso não copia o DNA nem o cabelo. Pegue uma tesoura e monte uma barbearia.
-
+Isso não copia as mutações, o cabelo nem a espécie do paciente original.
 </Document>

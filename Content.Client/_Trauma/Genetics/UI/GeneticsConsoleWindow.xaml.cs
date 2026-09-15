@@ -57,6 +57,11 @@ public sealed partial class GeneticsConsoleWindow : FancyWindow
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
+        Tabs.SetTabTitle(0, Loc.GetString("genetics-console-tab-sequencer"));
+        Tabs.SetTabTitle(1, Loc.GetString("genetics-console-tab-storage"));
+        Tabs.SetTabTitle(2, Loc.GetString("genetics-console-tab-combiner"));
+        Tabs.SetTabTitle(3, Loc.GetString("genetics-console-tab-enzymes"));
+
         _disk = _entMan.System<GeneticsDiskSystem>();
         _mutation = _entMan.System<MutationSystem>();
         _genome = _entMan.System<ScannedGenomeSystem>();

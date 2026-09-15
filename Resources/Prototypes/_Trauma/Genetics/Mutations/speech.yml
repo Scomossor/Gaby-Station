@@ -107,7 +107,7 @@
   parent: BaseFreeMutation
   id: MutationStoner
   name: Stoner
-  description: Incomplete mutation, it has no effect yet. Only used as an ingredient to combine Rock Absorber.
+  description: Used as an ingredient to combine Rock Absorber.
 
 - type: entity
   parent: BaseFreeMutation
