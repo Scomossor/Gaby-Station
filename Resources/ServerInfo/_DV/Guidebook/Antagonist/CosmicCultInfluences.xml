@@ -1,32 +1,32 @@
 <Document>
-  # Influences
+  # Influências
 
-  Culists begin with two powerful inflences, and will gradually unlock more as they progress the Monument through its three stages.
+  Cultistas começam com duas influências poderosas, e liberam mais aos poucos conforme levam o Monumento pelos três estágios dele.
 
-  Once a cultist reaches the third stage, any time a cultist uses an influence, they have a chance to generate a telltale [color=#4cabb3]Malign Echo[/color]. These will fade after a short time, but may alert outsiders to the presence of your cult prematurely!
+  Quando o culto chega no terceiro estágio, toda vez que um cultista usa uma influência ele tem uma chance de gerar um [color=#4cabb3]Eco Maligno[/color] denunciador. Esses ecos somem depois de um tempinho, mas podem entregar a existência do seu culto antes da hora!
 
-  Using Siphon Entropy will never generate a Malign Echo.
+  Drenar Entropia nunca gera um Eco Maligno.
 
   <Box>
     <GuideEntityEmbed Entity="CosmicEchoVfx" Caption=""/>
   </Box>
 
-  ## Starting Influences
-  - [color=#4cabb3][bold]Siphon Entropy:[/bold][/color] Silently siphon entropy from your target. If the target is in critical condition, it will finish them off, but also give much more entropy.
-  - [color=#4cabb3][bold]Attune Influence:[/bold][/color] Check the cult's progress, and spend gathered entropy to unlock better, more powerful Influences.
+  ## Influências iniciais
+  - [color=#4cabb3][bold]Drenar Entropia:[/bold][/color] Drene entropia do seu alvo em silêncio. Se o alvo estiver em estado crítico, isso acaba com ele, mas rende muito mais entropia.
+  - [color=#4cabb3][bold]Sintonizar Influência:[/bold][/color] Veja o progresso do culto e gaste a entropia juntada para liberar Influências melhores e mais fortes.
 
-  ## Special Influences
-  - [color=#4cabb3][bold]Null Fragmentation:[/bold][/color] Transfer malign empowerment into a digital system, such as an AI Upload Console or Cyborg, corrupting it in the process. Doing so will expend empowerment.
+  ## Influências especiais
+  - [color=#4cabb3][bold]Fragmentação Nula:[/bold][/color] Transfira o fortalecimento maligno para um sistema digital, como um Console de Upload da IA ou um Ciborgue, e corrompa ele no processo. Isso gasta o seu fortalecimento.
 
-  ## Unlockable Influences
-  - [color=#4cabb3][bold]Null Glare:[/bold][/color] Emit a horrific pulse of cosmic light, slowing and disorienting everyone around you.
-  - [color=#4cabb3][bold]Abberant Lapse:[/bold][/color] Lapse your target's corporeal form, temporarily rendering it immutable, impassible, and frozen in place.
-  - [color=#4cabb3][bold]Force Ingress:[/bold][/color] Use a concentrated blast of power to force any lock open.
-  - [color=#4cabb3][bold]Unbound Step:[/bold][/color] You move relative only to the starless black - your movement is no longer affected by gravity.
-  - [color=#4cabb3][bold]Corrupt Matter:[/bold][/color] Pour malign power into an item, transforming it into something else. You can see what items can be transmuted by examining them.
-  - [color=#4cabb3][bold]Shunt Subjectivity:[/bold][/color] Shunt your target's mind out of their body and unto the cosmic dark, temporarily rendering their body mindless.
-  - [color=#4cabb3][bold]Astral Stride:[/bold][/color] Astral energy invigorates your movement, allowing you to run at incredible speed for a short amount of time.
-  - [color=#4cabb3][bold]Shatter Cognition:[/bold][/color] Share the Knowledge with an unsuspecting crewmember, leaving them with no choice but to join your cause.
-  - [color=#4cabb3][bold]Astral Nova:[/bold][/color] Hurl a large and disruptive blast of astral energy, wreaking havoc upon a large area.
-  - [color=#4cabb3][bold]Vacuous Imposition:[/bold][/color] Negate any incoming damage for a short time, at the cost of slowing down your movement.
+  ## Influências para liberar
+  - [color=#4cabb3][bold]Clarão Nulo:[/bold][/color] Solte um pulso horrível de luz cósmica que deixa lento e desorientado todo mundo à sua volta.
+  - [color=#4cabb3][bold]Lapso Aberrante:[/bold][/color] Lapsa a forma corpórea do seu alvo e deixa ela temporariamente imutável, intransponível e presa no lugar.
+  - [color=#4cabb3][bold]Forçar Entrada:[/bold][/color] Use uma explosão concentrada de poder para arrombar qualquer tranca.
+  - [color=#4cabb3][bold]Passo Livre:[/bold][/color] Você se move só em relação ao negro sem estrelas. O seu movimento não sofre mais efeito da gravidade.
+  - [color=#4cabb3][bold]Corromper Matéria:[/bold][/color] Despeje poder maligno em um item e transforme ele em outra coisa. Dá para ver quais itens podem ser transmutados examinando eles.
+  - [color=#4cabb3][bold]Expelir Subjetividade:[/bold][/color] Arranque a mente do seu alvo do corpo dele e jogue no escuro cósmico, deixando o corpo temporariamente sem mente.
+  - [color=#4cabb3][bold]Passada Astral:[/bold][/color] A energia astral revigora o seu movimento e te deixa correr em uma velocidade absurda por um tempinho.
+  - [color=#4cabb3][bold]Estilhaçar Cognição:[/bold][/color] Divida o Conhecimento com um tripulante desavisado e não deixe outra escolha a ele além de entrar na sua causa.
+  - [color=#4cabb3][bold]Nova Astral:[/bold][/color] Arremesse uma explosão grande e destrutiva de energia astral, que faz um estrago numa área ampla.
+  - [color=#4cabb3][bold]Imposição Vacuosa:[/bold][/color] Anule todo dano recebido por um curto período, ao custo de deixar o seu movimento mais lento.
 </Document>

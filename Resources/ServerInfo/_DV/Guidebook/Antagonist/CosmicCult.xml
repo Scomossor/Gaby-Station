@@ -1,87 +1,87 @@
 <Document>
-  # The Cosmic Cult
+  # O Culto Cósmico
 
   <Box>
-    [color=#999999][italic]"A revelation beyond compare. An end to cyclic, sisyphean suffering."[/italic][/color]
+    [color=#999999][italic]"Uma revelação sem comparação. O fim do sofrimento cíclico e sisifiano."[/italic][/color]
   </Box>
   <Box>
-    [color=#999999][italic]"A gentle curtain call."[/italic][/color]
+    [color=#999999][italic]"Uma cortina que desce com delicadeza."[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="CosmicGlyphTruth" Caption=""/>
   </Box>
 
-  Otherworldly knowledge floods your mind! Welcome to the [color=#4cabb3]Cosmic Cult[/color], a team antagonist that has set its sights on the end of all things.
+  Um conhecimento de outro mundo invade a sua mente! Bem-vindo ao [color=#4cabb3]Culto Cósmico[/color], um antagonista de equipe que colocou o fim de todas as coisas na mira.
 
-  Use [color=#4cabb3]:a[/color] to communicate with fellow cultists through the [color=#4cabb3]Astral Murmur[/color].
+  Use [color=#4cabb3]:a[/color] para conversar com os outros cultistas pelo [color=#4cabb3]Murmúrio Astral[/color].
 
-  ## Objectives
-  - [color=#4cabb3][bold]Siphon Entropy[/bold][/color]  - Collectively siphon a certain amount of Entropy from the crew. The more entropy you siphon, the more powerful you become.
-  - [color=#4cabb3][bold]Attain Power[/bold][/color] - The more you gather entropy, the more power the cult gains access to, and the stronger are it's effects on the station.
-  - [color=#4cabb3][bold]Usher In The End[/bold][/color] - Once the cult is at full power, summon The Monument and complete the final ritual to beckon the Unknown and destroy the station.
+  ## Objetivos
+  - [color=#4cabb3][bold]Drenar Entropia[/bold][/color]  - Drenem juntos uma certa quantidade de Entropia da tripulação. Quanto mais entropia vocês drenarem, mais poderosos ficam.
+  - [color=#4cabb3][bold]Alcançar Poder[/bold][/color] - Quanto mais entropia vocês juntam, mais poder o culto libera, e mais forte fica o efeito dele na estação.
+  - [color=#4cabb3][bold]Traga o Fim[/bold][/color] - Com o culto no poder máximo, invoquem O Monumento e completem o ritual final para chamar o Desconhecido e destruir a estação.
 
-  Progress towards objectives is shared by the entire cult.
+  O progresso dos objetivos é compartilhado pelo culto inteiro.
 
-  ## Entropy
+  ## Entropia
   <Box>
     <GuideEntityEmbed Entity="MaterialCosmicCultEntropy1" Caption=""/>
-    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy10" Caption="Motes of Entropy"/>
+    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy10" Caption="Grãos de Entropia"/>
     <GuideEntityEmbed Entity="MaterialCosmicCultEntropy" Caption=""/>
   </Box>
 
-  All cultists start with two abilities, or [color=#4cabb3][bold]Influences[/bold][/color] - one of which is [italic][color=#4cabb3]Siphon Entropy[/color][/italic]. This is your bread and butter as a cosmic cultist, and you'll want to use it as often as possible.
+  Todo cultista começa com duas habilidades, ou [color=#4cabb3][bold]Influências[/bold][/color], e uma delas é [italic][color=#4cabb3]Drenar Entropia[/color][/italic]. Esse é o seu ganha-pão como cultista cósmico, e você vai querer usar isso o máximo possível.
 
-  Using Siphon Entropy on an unsuspecting crewmember will stealthily award you [color=#4cabb3]Entropy[/color].
+  Usar Drenar Entropia em um tripulante desavisado te dá [color=#4cabb3]Entropia[/color] sem ninguém perceber.
 
-  You can also siphon from crewmembers in critical condition, which will significantly increase the amount of entropy gathered, especially from high-value targets. However, doing so would also kill the target, so make sure to leave no witnesses.
+  Você também pode drenar de tripulantes em estado crítico, o que aumenta bastante a quantidade de entropia recolhida, ainda mais em alvos de valor alto. Só que isso também mata o alvo, então não deixe testemunhas.
 
-  The second Influence, [italic][color=#4cabb3]Attune Influence[/color][/italic] is just as important. Using it will allow you to see the cult's progress, as well as spend gathered entropy to unlock more [color=#4cabb3][bold]Influences[/bold][/color].
+  A segunda Influência, [italic][color=#4cabb3]Sintonizar Influência[/color][/italic], é igualmente importante. Com ela você vê o progresso do culto e gasta a entropia juntada para liberar mais [color=#4cabb3][bold]Influências[/bold][/color].
 
-  [textlink="For more on Influences, click here." link="CosmicCultInfluences"]
+  [textlink="Para saber mais sobre Influências, clique aqui." link="CosmicCultInfluences"]
 
   <Box>
-    <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="A vacuous spire"/>
+    <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="Um pináculo vacuoso"/>
   </Box>
 
-  When the cult grows stronger, they gain the ability to make [color=#4cabb3]Vacuous Spires[/color]. These can be made by transmuting a Gas Canister using [color=#4cabb3]Corrupt Matter[/color].
+  Quando o culto fica mais forte, ele ganha a capacidade de criar [color=#4cabb3]Pináculos Vacuosos[/color]. Eles saem da transmutação de um Canister de Gás com [color=#4cabb3]Corromper Matéria[/color].
 
-  When anchored in place, a vacuous spire rapidly devours the surrounding atmosphere! This process causes [color=#4cabb3]Motes of Entropy[/color] to condense from a spire's surface, acting as a powerful lategame source of entropy.
+  Fixado no chão, um pináculo vacuoso devora rapidamente a atmosfera em volta! Esse processo faz [color=#4cabb3]Grãos de Entropia[/color] se condensarem na superfície dele, o que serve como uma fonte forte de entropia no fim da rodada.
 
-  ## Malign Rifts
+  ## Fendas Malignas
   <Box>
-    <GuideEntityEmbed Entity="CosmicMalignRift" Caption="A Malign Rift"/>
+    <GuideEntityEmbed Entity="CosmicMalignRift" Caption="Uma Fenda Maligna"/>
   </Box>
-  As your cult progresses, [color=#4cabb3]Malign Rifts[/color] will begin to spawn throughout the surrounding environment. These rifts in realspace bleed unstable astral power, and should be located as soon as possible!
+  Conforme o culto avança, [color=#4cabb3]Fendas Malignas[/color] começam a aparecer pelo ambiente em volta. Essas fendas no espaço real vazam poder astral instável, e precisam ser achadas o quanto antes!
 
-  Cultists may stealthily [color=#4cabb3]absorb[/color] a Malign Rift by interacting with it.
+  Cultistas podem [color=#4cabb3]absorver[/color] uma Fenda Maligna sem chamar atenção, é só interagir com ela.
 
-  Successful absorbtion of a Malign Rift will [bold]permanently[/bold] empower the cultist doing so, increasing the strength of all the [color=#4cabb3]Influences[/color] they possess, and doubling the [color=#4cabb3]Entropy[/color] they gain from siphoning crewmembers. Empowered cultists also no longer need to breathe, eat, or drink, and are immune to the vaccuum of space.
+  Absorver uma Fenda Maligna com sucesso fortalece [bold]permanentemente[/bold] o cultista, aumenta a força de todas as [color=#4cabb3]Influências[/color] que ele tem e dobra a [color=#4cabb3]Entropia[/color] que ele ganha drenando tripulantes. Cultistas fortalecidos também não precisam mais respirar, comer ou beber, e ficam imunes ao vácuo do espaço.
 
-  Empowered cultists also gain the [color=#4cabb3]Null Fragmentation[/color] influence, which can be used to convert a Cyborg into an [color=#4cabb3]Entropic Colossus[/color], or to corrupt the station AI's laws.
+  Cultistas fortalecidos também ganham a influência [color=#4cabb3]Fragmentação Nula[/color], que dá para usar para converter um Ciborgue em um [color=#4cabb3]Colosso Entrópico[/color] ou para corromper as leis da IA da estação.
 
-  Malign Rifts can be purged by interacting with them using a bible.
+  Fendas Malignas podem ser purgadas com uma bíblia.
 
-  ## Vacuous Chantries
+  ## Capelas Vacuosas
   <Box>
     <GuideEntityEmbed Entity="CosmicBorgChantry" Caption=""/>
     <GuideEntityEmbed Entity="BorgChassisGeneric" Caption=""/>
     <GuideEntityEmbed Entity="MobCosmicColossus" Caption=""/>
   </Box>
-  While empowered, cultists can choose to use [color=#4cabb3]Null Fragmentation[/color] on a [bold]Cyborg[/bold]. Doing so will trap them inside a [color=#4cabb3]Vacuous Chantry[/color]! This will trigger a stationwide alert, and begin the process of transfiguring the unfortunate victim into an [color=#4cabb3]Entropic Colossus[/color].
+  Estando fortalecido, o cultista pode usar [color=#4cabb3]Fragmentação Nula[/color] em um [bold]Ciborgue[/bold]. Isso prende ele dentro de uma [color=#4cabb3]Capela Vacuosa[/color]! Um alerta é disparado para a estação inteira, e começa o processo de transfigurar a vítima em um [color=#4cabb3]Colosso Entrópico[/color].
 
-  Be prepared to defend the chantry - or use it as a distraction to draw the crew's attention! The crew must use weapons to destroy the chantry in order to free the trapped Cyborg within.
+  Esteja pronto para defender a capela, ou use ela como distração para puxar a atenção da tripulação! A tripulação precisa usar armas para destruir a capela e libertar o Ciborgue preso lá dentro.
 
-  If successfully unleashed, an Entropic Colossus will be a force to be reckoned with.
+  Se for solto com sucesso, um Colosso Entrópico vira uma força e tanto.
 
-  [textlink="For more on Entropic Colossi, click here." link="CosmicColossus"]
+  [textlink="Para saber mais sobre Colossos Entrópicos, clique aqui." link="CosmicColossus"]
 
-  ## Malign Law
+  ## Lei Maligna
   <Box>
     <GuideEntityEmbed Entity="StationAiUploadComputer" Caption=""/>
     <GuideEntityEmbed Entity="CosmicCultLawBoard" Caption=""/>
     <GuideEntityEmbed Entity="PlayerStationAi" Caption=""/>
   </Box>
-  While empowered, cultists can choose to use [color=#4cabb3]Null Fragmentation[/color] on the [bold]AI Upload Console[/bold]. Provided there is a Station AI active, this will forcibly overwrite their laws with a corrupt set of guidelines, aligning them with the Cosmic Cult, in addition to granting them access to the Astral Murmur channel.
+  Estando fortalecido, o cultista pode usar [color=#4cabb3]Fragmentação Nula[/color] no [bold]Console de Upload da IA[/bold]. Se tiver uma IA da estação ativa, isso sobrescreve as leis dela à força com um conjunto corrompido de diretrizes, alinha ela ao Culto Cósmico e ainda dá acesso ao canal do Murmúrio Astral.
 
-  If a different lawboard was installed, this process will forcibly eject the previous lawboard from the AI Upload Console, regardless of wether or not the console was locked. Be warned; the crew will still be able to restore the Station AI's functionality by installing a safe, crew-aligned lawboard.
+  Se já tinha outra placa de leis instalada, o processo ejeta a placa anterior do Console de Upload da IA à força, com o console trancado ou não. Fica o aviso: a tripulação ainda consegue restaurar o funcionamento da IA da estação instalando uma placa de leis segura e alinhada com ela.
 </Document>
