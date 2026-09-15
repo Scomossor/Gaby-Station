@@ -16,6 +16,7 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Status effect prototypes.
 # Holds no actual logic, just some basic data about the effect.
 
@@ -59,6 +60,14 @@
 - type: statusEffect
   id: Corporeal
   alert: Corporeal
+
+- type: statusEffect
+  id: Migraine
+  alwaysAllowed: true
+
+- type: statusEffect
+  id: MigraineSeizure
+  alwaysAllowed: true
 
 - type: statusEffect
   id: TemporaryBlindness
