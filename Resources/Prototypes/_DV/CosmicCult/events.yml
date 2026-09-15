@@ -31,3 +31,10 @@
         text: ghost-role-colossus-briefing
         color: CadetBlue
         sound: /Audio/_DV/CosmicCult/antag_cosmic_AI_briefing.ogg
+
+# Dumont changes start
+- type: ninjaHackingThreat
+  id: Colossus
+  announcement: terror-colossus
+  rule: ColossusSpawn
+# Dumont end
