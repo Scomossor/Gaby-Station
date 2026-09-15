@@ -200,7 +200,7 @@
     - id: ZombieOutbreak
     - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
-    - id: WraithMidround # Unchuddified version | no evolution | no absorbing corpses
+#    - id: WraithMidround # Unchuddified version | no evolution | no absorbing corpses
     - id: DerelictCyborgSpawn
     - id: BlobSpawn # Goobstation - Blob
     - id: LoneAbductorSpawn # Shitmed - Starlight Abductors
