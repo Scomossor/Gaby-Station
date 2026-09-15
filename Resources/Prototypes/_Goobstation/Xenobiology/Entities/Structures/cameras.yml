@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Project Dumont
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SurveillanceCameraScience
+  id: SurveillanceCameraScienceXenobiology
+  name: camera
+  suffix: Science, Xenobiology
+  components:
+  - type: ConsoleCamera
+    tags:
+    - Xenobiology

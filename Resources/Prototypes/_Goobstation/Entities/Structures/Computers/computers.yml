@@ -38,3 +38,39 @@
     guides:
     - Xenobiology
     - Science
+
+- type: entity
+  id: ComputerScienceXenobiology
+  parent: BaseComputerAiAccess
+  name: xenobiology console
+  description: Remotely monitors and handles slimes through linked cameras.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      sprite: _Goobstation/Xenobiology/Structures/Computers/xenobiology_console.rsi
+      state: screen
+    - map: ["computerLayerKeys"]
+      state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: XenobiologyConsole
+  - type: DeviceLinkSource
+    ports:
+    - XenobiologySlimeTransfer
+  - type: Computer
+    board: XenobiologyConsoleComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89f25"
+  - type: AccessReader
+    access: [["Research"]]
+  - type: GuideHelp
+    guides:
+    - Xenobiology
+    - Science

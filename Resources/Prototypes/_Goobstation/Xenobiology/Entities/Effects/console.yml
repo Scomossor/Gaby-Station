@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Project Dumont
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: XenobiologyTransferTubeEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Xenobiology/Effects/xenobiology_transfer.rsi
+    state: tube
+    drawdepth: Effects
+  - type: AnimationPlayer

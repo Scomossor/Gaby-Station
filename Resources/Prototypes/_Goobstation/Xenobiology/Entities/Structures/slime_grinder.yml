@@ -2,7 +2,7 @@
   id: SlimeGrinder
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: slime grinder
-  description: Produces extracts from a slimes corpse.
+  description: Stores slime corpses and processes them into extracts when activated.
   placement:
     mode: SnapgridCenter
   components:
@@ -21,6 +21,9 @@
     - type: Rotatable
     - type: Appearance
     - type: SlimeGrinder
+    - type: DeviceLinkSink
+      ports:
+      - XenobiologySlimeReceiver
     - type: Climbable
       delay: 1
     - type: AmbientSound

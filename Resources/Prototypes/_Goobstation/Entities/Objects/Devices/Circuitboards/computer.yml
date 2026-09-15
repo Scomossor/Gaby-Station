@@ -20,3 +20,15 @@
     state: cpu_medical
   - type: ComputerBoard
     prototype: ComputerVirology
+
+- type: entity
+  id: XenobiologyConsoleComputerCircuitboard
+  parent: BaseComputerCircuitboard
+  name: xenobiology console computer board
+  description: A computer printed circuit board for a xenobiology console.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerScienceXenobiology
+  - type: StaticPrice

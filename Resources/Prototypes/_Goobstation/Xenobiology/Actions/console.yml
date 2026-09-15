@@ -1,0 +1,108 @@
+# SPDX-FileCopyrightText: 2026 Project Dumont
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsoleExit
+  name: Disconnect from console
+  description: Return control to your body.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+      state: disconnect
+  - type: InstantAction
+    event: !type:XenobiologyConsoleExitEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsolePlaceMonkey
+  name: Place monkey
+  description: Spend stored monkey biomass to place a monkey at the cursor position.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+      state: place_monkey
+  - type: InstantAction
+    event: !type:XenobiologyConsolePlaceMonkeyEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsoleRecycleMonkey
+  name: Recycle monkey
+  description: Recycle the closest dead monkey into biomass.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+      state: recycle_monkey
+  - type: InstantAction
+    event: !type:XenobiologyConsoleRecycleMonkeyEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsoleGrabSlime
+  name: Store slime
+  description: Store the closest slime to the cursor or transfer its corpse to a linked grinder.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+      state: grab_slime
+  - type: InstantAction
+    event: !type:XenobiologyConsoleGrabSlimeEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsoleReleaseSlimes
+  name: Release slimes
+  description: Release every stored slime at the cursor position.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+      state: release_slimes
+  - type: InstantAction
+    event: !type:XenobiologyConsoleReleaseSlimesEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsoleAnalyzeSlime
+  name: Analyze slime
+  description: Analyze the closest slime to the cursor.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 0.5
+  - type: Sprite
+    sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+    state: scan_slime
+  - type: InstantAction
+    event: !type:XenobiologyConsoleAnalyzeSlimeEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenobiologyConsoleShowShortcuts
+  name: Show shortcuts
+  description: Print the console mouse shortcuts in chat.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+      state: shortcuts
+  - type: InstantAction
+    event: !type:XenobiologyConsoleShowShortcutsEvent

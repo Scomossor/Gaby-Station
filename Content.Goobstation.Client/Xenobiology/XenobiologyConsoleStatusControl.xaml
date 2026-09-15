@@ -1,0 +1,33 @@
+<!--
+SPDX-FileCopyrightText: 2026 Project Dumont
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<xeno:XenobiologyConsoleStatusControl
+    xmlns="https://spacestation14.io"
+    xmlns:xeno="clr-namespace:Content.Goobstation.Client.Xenobiology"
+    SetSize="64 64"
+    MouseFilter="Ignore">
+    <TextureRect
+        TexturePath="/Textures/_Goobstation/Xenobiology/Interface/xenobiology_counter.png"
+        Stretch="Scale"
+        SetSize="64 64"
+        MouseFilter="Ignore" />
+    <Label
+        Name="BiomassLabel"
+        SetSize="36 20"
+        Align="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Margin="24 11 0 0"
+        MouseFilter="Ignore" />
+    <Label
+        Name="SlimeLabel"
+        SetSize="36 20"
+        Align="Center"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Bottom"
+        Margin="24 0 0 12"
+        MouseFilter="Ignore" />
+</xeno:XenobiologyConsoleStatusControl>

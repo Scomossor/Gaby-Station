@@ -109,6 +109,14 @@
   result: SlimeGrinderMachineCircuitboard
 
 - type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseResearchComputerRecipeCategory ]
+  id: XenobiologyConsoleComputerCircuitboard
+  result: XenobiologyConsoleComputerCircuitboard
+  icon:
+    sprite: Structures/Machines/computers.rsi
+    state: xenobiology
+
+- type: latheRecipe
   parent: BaseGoldCircuitboardRecipe
   id: RadiationCollectorCircuitboard
   result: RadiationCollectorCircuitboard

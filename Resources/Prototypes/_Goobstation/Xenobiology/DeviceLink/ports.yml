@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Project Dumont
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: sourcePort
+  id: XenobiologySlimeTransfer
+  name: signal-port-name-xenobiology-slime-transfer
+  description: signal-port-description-xenobiology-slime-transfer
+  defaultLinks:
+  - XenobiologySlimeReceiver
+
+- type: sinkPort
+  id: XenobiologySlimeReceiver
+  name: signal-port-name-xenobiology-slime-receiver
+  description: signal-port-description-xenobiology-slime-receiver

@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Audio;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.Xenobiology.SlimeGrinder;
@@ -11,6 +12,8 @@ namespace Content.Goobstation.Server.Xenobiology.SlimeGrinder;
 [RegisterComponent]
 public sealed partial class SlimeGrinderComponent : Component
 {
+    public const string SlimeContainerId = "slime-grinder-slimes";
+
     /// <summary>
     /// This gets set for each mob it processes.
     /// When it hits 0, spit out extract.
@@ -30,7 +33,9 @@ public sealed partial class SlimeGrinderComponent : Component
     [DataField]
     public float ProcessingTimePerUnitMass = 0.1f;
 
+    [ViewVariables]
+    public Container SlimeContainer = default!;
+
     [DataField]
     public SoundSpecifier GrindSound = new SoundPathSpecifier("/Audio/Machines/reclaimer_startup.ogg");
-
 }

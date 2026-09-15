@@ -97,29 +97,55 @@ public sealed partial class SlimeLatchSystem : EntitySystem
         if (stomachList.Count == 0)
             return;
 
-        FixedPoint2 availabaleVolume = 0;
+        var availableVolume = FixedPoint2.Zero;
         foreach (var stomach in stomachList)
         {
             if (_solutionContainer.ResolveSolution(stomach.Owner, StomachSystem.DefaultSolutionName, ref stomach.Comp1.Solution, out var sol))
-                availabaleVolume += sol.AvailableVolume;
+                availableVolume += sol.AvailableVolume;
         }
 
         if (TryComp<BloodstreamComponent>(ent, out var bloodstream)
             && _solutionContainer.ResolveSolution(ent.Owner, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var blood)
             && _solutionContainer.ResolveSolution(ent.Owner, bloodstream.ChemicalSolutionName, ref bloodstream.ChemicalSolution, out var chem))
         {
-            FixedPoint2 bloodProportion = blood.Volume/(chem.Volume + blood.Volume);
-            FixedPoint2 chemProportion = 1 - bloodProportion;
-            FixedPoint2 bloodTransfer = FixedPoint2.Min(ent.Comp.SuctionUnits * bloodProportion, availabaleVolume * bloodProportion);
-            FixedPoint2 chemTransfer = FixedPoint2.Min(ent.Comp.SuctionUnits * chemProportion, availabaleVolume * chemProportion);
-            foreach (var stomach in stomachList)
+            var toxinVolume = chem.GetTotalPrototypeQuantity(ent.Comp.ToxinReagent.Id);
+            var chemicalVolume = FixedPoint2.Max(chem.Volume - toxinVolume, FixedPoint2.Zero);
+            var totalVolume = blood.Volume + chemicalVolume;
+
+            if (totalVolume > FixedPoint2.Zero && availableVolume > FixedPoint2.Zero)
             {
-                var bloodSolution = blood.SplitSolutionWithout(bloodTransfer/FixedPoint2.New(stomachList.Count), ent.Comp.ToxinReagent); // we don't want slime sucking it's own toxin instad of drinking blood
-                _stomach.TryTransferSolution(stomach.Owner, bloodSolution, stomach); // blood first, other chemicals later
-                var chemSolution = blood.SplitSolution(chemTransfer/FixedPoint2.New(stomachList.Count));
-                _stomach.TryTransferSolution(stomach.Owner, chemSolution, stomach);
+                var bloodProportion = blood.Volume / totalVolume;
+                var chemicalProportion = FixedPoint2.New(1) - bloodProportion;
+                var bloodTransfer = FixedPoint2.Min(
+                    ent.Comp.SuctionUnits * bloodProportion,
+                    availableVolume * bloodProportion);
+                var chemicalTransfer = FixedPoint2.Min(
+                    ent.Comp.SuctionUnits * chemicalProportion,
+                    availableVolume * chemicalProportion);
+                var stomachCount = FixedPoint2.New(stomachList.Count);
+
+                foreach (var stomach in stomachList)
+                {
+                    var bloodSolution = _solutionContainer.SplitSolutionWithout(
+                        bloodstream.BloodSolution.Value,
+                        bloodTransfer / stomachCount,
+                        ent.Comp.ToxinReagent);
+                    if (!_stomach.TryTransferSolution(stomach.Owner, bloodSolution, stomach))
+                        _solutionContainer.TryAddSolution(bloodstream.BloodSolution.Value, bloodSolution);
+
+                    var chemicalSolution = _solutionContainer.SplitSolutionWithout(
+                        bloodstream.ChemicalSolution.Value,
+                        chemicalTransfer / stomachCount,
+                        ent.Comp.ToxinReagent);
+                    if (!_stomach.TryTransferSolution(stomach.Owner, chemicalSolution, stomach))
+                        _solutionContainer.TryAddSolution(bloodstream.ChemicalSolution.Value, chemicalSolution);
+                }
             }
-            chem.AddReagent(ent.Comp.ToxinReagent, ent.Comp.ToxinUnits);
+
+            _solutionContainer.TryAddReagent(
+                bloodstream.ChemicalSolution.Value,
+                ent.Comp.ToxinReagent.Id,
+                ent.Comp.ToxinUnits);
         }
     }
 

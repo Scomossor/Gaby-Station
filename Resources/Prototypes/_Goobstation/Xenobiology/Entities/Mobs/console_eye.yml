@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 Project Dumont
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent:
+  - Incorporeal
+  - BaseMob
+  id: XenobiologyConsoleEye
+  name: xenobiology console camera
+  description: A remote xenobiology console viewer.
+  categories: [ HideSpawnMenu, DoNotMap ]
+  components:
+  - type: MovementIgnoreGravity
+  - type: CanMoveInAir
+  - type: Physics
+    bodyType: KinematicController
+    bodyStatus: InAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 15
+        hard: false
+        layer:
+        - GhostImpassable
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 10
+    baseWalkSpeed: 10
+  - type: NoFTL
+  - type: Eye
+    pvsScale: 1.5
+  - type: InputMover
+  - type: Visibility
+    layer: 1
+  - type: Sprite
+    sprite: _Goobstation/Xenobiology/Interface/xenobiology_console.rsi
+    layers:
+    - state: cursor
+      shader: unshaded
+      map: ["base"]
+  - type: Tag
+    tags:
+    - HideContextMenu

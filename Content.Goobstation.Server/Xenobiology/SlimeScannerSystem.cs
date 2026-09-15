@@ -1,9 +1,12 @@
+using Content.Server.Chat.Managers;
+using Content.Goobstation.Shared.Xenobiology;
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Goobstation.Shared.Xenobiology.Components.Equipment;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
@@ -12,6 +15,7 @@ using System.Text;
 namespace Content.Goobstation.Server.Xenobiology;
 public sealed partial class SlimeScannerSystem : EntitySystem
 {
+    [Dependency] private IChatManager _chat = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly IPrototypeManager _prot = default!;
 
@@ -30,6 +34,15 @@ public sealed partial class SlimeScannerSystem : EntitySystem
 
         TrySendTooltip(args.User, ent, GenerateSlimeMarkup(ent));
         args.Handled = true;
+    }
+
+    public void SendSlimeScanToChat(EntityUid user, Entity<SlimeComponent> slime)
+    {
+        if (!TryComp<ActorComponent>(user, out var actor))
+            return;
+
+        var message = FormattedMessage.RemoveMarkupPermissive(GenerateSlimeMarkup(slime));
+        _chat.DispatchServerMessage(actor.PlayerSession, message);
     }
 
     private void OnExtractAfterInteractUsing(Entity<SlimeExtractComponent> ent, ref AfterInteractUsingEvent args)
@@ -57,9 +70,11 @@ public sealed partial class SlimeScannerSystem : EntitySystem
 
         var sb = new StringBuilder();
 
-        sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-description", ("color", ent.Comp.SlimeColor.ToHex()), ("name", _prot.Index(ent.Comp.Breed).BreedName)));
+        sb.AppendLine(Loc.GetString(
+            "slime-scanner-examine-slime-description",
+            ("color", ent.Comp.SlimeColor.ToHex()),
+            ("name", GetBreedName(ent.Comp.Breed))));
 
-        // all this shit for a good looking examine text. imagine.
         sb.Append($"{Loc.GetString("slime-scanner-examine-slime-mutations", ("chance", mutationChance))} ");
         var mutations = ent.Comp.PotentialMutations.ToList();
         for (int i = 0; i < mutations.Count; i++)
@@ -71,7 +86,7 @@ public sealed partial class SlimeScannerSystem : EntitySystem
             if (info.Components.TryGetComponent(nameof(SlimeComponent), out var sc))
                 color = ((SlimeComponent) sc!).SlimeColor.ToHex();
 
-            sb.Append($"[color={color}]{info.BreedName}[/color]");
+            sb.Append($"[color={color}]{GetBreedName(mutations[i])}[/color]");
 
             if (i == mutations.Count - 1) sb.AppendLine(".");
             else sb.Append(", ");
@@ -81,6 +96,9 @@ public sealed partial class SlimeScannerSystem : EntitySystem
 
         return sb.ToString();
     }
+
+    private string GetBreedName(ProtoId<BreedPrototype> breed)
+        => Loc.GetString($"slime-scanner-breed-{breed}");
 
     private string GenerateExtractMarkup(Entity<SlimeExtractComponent> ent)
     {

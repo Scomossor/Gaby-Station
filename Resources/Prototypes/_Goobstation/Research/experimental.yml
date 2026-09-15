@@ -63,6 +63,7 @@
   cost: 5000
   recipeUnlocks:
   - SlimeGrinderMachineCircuitboard
+  - XenobiologyConsoleComputerCircuitboard
   - ClothingBackpackXenoBioTank
   position: -3,3
   technologyPrerequisites:
