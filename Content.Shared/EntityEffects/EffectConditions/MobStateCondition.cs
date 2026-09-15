@@ -15,15 +15,15 @@ public sealed partial class MobStateCondition : EntityEffectCondition
     [DataField]
     public MobState Mobstate = MobState.Alive;
 
+    [DataField]
+    public bool Inverted;
+
     public override bool Condition(EntityEffectBaseArgs args)
     {
-        if (args.EntityManager.TryGetComponent(args.TargetEntity, out MobStateComponent? mobState))
-        {
-            if (mobState.CurrentState == Mobstate)
-                return true;
-        }
+        var result = args.EntityManager.TryGetComponent(args.TargetEntity, out MobStateComponent? mobState)
+                     && mobState.CurrentState == Mobstate;
 
-        return false;
+        return result != Inverted;
     }
 
     public override string GuidebookExplanation(IPrototypeManager prototype)

@@ -362,7 +362,8 @@ public sealed partial class PolymorphSystem : EntitySystem
         }
         var child = Spawn(proto, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
 
-        _mindSystem.MakeSentient(child, configuration.AllowMovement);
+        if (configuration.MakeSentient) // Trauma
+            _mindSystem.MakeSentient(child, configuration.AllowMovement);
         // Goob edit end
 
         var polymorphedComp = Factory.GetComponent<PolymorphedEntityComponent>();
@@ -467,7 +468,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         {
             // Goob edit start
             _metaData.SetEntityName(child,
-                TryComp(uid, out NameModifierComponent? modifier) ? modifier.BaseName : targetMeta.EntityName);
+                configuration.StripNameModifier && TryComp(uid, out NameModifierComponent? modifier) ? modifier.BaseName : targetMeta.EntityName); // Trauma - StripNameModifier
             // Goob edit end
         }
 

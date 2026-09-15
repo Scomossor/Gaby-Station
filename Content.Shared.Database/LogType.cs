@@ -622,4 +622,9 @@ public enum LogType
     /// Silicon law changes.
     /// </summary>
     SiliconLaws = 10005, // Goobstation
+
+    /// <summary>
+    /// Genetics: mutation, scanning and unique enzyme changes.
+    /// </summary>
+    Genetics = 10006, // Trauma
 }

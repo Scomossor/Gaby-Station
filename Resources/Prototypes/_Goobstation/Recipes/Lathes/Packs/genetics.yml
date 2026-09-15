@@ -2,3 +2,6 @@
   id: Genetics # thats bait
   recipes:
   - XenoCompatibilityImplanter
+  # Trauma
+  - GeneticsDisk
+  - HandheldGeneticsScanner

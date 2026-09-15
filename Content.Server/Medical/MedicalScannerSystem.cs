@@ -39,6 +39,7 @@
 
 using Content.Server.Cloning;
 using Content.Server.Medical.Components;
+using Content.Trauma.Common.Medical; // Trauma
 using Content.Shared.Destructible;
 using Content.Shared.ActionBlocker;
 using Content.Shared.DragDrop;
@@ -181,20 +182,43 @@ namespace Content.Server.Medical
 
         private void OnPortDisconnected(EntityUid uid, MedicalScannerComponent component, PortDisconnectedEvent args)
         {
+            // <Trauma>
+            if (args.Port == MedicalScannerComponent.ScannerPort && component.ConnectedConsole is { } ligado)
+            {
+                var desligou = new ScannerDisconnectedEvent(uid);
+                RaiseLocalEvent(ligado, ref desligou);
+            }
+            // </Trauma>
             component.ConnectedConsole = null;
         }
 
         private void OnAnchorChanged(EntityUid uid, MedicalScannerComponent component, ref AnchorStateChangedEvent args)
         {
-            if (component.ConnectedConsole == null || !TryComp<CloningConsoleComponent>(component.ConnectedConsole, out var console))
+            if (component.ConnectedConsole is not { } consoleLigado)
+                return;
+
+            // <Trauma>
+            if (args.Anchored)
+            {
+                var ligou = new ScannerConnectedEvent(uid);
+                RaiseLocalEvent(consoleLigado, ref ligou);
+            }
+            else
+            {
+                var desligou = new ScannerDisconnectedEvent(uid);
+                RaiseLocalEvent(consoleLigado, ref desligou);
+            }
+            // </Trauma>
+
+            if (!TryComp<CloningConsoleComponent>(consoleLigado, out var console))
                 return;
 
             if (args.Anchored)
             {
-                _cloningConsoleSystem.RecheckConnections(component.ConnectedConsole.Value, console.CloningPod, uid, console);
+                _cloningConsoleSystem.RecheckConnections(consoleLigado, console.CloningPod, uid, console);
                 return;
             }
-            _cloningConsoleSystem.UpdateUserInterface(component.ConnectedConsole.Value, console);
+            _cloningConsoleSystem.UpdateUserInterface(consoleLigado, console);
         }
         private MedicalScannerStatus GetStatus(EntityUid uid, MedicalScannerComponent scannerComponent)
         {

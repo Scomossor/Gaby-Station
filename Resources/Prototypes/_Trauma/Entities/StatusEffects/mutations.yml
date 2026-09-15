@@ -1,0 +1,95 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectMutedMutation
+  name: muted
+  components:
+  - type: StatusEffectAlert
+    alert: Muted
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: Muted
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectPressureImmunityMutation
+  name: pressure immunity
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: PressureImmunity
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectClumsyMutation
+  name: clumsy
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: Clumsy
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectBlurryVision
+  name: blurry vision
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: BlurryVision
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectBlindness
+  name: temporary blindness
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+      - Blindable
+      requireAll: true
+  - type: TemporaryBlindness
+
+- type: entity
+  parent: StatusEffectBase
+  id: DnaMeltingStatusEffect
+  name: DNA melting
+  components:
+  - type: StatusEffectEffectsApply
+    effectsOnRemoval:
+    - !type:NestedEffect
+      conditions:
+      - !type:DnaUnstableCondition
+      proto: SomethingHorrible
+    - !type:ScrambleDna
+
+- type: entity
+  parent: StatusEffectBase
+  id: DecloningStatusEffect
+  name: decloning
+
+- type: entity
+  parent: StatusEffectBase
+  id: LookingUpStatusEffect
+  name: looking up
+  components:
+  - type: StatusEffectEffectsApply
+    effectsOnRemoval:
+    - !type:PopupMessage
+      type: Pvs
+      messages:
+      - entity-effect-popup-eyes-melt
+    - !type:RelayOrgan
+      category: Eyes
+      guidebookText: entity-effect-guidebook-melts-eyes
+      effects:
+      - !type:Delete
+    - !type:RelayOrgan
+      category: Brain
+      guidebookText: entity-effect-guidebook-melts-brain
+      effects:
+      - !type:AddComponents
+        guidebookText: entity-effect-guidebook-melts-brain
+        components:
+        - type: TimedDespawn

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
 
 namespace Content.Goobstation.Server.ComponentsRegistry;
 public sealed partial class GrantComponentsStatusEffectSystem : EntitySystem
@@ -20,13 +21,48 @@ public sealed partial class GrantComponentsStatusEffectSystem : EntitySystem
         SubscribeLocalEvent<GrantComponentsStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemove);
     }
 
+    // Dumont
     private void OnStatusEffectApply(Entity<GrantComponentsStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        EntityManager.AddComponents(args.Target, ent.Comp.Components);
+        ent.Comp.Added.Clear();
+        foreach (var name in ent.Comp.Components.Keys)
+        {
+            if (!HasComp(args.Target, Factory.GetRegistration(name).Type))
+                ent.Comp.Added.Add(name);
+        }
+
+        EntityManager.AddComponents(args.Target, ent.Comp.Components, removeExisting: false);
     }
 
     private void OnStatusEffectRemove(Entity<GrantComponentsStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
-        EntityManager.RemoveComponents(args.Target, ent.Comp.Components);
+        foreach (var name in ent.Comp.Added)
+        {
+            // Dumont
+            if (!PassToOtherEffect(args.Target, ent.Owner, name))
+                RemComp(args.Target, Factory.GetRegistration(name).Type);
+        }
+        ent.Comp.Added.Clear();
+    }
+
+    private bool PassToOtherEffect(EntityUid target, EntityUid leaving, string name)
+    {
+        if (!TryComp<StatusEffectContainerComponent>(target, out var container) ||
+            container.ActiveStatusEffects is not {} effects)
+            return false;
+
+        foreach (var effect in effects.ContainedEntities)
+        {
+            if (effect == leaving ||
+                !TryComp<GrantComponentsStatusEffectComponent>(effect, out var other) ||
+                !other.Components.ContainsKey(name))
+                continue;
+
+            if (!other.Added.Contains(name))
+                other.Added.Add(name);
+            return true;
+        }
+
+        return false;
     }
 }

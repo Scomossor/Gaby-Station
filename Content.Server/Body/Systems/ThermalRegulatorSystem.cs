@@ -36,6 +36,21 @@ public sealed class ThermalRegulatorSystem : EntitySystem
         ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.UpdateInterval;
     }
 
+    public void ScaleRegulation(Entity<ThermalRegulatorComponent?> ent,
+        float shivering,
+        float sweating,
+        float metabolism,
+        float regulation)
+    {
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
+            return;
+
+        ent.Comp.ShiveringHeatRegulation *= shivering;
+        ent.Comp.SweatHeatRegulation *= sweating;
+        ent.Comp.MetabolismHeat *= metabolism;
+        ent.Comp.ImplicitHeatRegulation *= regulation;
+    }
+
     private void OnUnpaused(Entity<ThermalRegulatorComponent> ent, ref EntityUnpausedEvent args)
     {
         ent.Comp.NextUpdate += args.PausedTime;

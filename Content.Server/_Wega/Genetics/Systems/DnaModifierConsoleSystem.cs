@@ -4,6 +4,7 @@
 
 using System.Linq;
 using Content.Server.Administration;
+using Content.Shared.ActionBlocker;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Medical.Components;
 using Content.Server.Power.EntitySystems;
@@ -44,6 +45,7 @@ namespace Content.Server.Genetics.System
     [UsedImplicitly]
     public sealed class DnaModifierConsoleSystem : EntitySystem
     {
+        [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
         [Dependency] private readonly DamageableSystem _damage = default!;
@@ -96,6 +98,30 @@ namespace Content.Server.Genetics.System
             SubscribeNetworkEvent<DnaModifierConsoleReleverationsEvent>(OnReleverationsPressed);
         }
 
+        private bool IsAuthorized(NetEntity netConsole, EntitySessionEventArgs session, out EntityUid user)
+        {
+            user = default;
+
+            if (session.SenderSession.AttachedEntity is not { } attached)
+                return false;
+
+            var uid = GetEntity(netConsole);
+            if (!HasComp<DnaModifierConsoleComponent>(uid))
+                return false;
+
+            if (!_uiSystem.IsUiOpen(uid, DnaModifierUiKey.Key, attached))
+                return false;
+
+            if (!_actionBlocker.CanInteract(attached, uid))
+                return false;
+
+            if (!_powerReceiverSystem.IsPowered(uid))
+                return false;
+
+            user = attached;
+            return true;
+        }
+
         #region UI logic
         private void OnInit(EntityUid uid, DnaModifierConsoleComponent component, ComponentInit args)
         {
@@ -127,8 +153,11 @@ namespace Content.Server.Genetics.System
             }
         }
 
-        private void OnUpdateUI(DnaModifierUpdateEvent args)
+        private void OnUpdateUI(DnaModifierUpdateEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var component))
                 return;
 
@@ -394,8 +423,11 @@ namespace Content.Server.Genetics.System
         private void PlayClickSound(Entity<DnaModifierConsoleComponent> ent)
             => _audio.PlayPvs(ent.Comp.ClickSound, ent, AudioParams.Default.WithVolume(-2f));
 
-        private void OnEjectPressed(DnaModifierConsoleEjectEvent args)
+        private void OnEjectPressed(DnaModifierConsoleEjectEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var console) || console.GeneticScanner == null)
                 return;
 
@@ -409,8 +441,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
-        private void OnEjectRejuvePressed(DnaModifierConsoleEjectRejuveEvent args)
+        private void OnEjectRejuvePressed(DnaModifierConsoleEjectRejuveEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var console) || console.GeneticScanner == null)
                 return;
 
@@ -424,8 +459,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
-        private void OnReagentButtonPressed(DnaModifierConsoleReagentButtonEvent args)
+        private void OnReagentButtonPressed(DnaModifierConsoleReagentButtonEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var console) || console.GeneticScanner == null)
                 return;
 
@@ -468,8 +506,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
-        private void OnSaveServerPressed(DnaModifierConsoleSaveServerEvent args)
+        private void OnSaveServerPressed(DnaModifierConsoleSaveServerEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
                 || !TryComp<DnaClientComponent>(clientEntity, out var client))
@@ -530,8 +571,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(clientEntity, console);
         }
 
-        private void OnClearBufferPressed(DnaModifierConsoleClearBufferEvent args)
+        private void OnClearBufferPressed(DnaModifierConsoleClearBufferEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || !TryComp<DnaClientComponent>(clientEntity, out var client))
                 return;
@@ -542,8 +586,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(clientEntity, console);
         }
 
-        private void OnRenameBufferPressed(DnaModifierConsoleRenameBufferEvent args)
+        private void OnRenameBufferPressed(DnaModifierConsoleRenameBufferEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Console, session, out var user))
+                return;
+
             var clientEntity = GetEntity(args.Console);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || !TryComp<DnaClientComponent>(clientEntity, out var client))
                 return;
@@ -551,7 +598,6 @@ namespace Content.Server.Genetics.System
             if (!_dnaClient.TryGetBufferData((clientEntity, client), args.Index, out var data))
                 return;
 
-            var user = GetEntity(args.User);
             if (!TryComp<ActorComponent>(user, out var playerActor))
                 return;
 
@@ -563,10 +609,7 @@ namespace Content.Server.Genetics.System
                         ? data.SampleName
                         : name;
 
-                    var consolePosition = _transform.GetWorldPosition(clientEntity);
-                    var userPosition = _transform.GetWorldPosition(user);
-                    var distance = (userPosition - consolePosition).Length();
-                    if (distance > 3f)
+                    if (!IsAuthorized(args.Console, session, out _))
                         return;
 
                     _dnaClient.TryRenameBuffer((clientEntity, client), args.Index, finalName);
@@ -576,8 +619,11 @@ namespace Content.Server.Genetics.System
                 });
         }
 
-        private void OnInjectorPressed(DnaModifierConsoleInjectorEvent args)
+        private void OnInjectorPressed(DnaModifierConsoleInjectorEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
                 || !TryComp<DnaClientComponent>(clientEntity, out var client))
@@ -595,8 +641,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(clientEntity, console);
         }
 
-        private void OnInjectBlockPressed(DnaModifierInjectBlockEvent args)
+        private void OnInjectBlockPressed(DnaModifierInjectBlockEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
                 || !TryComp<DnaClientComponent>(clientEntity, out var client))
@@ -619,8 +668,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(clientEntity, console);
         }
 
-        private void OnSubjectInjectPressed(DnaModifierConsoleSubjectInjectEvent args)
+        private void OnSubjectInjectPressed(DnaModifierConsoleSubjectInjectEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
                 || !TryComp<DnaClientComponent>(clientEntity, out var client))
@@ -645,8 +697,11 @@ namespace Content.Server.Genetics.System
             _damage.TryChangeDamage(scanBody.Value, damage, true);
         }
 
-        private void OnExportOnDiskPressed(DnaModifierConsoleExportOnDiskEvent args)
+        private void OnExportOnDiskPressed(DnaModifierConsoleExportOnDiskEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
                 || !TryComp<DnaClientComponent>(clientEntity, out var client))
@@ -664,8 +719,11 @@ namespace Content.Server.Genetics.System
             }
         }
 
-        private void OnExportFromDiskPressed(DnaModifierConsoleExportFromDiskEvent args)
+        private void OnExportFromDiskPressed(DnaModifierConsoleExportFromDiskEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
                 || !TryComp<DnaClientComponent>(clientEntity, out var client))
@@ -684,8 +742,11 @@ namespace Content.Server.Genetics.System
             }
         }
 
-        private void OnClearDiskPressed(DnaModifierConsoleClearDiskEvent args)
+        private void OnClearDiskPressed(DnaModifierConsoleClearDiskEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             var clientEntity = GetEntity(args.Uid);
             if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null)
                 return;
@@ -697,8 +758,11 @@ namespace Content.Server.Genetics.System
             }
         }
 
-        private void OnReleverationPressed(DnaModifierConsoleReleverationEvent args)
+        private void OnReleverationPressed(DnaModifierConsoleReleverationEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var console) || console.GeneticScanner == null)
                 return;
 
@@ -727,8 +791,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
-        private void OnReleverationsPressed(DnaModifierConsoleReleverationsEvent args)
+        private void OnReleverationsPressed(DnaModifierConsoleReleverationsEvent args, EntitySessionEventArgs session)
         {
+            if (!IsAuthorized(args.Uid, session, out _))
+                return;
+
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var console) || console.GeneticScanner == null)
                 return;
 

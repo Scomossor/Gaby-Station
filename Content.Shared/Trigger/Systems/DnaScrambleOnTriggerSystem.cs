@@ -40,23 +40,41 @@ public sealed class DnaScrambleOnTriggerSystem : EntitySystem
 
         args.Handled = true;
 
+        Scramble(target.Value, humanoid);
+    }
+
+    // Trauma
+    public void Scramble(EntityUid target, HumanoidAppearanceComponent humanoid)
+    {
         // Randomness will mispredict
         // and LoadProfile causes a debug assert on the client at the moment.
         if (_net.IsClient)
             return;
 
         var newProfile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
-        _humanoidAppearance.LoadProfile(target.Value, newProfile, humanoid);
-        _metaData.SetEntityName(target.Value, newProfile.Name, raiseEvents: false); // raising events would update ID card, station record, etc.
+        _humanoidAppearance.LoadProfile(target, newProfile, humanoid);
+        _metaData.SetEntityName(target, newProfile.Name, raiseEvents: false); // raising events would update ID card, station record, etc.
 
         // If the entity has the respective components, then scramble the dna and fingerprint strings.
-        _forensics.RandomizeDNA(target.Value);
-        _forensics.RandomizeFingerprint(target.Value);
+        _forensics.RandomizeDNA(target);
+        _forensics.RandomizeFingerprint(target);
 
-        RemComp<DetailExaminableComponent>(target.Value); // remove MRP+ custom description if one exists
-        _identity.QueueIdentityUpdate(target.Value); // manually queue identity update since we don't raise the event
+        RemComp<DetailExaminableComponent>(target); // remove MRP+ custom description if one exists
+        _identity.QueueIdentityUpdate(target); // manually queue identity update since we don't raise the event
 
         // Can't use PopupClient or PopupPredicted because the trigger might be unpredicted.
-        _popup.PopupEntity(Loc.GetString("scramble-on-trigger-popup"), target.Value, target.Value);
+        _popup.PopupEntity(Loc.GetString("scramble-on-trigger-popup"), target, target);
+
+        // Trauma
+        var ev = new DnaScrambledEvent(target);
+        RaiseLocalEvent(target, ref ev, true);
     }
 }
+
+/// <summary>
+/// Raised after an entity has had its DNA scrambled. Only happens on the server, because the
+/// scrambling itself is cut short on the client.
+/// </summary>
+/// <param name="Target">The entity that had its DNA scrambled.</param>
+[ByRefEvent]
+public record struct DnaScrambledEvent(EntityUid Target);

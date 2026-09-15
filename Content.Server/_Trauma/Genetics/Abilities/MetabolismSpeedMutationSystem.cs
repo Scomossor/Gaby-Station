@@ -1,0 +1,47 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Body.Components;
+using Content.Shared.Body.Systems;
+using Content.Trauma.Shared.Genetics.Abilities;
+using Content.Trauma.Shared.Genetics.Mutations;
+
+namespace Content.Trauma.Server.Genetics.Abilities;
+
+public sealed partial class MetabolismSpeedMutationSystem : SharedMetabolismSpeedMutationSystem
+{
+    [Dependency] private SharedBodySystem _body = default!;
+
+    private EntityQuery<MetabolizerComponent> _query;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _query = GetEntityQuery<MetabolizerComponent>();
+
+        SubscribeLocalEvent<MetabolismSpeedMutationComponent, MutationAddedEvent>(OnAdded);
+        SubscribeLocalEvent<MetabolismSpeedMutationComponent, MutationRemovedEvent>(OnRemoved);
+    }
+
+    private void OnAdded(Entity<MetabolismSpeedMutationComponent> ent, ref MutationAddedEvent args)
+    {
+        Modify(args.Target, ent.Comp.Bonus);
+    }
+
+    private void OnRemoved(Entity<MetabolismSpeedMutationComponent> ent, ref MutationRemovedEvent args)
+    {
+        Modify(args.Target, -ent.Comp.Bonus);
+    }
+
+    private void Modify(EntityUid uid, float add)
+    {
+        // some shitcode mobs like dragon have metabolizer on the mob itself not organs, check edge case
+        if (_query.TryComp(uid, out var mobComp))
+            mobComp.UpdateIntervalMultiplier += add;
+
+        foreach (var organ in _body.GetBodyOrganEntityComps<MetabolizerComponent>(uid))
+        {
+            organ.Comp1.UpdateIntervalMultiplier += add;
+        }
+    }
+}
