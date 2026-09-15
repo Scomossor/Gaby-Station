@@ -60,6 +60,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared._ES.Camera;
 using Content.Shared.Camera;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage;
@@ -85,6 +86,9 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
         [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
         [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
+        // ES START
+        [Dependency] private readonly ESScreenshakeSystem _shake = default!;
+        // ES END
         [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Adventure
         [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Omu - MBGCA
 
@@ -127,7 +131,12 @@ namespace Content.Server.Damage.Systems
             if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
             {
                 var direction = body.LinearVelocity.Normalized();
-                _sharedCameraRecoil.KickCamera(args.Target, direction);
+                // ES START
+                // lower recoil + shake
+                _sharedCameraRecoil.KickCamera(args.Target, direction * 0.1f);
+                var otherHitShake = new ESScreenshakeParameters() { Trauma = 0.35f, DecayRate = 1.4f, Frequency = 0.014f };
+                _shake.Screenshake(args.Target, otherHitShake, null);
+                // ES END
             }
         }
 

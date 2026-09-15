@@ -70,6 +70,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._Shitmed.Weapons.Ranged.Events; // Shitmed Change
 using Content.Shared._Starlight.Weapon.Components;
+using Content.Shared._ES.Camera;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
@@ -117,6 +118,9 @@ namespace Content.Shared.Weapons.Ranged.Systems;
 public abstract partial class SharedGunSystem : EntitySystem
 {
     [Dependency] private   readonly ActionBlockerSystem _actionBlockerSystem = default!;
+    // ES START
+    [Dependency] private ESScreenshakeSystem _shake = default!;
+    // ES END
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly SharedMapSystem MapSystem = default!;
     [Dependency] private   readonly INetManager _netManager = default!;
@@ -542,6 +546,13 @@ public abstract partial class SharedGunSystem : EntitySystem
         RaiseLocalEvent(gunUid, ref shotEv);
         var shotBodyEv = new GunShotBodyEvent(gunUid, gun); // Shitmed Change
         RaiseLocalEvent(user, shotBodyEv); // Shitmed Change
+
+        // ES START
+        // this is a suspicious place to do this but whatever.
+        var recoilScalar = Math.Min(gun.CameraRecoilScalarModified, 2f);
+        var gunShakeRotation = new ESScreenshakeParameters() { Trauma = 0.05f * recoilScalar, DecayRate = 1.8f, Frequency = 0.008f};
+        _shake.Screenshake(user, null, gunShakeRotation);
+        // ES END
 
         if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
             return;
