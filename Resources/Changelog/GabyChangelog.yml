@@ -4061,3 +4061,9 @@ Entries:
       message: Animação fluida para portas
   id: 480
   time: '2026-09-15T00:59:13.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Alteradas algumas entradas no livro-guia das espécies.
+  id: 481
+  time: '2026-09-15T01:02:33.0000000+00:00'
