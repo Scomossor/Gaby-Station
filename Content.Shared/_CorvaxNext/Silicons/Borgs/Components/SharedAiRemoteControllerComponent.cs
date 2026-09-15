@@ -56,6 +56,9 @@ public record struct RemoteDevicesData()
     public string DisplayName = string.Empty;
     public NetEntity NetEntityUid = NetEntity.Invalid;
     public bool IsOccupied; // Gabystation - ai fix
+    public string TagText = string.Empty; // Dumont-Boris-Tags: função do borg na lista
+    public Color TagColor = Color.Transparent; // Dumont-Boris-Tags
+    public bool TagIsRadio; // Dumont-Boris-Tags: true = cor do canal de rádio, false = fundo cinza
 }
 
 [Serializable, NetSerializable]

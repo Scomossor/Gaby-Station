@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionOpenAiAlertsMenu
+  name: Internal monitoring
+  description: Live atmospheric and fire alarms, with a jump to each one.
+  components:
+  - type: Action
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -8
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Dumont/Interface/Actions/actions_ai_dumont.rsi
+      state: alerts
+  - type: InstantAction
+    event: !type:ToggleAiAlertsScreenEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAiPlaceWaypoint
+  name: Mark waypoint
+  description: Marks a spot for the silicon collective and announces it on binary.
+  components:
+  - type: Action
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -7
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Dumont/Interface/Actions/actions_ai_dumont.rsi
+      state: waypoint
+  # sem isso a validação mede alcance a partir do cérebro, que mora dentro do núcleo,
+  # e a ação nunca dispara. mesmo padrão das ações de mapping
+  - type: TargetAction
+    checkCanAccess: false
+    range: -1
+  - type: WorldTargetAction
+    event: !type:AiPlaceWaypointEvent

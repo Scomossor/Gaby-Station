@@ -23,7 +23,8 @@ namespace Content.Shared.Silicons.Borgs.Components;
 /// "brain", legs, modules, and battery. Essentially the master component
 /// for borg logic.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedBorgSystem)), AutoGenerateComponentState]
+// Dumont-Borg-Upgrades: o BorgUpgradeSharedSystem escreve MaxModules pra baia de módulo
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedBorgSystem), typeof(_Dumont.Silicons.Borgs.BorgUpgradeSharedSystem)), AutoGenerateComponentState]
 public sealed partial class BorgChassisComponent : Component
 {
     #region Brain
@@ -55,7 +56,7 @@ public sealed partial class BorgChassisComponent : Component
     /// <summary>
     /// How many modules can be installed in this borg
     /// </summary>
-    [DataField("maxModules"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("maxModules"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] // Dumont-Borg-Upgrades: o menu do borg lê isso no cliente, sem sincronizar mostrava 4/3 depois da baia de módulo
     public int MaxModules = 3;
 
     /// <summary>

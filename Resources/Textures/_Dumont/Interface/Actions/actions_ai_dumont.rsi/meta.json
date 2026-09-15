@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Derived from the mass_scanner sprite in Interface/Actions/actions_ai.rsi, itself taken from tgstation at commit https://github.com/tgstation/tgstation/blob/c473a8bcc28fbd80827dfca5660d81ca6e833e2c/icons/hud/screen_ai.dmi . Alert symbol added for Dumont Station.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "alerts"
+    },
+    {
+      "name": "waypoint"
+    }
+  ]
+}

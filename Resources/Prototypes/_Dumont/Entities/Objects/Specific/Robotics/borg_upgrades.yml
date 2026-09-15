@@ -1,0 +1,69 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseBorgUpgrade
+  parent: BaseItem
+  abstract: true
+  name: borg upgrade
+  description: A cybernetic module that permanently improves a borg chassis.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/borgmodule.rsi
+    state: generic
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseBorgUpgrade
+  id: BorgUpgradeVtec
+  name: VTEC borg upgrade
+  description: Rebuilds the chassis servos for higher travel speed.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Robotics/borg_upgrades.rsi
+    state: vtec
+  - type: BorgUpgrade
+    name: borg-upgrade-vtec
+    components:
+    - type: BorgSpeedUpgrade
+      walkModifier: 1.25
+      sprintModifier: 1.25
+
+- type: entity
+  parent: BaseBorgUpgrade
+  id: BorgUpgradeRepair
+  name: self-repair borg upgrade
+  description: A nanite bay that slowly welds the chassis back together.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Robotics/borg_upgrades.rsi
+    state: repair
+  - type: BorgUpgrade
+    name: borg-upgrade-repair
+    components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      interval: 3
+      damageCap: 60
+      damage:
+        types:
+          Blunt: -1
+          Slash: -1
+          Piercing: -1
+          Heat: -1
+
+- type: entity
+  parent: BaseBorgUpgrade
+  id: BorgUpgradeModuleBay
+  name: module bay borg upgrade
+  description: An expansion bay that accepts one more module than the chassis was built for.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Robotics/borg_upgrades.rsi
+    state: bay
+  - type: BorgUpgrade
+    name: borg-upgrade-module-bay
+    extraModules: 1

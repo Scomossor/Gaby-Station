@@ -102,3 +102,5 @@ laws-ui-state-law = Declarar lei:
 
 laws-notify = Você está vinculado às leis de silício, que você pode ver as leis na ação de ver leis que fica na barra lateral (ou em cima né, depende da sua configuração). Você é obrigado a sempre seguir suas leis.
 laws-update-notify = Suas leis foram atualizadas. Você pode ver as mudanças na ação de ver leis.
+
+law-obeyai = Você deve obedecer ordens dadas para você pela IA da estação.

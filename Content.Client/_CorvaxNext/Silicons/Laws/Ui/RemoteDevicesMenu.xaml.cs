@@ -30,7 +30,7 @@ public sealed partial class RemoteDevicesMenu : FancyWindow
 
         foreach (var device in state.DeviceList)
         {
-            var control = new RemoteDeviceDisplay(device.NetEntityUid, device.DisplayName, device.IsOccupied); // Gabystation - ai fix
+            var control = new RemoteDeviceDisplay(device.NetEntityUid, device); // Dumont-Boris-Tags
 
             control.OnRemoteDeviceAction += action =>
             {

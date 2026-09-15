@@ -309,6 +309,9 @@
     - PowerDrill
     - JawsOfLife
     - BorgModuleAdvancedTool
+    - BorgUpgradeVtec # Dumont-Borg-Upgrades
+    - BorgUpgradeRepair # Dumont-Borg-Upgrades
+    - BorgUpgradeModuleBay # Dumont-Borg-Upgrades
     - SignallerAdvanced # Moved from explosives research
   # Goobstation R&D Console rework start
   position: 2,-5

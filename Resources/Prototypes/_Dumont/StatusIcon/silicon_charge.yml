@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: siliconChargeIcon
+  abstract: true
+  id: BaseSiliconChargeIcon
+  priority: 6
+  locationPreference: Right
+  showTo:
+    components:
+    - ShowSiliconChargeIcons
+
+- type: siliconChargeIcon
+  parent: BaseSiliconChargeIcon
+  id: SiliconChargeHigh
+  icon:
+    sprite: /Textures/Interface/Alerts/battery.rsi
+    state: battery3
+
+- type: siliconChargeIcon
+  parent: BaseSiliconChargeIcon
+  id: SiliconChargeHalf
+  icon:
+    sprite: /Textures/Interface/Alerts/battery.rsi
+    state: battery2
+
+- type: siliconChargeIcon
+  parent: BaseSiliconChargeIcon
+  id: SiliconChargeLow
+  icon:
+    sprite: /Textures/Interface/Alerts/battery.rsi
+    state: battery1
+
+- type: siliconChargeIcon
+  parent: BaseSiliconChargeIcon
+  id: SiliconChargeCritical
+  icon:
+    sprite: /Textures/Interface/Alerts/battery.rsi
+    state: battery0
+
+- type: siliconChargeIcon
+  parent: BaseSiliconChargeIcon
+  id: SiliconChargeNone
+  icon:
+    sprite: /Textures/Interface/Alerts/battery.rsi
+    state: battery-none

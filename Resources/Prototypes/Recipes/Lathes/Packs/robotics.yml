@@ -48,6 +48,9 @@
 - type: latheRecipePack
   id: BorgModules
   recipes:
+  - BorgUpgradeVtec # Dumont-Borg-Upgrades
+  - BorgUpgradeRepair # Dumont-Borg-Upgrades
+  - BorgUpgradeModuleBay # Dumont-Borg-Upgrades
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
   # - BorgModuleAdvancedClowning # goobedit

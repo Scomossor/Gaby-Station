@@ -134,6 +134,7 @@
     - Inorganic
     - Silicon
     - SiliconRadiation # Goobstation - Make IPCs take radiation
+  - type: ShowSiliconChargeIcons # Dumont-Silicon-Charge
   - type: Tag
     tags:
     - HudDiagnostic # Goobstation - CR glasses changes and addition

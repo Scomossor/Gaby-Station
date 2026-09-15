@@ -1,0 +1,28 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                     xmlns:controls="using:Content.Client.UserInterface.Controls"
+                     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                     Title="{Loc ai-alerts-ui-title}"
+                     MinSize="360 140"
+                     SetSize="360 420">
+    <BoxContainer Orientation="Vertical"
+                  HorizontalExpand="True"
+                  VerticalExpand="True">
+        <Label Name="StatusLabel" Margin="10 6 10 2"/>
+        <PanelContainer VerticalExpand="True" Margin="10 4 10 10">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+            </PanelContainer.PanelOverride>
+            <ScrollContainer
+                HScrollEnabled="False"
+                HorizontalExpand="True"
+                VerticalExpand="True">
+                <BoxContainer
+                    Name="AlertsContainer"
+                    Orientation="Vertical"
+                    VerticalExpand="True"
+                    Margin="8 8 8 0">
+                </BoxContainer>
+            </ScrollContainer>
+        </PanelContainer>
+    </BoxContainer>
+</controls:FancyWindow>

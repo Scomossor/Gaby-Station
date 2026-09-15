@@ -16,8 +16,12 @@ using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
 using Content.Shared.Verbs;
+using Content.Shared.Radio; // Dumont-Boris-Tags
+using Content.Shared.Silicons.Borgs; // Dumont-Boris-Tags
+using Content.Shared.Silicons.Borgs.Components; // Dumont-Boris-Tags
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes; // Dumont-Boris-Tags
 
 namespace Content.Server._CorvaxNext.Silicons.Borgs;
 
@@ -29,6 +33,7 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!; // Dumont-Boris-Tags
 
     public override void Initialize()
     {
@@ -149,11 +154,52 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         {
             var isOccupied = comp.LinkedMind is not null; // Gabystation - ai fix
 
+            // Dumont-Boris-Tags start: função do borg vira tag na lista, com a cor do rádio
+            var tagText = string.Empty;
+            var tagColor = Color.Transparent;
+            var tagIsRadio = false;
+
+            if (TryComp<BorgSwitchableTypeComponent>(queryUid, out var switchable)
+                && switchable.SelectedBorgType is { } typeId
+                && _proto.TryIndex(typeId, out var borgType))
+            {
+                // canal departamental ganha, o da ciência é o genérico que todo tipo tem
+                ProtoId<RadioChannelPrototype>? pick = null;
+                foreach (var channel in borgType.RadioChannels)
+                {
+                    if (channel == "Common" || channel == "Binary")
+                        continue;
+
+                    if (channel != "Science")
+                    {
+                        pick = channel;
+                        break;
+                    }
+
+                    pick ??= channel;
+                }
+
+                if (pick is { } picked && _proto.TryIndex(picked, out var channelProto))
+                {
+                    tagText = Loc.GetString(channelProto.Name);
+                    tagColor = channelProto.Color;
+                    tagIsRadio = true;
+                }
+                else
+                {
+                    tagText = Loc.GetString($"borg-type-{typeId.Id}-name");
+                }
+            }
+            // Dumont-Boris-Tags end
+
             var data = new RemoteDevicesData
             {
                 NetEntityUid = GetNetEntity(queryUid),
                 DisplayName = Comp<MetaDataComponent>(queryUid).EntityName, // Gabystation - ai fix
-                IsOccupied = isOccupied // Gabystation - ai fix
+                IsOccupied = isOccupied, // Gabystation - ai fix
+                TagText = tagText, // Dumont-Boris-Tags
+                TagColor = tagColor, // Dumont-Boris-Tags
+                TagIsRadio = tagIsRadio // Dumont-Boris-Tags
             };
 
             remoteDevices.Add(data);

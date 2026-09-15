@@ -164,8 +164,12 @@
     - ActionAIViewLaws
     - ActionOpenRemoteDevicesMenu # Corvax-Next-AiRemoteControl
     - ActionOpenCameraWarpMenu # Goobstation-Ai-Camera-Jumping
+    - ActionOpenAiAlertsMenu # Dumont-Ai-Alerts
+    - ActionAiPlaceWaypoint # Dumont-Ai-Waypoint
   - type: UserInterface
     interfaces:
+      enum.AiAlertsUiKey.Key: # Dumont-Ai-Alerts
+        type: AiAlertsBoundUserInterface
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
