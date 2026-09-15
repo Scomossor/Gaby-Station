@@ -176,7 +176,6 @@ public sealed partial class ActionComponent : Component
     [DataField, AutoNetworkedField]
     public bool RaiseOnUser;
 
-    /// <summary>
     // Trauma
     [DataField, AutoNetworkedField]
     public bool RaiseOnAction;

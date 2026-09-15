@@ -182,6 +182,7 @@ namespace Content.Server.Medical
 
         private void OnPortDisconnected(EntityUid uid, MedicalScannerComponent component, PortDisconnectedEvent args)
         {
+            // <Trauma>
             if (args.Port == MedicalScannerComponent.ScannerPort && component.ConnectedConsole is { } ligado)
             {
                 var desligou = new ScannerDisconnectedEvent(uid);
@@ -196,6 +197,7 @@ namespace Content.Server.Medical
             if (component.ConnectedConsole is not { } consoleLigado)
                 return;
 
+            // <Trauma>
             if (args.Anchored)
             {
                 var ligou = new ScannerConnectedEvent(uid);

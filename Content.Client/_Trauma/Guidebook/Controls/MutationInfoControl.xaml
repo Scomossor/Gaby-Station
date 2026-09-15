@@ -12,7 +12,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </PanelContainer.PanelOverride>
     <BoxContainer Orientation="Vertical" Margin="8">
         <Label Name="MutationName" Align="Center"/>
-        <TextEdit Name="MutationDesc" Editable="False" MinHeight="60"/> <!-- TextEdit porque ele quebra linha sozinho -->
+        <TextEdit Name="MutationDesc" Editable="False" MinHeight="60"/>
         <controls:HLine Color="#222" Margin="10" Thickness="2" HorizontalExpand="True"/>
         <BoxContainer Orientation="Horizontal" Margin="4" HorizontalAlignment="Center">
             <Label Name="MutationInstability" Margin="8"/>

@@ -511,7 +511,6 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         return true;
     }
 
-    /// <summary>
     // Trauma
     public bool TrySetBloodRefreshAmount(Entity<BloodstreamComponent?> ent, FixedPoint2 amount)
     {

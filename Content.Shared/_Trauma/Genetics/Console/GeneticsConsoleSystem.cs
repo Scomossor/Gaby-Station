@@ -126,7 +126,7 @@ public sealed partial class GeneticsConsoleSystem : EntitySystem
     {
         if (GetWorkableMob(ent.Owner) is not {} mob ||
             _genome.GetSequence(mob, args.Sequence) is not {} sequence ||
-            args.Index > sequence.Bases.Length)
+            args.Index >= sequence.Bases.Length)
             return;
 
         // chud language can't just set a char directly
