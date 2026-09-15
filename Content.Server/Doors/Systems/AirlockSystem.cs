@@ -77,8 +77,6 @@ namespace Content.Server.Doors.Systems;
 
 public sealed class AirlockSystem : SharedAirlockSystem
 {
-    [Dependency] private readonly WiresSystem _wiresSystem = default!;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -122,19 +120,6 @@ public sealed class AirlockSystem : SharedAirlockSystem
     {
         if (args.Handled || !args.Complex)
             return;
-
-        if (TryComp<WiresPanelComponent>(uid, out var panel) &&
-            panel.Open &&
-            TryComp<ActorComponent>(args.User, out var actor))
-        {
-            if (TryComp<WiresPanelSecurityComponent>(uid, out var wiresPanelSecurity) &&
-                !wiresPanelSecurity.WiresAccessible)
-                return;
-
-            _wiresSystem.OpenUserInterface(uid, actor.PlayerSession);
-            args.Handled = true;
-            return;
-        }
 
         if (component.KeepOpenIfClicked && component.AutoClose)
         {
