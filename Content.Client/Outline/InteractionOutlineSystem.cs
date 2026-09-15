@@ -84,6 +84,7 @@ using Content.Client.Interactable.Components;
 using Content.Client.Viewport;
 using Content.Shared.CCVar;
 using Content.Shared.Interaction;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
@@ -91,6 +92,7 @@ using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Outline;
 
@@ -306,16 +308,16 @@ public sealed class InteractionOutlineSystem : EntitySystem
         SetOutlinePostShader((ent.Owner, sprite), ent.Comp.InRange, ent.Comp.LastRenderScale);
     }
 
-    private void SetOutlinePostShader(Entity<SpriteComponent?> sprite, bool inRange, int renderScale)
+    private void SetOutlinePostShader(Entity<SpriteComponent> sprite, bool inRange, int renderScale)
     {
         var shader = GetShader(inRange, renderScale);
-        if (_sprite.TryGetPostShader(sprite, ContentPostShaderIds.InteractionOutline, out var entry) &&
+        if (_sprite.TryGetPostShader(sprite.Comp, ContentPostShaderIds.InteractionOutline, out var entry) &&
             entry.Shader == shader)
         {
             return;
         }
 
-        _sprite.SetPostShader(sprite, new SpriteComponent.PostShaderArgs(ContentPostShaderIds.InteractionOutline, shader)
+        _sprite.SetPostShader(sprite.Comp, new SpriteComponent.PostShaderArgs(ContentPostShaderIds.InteractionOutline, shader)
         {
             After = ContentPostShaderIds.AfterBaseEffects,
         });

@@ -111,6 +111,7 @@ public sealed class TargetOutlineSystem : EntitySystem
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private EntityQuery<SpriteComponent> _spriteQuery = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
     private bool _enabled = false;
