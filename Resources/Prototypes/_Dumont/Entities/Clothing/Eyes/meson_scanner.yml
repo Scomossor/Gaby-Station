@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ideia original do SukitaBR na issue #894
+# item novo de propósito: o ClothingEyesGlassesMeson antigo é cosmético e nasce
+# em meia estação, dar visão pra ele distribuiria a feature sem ninguém pedir
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesMesonScanner
+  name: optical meson scanner
+  description: Structural scanning goggles. Reveals the station layout through walls, leaving equipment, people and objects out of sight.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Eyes/Glasses/meson_scanner.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: _Dumont/Clothing/Eyes/Glasses/meson_scanner.rsi
+  # o cliente monta o nome do sprite vestido como "{prefixo}-equipped-{slot}",
+  # entao sem esse prefixo o estado aceso nunca seria carregado
+  - type: ToggleClothingPrefix
+    prefixOn: on
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: icon-on }
+          False: { state: icon }
+  # sem EyeProtection: proteger de solda não é o propósito desses óculos
+  # só a planta: chão, parede, porta e janela. equipamento é trabalho do t-ray
+  - type: MesonVision
+    range: 8
+  # liga e desliga com E, sem acao na barra. o sistema do fork cancela o toggle
+  # quando o item nao esta vestido, senao voltaria a funcionar na mao
+  - type: ItemToggle
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 300
+      Glass: 200
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+

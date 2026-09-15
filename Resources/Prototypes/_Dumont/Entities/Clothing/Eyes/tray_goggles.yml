@@ -1,0 +1,56 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ideia original do SukitaBR na issue #894
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesTray
+  name: t-ray goggles
+  description: Terahertz scanning goggles. Reveals pipes, wiring and engineering machinery through walls, without occupying your hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Eyes/Glasses/tray_goggles.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: _Dumont/Clothing/Eyes/Glasses/tray_goggles.rsi
+  # o cliente monta o nome do sprite vestido como "{prefixo}-equipped-{slot}",
+  # entao sem esse prefixo o estado aceso nunca seria carregado
+  - type: ToggleClothingPrefix
+    prefixOn: on
+  # o componente fica sempre no item porque a máscara de visão do subsolo é
+  # concedida no GotEquippedEvent. o toggle só liga e desliga o Enabled
+  - type: TrayScanner
+    enabled: false
+    range: 4
+  - type: WornTrayScanner
+  # o TrayScanner tira o equipamento de baixo do piso e o ScannerVision traz ele
+  # pra frente através das paredes.. um sem o outro não resolve
+  - type: ScannerVision
+    showsStructure: true
+    range: 4
+  # liga e desliga com E, sem acao na barra. o sistema do fork cancela o toggle
+  # quando o item nao esta vestido, senao voltaria a funcionar na mao
+  - type: ItemToggle
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: icon-on }
+          False: { state: icon }
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 300
+      Glass: 200
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+

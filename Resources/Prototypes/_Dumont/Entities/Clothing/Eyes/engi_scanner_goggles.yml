@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ideia original do SukitaBR na issue #894
+# junta o t-ray e o meson num item só, com 2 tiles a mais de alcance em cada
+# modo pra compensar o custo de fabricação
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesEngineeringScanner
+  name: engineering scanner goggles
+  description: Combined scanning goggles. Reveals the station layout and the engineering equipment through walls at once, without occupying your hands.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Eyes/Glasses/engi_scanner.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: _Dumont/Clothing/Eyes/Glasses/engi_scanner.rsi
+  # o cliente monta o nome do sprite vestido como "{prefixo}-equipped-{slot}",
+  # entao sem esse prefixo o estado aceso nunca seria carregado
+  - type: ToggleClothingPrefix
+    prefixOn: on
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: icon-on }
+          False: { state: icon }
+  # sem EyeProtection: proteger de solda não é o propósito desses óculos
+  # o TrayScanner tira o equipamento de baixo do piso e o ScannerVision traz ele
+  # pra frente através das paredes.. um sem o outro não resolve
+  - type: TrayScanner
+    enabled: false
+    range: 6
+  - type: WornTrayScanner
+  - type: ScannerVision
+    showsStructure: true
+    range: 6
+  # a planta da estação, o modo do meson
+  - type: MesonVision
+    range: 10
+  # liga e desliga com E, sem acao na barra. o sistema do fork cancela o toggle
+  # quando o item nao esta vestido, senao voltaria a funcionar na mao
+  - type: ItemToggle
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+      Glass: 300
+      Gold: 100
+  - type: StaticPrice
+    price: 500
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+

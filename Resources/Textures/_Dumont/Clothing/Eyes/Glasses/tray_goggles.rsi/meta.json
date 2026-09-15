@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Criado por Gabriel Raposo (RaposoG) para o Dumont Station, a partir da ideia de SukitaBR na issue #894.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-on"
+        },
+        {
+            "name": "equipped-EYES",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-EYES",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}
