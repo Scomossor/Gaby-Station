@@ -1,0 +1,21 @@
+dv-ascended-title-1 = Ascendente
+dv-ascended-title-2 = Apócrifo
+dv-ascended-title-3 = Ilimitado
+dv-ascended-title-4 = Transcendente
+
+dv-ascended-name-1 = Aquilo-Que-Encara,
+dv-ascended-name-2 = Aquilo-Que-Fugiu,
+dv-ascended-name-3 = Aquilo-Que-Espera,
+dv-ascended-name-4 = Aquilo-Que-Sussurra,
+dv-ascended-name-5 = Aquilo-Que-Observa,
+dv-ascended-name-6 = Aquilo-Que-Deseja,
+dv-ascended-name-7 = Aquilo-Que-Foi,
+dv-ascended-name-8 = Aquilo-Que-Alcança,
+dv-ascended-name-9 = Aquilo-Que-Persegue,
+dv-ascended-name-10 = Aquilo-Que-Esvazia,
+dv-ascended-name-11 = Aquilo-Que-Espreita,
+dv-ascended-name-12 = O-Que-Deseja,
+dv-ascended-name-13 = O-Que-Espera,
+dv-ascended-name-14 = O-Que-Observa,
+dv-ascended-name-15 = O-Que-Sussurra,
+dv-ascended-name-16 = O-Que-Foi,

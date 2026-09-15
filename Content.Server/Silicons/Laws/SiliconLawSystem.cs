@@ -479,6 +479,10 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components);
 
+        // Dumont changes start
+        ent.Comp.LastLawset = provider.Laws;
+        // Dumont end
+
         while (query.MoveNext(out var update))
         {
             SetLaws(lawset, update, provider.LawUploadSound);
@@ -491,9 +495,11 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
                 SetLaws(lawset, stationAiHeldComp.CurrentConnectedEntity.Value, provider.LawUploadSound);
             }
             // Corvax-Next-AiRemoteControl-End
-        }
 
-        ent.Comp.LastLawset = provider.Laws;
+            // Dumont changes start
+            RaiseLocalEvent(update, new AILawUpdatedEvent());
+            // Dumont end
+        }
     }
 
     // Corvax-Next-AiRemoteControl-Start

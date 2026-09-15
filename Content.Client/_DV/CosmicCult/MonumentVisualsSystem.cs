@@ -1,53 +1,37 @@
-// SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Client.GameObjects;
 using Content.Shared._DV.CosmicCult.Components;
+using Robust.Client.GameObjects;
 
 namespace Content.Client._DV.CosmicCult;
 
 /// <summary>
 /// Visualizer for The Monument of the Cosmic Cult.
 /// </summary>
-public sealed class MonumentVisualizerSystem : EntitySystem
+public sealed partial class MonumentVisualizerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<MonumentComponent, AppearanceChangeEvent>(OnAppearanceChanged);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAppearanceChanged(Entity<MonumentComponent> ent, ref AppearanceChangeEvent args)
     {
-        if (args.Sprite == null)
+        if (args.Sprite is not { } spriteComp)
             return;
 
-        args.Sprite.LayerMapTryGet(MonumentVisualLayers.TransformLayer, out var transformLayer);
-        args.Sprite.LayerMapTryGet(MonumentVisualLayers.MonumentLayer, out var baseLayer);
+        var sprite = new Entity<SpriteComponent?>(ent.Owner, spriteComp);
+        var transformLayer = _sprite.LayerMapGet(sprite, MonumentVisualLayers.TransformLayer);
+        var finaleLayer = _sprite.LayerMapGet(sprite, MonumentVisualLayers.FinaleLayer);
+        var baseLayer = _sprite.LayerMapGet(sprite, MonumentVisualLayers.MonumentLayer);
         _appearance.TryGetData<bool>(ent, MonumentVisuals.Transforming, out var transforming, args.Component);
-        _appearance.TryGetData<bool>(ent, MonumentVisuals.Tier3, out var tier3, args.Component);
 
-        if (!tier3)
-            args.Sprite.LayerSetState(transformLayer, "transform-stage2");
-        else
-            args.Sprite.LayerSetState(transformLayer, "transform-stage3");
+        transforming &= HasComp<MonumentTransformingComponent>(ent);
 
-        if (transforming && HasComp<MonumentTransformingComponent>(ent))
-        {
-            args.Sprite.LayerSetAnimationTime(transformLayer, 0f);
-            args.Sprite.LayerSetVisible(transformLayer, true);
-            args.Sprite.LayerSetVisible(baseLayer, false);
-        }
-        else
-        {
-            args.Sprite.LayerSetVisible(transformLayer, false);
-            args.Sprite.LayerSetVisible(baseLayer, true);
-        }
+        if (transforming)
+            _sprite.LayerSetAnimationTime(sprite, transformLayer, 0f);
+
+        _sprite.LayerSetVisible(sprite, transformLayer, transforming);
+        _sprite.LayerSetVisible(sprite, finaleLayer, !transforming);
+        _sprite.LayerSetVisible(sprite, baseLayer, !transforming);
     }
 }

@@ -1,25 +1,21 @@
 <Document>
-  # Deconversão
+  # Desconversão
   <Box>
     <GuideEntityEmbed Entity="Bible" Caption=""/>
   </Box>
 
-  Ao montar um esforço para frustrar o [color=#4cabb3]Culto Cósmico[/color], há vários métodos que a tripulação pode empregar para garantir sua sobrevivência e segurança. Um desses métodos é a [color=Yellow]Deconversão[/color].
+  Na hora de montar um esforço para barrar o [color=#4cabb3]Culto Cósmico[/color], a tripulação tem alguns métodos para garantir a própria sobrevivência e segurança. Um deles é a [color=Yellow]Desconversão[/color].
 
-  Para [color=Yellow]Deconverter[/color] um cultista cósmico, dois métodos podem ser utilizados. O primeiro é fazer o cultista beber um copo de [color=#91C3F7]Água Benta[/color] — à força, se necessário. Água Benta pode ser obtida de:
-  - Remessas de suprimentos religiosos, disponíveis no Cargo. Elas contêm dois galões de Água Benta, além de uma Bíblia.
-  - O uso de uma Bíblia por um Capelão em qualquer recipiente de água abençoará a água, transformando-a em Água Benta.
+  Infelizmente, desconverter um cultista cósmico é [color=Red]impossível[/color] com as ferramentas que a tripulação tem. Se você capturar um cultista, o melhor a fazer é entregar ele algemado à CentComm, onde ele pode ser "processado" como merece.
 
-  ## Métodos de Supressão
+  ## Servos Cósmicos
   <Box>
-    <GuideEntityEmbed Entity="Bible" Caption=""/>
     <GuideEntityEmbed Entity="MindShieldImplanter" Caption=""/>
   </Box>
 
-  A deconversão é apenas um dos métodos para lidar com um culto em ascensão. A tripulação da estação pode, alternativamente, investir em implantadores de [color=Green]Escudo Mental[/color].
+  Só que os cultistas não são a única ameaça: qualquer tripulante sem [color=Yellow]implante de escudo mental[/color] pode ter o cérebro lavado pelo culto e ser forçado a fazer o que eles mandam.
 
-  Esses dispositivos de última geração podem prevenir influências externas de doutrinar membros da tripulação, fornecendo uma poderosa utilidade contra a influência do culto.
+  Achar tripulantes de cérebro lavado é bem simples, porque os olhos deles brilham com uma energia estranha. Mas tome cuidado, porque esse brilho é fácil de esconder com roupa.
 
-  A devoção do [color=Yellow]Capelão[/color] o torna imune a quase todos os poderes do culto cósmico.
-
+  Se um tripulante de cérebro lavado for descoberto, basta instalar um [color=Yellow]implante de escudo mental[/color] para libertar ele da influência do culto. Isso, porém, não resolve com cultistas de verdade: o poder maligno dentro deles é forte o bastante para fritar os circuitos do implante e deixar ele inútil.
 </Document>

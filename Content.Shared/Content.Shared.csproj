@@ -62,4 +62,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
+  <!-- Dumont changes start -->
+  <Import Project="..\RobustToolbox\MSBuild\Robust.EntitySystemSubscriptionsGenerator.targets" />
+  <!-- Dumont end -->
 </Project>

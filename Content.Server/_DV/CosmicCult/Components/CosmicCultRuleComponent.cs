@@ -1,5 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.RoundEnd;
 using Content.Shared._DV.CosmicCult.Components;
+using Content.Server._DV.CosmicCult.EntitySystems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._DV.CosmicCult.Components;
@@ -7,7 +10,8 @@ namespace Content.Server._DV.CosmicCult.Components;
 /// <summary>
 /// Component for the CosmicCultRuleSystem that should store gameplay info.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause]
+[RegisterComponent, Access(typeof(CosmicCultRuleSystem), typeof(CosmicChantrySystem), typeof(CosmicCultSystem), typeof(MonumentSystem))] // This is getting ridiculous
+[AutoGenerateComponentPause]
 public sealed partial class CosmicCultRuleComponent : Component
 {
     /// <summary>
@@ -43,34 +47,46 @@ public sealed partial class CosmicCultRuleComponent : Component
     [DataField]
     public HashSet<EntityUid> Cultists = [];
 
+    /// <summary>
+    /// When true, Malign Rifts are unable to spawn.
+    /// </summary>
     [DataField]
-    public bool WinLocked;
+    public bool RiftStop;
+
+    /// <summary>
+    /// Set to true to send all the relevant data to the cultists once. Used on roundstart to pass the amount of cultists.
+    /// </summary>
+    [DataField]
+    public bool UpdateAllCultists;
 
     [DataField]
-    public WinType WinType = WinType.CrewMinor;
+    public EntityUid ActiveChantry;
+
+    [DataField]
+    public WinType WinType = WinType.CrewWin; // If the cult didn't summon the Unknown, that's a crew win
 
     /// <summary>
     ///     The cult's monument
     /// </summary>
-    public Entity<MonumentComponent> MonumentInGame;
-
-    /// <summary>
-    ///     The slow zone of the spawned monument
-    /// </summary>
-    [DataField]
-    public EntityUid MonumentSlowZone;
-
-    /// <summary>
-    ///     The EntityUid of the cult leader
-    /// </summary>
-    [DataField]
-    public EntityUid? CultLeader;
+    public Entity<MonumentComponent>? MonumentInGame;
 
     /// <summary>
     ///     Current tier of the cult
     /// </summary>
     [DataField]
-    public int CurrentTier;
+    public int CurrentTier = 0;
+
+    /// <summary>
+    ///     Amount of cultists that need to be at least <see cref="CurrentTier"> + 1 level for the current tier to increase.
+    /// </summary>
+    [DataField]
+    public int CultistsForNextTier;
+
+    /// <summary>
+    ///     Amount of cultists that are at <see cref="CurrentTier"> + 1 level.
+    /// </summary>
+    [DataField]
+    public int CultistsAtNextLevel;
 
     /// <summary>
     ///     Amount of present crew
@@ -79,16 +95,16 @@ public sealed partial class CosmicCultRuleComponent : Component
     public int TotalCrew;
 
     /// <summary>
-    ///     Amount of cultists
+    ///     Amount of cultists that were initially present
+    /// </summary>
+    [DataField]
+    public int InitialCult;
+
+    /// <summary>
+    ///     Amount of active cultists that contribute to progression (doesn't include dead)
     /// </summary>
     [DataField]
     public int TotalCult;
-
-    /// <summary>
-    ///     Percentage of crew that have been converted into cultists
-    /// </summary>
-    [DataField]
-    public double PercentConverted;
 
     /// <summary>
     ///     How much entropy has been siphoned by the cult
@@ -97,46 +113,16 @@ public sealed partial class CosmicCultRuleComponent : Component
     public int EntropySiphoned;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
-    public TimeSpan? StewardVoteTimer;
+    public TimeSpan? ExtraRiftTimer;
 
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
-    public TimeSpan? PrepareFinaleTimer;
-
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
-    public TimeSpan? Tier3DelayTimer;
-
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
-    public TimeSpan? Tier2DelayTimer;
+    /// <summary>
+    /// Used to prevent recursion with IncreaseTier and UpdateCultData
+    /// </summary>
+    public bool IncreasingTier;
 }
 
 public enum WinType : byte
 {
-    /// <summary>
-    ///     Cult complete win. The Cosmic Cult beckoned the final curtain call.
-    /// </summary>
-    CultComplete,
-    /// <summary>
-    ///    Cult major win. The Monument reached Stage 3 and was fully empowered.
-    /// </summary>
-    CultMajor,
-    /// <summary>
-    ///    Cult minor win. Even if the crew escaped, The Monument reached Stage 3.
-    /// </summary>
-    CultMinor,
-    /// <summary>
-    ///     Neutral. The Monument didn't reach Stage 3, The crew escaped, but the Cult Leader also escaped.
-    /// </summary>
-    Neutral,
-    /// <summary>
-    ///     Crew minor win. The monument didn't reach Stage 3, The crew escaped, and Cult leader was killed, deconverted, or left on the station.
-    /// </summary>
-    CrewMinor,
-    /// <summary>
-    ///     Crew major win. The monument didn't reach Stage 3, The crew escaped, and the cult was killed.
-    /// </summary>
-    CrewMajor,
-    /// <summary>
-    ///     Crew complete win. The cult was completely deconverted.
-    /// </summary>
-    CrewComplete,
+    CultWin,
+    CrewWin,
 }

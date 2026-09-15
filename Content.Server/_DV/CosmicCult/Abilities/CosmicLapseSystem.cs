@@ -1,70 +1,66 @@
-// SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Bible;
-using Content.Goobstation.Shared.Religion; // Goobstation - Bible
-using Content.Server.Polymorph.Systems;
-using Content.Server.Popups;
-using Content.Shared._DV.CosmicCult;
-using Content.Shared._DV.CosmicCult.Components;
-using Content.Shared._DV.CosmicCult.Components.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Server.Polymorph.Systems;
 using Content.Shared.Polymorph;
+using Content.Shared.Popups;
+using Content.Shared._DV.CosmicCult.Components.Examine;
+using Content.Shared._DV.CosmicCult;
+using Content.Shared._DV.CosmicCult.Components;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._DV.CosmicCult.Abilities;
 
-public sealed class CosmicLapseSystem : EntitySystem
+public sealed partial class CosmicLapseSystem : EntitySystem
 {
-    [Dependency] private readonly CosmicCultSystem _cult = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly PolymorphSystem _polymorph = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DivineInterventionSystem _divineIntervention = default!;
+    [Dependency] private SharedCosmicCultSystem _cult = default!;
+    [Dependency] private PolymorphSystem _polymorph = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private INetManager _net = default!;
 
     private static readonly ProtoId<PolymorphPrototype> HumanLapse = "CosmicLapseMobHuman";
 
-    public override void Initialize()
+    [SubscribeLocalEvent]
+    private void OnCosmicLapse(Entity<CosmicCultComponent> ent, ref CosmicLapseEvent args)
     {
-        base.Initialize();
-
-        SubscribeLocalEvent<CosmicCultComponent, EventCosmicLapse>(OnCosmicLapse);
-    }
-
-    private void OnCosmicLapse(Entity<CosmicCultComponent> uid, ref EventCosmicLapse action)
-    {
-        if (action.Handled
-            || HasComp<CosmicBlankComponent>(action.Target)
-            || HasComp<CleanseCultComponent>(action.Target))
+        if (args.Handled || HasComp<CosmicBlankComponent>(args.Target))
         {
-            _popup.PopupEntity(Loc.GetString("cosmicability-generic-fail"), uid, uid);
+            _popup.PopupEntity(Loc.GetString("cosmicability-generic-fail"), ent, ent);
             return;
         }
 
-        if (_divineIntervention.TouchSpellDenied(action.Target))
+        var evt = new CosmicAbilityAttemptEvent(args.Target, PlayEffects: true);
+        RaiseLocalEvent(ref evt);
+        if (evt.Cancelled)
             return;
 
-        action.Handled = true;
-        var tgtpos = Transform(action.Target).Coordinates;
-        Spawn(uid.Comp.LapseVFX, tgtpos);
+        args.Handled = true;
+        var tgtpos = Transform(args.Target).Coordinates;
+        if (_net.IsServer) // Predicted spawn looks bad with animations
+            PredictedSpawnAtPosition(ent.Comp.LapseVFX, tgtpos);
+
         _popup.PopupEntity(Loc.GetString("cosmicability-lapse-success",
-            ("target", Identity.Entity(action.Target, EntityManager))),
-            uid,
-            uid);
-        var species = Comp<HumanoidAppearanceComponent>(action.Target).Species;
-        var polymorphId = "CosmicLapseMob" + species;
+            ("target", Identity.Entity(args.Target, EntityManager))),
+            ent,
+            ent);
+        var species = Comp<HumanoidAppearanceComponent>(args.Target).Species;
+        ProtoId<PolymorphPrototype> polymorphId = "CosmicLapseMob" + species;
+        if (!ProtoMan.HasIndex(polymorphId))
+            polymorphId = HumanLapse;
+        if (!ProtoMan.Resolve(polymorphId, out var polymorph))
+            return;
 
-        if (_prototype.HasIndex<PolymorphPrototype>(polymorphId))
-            _polymorph.PolymorphEntity(action.Target, polymorphId);
-        else
-            _polymorph.PolymorphEntity(action.Target, HumanLapse);
+        var copy = polymorph.Configuration;
+        if (_cult.EntityIsCultist(args.Target))
+        {
+            copy.Duration *= 2;
+            copy.Forced = false;
+        }
 
-        _cult.MalignEcho(uid);
+        _polymorph.PolymorphEntity(args.Target, copy);
+
+        // Doesn't make an echo because the morph is invisible
     }
 }

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Unary.EntitySystems;
@@ -5,30 +7,29 @@ using Content.Server.Audio;
 using Content.Server.Popups;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.Piping.Unary.Components;
+using Content.Shared.Stacks;
 using Robust.Server.GameObjects;
 
 namespace Content.Server._DV.CosmicCult.EntitySystems;
 
-public sealed class CosmicSpireSystem : EntitySystem
+public sealed partial class CosmicSpireSystem : EntitySystem
 {
-    [Dependency] private readonly AmbientSoundSystem _ambient = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly CosmicCultRuleSystem _cosmicRule = default!;
-    [Dependency] private readonly SharedPointLightSystem _lights = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly GasVentScrubberSystem _scrub = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private AmbientSoundSystem _ambient = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private AtmosphereSystem _atmos = default!;
+    [Dependency] private CosmicCultRuleSystem _cosmicRule = default!;
+    [Dependency] private SharedPointLightSystem _lights = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private GasVentScrubberSystem _scrub = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private SharedStackSystem _stack = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<CosmicSpireComponent, AnchorStateChangedEvent>(OnAnchorChanged);
-        SubscribeLocalEvent<CosmicSpireComponent, AtmosDeviceUpdateEvent>(OnDeviceUpdated);
-        SubscribeLocalEvent<CosmicSpireComponent, GasAnalyzerScanEvent>(OnSpireAnalyzed);
-    }
+    private readonly HashSet<Entity<CosmicEntropyMoteComponent>> _motes = [];
 
+    [SubscribeLocalEvent]
     private void OnAnchorChanged(Entity<CosmicSpireComponent> ent, ref AnchorStateChangedEvent args)
     {
         if (args.Anchored)
@@ -47,6 +48,7 @@ public sealed class CosmicSpireSystem : EntitySystem
         _lights.SetEnabled(ent, ent.Comp.Enabled);
     }
 
+    [SubscribeLocalEvent]
     private void OnDeviceUpdated(Entity<CosmicSpireComponent> ent, ref AtmosDeviceUpdateEvent args)
     {
         if (!ent.Comp.Enabled
@@ -70,14 +72,27 @@ public sealed class CosmicSpireSystem : EntitySystem
         {
             _popup.PopupCoordinates(Loc.GetString("cosmiccult-spire-entropy"), Transform(ent).Coordinates);
             ent.Comp.Storage.Clear();
+
+            _motes.Clear();
+            _lookup.GetEntitiesInRange(Transform(ent).Coordinates, range: 0.7f, _motes);
+
             Spawn(ent.Comp.SpawnVFX, Transform(ent).Coordinates);
-            Spawn(ent.Comp.EntropyMote, Transform(ent).Coordinates);
+            var mote = Spawn(ent.Comp.EntropyMote, Transform(ent).Coordinates);
+            foreach (var otherMote in _motes)
+                if (_stack.TryAdd(mote, otherMote.Owner)) break; // We spawn 1 mote at a time, so we just check whether we merged any, and then stop if we do.
 
             if (_cosmicRule.AssociatedGamerule(ent) is not { } cult)
                 return;
 
             cult.Comp.EntropySiphoned++;
         }
+    }
+
+    [SubscribeLocalEvent]
+    private void OnSpireAnalyzed(Entity<CosmicSpireComponent> ent, ref GasAnalyzerScanEvent args)
+    {
+        args.GasMixtures ??= [];
+        args.GasMixtures.Add((Name(ent), ent.Comp.Storage));
     }
 
     private bool Drain(float timeDelta, Entity<CosmicSpireComponent> ent, GasMixture? tile)
@@ -90,12 +105,8 @@ public sealed class CosmicSpireSystem : EntitySystem
             ent.Comp.Storage);
     }
 
-    private void OnSpireAnalyzed(Entity<CosmicSpireComponent> ent, ref GasAnalyzerScanEvent args)
+    private void UpdateSpireAppearance(EntityUid uid, SpireStatus status)
     {
-        args.GasMixtures ??= [];
-        args.GasMixtures.Add((Name(ent), ent.Comp.Storage));
-    }
-
-    private void UpdateSpireAppearance(EntityUid uid, SpireStatus status) =>
         _appearance.SetData(uid, SpireVisuals.Status, status);
+    }
 }

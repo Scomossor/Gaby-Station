@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -15,14 +17,17 @@ public sealed partial class InfluencePrototype : IPrototype
     [DataField(required: true)]
     public LocId Name;
 
-    [DataField(required: true)]
-    public LocId InfluenceType;
+    [DataField]
+    public bool Passive;
 
     [DataField(required: true)]
     public int Cost;
 
     [DataField(required: true)]
     public LocId Description;
+
+    [DataField]
+    public LocId? EmpoweredDescription = null;
 
     [DataField(required: true)]
     public SpriteSpecifier Icon = SpriteSpecifier.Invalid;

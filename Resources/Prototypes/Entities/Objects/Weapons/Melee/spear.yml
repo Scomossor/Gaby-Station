@@ -74,6 +74,10 @@
   id: Spear
   description: Definition of a Classic. Keeping murder affordable since 200,000 BCE.
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: SpearCosmicCult
+  # Dumont end
   - type: EmbeddableProjectile
     offset: -0.15,0.0
   - type: ThrowingAngle

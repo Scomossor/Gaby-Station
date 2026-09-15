@@ -2,75 +2,86 @@
   # O Culto Cósmico
 
   <Box>
-    [color=#999999][italic]"Uma revelação sem igual. Um fim para o sofrimento cíclico e sisifiano."[/italic][/color]
+    [color=#999999][italic]"Uma revelação sem comparação. O fim do sofrimento cíclico e sisifiano."[/italic][/color]
   </Box>
   <Box>
-    [color=#999999][italic]"Uma cortina suave se fecha."[/italic][/color]
+    [color=#999999][italic]"Uma cortina que desce com delicadeza."[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="CosmicGlyphTruth" Caption=""/>
   </Box>
 
-  Conhecimento de outro mundo invade sua mente! Bem-vindo ao [color=#4cabb3]Culto Cósmico[/color], um antagonista de conversão em grupo que tem como objetivo o fim de todas as coisas.
+  Um conhecimento de outro mundo invade a sua mente! Bem-vindo ao [color=#4cabb3]Culto Cósmico[/color], um antagonista de equipe que colocou o fim de todas as coisas na mira.
 
-  Use [color=#4cabb3]:a[/color] para se comunicar com outros cultistas através do [color=#4cabb3]Murmúrio Astral[/color].
+  Use [color=#4cabb3]:a[/color] para conversar com os outros cultistas pelo [color=#4cabb3]Murmúrio Astral[/color].
 
   ## Objetivos
-  - [color=#4cabb3][bold]Drenar Entropia[/bold][/color]  - Drene coletivamente uma certa quantidade de Entropia da tripulação. Quanto mais entropia você drenar, mais poderá energizar o Monólito!
-  - [color=#4cabb3][bold]Energizar o Monólito[/bold][/color] - Certifique-se de que o Monólito seja levado ao poder máximo. Quanto mais você energizar o Monólito, mais poder o culto terá acesso.
-  - [color=#4cabb3][bold]Traga o Fim[/bold][/color] - Quando o Monólito estiver totalmente energizado, complete o ritual final para convocar o Desconhecido e destruir a estação.
+  - [color=#4cabb3][bold]Drenar Entropia[/bold][/color]  - Drenem juntos uma certa quantidade de Entropia da tripulação. Quanto mais entropia vocês drenarem, mais poderosos ficam.
+  - [color=#4cabb3][bold]Alcançar Poder[/bold][/color] - Quanto mais entropia vocês juntam, mais poder o culto libera, e mais forte fica o efeito dele na estação.
+  - [color=#4cabb3][bold]Traga o Fim[/bold][/color] - Com o culto no poder máximo, invoquem O Monumento e completem o ritual final para chamar o Desconhecido e destruir a estação.
 
-  O progresso dos objetivos é compartilhado por todo o culto.
-
-  Os tripulantes devem estar vivos para que você possa [color=#4cabb3]Drenar Entropia[/color] deles, e converter tripulantes aumentará as fileiras do seu culto, facilitando a coleta de entropia. Por isso, muitas vezes é do seu interesse manter a tripulação [italic]viva[/italic] — pelo menos enquanto for relevante para seus objetivos.
+  O progresso dos objetivos é compartilhado pelo culto inteiro.
 
   ## Entropia
   <Box>
     <GuideEntityEmbed Entity="MaterialCosmicCultEntropy1" Caption=""/>
-    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy3" Caption="Fragmentos de Entropia"/>
-    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy5" Caption=""/>
+    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy10" Caption="Grãos de Entropia"/>
+    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy" Caption=""/>
   </Box>
 
-  Todos os cultistas começam com duas habilidades, ou [color=#4cabb3][bold]Influências[/bold][/color] — uma delas é [italic][color=#4cabb3]Drenar Entropia[/color][/italic]. Esta é sua principal ferramenta como cultista cósmico, e você deve usá-la sempre que possível.
+  Todo cultista começa com duas habilidades, ou [color=#4cabb3][bold]Influências[/bold][/color], e uma delas é [italic][color=#4cabb3]Drenar Entropia[/color][/italic]. Esse é o seu ganha-pão como cultista cósmico, e você vai querer usar isso o máximo possível.
 
-  Usar Drenar Entropia em um tripulante desavisado concederá a você [color=#4cabb3]Entropia[/color] de forma furtiva. Isso fará com que uma pequena parte da saúde do tripulante se deteriore ao longo do tempo.
+  Usar Drenar Entropia em um tripulante desavisado te dá [color=#4cabb3]Entropia[/color] sem ninguém perceber.
 
-  Você pode armazenar até 14 Fragmentos de Entropia, e ao se aproximar do Monólito, toda a Entropia que você possui será depositada automaticamente.
+  Você também pode drenar de tripulantes em estado crítico, o que aumenta bastante a quantidade de entropia recolhida, ainda mais em alvos de valor alto. Só que isso também mata o alvo, então não deixe testemunhas.
 
-  [textlink="Para saber mais sobre o Monólito, clique aqui." link="CosmicCultMonument"]
+  A segunda Influência, [italic][color=#4cabb3]Sintonizar Influência[/color][/italic], é igualmente importante. Com ela você vê o progresso do culto e gasta a entropia juntada para liberar mais [color=#4cabb3][bold]Influências[/bold][/color].
 
   [textlink="Para saber mais sobre Influências, clique aqui." link="CosmicCultInfluences"]
 
   <Box>
-    <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="Uma torre vazia"/>
+    <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="Um pináculo vacuoso"/>
   </Box>
 
-  Se o culto for bem-sucedido em energizar o Monólito, eles ganham a habilidade de criar [color=#4cabb3]Torres Vazias[/color]. Elas podem ser feitas transmutando um Purificador Portátil em um [color=#4cabb3]Glifo[/color].
+  Quando o culto fica mais forte, ele ganha a capacidade de criar [color=#4cabb3]Pináculos Vacuosos[/color]. Eles saem da transmutação de um Canister de Gás com [color=#4cabb3]Corromper Matéria[/color].
 
-  Quando ancorada, uma torre vazia devora rapidamente a atmosfera ao redor! Esse processo faz com que [color=#4cabb3]Fragmentos de Entropia[/color] se condensem na superfície da torre, servindo como uma poderosa fonte de entropia no final do jogo.
-
-  ## Conversão
-  <Box>
-    <GuideEntityEmbed Entity="CosmicGlyphKnowledge" Caption="Um Glifo do Conhecimento"/>
-  </Box>
-
-  Assim que o Monólito for construído, você pode começar a converter tripulantes em cultistas. Para isso, será necessário usar o monólito para escrever um [color=#4cabb3]Glifo[/color] apropriado e interagir com o glifo enquanto um tripulante estiver sobre ele. Glifos são visíveis para não-cultistas, então tenha cuidado!
-
-  Capelães ou tripulantes com escudo mental não podem ser convertidos usando o Glifo do Conhecimento. Quando o Monólito estiver totalmente energizado, o Glifo da Verdade poderá ser usado para converter esses tripulantes.
-
-  Será necessário um certo número de tripulantes presentes para que a conversão seja bem-sucedida. O número necessário pode ser verificado acessando o Monólito. [italic]Se não houver cultistas suficientes presentes, a conversão falhará e seu culto poderá ser exposto.[/italic]
-
-  [textlink="Para informações sobre deconversão, clique aqui." link="CosmicCultDeconversion"]
+  Fixado no chão, um pináculo vacuoso devora rapidamente a atmosfera em volta! Esse processo faz [color=#4cabb3]Grãos de Entropia[/color] se condensarem na superfície dele, o que serve como uma fonte forte de entropia no fim da rodada.
 
   ## Fendas Malignas
   <Box>
-    <GuideEntityEmbed Entity="CosmicMalignRift" Caption=""/>
+    <GuideEntityEmbed Entity="CosmicMalignRift" Caption="Uma Fenda Maligna"/>
   </Box>
-  Conforme seu culto progride, [color=#4cabb3]Fendas Malignas[/color] começarão a surgir pelo ambiente. Essas fendas no espaço real liberam energia astral instável e devem ser localizadas o quanto antes!
+  Conforme o culto avança, [color=#4cabb3]Fendas Malignas[/color] começam a aparecer pelo ambiente em volta. Essas fendas no espaço real vazam poder astral instável, e precisam ser achadas o quanto antes!
 
-  Cultistas podem furtivamente [color=#4cabb3]absorver[/color] uma Fenda Maligna interagindo com ela.
+  Cultistas podem [color=#4cabb3]absorver[/color] uma Fenda Maligna sem chamar atenção, é só interagir com ela.
 
-  Absorver com sucesso uma Fenda Maligna irá [bold]permanentemente[/bold] fortalecer o cultista que o fizer, aumentando a força de todas as [color=#4cabb3]Influências[/color] que possui e dobrando a [color=#4cabb3]Entropia[/color] obtida ao drenar tripulantes. Cultistas energizados também não precisam mais respirar e são imunes ao vácuo do espaço.
+  Absorver uma Fenda Maligna com sucesso fortalece [bold]permanentemente[/bold] o cultista, aumenta a força de todas as [color=#4cabb3]Influências[/color] que ele tem e dobra a [color=#4cabb3]Entropia[/color] que ele ganha drenando tripulantes. Cultistas fortalecidos também não precisam mais respirar, comer ou beber, e ficam imunes ao vácuo do espaço.
 
-  Fendas Malignas podem ser purificadas interagindo com elas usando uma bíblia.
+  Cultistas fortalecidos também ganham a influência [color=#4cabb3]Fragmentação Nula[/color], que dá para usar para converter um Ciborgue em um [color=#4cabb3]Colosso Entrópico[/color] ou para corromper as leis da IA da estação.
+
+  Fendas Malignas podem ser purgadas com uma bíblia.
+
+  ## Capelas Vacuosas
+  <Box>
+    <GuideEntityEmbed Entity="CosmicBorgChantry" Caption=""/>
+    <GuideEntityEmbed Entity="BorgChassisGeneric" Caption=""/>
+    <GuideEntityEmbed Entity="MobCosmicColossus" Caption=""/>
+  </Box>
+  Estando fortalecido, o cultista pode usar [color=#4cabb3]Fragmentação Nula[/color] em um [bold]Ciborgue[/bold]. Isso prende ele dentro de uma [color=#4cabb3]Capela Vacuosa[/color]! Um alerta é disparado para a estação inteira, e começa o processo de transfigurar a vítima em um [color=#4cabb3]Colosso Entrópico[/color].
+
+  Esteja pronto para defender a capela, ou use ela como distração para puxar a atenção da tripulação! A tripulação precisa usar armas para destruir a capela e libertar o Ciborgue preso lá dentro.
+
+  Se for solto com sucesso, um Colosso Entrópico vira uma força e tanto.
+
+  [textlink="Para saber mais sobre Colossos Entrópicos, clique aqui." link="CosmicColossus"]
+
+  ## Lei Maligna
+  <Box>
+    <GuideEntityEmbed Entity="StationAiUploadComputer" Caption=""/>
+    <GuideEntityEmbed Entity="CosmicCultLawBoard" Caption=""/>
+    <GuideEntityEmbed Entity="PlayerStationAi" Caption=""/>
+  </Box>
+  Estando fortalecido, o cultista pode usar [color=#4cabb3]Fragmentação Nula[/color] no [bold]Console de Upload da IA[/bold]. Se tiver uma IA da estação ativa, isso sobrescreve as leis dela à força com um conjunto corrompido de diretrizes, alinha ela ao Culto Cósmico e ainda dá acesso ao canal do Murmúrio Astral.
+
+  Se já tinha outra placa de leis instalada, o processo ejeta a placa anterior do Console de Upload da IA à força, com o console trancado ou não. Fica o aviso: a tripulação ainda consegue restaurar o funcionamento da IA da estação instalando uma placa de leis segura e alinhada com ela.
 </Document>

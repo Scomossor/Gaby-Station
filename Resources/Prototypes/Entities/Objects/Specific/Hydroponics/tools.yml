@@ -103,6 +103,10 @@
   id: HydroponicsToolScythe
   description: A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow.
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: ScytheCosmicCult
+  # Dumont end
   - type: Sharp
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/scythe.rsi
@@ -131,6 +135,10 @@
   id: HydroponicsToolHatchet
   description: A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood.
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: ScytheCosmicCult
+  # Dumont end
   - type: Tag
     tags:
     - BotanyHatchet

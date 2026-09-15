@@ -16,6 +16,9 @@
     LoneOperative: 1
     Slasher: 1
     # Goobstation end
+    # Dumont changes start
+    Colossus: 1
+    # Dumont end
 
 - type: ninjaHackingThreat
   id: Dragon

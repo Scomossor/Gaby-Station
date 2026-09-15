@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -11,7 +13,7 @@ namespace Content.Shared._DV.CosmicCult.Components;
 public sealed partial class CosmicStarMarkComponent : Component
 {
     [DataField]
-    public SpriteSpecifier Sprite = new SpriteSpecifier.Rsi(new("/Textures/_DV/CosmicCult/Effects/cultrevealed.rsi"), "vfx");
+    public SpriteSpecifier Sprite = new SpriteSpecifier.Rsi(new("/Textures/_DV/CosmicCult/Effects/cultrevealed.rsi"), "default");
 }
 
 [Serializable, NetSerializable]

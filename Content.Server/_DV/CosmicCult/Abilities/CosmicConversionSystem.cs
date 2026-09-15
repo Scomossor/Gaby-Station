@@ -1,96 +1,121 @@
-// SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server.Actions;
+using Content.Server.Atmos.Rotting;
+using Content.Server.Ghost;
+using Content.Shared.Bible.Components;
+using Content.Shared.DoAfter;
+using Content.Server.Light.Components;
+using Content.Shared.Mind;
 using Content.Goobstation.Common.Religion;
-using Content.Server._DV.CosmicCult.Components;
-using Content.Server.Popups;
-using Content.Shared._DV.CosmicCult.Components;
-using Content.Shared._DV.CosmicCult;
-using Content.Shared.Damage;
 using Content.Shared.Mindshield.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
-using Content.Server.Atmos.Rotting;
-using Content.Server.Administration.Systems;
+using Content.Shared._DV.CosmicCult.Components;
+using Content.Shared._DV.CosmicCult.Prototypes;
+using Content.Shared._DV.CosmicCult;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._DV.CosmicCult.Abilities;
 
-public sealed class CosmicConversionSystem : EntitySystem
+public sealed partial class CosmicConversionSystem : EntitySystem
 {
-    [Dependency] private readonly CosmicCultRuleSystem _cultRule = default!;
-    [Dependency] private readonly CosmicGlyphSystem _cosmicGlyph = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedCosmicCultSystem _cosmicCult = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly RottingSystem _rotting = default!;
-    [Dependency] private readonly RejuvenateSystem _rejuvenateSystem = default!;
+    [Dependency] private SharedCosmicCultSystem _cult = default!;
+    [Dependency] private CosmicCultRuleSystem _cultRule = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private GhostSystem _ghost = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private RottingSystem _rotting = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
-    public override void Initialize()
+    private static readonly SoundSpecifier SFX = new SoundPathSpecifier("/Audio/_DV/CosmicCult/conversion_start.ogg");
+    private static readonly SoundSpecifier EndSFX = new SoundPathSpecifier("/Audio/_DV/CosmicCult/conversion_end.ogg");
+    private static readonly EntProtoId VFX = "CosmicConversionAbilityVFX";
+    private static readonly EntProtoId EndVFX = "CosmicBlankAbilityVFX";
+    private static readonly EntProtoId Decal = "DecalSpawnerCosmicAsh";
+    private static readonly ProtoId<InfluencePrototype> InfluenceConversion = "InfluenceConversion";
+    private const float FlickerRange = 8f;
+
+    private readonly HashSet<Entity<PoweredLightComponent>> _lights = [];
+
+    [SubscribeLocalEvent]
+    private void OnCosmicConversion(Entity<CosmicCultComponent> ent, ref CosmicConversionEvent args)
     {
-        base.Initialize();
+        var target = args.Target;
 
-        SubscribeLocalEvent<CosmicGlyphConversionComponent, TryActivateGlyphEvent>(OnConversionGlyph);
+        if (!_mind.TryGetMind(target, out _, out _))
+        {
+            _popup.PopupEntity(Loc.GetString("cosmicability-convert-mindless"), ent, ent);
+            return;
+        }
+        if (HasComp<MindShieldComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("cosmicability-convert-mindshield"), ent, ent);
+            return;
+        }
+        if (HasComp<BibleUserComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("cosmicability-convert-chaplain"), ent, ent);
+            return;
+        }
+        if (_rotting.IsRotten(target))
+        {
+            _popup.PopupEntity(Loc.GetString("cosmicability-convert-rotten"), ent, ent);
+            return;
+        }
+
+        if (args.Handled)
+            return;
+
+        var doargs = new DoAfterArgs(EntityManager, ent, ent.Comp.CosmicConversionDelay, new CosmicConversionDoAfterEvent(), ent, target)
+        {
+            DistanceThreshold = 2.5f,
+            Hidden = false,
+            BreakOnHandChange = false,
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            BreakOnDropItem = false,
+        };
+        if (!_doAfter.TryStartDoAfter(doargs))
+            return;
+
+        args.Handled = true;
+
+        _actions.RemoveAction(ent.Owner, args.Action.Owner);
+        _cult.UnlockInfluence(ent, InfluenceConversion);
+
+        Spawn(VFX, Transform(target).Coordinates);
+        _audio.PlayPvs(SFX, ent);
+        _cult.MalignEcho(ent);
+        _stun.TryUpdateParalyzeDuration(target, ent.Comp.CosmicConversionDelay);
+
+        _lights.Clear();
+        _lookup.GetEntitiesInRange(Transform(ent).Coordinates, FlickerRange, _lights, LookupFlags.StaticSundries);
+        foreach (var light in _lights)
+        {
+            _ghost.DoGhostBooEvent(light);
+        }
     }
 
-    private void OnConversionGlyph(Entity<CosmicGlyphConversionComponent> uid, ref TryActivateGlyphEvent args)
+    [SubscribeLocalEvent]
+    private void OnDoAfter(Entity<CosmicCultComponent> ent, ref CosmicConversionDoAfterEvent args)
     {
-        var possibleTargets = _cosmicGlyph.GetTargetsNearGlyph(uid,
-            uid.Comp.ConversionRange,
-            entity => _cosmicCult.EntityIsCultist(entity));
-
-        if (possibleTargets.Count == 0)
-        {
-            _popup.PopupEntity(Loc.GetString("cult-glyph-conditions-not-met"), uid, args.User);
-            args.Cancel();
+        if (args.Target is not { } target ||
+            args.Cancelled ||
+            args.Handled)
             return;
-        }
+        args.Handled = true;
 
-        if (possibleTargets.Count > 1)
-        {
-            _popup.PopupEntity(Loc.GetString("cult-glyph-too-many-targets"), uid, args.User);
-            args.Cancel();
-            return;
-        }
+        _cultRule.CosmicConversion(ent, target);
 
-        foreach (var target in possibleTargets)
-        {
-            if (_rotting.IsRotten(target)) //Goobstation: Prevents using space corpses.
-            {
-                _popup.PopupEntity(Loc.GetString("cult-glyph-target-rotting"), uid, args.User);
-                args.Cancel();
-            }
-            if (HasComp<BibleUserComponent>(target))
-            {
-                _popup.PopupEntity(Loc.GetString("cult-glyph-target-chaplain"), uid, args.User);
-                args.Cancel();
-            }
-            else if (uid.Comp.NegateProtection == false && HasComp<MindShieldComponent>(target))
-            {
-                _popup.PopupEntity(Loc.GetString("cult-glyph-target-mindshield"), uid, args.User);
-                args.Cancel();
-            }
-            else
-            {
-                _stun.TryUpdateStunDuration(target, TimeSpan.FromSeconds(4f));
-                _rejuvenateSystem.PerformRejuvenate(target); //Goobstation: No one likes being brought into the antag gang dead, now do we?
-                _cultRule.CosmicConversion(uid, target);
-                var finaleQuery = EntityQueryEnumerator<CosmicFinaleComponent>(); // Enumerator for The Monument's Finale
-                while (finaleQuery.MoveNext(out var monument, out var comp)
-                    && comp.CurrentState == FinaleState.ActiveBuffer)
-                {
-                    comp.BufferTimer -= TimeSpan.FromSeconds(45);
-                    _popup.PopupCoordinates(Loc.GetString("cosmiccult-finale-speedup"), Transform(monument).Coordinates, PopupType.Large);
-                }
-            }
-        }
+        _audio.PlayPvs(EndSFX, ent);
+        Spawn(EndVFX, Transform(target).Coordinates);
+        Spawn(Decal, Transform(target).Coordinates);
     }
 }

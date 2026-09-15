@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Atmos;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -12,7 +14,7 @@ public sealed partial class CosmicSpireComponent : Component
     public bool Enabled;
 
     [DataField]
-    public float DrainRate = 550;
+    public float DrainRate = 250; // 6-ish entropy per minute
 
     [DataField]
     public float DrainThreshHold = 2500;

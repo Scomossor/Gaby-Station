@@ -1,0 +1,37 @@
+<Document>
+  # Colosso Entrópico
+
+  <Box>
+    [color=#999999][italic]"Nem má vontade, nem desejo ardente. Nem malícia, nem crueldade. Nada."[/italic][/color]
+  </Box>
+  <Box>
+    [color=#999999][italic]"Só um fim."[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="MobCosmicColossus" Caption=""/>
+  </Box>
+
+  Você é um Colosso Entrópico, uma monstruosidade imponente de placas malignas e infestação dendrítica. O seu propósito é o mesmo do [color=#4cabb3]Culto Cósmico[/color]: o fim de todas as coisas.
+
+  Alguns Colossos são restos. Talvez sobreviventes de um conflito nascido da influência do Desconhecido, ou produto de alguma anomalia Noosférica estranha. Esses Colossos vagam pelo negro distante do espaço até as energias deles acabarem... Ou até baterem na civilização.
+
+  [textlink="Para informações sobre colossos criados pelo culto, clique aqui." link="CosmicCult"]
+
+  ## Influências
+
+  Colossos Entrópicos carregam [color=#4cabb3]Influências Malignas[/color] poderosas, com as quais um colosso competente arrasa os inimigos dele.
+
+  - [color=#4cabb3][bold]Ruptura Entrópica:[/bold][/color] Salte para o local escolhido e libere uma onda de choque de energia maligna, que derruba todo mundo em volta por um instante.
+  - [color=#4cabb3][bold]Entrada Colossal:[/bold][/color] Use a sua força colossal para forçar a abertura de uma passagem. Nem portas bem travadas por ferrolho aguentam o seu poder titânico.
+  - [color=#4cabb3][bold]Casulo de Torpor:[/bold][/color] Adormeça o seu corpo por um tempo para regenerar integridade. Precisa ser feito em chão firme. Isso recupera exatamente metade do dano que você levou.
+
+  Colossos que chegaram na estação por acaso também têm esta influência:
+  - [color=#4cabb3][bold]Entrada Colossal:[/bold][/color] Use a sua força colossal para forçar a abertura de uma passagem. Nem portas bem travadas por ferrolho aguentam o seu poder titânico.
+
+  ## Efígie da Entropia
+  <Box>
+    <GuideEntityEmbed Entity="CosmicEffigy" Caption=""/>
+  </Box>
+  Alguns Colossos conseguem chamar uma [color=#4cabb3]Efígie da Entropia[/color]. A efígie é uma anomalia maligna perigosamente instável, e a segurança precisa lidar com ela imediatamente!
+
+</Document>

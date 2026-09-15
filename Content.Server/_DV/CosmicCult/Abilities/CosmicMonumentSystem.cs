@@ -1,106 +1,181 @@
-// SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Actions;
+using Content.Shared.Popups;
+using Content.Shared.Station;
+using Content.Shared.Interaction;
+using Content.Shared.Maps;
+using Content.Shared.Physics;
 using System.Numerics;
-using Content.Server.Actions;
-using Content.Server.Popups;
-using Content.Server.Station.Components;
-using Content.Server.Station.Systems;
+using Content.Server.Shuttles.Events;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
-using Content.Shared.Maps;
-using Content.Shared.Station.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Physics;
+using Robust.Shared.Timing;
+using System.Linq;
 
 namespace Content.Server._DV.CosmicCult.Abilities;
 
-public sealed class CosmicMonumentSystem : EntitySystem
+// TODO: why the fuck is this not in MonumentSystem
+public sealed partial class CosmicMonumentSystem : EntitySystem
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly CosmicCultRuleSystem _cultRule = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
-    [Dependency] private readonly MonumentSystem _monument = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private CosmicCultRuleSystem _cultRule = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedStationSystem _station = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
-    private static readonly EntProtoId MonumentCollider = "MonumentCollider";
-    private static readonly EntProtoId MonumentCosmicCultMoveEnd = "MonumentCosmicCultMoveEnd";
-    private static readonly EntProtoId MonumentCosmicCultMoveStart = "MonumentCosmicCultMoveStart";
+    private HashSet<Entity<MonumentSpawnMarkComponent>> _nearbyMarks = [];
+    private HashSet<Entity<FixturesComponent>> _blocking = [];
 
-    public override void Initialize()
+    public override void Update(float frameTime)
     {
-        base.Initialize();
+        base.Update(frameTime);
 
-        SubscribeLocalEvent<CosmicCultLeadComponent, EventCosmicPlaceMonument>(OnCosmicPlaceMonument);
-        SubscribeLocalEvent<CosmicCultLeadComponent, EventCosmicMoveMonument>(OnCosmicMoveMonument);
+        var spawnQuery = EntityQueryEnumerator<MonumentOnDespawnComponent>();
+        while (spawnQuery.MoveNext(out var uid, out var comp))
+        {
+            if (_timing.CurTime < comp.SpawnTimer)
+                continue;
+
+            var monument = Spawn(comp.Prototype, Transform(uid).Coordinates);
+            var evt = new CosmicCultAssociateRuleEvent(uid, monument);
+            RaiseLocalEvent(ref evt);
+            RemComp<MonumentOnDespawnComponent>(uid);
+        }
     }
 
-    //todo attack this with a debugger at some point, it seems to un-prime before it should sometimes?
-    //no idea why, might be something to do with verifying placement inside the action's execution instead of in an attemptEvent beforehand?
-    //yeah it is - if the action is primed but fails at this step, then the action becomes un-primed but does not properly go through, requiring it to be primed again
-    //works fine:tm: for now with a slightly jank fix on the client end of things, will probably want to dig deeper?
-    //actually might not want to fix it?
-    //I've got the client stuff working well & this works out to making the ghost stay up so long as you consistently try (& fail) to place the monument
-    //guess I should ask for specific feedback for this one tiny feature?
-    private void OnCosmicPlaceMonument(Entity<CosmicCultLeadComponent> uid, ref EventCosmicPlaceMonument args)
+    [SubscribeLocalEvent]
+    private void OnStartup(Entity<MonumentOnDespawnComponent> ent, ref ComponentStartup args)
     {
-        if (!VerifyPlacement(uid, out var pos))
+        ent.Comp.SpawnTimer = _timing.CurTime + ent.Comp.SpawnTime;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnCosmicPlaceMonument(Entity<CosmicCultComponent> ent, ref CosmicPlaceMonumentEvent args)
+    {
+        if (!TryComp<MonumentPlacementActionComponent>(args.Action, out var monuPlacement) ||
+            !TryComp<CosmicCultComponent>(args.Performer, out var cultComp) ||
+            _cultRule.AssociatedGamerule(ent) is not { } rule ||
+            args.Handled)
             return;
-
-        _actions.RemoveAction(uid.Comp.CosmicMonumentPlaceActionEntity);
-
-        Spawn(MonumentCollider, pos);
-        var monument = Spawn(uid.Comp.MonumentPrototype, pos);
-
-        _cultRule.TransferCultAssociation(uid, monument);
-    }
-
-    private void OnCosmicMoveMonument(Entity<CosmicCultLeadComponent> uid, ref EventCosmicMoveMonument args)
-    {
 
         args.Handled = true;
-        if (_cultRule.AssociatedGamerule(uid) is not { } cult
-            || !VerifyPlacement(uid, out var pos))
+
+        if (monuPlacement.MarkUid is { } mark) // If you already placed a mark, using the action again removes it
+        {
+            QueueDel(mark);
+            monuPlacement.MarkUid = null;
+            _popup.PopupEntity(Loc.GetString("cosmiccult-monument-mark-removed"), ent, ent);
+            return;
+        }
+        if (!VerifyPlacement(ent, out var targetPos))
             return;
 
-        //The action to move the monument will instead now have a cooldown, to prevent security camping.
-        //_actions.RemoveAction(uid.Comp.CosmicMonumentMoveActionEntity);
+        _nearbyMarks.Clear();
+        _lookup.GetEntitiesInRange(targetPos, range: 0.1f, _nearbyMarks); // If you use the action on top of an existing mark, you un-/approve it instead
+        if (_nearbyMarks.Count > 0)
+        {
+            ToggleMarkApproval(_nearbyMarks.First(), (args.Performer, cultComp));
+            return;
+        }
 
-        //delete all old monument colliders for 100% safety
-        var colliderQuery = EntityQueryEnumerator<MonumentCollisionComponent>();
+        var newMark = Spawn(monuPlacement.MarkProto, targetPos); // If all else failed, just create a new mark
+        monuPlacement.MarkUid = newMark;
+        _cultRule.TransferCultAssociation(ent, newMark);
+        EnsureComp<MonumentSpawnMarkComponent>(newMark, out var markComp);
+        markComp.ApprovalsRequired = (int) Math.Ceiling(rule.Comp.TotalCult / 2f);
 
-        while (colliderQuery.MoveNext(out var collider, out _))
-           QueueDel(collider);
-
-        //spawn the destination effect first because we only need one
-        var destEnt = Spawn(MonumentCosmicCultMoveEnd, pos);
-        var destComp = EnsureComp<MonumentMoveDestinationComponent>(destEnt);
-        destComp.Monument = cult.Comp.MonumentInGame;
-        var coords = Transform(cult.Comp.MonumentInGame).Coordinates;
-        Spawn(MonumentCollider, pos); //spawn a new collider
-        Spawn(MonumentCosmicCultMoveStart, coords);
-        Spawn(MonumentCollider, Transform(cult.Comp.MonumentInGame).Coordinates); //spawn a new collider
-        _monument.PhaseOutMonument(cult.Comp.MonumentInGame);
-        destComp.PhaseInTimer = cult.Comp.MonumentInGame.Comp.PhaseOutTimer + TimeSpan.FromSeconds(0.75);
+        ToggleMarkApproval((newMark, markComp), (args.Performer, cultComp)); // Automatically approve your own mark
     }
 
-    //todo this can probably be mostly moved to shared but my brain isn't cooperating w/ that rn
-    private bool VerifyPlacement(Entity<CosmicCultLeadComponent> uid, out EntityCoordinates outPos)
+
+    /// <summary>
+    /// If a given cultist hasn't approved a given mark, set their approval, otherwise revoke it.
+    /// If enough approvals are granted, spawn the actual monument
+    /// </summary>
+    private void ToggleMarkApproval(Entity<MonumentSpawnMarkComponent> monument, Entity<CosmicCultComponent> cultist)
+    {
+        if (_cultRule.AssociatedGamerule(monument) is not { } cult) return;
+        if (cultist.Comp.CurrentLevel < cultist.Comp.MaxLevel)
+        {
+            _popup.PopupEntity(Loc.GetString("cosmiccult-monument-approval-lowlevel"), monument, cultist);
+            return;
+        }
+        if (monument.Comp.ApprovingCultists.Remove(cultist.Owner))
+        {
+            _popup.PopupEntity(Loc.GetString("cosmiccult-monument-approval-removed"), monument, cultist);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("cosmiccult-monument-approval-added"), monument, cultist);
+            monument.Comp.ApprovingCultists.Add(cultist.Owner);
+        }
+
+        monument.Comp.ApprovalsRequired = (int) Math.Ceiling(cult.Comp.TotalCult / 2f);
+        if (monument.Comp.ApprovalsRequired > monument.Comp.ApprovingCultists.Count) return; // Not enough approvals yet
+
+        var newMonument = Spawn(monument.Comp.MonumentSpawnIn, Transform(monument).Coordinates);
+        var evt = new CosmicCultAssociateRuleEvent(monument, newMonument);
+        RaiseLocalEvent(ref evt);
+        RemoveAllMonumentMarks();
+
+        Dirty(monument, monument.Comp);
+    }
+
+    /// <summary>
+    /// Removes all already placed monument marks, and all "Place Monument" actions from all cultists
+    /// </summary>
+    private void RemoveAllMonumentMarks()
+    {
+        var cultQuery = EntityQueryEnumerator<CosmicCultComponent>();
+        while (cultQuery.MoveNext(out _, out var comp))
+            _actions.RemoveAction(comp.MonumentActionEntity);
+
+        var markQuery = EntityQueryEnumerator<MonumentSpawnMarkComponent>();
+        while (markQuery.MoveNext(out var mark, out _))
+            QueueDel(mark);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnActivate(Entity<MonumentSpawnMarkComponent> ent, ref InteractHandEvent args)
+    {
+        if (!TryComp<CosmicCultComponent>(args.User, out var cultComp)) return;
+        ToggleMarkApproval(ent, (args.User, cultComp));
+    }
+
+    /// <summary>
+    /// Makes it impossible to place or activate a monument if evac docks to the station. Unless the monument is already active, in which case the evac shouldn't come anyway.
+    /// </summary>
+    [SubscribeLocalEvent]
+    private void OnEvacDocked(ref EmergencyShuttleDockedEvent args)
+    {
+        var query = EntityQueryEnumerator<MonumentComponent>(); // Remove any existing monuments
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (comp.Active) return; // Should only have one of those at a time, so if one is already active, we don't do anything
+
+            Spawn(comp.DespawnVfx, Transform(uid).Coordinates);
+            QueueDel(uid);
+        }
+
+        RemoveAllMonumentMarks();
+    }
+
+    // TODO: move to shared...
+    private bool VerifyPlacement(Entity<CosmicCultComponent> uid, out EntityCoordinates outPos)
     {
         //MAKE SURE WE'RE STANDING ON A GRID
         var xform = Transform(uid);
         outPos = new EntityCoordinates();
 
-        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
+        if (xform.GridUid is not {} gridUid || !TryComp<MapGridComponent>(gridUid, out var grid))
         {
             _popup.PopupEntity(Loc.GetString("cosmicability-monument-spawn-error-grid"), uid, uid);
             return false;
@@ -115,7 +190,7 @@ public sealed class CosmicMonumentSystem : EntitySystem
         //CHECK IF IT'S BEING PLACED CHEESILY CLOSE TO SPACE
         var spaceDistance = 3;
         var worldPos = _transform.GetWorldPosition(xform);
-        foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, spaceDistance)))
+        foreach (var tile in _map.GetTilesIntersecting(gridUid, grid, new Circle(worldPos, spaceDistance)))
         {
             if (_turf.IsSpace(tile))
             {
@@ -125,26 +200,47 @@ public sealed class CosmicMonumentSystem : EntitySystem
         }
 
         //CHECK IF WE'RE ON THE STATION OR IF SOMEONE'S TRYING TO SNEAK THIS ONTO SOMETHING SMOL
-        var station = _station.GetStationInMap(xform.MapID);
+        if (_station.GetStationInMap(xform.MapID) is not { } station)
+        {
+            _popup.PopupEntity(Loc.GetString("cosmicability-monument-spawn-error-station"), uid, uid);
+            return false;
+        }
 
-        EntityUid? stationGrid = null;
+        var stationGrid = _station.GetLargestGrid(station);
 
-        if (TryComp<StationDataComponent>(station, out _))
-            stationGrid = _station.GetLargestGrid(station.Value);
-
-        if (stationGrid is not null && stationGrid != xform.GridUid)
+        if (stationGrid != null && stationGrid != gridUid)
         {
             _popup.PopupEntity(Loc.GetString("cosmicability-monument-spawn-error-station"), uid, uid);
             return false;
         }
 
         //CHECK FOR ENTITY AND ENVIRONMENTAL INTERSECTIONS
-        if (_lookup.AnyLocalEntitiesIntersecting(xform.GridUid.Value, box, LookupFlags.Dynamic | LookupFlags.Static, uid))
+        _blocking.Clear();
+        _lookup.GetLocalEntitiesIntersecting(gridUid, box, _blocking, LookupFlags.Dynamic | LookupFlags.Static);
+        foreach (var blocking in _blocking)
         {
+            if (blocking.Owner == uid.Owner || !BlockedBy(blocking.Comp))
+                continue;
+
             _popup.PopupEntity(Loc.GetString("cosmicability-monument-spawn-error-intersection"), uid, uid);
             return false;
         }
 
         return true;
+    }
+
+    private bool BlockedBy(FixturesComponent fixtures)
+    {
+        var mask = (int) CollisionGroup.MachineMask;
+        foreach (var fixture in fixtures.Fixtures.Values)
+        {
+            if (!fixture.Hard)
+                continue;
+
+            if ((fixture.CollisionLayer & mask) != 0)
+                return true;
+        }
+
+        return false;
     }
 }

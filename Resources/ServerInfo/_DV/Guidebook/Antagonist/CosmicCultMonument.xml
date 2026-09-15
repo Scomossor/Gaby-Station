@@ -1,53 +1,23 @@
 <Document>
- # O Monólito
+  ## Invocando o Desconhecido
   <Box>
-    <GuideEntityEmbed Entity="MonumentCosmicCult1" Caption=""/>
-    <GuideEntityEmbed Entity="MonumentCosmicCult2" Caption=""/>
-    <GuideEntityEmbed Entity="MonumentCosmicCult3" Caption=""/>
+    <GuideEntityEmbed Entity="MonumentCosmicCult" Caption=""/>
   </Box>
 
-  Antes de iniciar seus objetivos, o Monólito deve ser [italic][color=#4cabb3]Convocado[/color][/italic] pelo líder do culto. Quando construído pela primeira vez, o Monólito é invisível, intangível e efetivamente imperceptível para qualquer não-cultista. Uma vez energizado, o Monólito se tornará visível e tangível para todos a bordo da estação.
+  Com poder suficiente, vocês conseguem chamar O Monumento. Use a ação correspondente para marcar um ponto, e a maior parte do culto precisa concordar com ele para O Monumento aparecer.
 
-  Por esse motivo, o Monólito deve ser escondido de olhares curiosos e em um local relativamente defendível.
+  Com o Monumento colocado, dá para usar ele para [bold]Invocar [color=#4cabb3]o Desconhecido[/bold][/color]. Qualquer cultista pode fazer isso interagindo com o Monumento.
 
-  Entropia pode ser infundida no Monólito para energizá-lo. À medida que você infunde o Monólito com entropia, o culto ganhará coletivamente acesso a mais [color=#4cabb3][bold]Influências[/bold][/color] e [color=#4cabb3][bold]Rituais[/bold][/color], que podem ser obtidos interagindo com o Monólito.
+  Esteja pronto para defender o Monumento durante a Invocação, porque uma única ação atravessada de uma única alma atrapalhada encerra o ritual de uma hora para outra.
 
-  Cultistas podem interagir com o Monólito para comprar [color=#4cabb3][bold]Influências[/bold][/color] adicionais. A entropia armazenada no monólito para compras é [italic]por pessoa,[/italic] então um cultista adquirindo uma habilidade não gastará a entropia coletada por outros cultistas.
-
-  [textlink="Para saber mais sobre Influências, clique aqui." link="CosmicCultInfluences"]
-
-  ## Convocando o Desconhecido
+  ## Fraturamento
   <Box>
-    <GuideEntityEmbed Entity="PlushieCosmicCult" Caption=""/>
+    <GuideEntityEmbed Entity="MobCosmicShatteredForm" Caption="Forma Estilhaçada"/>
   </Box>
 
-  Se você conseguir energizar totalmente o Monólito até o terceiro estágio, ele desejará um último limiar de entropia — combustível para alimentar o ato final. Quando entropia suficiente for infundida, o Monólito energizado irá brilhar, sinalizando que agora pode ser usado para [color=#4cabb3][bold]Convocar[/bold][/color] o Desconhecido. Qualquer cultista pode fazer isso interagindo com o Monólito.
+  Enquanto o monumento estiver ativo, vocês podem levar tripulantes (ou até companheiros de culto) em estado crítico para perto do Monumento e [color=#4cabb3]fraturar[/color] a forma física deles para acelerar a Invocação.
 
-  Quando o Monólito estiver pronto para ativar, os cultistas [bold]devem[/bold] ativá-lo para recuperar o acesso à loja e aos Rituais do Monólito — o fim [bold]não pode[/bold] ser adiado.
+  Isso prende a mente e o corpo deles ao Monumento. Eles param de sufocar, e a mente deles é arrancada do corpo e passa a poder vagar pela estação. Um raro ato de misericórdia antes do Fim.
 
-  Esteja preparado para defender o Monólito durante a Convocação, pois apenas uma ação interrompida de uma alma disruptiva pode encerrar este ritual de forma súbita e sem cerimônia.
-
-  Converter mais tripulantes usando um [color=#4cabb3]Ritual da Verdade[/color] enquanto a Convocação está ativa irá acelerar sua velocidade, aproximando o culto da vitória total.
-
-  ## Rituais
-  Rituais podem ser [color=#4cabb3]Escritos[/color] interagindo com o Monólito. Você também pode [color=#4cabb3]Apagar[/color] um Ritual não utilizado da mesma forma no Monólito.
-
-  Esteja ciente de que ativar um Ritual irá drenar a saúde de todos os cultistas que ajudarem na ativação do Ritual!
-
-  <Box>
-    <GuideEntityEmbed Entity="CosmicGlyphKnowledge" Caption=""/>
-    <GuideEntityEmbed Entity="CosmicGlyphProjection" Caption=""/>
-    <GuideEntityEmbed Entity="CosmicGlyphWarding" Caption=""/>
-  </Box>
-  <Box>
-    <GuideEntityEmbed Entity="CosmicGlyphBlades" Caption=""/>
-    <GuideEntityEmbed Entity="CosmicGlyphCessation" Caption=""/>
-    <GuideEntityEmbed Entity="CosmicGlyphTruth" Caption=""/>
-  </Box>
-  - [bold]Ritual do Conhecimento[/bold] permite que um não-cultista levado até ele seja [color=#4cabb3]convertido[/color] em um novo cultista cósmico! Capelães e indivíduos com proteção mental não podem ser convertidos usando este Ritual.
-  - [bold]Ritual da Projeção[/bold] permite ao cultista usá-lo para escapar temporariamente de seu corpo como uma [color=#4cabb3]Forma Astral[/color] livre e imperceptível, possibilitando espionar tripulantes desavisados.
-  - [bold]Ritual da Proteção[/bold] transmuta qualquer traje espacial — rígido ou flexível — na [color=#4cabb3]Armadura Entrópica[/color] especial do culto cósmico.
-  - [bold]Ritual das Lâminas[/bold] transmuta aleatoriamente qualquer objeto cortante em uma das [color=#4cabb3]Armas Únicas[/color] do culto cósmico.
-  - [bold]Ritual da Cessação[/bold] transmuta um purificador atmosférico portátil em uma [color=#4cabb3]Torre Vazia[/color] não ancorada.
-  - [bold]Ritual da Verdade[/bold] permite que qualquer não-cultista levado até ele seja [color=#4cabb3]convertido[/color] em um novo cultista cósmico, mesmo que seja um capelão ou protegido por um escudo mental.
+  Se a Invocação for interrompida, eles voltam ao normal na hora, mas com os ferimentos que já tinham.
 </Document>

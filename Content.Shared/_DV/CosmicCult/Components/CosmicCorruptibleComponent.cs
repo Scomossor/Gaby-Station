@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.CosmicCult.Components;
@@ -8,6 +10,9 @@ namespace Content.Shared._DV.CosmicCult.Components;
 [RegisterComponent]
 public sealed partial class CosmicCorruptibleComponent : Component
 {
+    /// <summary>
+    /// What the entity turns into on corruption. Nullable for evil inheritance reasons.
+    /// </summary>
     [DataField(required: true)]
-    public EntProtoId ConvertTo;
+    public EntProtoId? ConvertTo;
 }

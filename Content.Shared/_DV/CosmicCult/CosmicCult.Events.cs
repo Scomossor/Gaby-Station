@@ -1,21 +1,18 @@
-using Robust.Shared.Serialization;
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 namespace Content.Shared._DV.CosmicCult;
 
-[Serializable, NetSerializable]
-public sealed partial class CosmicSiphonIndicatorEvent(NetEntity target) : EntityEventArgs
-{
-    public NetEntity Target = target;
+public sealed partial class CosmicSiphonIndicatorEvent() : EntityEventArgs;
 
-    public CosmicSiphonIndicatorEvent() : this(new())
-    {
-    }
-}
+public sealed partial class CosmicCultLeadChangedEvent() : EntityEventArgs;
 
-public sealed partial class CosmicCultLeadChangedEvent() : EntityEventArgs
-{
-}
+public sealed partial class CosmicCultAddedCultistEvent() : EntityEventArgs;
 
-public sealed partial class CosmicCultAddedCultistEvent(): EntityEventArgs
-{
-}
+[ByRefEvent]
+public record struct CosmicAbilityAttemptEvent(EntityUid Target, bool PlayEffects = false, bool Cancelled = false);
+
+/// <summary>
+///     Event dispatched from shared into server code where something creates another thing that should be associated with the gamerule
+/// </summary>
+[ByRefEvent]
+public record struct CosmicCultAssociateRuleEvent(EntityUid Originator, EntityUid Target);

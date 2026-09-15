@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: Wisp
   parent: [ BaseSimpleMob, FlyingMobBase ]
@@ -23,8 +25,6 @@
         - FlyingMobMask
         layer:
         - FlyingMobLayer
-  - type: Body
-    prototype: Animal
   - type: Speech
     speechSounds: Alto
     speechVerb: Ghost
@@ -63,5 +63,5 @@
        enabled: true
        isLooped: true
        reverseWhenFinished: true
-  - type: WeakToHoly # Goobstation Shitchap
+  - type: WeakToHoly
     alwaysTakeHoly: true

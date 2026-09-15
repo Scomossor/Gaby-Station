@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 
@@ -6,20 +8,24 @@ namespace Content.Shared._DV.CosmicCult;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CosmicCultActionComponent : Component;
 
-public sealed partial class EventCosmicSiphon : EntityTargetActionEvent;
-public sealed partial class EventCosmicBlank : EntityTargetActionEvent;
-public sealed partial class EventCosmicPlaceMonument : InstantActionEvent; //given to the cult leader on roundstart
-public sealed partial class EventCosmicMoveMonument : InstantActionEvent; //given the the cult leader on hitting tier 1, taken away on hitting tier 3
-public sealed partial class EventCosmicReturn : InstantActionEvent;
-public sealed partial class EventCosmicLapse : EntityTargetActionEvent;
-public sealed partial class EventCosmicGlare : InstantActionEvent;
-public sealed partial class EventCosmicIngress : EntityTargetActionEvent;
-public sealed partial class EventCosmicImposition : InstantActionEvent;
-public sealed partial class EventCosmicNova : WorldTargetActionEvent;
+public sealed partial class CosmicSiphonEvent : EntityTargetActionEvent;
+public sealed partial class CosmicBlankEvent : EntityTargetActionEvent;
+public sealed partial class CosmicPlaceMonumentEvent : InstantActionEvent;
+public sealed partial class CosmicReturnEvent : InstantActionEvent;
+public sealed partial class CosmicLapseEvent : EntityTargetActionEvent;
+public sealed partial class CosmicGlareEvent : InstantActionEvent;
+public sealed partial class CosmicIngressEvent : EntityTargetActionEvent;
+public sealed partial class CosmicImpositionEvent : InstantActionEvent;
+public sealed partial class CosmicNovaEvent : WorldTargetActionEvent;
+public sealed partial class CosmicFragmentationEvent : EntityTargetActionEvent;
+public sealed partial class CosmicShopEvent : InstantActionEvent;
+public sealed partial class CosmicConversionEvent : EntityTargetActionEvent;
+public sealed partial class CosmicDamageTransferEvent : EntityTargetActionEvent;
+public sealed partial class CosmicTransmutationEvent : InstantActionEvent;
+public sealed partial class CosmicStrideEvent : InstantActionEvent;
 
-
-// Rogue Ascended
-public sealed partial class EventRogueCosmicNova : WorldTargetActionEvent;
-public sealed partial class EventRogueInfection : EntityTargetActionEvent;
-public sealed partial class EventRogueGrandShunt : InstantActionEvent;
-public sealed partial class EventRogueSlumber : EntityTargetActionEvent;
+// COLOSSUS ACTIONS
+public sealed partial class CosmicColossusSunderEvent : WorldTargetActionEvent;
+public sealed partial class CosmicColossusIngressEvent : EntityTargetActionEvent;
+public sealed partial class CosmicColossusHibernateEvent : InstantActionEvent;
+public sealed partial class CosmicColossusEffigyEvent : InstantActionEvent;

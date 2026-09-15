@@ -1,19 +1,21 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._DV.CosmicCult;
 
 [Serializable, NetSerializable]
-public sealed partial class EventCosmicSiphonDoAfter : SimpleDoAfterEvent;
+public sealed partial class CosmicSiphonDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class EventCosmicBlankDoAfter : SimpleDoAfterEvent;
+public sealed partial class CosmicBlankDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class EventAbsorbRiftDoAfter : SimpleDoAfterEvent;
+public sealed partial class AbsorbRiftDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class EventPurgeRiftDoAfter : SimpleDoAfterEvent;
+public sealed partial class PurgeRiftDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
 public sealed partial class StartFinaleDoAfterEvent : SimpleDoAfterEvent;
@@ -21,10 +23,14 @@ public sealed partial class StartFinaleDoAfterEvent : SimpleDoAfterEvent;
 [Serializable, NetSerializable]
 public sealed partial class CancelFinaleDoAfterEvent : SimpleDoAfterEvent;
 
-
-// Rogue Ascended
 [Serializable, NetSerializable]
-public sealed partial class EventRogueInfectionDoAfter : SimpleDoAfterEvent;
+public sealed partial class CosmicColossusIngressDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class EventRogueSlumberDoAfter : SimpleDoAfterEvent;
+public sealed partial class CosmicChantryDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class CosmicHibernationDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class CosmicConversionDoAfterEvent : SimpleDoAfterEvent;

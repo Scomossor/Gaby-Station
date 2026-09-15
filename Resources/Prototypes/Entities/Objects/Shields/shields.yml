@@ -136,6 +136,10 @@
   description: A shield!
   abstract: true
   components:
+    # Dumont changes start
+    - type: CosmicTransmutable
+      transmuteTo: CosmicCultShield
+    # Dumont end
     - type: Sprite
       sprite: Objects/Weapons/Melee/shields.rsi
       state: riot-icon
@@ -607,6 +611,10 @@
   id: EnergyShield
   description: Exotic energy shield, when folded, can even fit in your pocket.
   components:
+    # Dumont changes start
+    - type: CosmicTransmutable
+      transmuteTo: CosmicCultShield
+    # Dumont end
     - type: ItemToggle
       predictable: false # WD EDIT
       soundActivate:

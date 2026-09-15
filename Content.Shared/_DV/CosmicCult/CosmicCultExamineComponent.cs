@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 namespace Content.Shared._DV.CosmicCult;
 
 /// <summary>
@@ -6,8 +8,8 @@ namespace Content.Shared._DV.CosmicCult;
 [RegisterComponent]
 public sealed partial class CosmicCultExamineComponent : Component
 {
-    [DataField(required: true)]
-    public LocId CultistText;
+    [DataField]
+    public LocId CultistText = "cosmic-examine-text-forthecult";
 
     [DataField]
     public LocId OthersText = "cosmic-examine-text-structures";

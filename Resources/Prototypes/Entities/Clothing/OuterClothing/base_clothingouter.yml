@@ -415,6 +415,10 @@
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: ClothingOuterHardsuitCosmicCult
+  # Dumont end
 # SlotBlocker blocked until UI change
 #  - type: SlotBlock
 #    slots: [innerclothing, feet]

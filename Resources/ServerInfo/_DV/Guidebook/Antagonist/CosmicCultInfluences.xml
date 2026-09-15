@@ -1,30 +1,32 @@
 <Document>
   # Influências
 
-  Cultistas começam com duas influências poderosas e gradualmente desbloquearão mais à medida que avançam o Monólito por seus três estágios.
+  Cultistas começam com duas influências poderosas, e liberam mais aos poucos conforme levam o Monumento pelos três estágios dele.
 
-  Quando o Monólito atinge o segundo estágio, toda vez que um cultista usa uma influência, há uma chance de gerar um [color=#4cabb3]Eco Maligno[/color] revelador. Eles desaparecerão após um curto período, mas podem alertar estranhos sobre a presença do seu culto antes da hora!
+  Quando o culto chega no terceiro estágio, toda vez que um cultista usa uma influência ele tem uma chance de gerar um [color=#4cabb3]Eco Maligno[/color] denunciador. Esses ecos somem depois de um tempinho, mas podem entregar a existência do seu culto antes da hora!
 
-  Usar Drenar Entropia nunca gerará um Eco Maligno.
+  Drenar Entropia nunca gera um Eco Maligno.
 
   <Box>
     <GuideEntityEmbed Entity="CosmicEchoVfx" Caption=""/>
   </Box>
 
-  ## Influências Iniciais
-  - [color=#4cabb3][bold]Drenar Entropia:[/bold][/color] Drene entropia silenciosamente do seu alvo, causando dano no processo.
-  - [color=#4cabb3][bold]Clarão Nulo:[/bold][/color] Emite um pulso horrível de luz cósmica, desacelerando e desorientando todos ao seu redor.
+  ## Influências iniciais
+  - [color=#4cabb3][bold]Drenar Entropia:[/bold][/color] Drene entropia do seu alvo em silêncio. Se o alvo estiver em estado crítico, isso acaba com ele, mas rende muito mais entropia.
+  - [color=#4cabb3][bold]Sintonizar Influência:[/bold][/color] Veja o progresso do culto e gaste a entropia juntada para liberar Influências melhores e mais fortes.
 
-  ## Influências Ativas Desbloqueáveis
-  - [color=#4cabb3][bold]Lapso Aberrante:[/bold][/color] Faz a forma corpórea do seu alvo entrar em lapso, tornando-a temporariamente imutável, intransponível e congelada no lugar.
-  - [color=#4cabb3][bold]Transferir Subjetividade:[/bold][/color] Expulsa a mente do alvo de seu corpo para a escuridão cósmica, tornando seu corpo temporariamente sem mente.
-  - [color=#4cabb3][bold]Forçar Entrada:[/bold][/color] Usa uma explosão concentrada de poder para forçar a abertura de uma porta de segurança.
-  - [color=#4cabb3][bold]Nova Astral:[/bold][/color] Lança uma grande e disruptiva explosão de energia astral.
-  - [color=#4cabb3][bold]Imposição Vazia:[/bold][/color] Você nega qualquer dano recebido por um curto período de tempo.
+  ## Influências especiais
+  - [color=#4cabb3][bold]Fragmentação Nula:[/bold][/color] Transfira o fortalecimento maligno para um sistema digital, como um Console de Upload da IA ou um Ciborgue, e corrompa ele no processo. Isso gasta o seu fortalecimento.
 
-  ## Influências Passivas Desbloqueáveis
-  - [color=#4cabb3][bold]Abandonar Metabolismo:[/bold][/color] Suas necessidades corpóreas de fome e sede são rompidas — você não precisa mais comer ou beber.
-  - [color=#4cabb3][bold]Passo Desatado:[/bold][/color] Você se move apenas em relação ao vazio sem estrelas — seu movimento não é mais afetado pela gravidade.
-  - [color=#4cabb3][bold]Passada Astral:[/bold][/color] Energia astral revigora cada movimento seu, acelerando sutilmente sua velocidade.
-  - [color=#4cabb3][bold]Vitalidade Vazia:[/bold][/color] O vazio sem estrelas do Monólito domina sua mente e corpo. Sua forma corpórea regenera lentamente enquanto estiver em sua presença.
+  ## Influências para liberar
+  - [color=#4cabb3][bold]Clarão Nulo:[/bold][/color] Solte um pulso horrível de luz cósmica que deixa lento e desorientado todo mundo à sua volta.
+  - [color=#4cabb3][bold]Lapso Aberrante:[/bold][/color] Lapsa a forma corpórea do seu alvo e deixa ela temporariamente imutável, intransponível e presa no lugar.
+  - [color=#4cabb3][bold]Forçar Entrada:[/bold][/color] Use uma explosão concentrada de poder para arrombar qualquer tranca.
+  - [color=#4cabb3][bold]Passo Livre:[/bold][/color] Você se move só em relação ao negro sem estrelas. O seu movimento não sofre mais efeito da gravidade.
+  - [color=#4cabb3][bold]Corromper Matéria:[/bold][/color] Despeje poder maligno em um item e transforme ele em outra coisa. Dá para ver quais itens podem ser transmutados examinando eles.
+  - [color=#4cabb3][bold]Expelir Subjetividade:[/bold][/color] Arranque a mente do seu alvo do corpo dele e jogue no escuro cósmico, deixando o corpo temporariamente sem mente.
+  - [color=#4cabb3][bold]Passada Astral:[/bold][/color] A energia astral revigora o seu movimento e te deixa correr em uma velocidade absurda por um tempinho.
+  - [color=#4cabb3][bold]Estilhaçar Cognição:[/bold][/color] Divida o Conhecimento com um tripulante desavisado e não deixe outra escolha a ele além de entrar na sua causa.
+  - [color=#4cabb3][bold]Nova Astral:[/bold][/color] Arremesse uma explosão grande e destrutiva de energia astral, que faz um estrago numa área ampla.
+  - [color=#4cabb3][bold]Imposição Vacuosa:[/bold][/color] Anule todo dano recebido por um curto período, ao custo de deixar o seu movimento mais lento.
 </Document>

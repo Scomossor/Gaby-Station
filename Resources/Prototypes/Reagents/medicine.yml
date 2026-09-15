@@ -1425,10 +1425,6 @@
       effects:
       - !type:SatiateThirst
         factor: 3
-      - !type:CleanseCult # DeltaV - Cosmic Cult
-        conditions:
-        - !type:ReagentThreshold
-          min: 10
       - !type:DeCultify  # funky: TODO, make DeCultify work for both Cosmic and Blood Cult
         amount: 2.5
 

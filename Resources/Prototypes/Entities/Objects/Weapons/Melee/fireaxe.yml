@@ -56,6 +56,10 @@
   id: FireAxe
   description: Truly, the weapon of a madman. Who would think to fight fire with an axe?
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: ScytheCosmicCult
+  # Dumont end
   - type: Tag
     tags:
     - FireAxe
