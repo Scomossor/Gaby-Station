@@ -16,11 +16,11 @@
   name: gs-balanceui-token-thief
   price: 500
 
-- type: tokenListing
-  id: WraithRoundStartToken
-  tokenType: Antag
-  name: gs-balanceui-token-wraith-start
-  price: 1350
+#- type: tokenListing
+#  id: WraithRoundStartToken
+#  tokenType: Antag
+#  name: gs-balanceui-token-wraith-start
+#  price: 1350
 
 - type: tokenListing
   id: HereticToken

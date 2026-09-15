@@ -4,11 +4,11 @@
   name: gs-balanceui-token-loneops
   price: 900
 
-- type: tokenListing
-  id: WraithMidRoundToken
-  tokenType: GhostRole
-  name: gs-balanceui-token-wraith-mid
-  price: 1000
+#- type: tokenListing
+#  id: WraithMidRoundToken
+#  tokenType: GhostRole
+#  name: gs-balanceui-token-wraith-mid
+#  price: 1000
 
 - type: tokenListing
   id: SlaughterDemonToken
