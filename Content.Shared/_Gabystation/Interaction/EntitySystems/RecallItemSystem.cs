@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Marking the file for future changes
+
 using Content.Shared.Actions;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared._Gabystation.Interaction.Events;

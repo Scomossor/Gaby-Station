@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Marking the file for future changes
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.GameStates;
 
