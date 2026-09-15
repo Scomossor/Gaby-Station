@@ -143,31 +143,25 @@
   name: job-name-hos
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
-  requirements:
+  requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 72000 #20 hr
+      role: JobWarden # SpaceLaw and proper arrest procedure knowledge needed
+      time: 86400 # 24 hrs
     - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 18000 #5 hr, knowing how to use the tools is important
+      role: JobDetective # Learn the basics on how to use the tools and properly investigate
+      time: 43200 # 12 hrs
     - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 36000 #10 hrs
+      role: JobSecurityOfficer # HoS is kind of a SecOff with a pocket arsenal and full autority if you think about it
+      time: 129600 # 36 hrs
     - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 3600 #1 hrs
+      role: JobBrigmedic # You are their commander, you should at the very least know their SOP and what they do
+      time: 21600 # 6 hrs
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 108000 # 30 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
-  #  - !type:StyleRequirement
-  #    styles:
-  #    - HumanHairFloorlengthBedhead
-  #    - HumanHairClassicFloorlengthBedhead
-  #    - HumanHairFloorlengthBraid
+      department: Security # Gotta grind! Be robust! Don't be a shitsec!
+      time: 432000 # 120 hrs
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # Command basics
+      time: 43200 # 12 hrs
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

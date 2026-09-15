@@ -98,16 +98,20 @@
   name: Nanotrasen Representative
   description: "Represent NT, Send reports back to them on the station's situation, Inform the heads of anything CentCom orders them to do."
   playTimeTracker: JobNanotrasenRepresentative
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Command
-      time: 180000  #50 hours
-    - !type:AgeRequirement
-      requiredAge: 21
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Command # Gotta grind! Get used to SOP and stuff
+      time: 360000  # 100 hours
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # You're pretty much CC's version of this, get a hold on watching over command and helping them
+      time: 108000 # 30 hrs
+    - !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel # Learn how to be a bureocrat
+      time: 86400 # 24 hrs
+    # Good thing to have for MRP, but to be discussed at a later date
+    # because there's no sense on enforcing this requirement on only 2 jobs
+    #- !type:AgeRequirement
+    #  requiredAge: 21
   weight: 20
   salary: 100 # Gaby content
   startingGear: NanotrasenRepresentativeGear

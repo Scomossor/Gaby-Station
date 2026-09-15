@@ -139,20 +139,30 @@
   name: job-name-cmo
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
-  requirements:
+  requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 36000 #10 hrs
+      role: JobChemist # Be familiar with what is needed and how to make chems
+      time: 86400 #24 hrs
     - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 28000 #8 hrs
+      role: JobMedicalDoctor # Know how to perform all common functions necessary for healing
+      time: 86400 #24 hrs
+    - !type:RoleTimeRequirement
+      role: JobParamedic # Learn how to be fast and act during emergency
+      time: 43200 #12 hrs
+    # Not fully mapped yet
+    #- !type:RoleTimeRequirement
+    #  role: JobPsychologist # Know when to tell people they are being LRP in a very polite and IC way
+    #  time: 28800 #8 hrs
+    # Close to no real gameplay currently
+    #- !type:RoleTimeRequirement
+    #  role: JobVirologist # No real gameplay for now
+    #  time: 28800 #8 hrs
     - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 36000 #10 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Medical # Gotta grind! Be familiar enought on Med's tools and available treatments, as well as experience on how things tend to unfold
+      time: 360000 # 100 hrs
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # Command basics
+      time: 43200 # 12 hrs
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain

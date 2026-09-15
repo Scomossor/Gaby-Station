@@ -142,26 +142,28 @@
   name: job-name-hop
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 14400 # 4 hours
+      department: Engineering # Basics
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 14400 # 4 hours
+      department: Medical # of
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
-      department: Science
-      time: 14400 # 4 hrs
+      department: Science # everything
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 14400 # 4 hrs
+      department: Security # on
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
-      department: Command
-      time: 14400 # 4 hours
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Cargo # station
+      time: 43200 # 12 hrs
+    - !type:DepartmentTimeRequirement
+      department: Service # Double this, it's your department
+      time: 86400 # 24 hrs
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # Known the bridge and paperwork very well
+      time: 86400 # 24 hrs
   guides: # goobstation
   - Command
   # - Succession

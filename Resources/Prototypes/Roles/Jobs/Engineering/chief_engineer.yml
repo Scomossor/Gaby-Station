@@ -138,20 +138,19 @@
   name: job-name-ce
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
-  requirements:
+  requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobAtmosphericTechnician
-      time: 36000 #10 hrs
+      role: JobAtmosphericTechnician # How to Atmos
+      time: 129600 # 36 hrs
     - !type:RoleTimeRequirement
-      role: JobStationEngineer
-      time: 21600 #6 hrs
+      role: JobStationEngineer # How to fix and power
+      time: 129600 # 36 hrs
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 54000 #15 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Engineering # Gotta grind! We don't want a CE that can't use an air alarm or build an AME
+      time: 360000 # 100 hrs
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # Command basics
+      time: 43200 # 12 hrs
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

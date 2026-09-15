@@ -136,17 +136,22 @@
   name: job-name-rd
   description: job-description-rd
   playTimeTracker: JobResearchDirector
-  requirements:
-  - !type:RoleTimeRequirement
-    role: JobScientist
-    time: 21600 #6 hrs
-  - !type:DepartmentTimeRequirement
-    department: Science
-    time: 36000 #10 hrs
-  - !type:SpeciesRequirement # Goob - None Felinid
-    inverted: true
-    species:
-    - Felinid
+  requirements: # Dumont edit
+    - !type:RoleTimeRequirement
+      role: JobScientist # RD's main role is directing research
+      time: 108000 #30 hrs
+    - !type:RoleTimeRequirement
+      role: JobRoboticist # RD should know about mechs, borgs, modules and the robotics console
+      time: 86400 #24 hrs
+    - !type:RoleTimeRequirement
+      role: JobGeneticist # Genetics has quite a lot of genes to familiarize with
+      time: 86400 #24 hrs
+    - !type:DepartmentTimeRequirement
+      department: Science # Gotta grind! RD should have enought understanding to handle anomalies, maintain silicons and direct research
+      time: 360000 #100 hrs
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # Command basics
+      time: 43200 #12 hrs
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

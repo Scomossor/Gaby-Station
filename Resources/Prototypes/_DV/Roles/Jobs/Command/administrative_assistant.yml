@@ -8,9 +8,9 @@
   name: job-name-admin-assistant
   description: job-description-admin-assistant
   playTimeTracker: JobAdminAssistant
-  requirements:
-  - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-    time: 90000 # 25 hours
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Learn and/or help Command, not easy
+    time: 360000 # 100 hrs
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command

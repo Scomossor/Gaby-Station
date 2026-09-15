@@ -34,10 +34,15 @@
   name: job-name-station-ai
   description: job-description-station-ai
   playTimeTracker: JobStationAi
-  requirements:
+  requirements: # Dumont edit
   - !type:RoleTimeRequirement
-    role: JobBorg
-    time: 18000  # 5 hrs
+    role: JobBorg # OBEY YOUR DAMM LAWS and know how silicons operate
+    time: 86400  # 24 hrs
+  - !type:DepartmentTimeRequirement
+    department: Command # Know the bare basics about command
+    time: 21600 # 6 hrs
+  - !type:OverallPlaytimeRequirement # Needs good RP knowledge
+    time: 360000 # 100 hrs - Kinda of already covered by 6h command requirement, but added because unlocking by transfering hours would be easy without
   canBeAntag: false
   goobcoins: 40 #Goob content
   hasBank: false # Gaby content
@@ -55,9 +60,9 @@
   name: job-name-borg
   description: job-description-borg
   playTimeTracker: JobBorg
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 36000 # 10 hrs
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # Needs sufficient RP and game knowledge to understand laws and use modules
+      time: 180000 # 50 hrs
   canBeAntag: false
   goobcoins: 20 #Goob content
   hasBank: false # Gaby content

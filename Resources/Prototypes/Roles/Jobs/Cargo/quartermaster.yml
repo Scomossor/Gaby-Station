@@ -132,20 +132,25 @@
   name: job-name-qm
   description: job-description-qm
   playTimeTracker: JobQuartermaster
-  requirements:
+  requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobCargoTechnician
-      time: 18000 #5 hrs
+      role: JobCargoTechnician # QM needs to be very familiar with bounties and what cargo techs do, this is the job they will mostly supervise
+      time: 86400 # 24 hrs
     - !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
-      time: 9000 #2.5 hrs
+      role: JobSalvageLead # How to lead a team and how salvage works
+      time: 43200 # 12 hrs
+    - !type:RoleTimeRequirement
+      role: JobBitrunner # Bitrunning basics
+      time: 28800 # 8 hrs
+    - !type:RoleTimeRequirement
+      role: JobShaftMiner # Mining basics
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 36000 #10 hours
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Cargo # Gotta grind! A QM needs to undertand how to prioritize, make money, materials and properly distribute them
+      time: 360000 # 100 hrs
+    - !type:RoleTimeRequirement
+      role: JobAdminAssistant # Command basics
+      time: 43200 # 12 hrs
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

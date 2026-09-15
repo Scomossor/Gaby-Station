@@ -144,24 +144,35 @@
   name: job-name-captain
   description: job-description-captain
   playTimeTracker: JobCaptain
-  requirements:
+  requirements: # Dumont edit
+    - !type:DepartmentTimeRequirement
+      department: Engineering # Enought
+      time: 108000 # 30 hrs - Some are more important than others
+    - !type:DepartmentTimeRequirement
+      department: Medical # of
+      time: 90000 # 25 hrs
+    - !type:DepartmentTimeRequirement
+      department: Science # every
+      time: 90000 # 25 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security # department
+      time: 180000 # 50 hrs - Some level of robustness and Spacelaw required
+    - !type:DepartmentTimeRequirement
+      department: Cargo # on
+      time: 90000 # 25 hrs
+    - !type:DepartmentTimeRequirement
+      department: Service # station
+      time: 90000 # 25 hrs
+    - !type:DepartmentTimeRequirement
+      department: Command # Gotta grind! Get very used to SOP, delegating orders and stuff
+      time: 432000  # 120 hours
     - !type:RoleTimeRequirement
-      role: JobChiefEngineer
-      time: 18000 #5 hrs
+      role: JobHeadOfPersonnel # Learn how to be a bureocrat
+      time: 86400 # 24 hrs
     - !type:RoleTimeRequirement
-      role: JobChiefMedicalOfficer
-      time: 18000 #5 hrs
-    - !type:RoleTimeRequirement
-      role: JobHeadOfSecurity
-      time: 54000 #15 hrs
-    - !type:RoleTimeRequirement
-      role: JobResearchDirector
-      time: 18000 #5 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
-      #any MRP using our code might eventually want to use it
+      role: JobAdminAssistant # Known the bridge and paperwork very well
+      time: 108000 # 30 hrs
+    # any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30
   guides: # goobstation

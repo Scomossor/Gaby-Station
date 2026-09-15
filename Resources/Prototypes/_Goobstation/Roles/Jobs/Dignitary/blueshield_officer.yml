@@ -32,22 +32,26 @@
   name: job-name-bs
   description: "Act as a bodyguard and advisor for Command and CentCom VIPs."
   playTimeTracker: JobBlueshieldOfficer
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Command
-      time: 90000 # 25 hours
+      department: Command # How they work
+      time: 180000 # 50 hrs
+    - !type:RoleTimeRequirement
+      role: JobParamedic # How to save them
+      time: 43200 #12 hrs
+    - !type:RoleTimeRequirement
+      role: JobBrigmedic # How to save yourself
+      time: 43200 #12 hrs
     - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 54000 # 15 hours
+      department: Medical # How to not screw up treatment
+      time: 180000 # 50 hrs
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 90000 # 25 hours
-    - !type:AgeRequirement
-      requiredAge: 21
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Security # How to protect them
+      time: 360000 # 100 hours
+    # Good thing to have for MRP, but to be discussed at a later date
+    # because there's no sense on enforcing this requirement on only 2 jobs
+    #- !type:AgeRequirement
+    #  requiredAge: 21
   guides:
   # - BlueshieldOfficerSOP
   - Command
