@@ -62,7 +62,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Threading;
-using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Shared.Access;
@@ -79,9 +78,16 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
-using Content.Server.Explosion.EntitySystems;
-using Content.Server.Chat.Systems;
+// Starlght Start
+using Robust.Shared.Random;
+using Content.Shared.Screen.Components;
+using Content.Shared.Parallax.Biomes;
+using System.Numerics;
+using Content.Shared.Procedural;
+using Robust.Shared.Map.Components;
 using Content.Shared.Chat;
+using Content.Server.Screens.Components;
+// Starlight End
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -90,8 +96,14 @@ namespace Content.Server.Shuttles.Systems;
 public sealed partial class EmergencyShuttleSystem
 {
     /*
-     * Handles the emergency shuttle's console and early launching.
+     * Handles the emergency shuttle's console and early launching
      */
+
+    // Starlight Start: Evacuation pod planet landing
+    private EntityUid? _evacuationPlanetMap = null;
+    private EntityCoordinates? _evacuationLandingZone = null;
+    private const float PodSpreadRadius = 25f;
+    // Starlight End
 
     /// <summary>
     /// Has the emergency shuttle arrived?
@@ -267,21 +279,60 @@ public sealed partial class EmergencyShuttleSystem
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();
+        var timeDelay = 0f;
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
-            var stationUid = _station.GetOwningStation(uid);
+            // Starlight edit Start: Commented out for evacuation pod planet landing
+            // var stationUid = _station.GetOwningStation(uid);
 
-            if (!TryComp<StationCentcommComponent>(stationUid, out var centcomm) ||
-                Deleted(centcomm.Entity) ||
-                pod.LaunchTime == null ||
+            // if (!TryComp<StationCentcommComponent>(stationUid, out var centcomm) ||
+            //     Deleted(centcomm.Entity) ||
+            //     pod.LaunchTime == null ||
+            // Starlight edit End: Commented out for evacuation pod planet landing
+            if (pod.LaunchTime == null || // Starlght Edit: added ``if`` for evacuation pod planet landing
                 pod.LaunchTime > _timing.CurTime)
             {
                 continue;
             }
 
-            // Don't dock them. If you do end up doing this then stagger launch.
-            _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime);
+            // Starlight edit Start: Commented out for evacuation pod planet landing
+            // // Don't dock them. If you do end up doing this then stagger launch.
+            // _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime + 1 + timeDelay++); //starlight edit, add seconds onto the transit time to ENSURE the emergency shuttle tries to find a dock first
+            // Starlight edit End: Commented out for evacuation pod planet landing
+
+            // Starlight Start: Evacuation pod planet landing
+            if (_evacuationPlanetMap == null || _evacuationLandingZone == null)
+                SetupEvacuationPlanet();
+
+            if (_evacuationPlanetMap == null || _evacuationLandingZone is not { } evacuationLandingZone)
+            {
+                Log.Error($"Evacuation pod {ToPrettyString(uid)} failed to setup evacuation planet destination.");
+                continue;
+            }
+
+            var angle = _random.NextAngle();
+            var distance = _random.NextFloat(0, PodSpreadRadius);
+            var offset = angle.ToVec() * distance;
+            var landingCoords = evacuationLandingZone.Offset(offset);
+
+            var rotations = new[]
+            {
+                Angle.Zero,
+                Angle.FromDegrees(90),
+                Angle.FromDegrees(180),
+                Angle.FromDegrees(270)
+            };
+            var podRotation = _random.Pick(rotations);
+
+            _shuttle.FTLToCoordinates(
+                uid,
+                shuttle,
+                landingCoords,
+                podRotation,
+                startupTime: 0f,
+                hyperspaceTime: TransitTime + 1 + timeDelay++);
+            // Starlight End: Evacuation pod planet landing
             RemCompDeferred<EscapePodComponent>(uid);
         }
 
@@ -419,6 +470,12 @@ public sealed partial class EmergencyShuttleSystem
         TransitTime = MinimumTransitTime + (MaximumTransitTime - MinimumTransitTime) * _random.NextFloat();
         // Round to nearest 10
         TransitTime = MathF.Round(TransitTime / 10f) * 10f;
+
+        // Starlight Start: Evacuation pod planet landing
+        // Clear round-local evacuation planet state so stale map entity IDs are not reused next round.
+        _evacuationPlanetMap = null;
+        _evacuationLandingZone = null;
+        // Starlight End
     }
 
     private void UpdateAllEmergencyConsoles()
@@ -516,5 +573,125 @@ public sealed partial class EmergencyShuttleSystem
         _roundEndCancelToken?.Cancel();
         _roundEndCancelToken = null;
         return true;
+    }
+
+    // Starlight Start: Evacuation pod planet landing
+    /// <summary>
+    /// Creates the evacuation planet for escape pods to land on with ores and ruins.
+    /// All pods will land on the same planet with random positions and rotations.
+    /// </summary>
+    private void SetupEvacuationPlanet()
+    {
+        try
+        {
+            // Create a new map for the evacuation planet
+            _mapSystem.CreateMap(out var mapId, runMapInit: false);
+            _evacuationPlanetMap = _mapSystem.GetMap(mapId);
+            
+            if (_evacuationPlanetMap == null)
+            {
+                Log.Error("Failed to create evacuation planet map!");
+                return;
+            }
+            
+            // Generate a biome planet (similar to expedition/arrivals planets)
+            var biomeOptions = new[]
+            {
+                "Grasslands",
+                "Snow",
+                "Caves"
+            };
+            
+            var selectedBiome = _random.Pick(biomeOptions);
+            
+            if (!_protoManager.TryIndex<BiomeTemplatePrototype>(selectedBiome, out var template))
+            {
+                Log.Error($"Failed to load biome template: {selectedBiome}");
+                return;
+            }
+            
+            // Generate the planet biome
+            _biomes.EnsurePlanet(_evacuationPlanetMap.Value, template);
+
+            // Add ore layers to the biome for mining
+            if (TryComp(_evacuationPlanetMap.Value, out BiomeComponent? biomeComp))
+            {
+                var oreMarkers = new[]
+                {
+                    "OreIron",
+                    "OreCoal",
+                    "OreQuartz",
+                    "OreSalt",
+                    "OreGold",
+                    "OreSilver",
+                    "OrePlasma",
+                    "OreUranium",
+                    "OreDiamond",
+                    "OreArtifactFragment"
+                };
+
+                foreach (var oreId in oreMarkers)
+                {
+                    _biomes.AddMarkerLayer(_evacuationPlanetMap.Value, biomeComp, oreId);
+                    
+                }
+            }
+
+            // Get the map's grid component for dungeon generation
+            if (!TryComp<MapGridComponent>(_evacuationPlanetMap.Value, out var grid))
+                return;
+
+            var dungeonConfigs = new[]
+            {
+                "Experiment",
+                "XenoDungeon",
+                "SovietDungeonWeh",
+                "Mineshaft"
+            };
+            
+            var selectedConfig = _random.Pick(dungeonConfigs);
+            var seed = _random.Next();
+            
+            var offsetDistance = 80f; 
+            
+            if (_protoManager.TryIndex<DungeonConfigPrototype>(selectedConfig, out var dungeonProto))
+            {
+                var angle = _random.NextAngle();
+                var offset = angle.ToVec() * offsetDistance;
+                var offsetPos = (Vector2i)(Vector2.Zero + offset);
+
+                try
+                {
+                    _dungeon.GenerateDungeon(dungeonProto, _evacuationPlanetMap.Value, grid, offsetPos, seed);
+                    Log.Info($"Gerada uma única ruin {selectedConfig} no offset {offsetPos}");
+                }
+                catch (Exception e)
+                {
+                    Log.Warning($"Erro ao gerar a ruin {selectedConfig}: {e.Message}");
+                }
+            }
+            else
+            {
+                Log.Warning($"Não foi possível carregar a config da dungeon {selectedConfig}");
+            }
+            
+            // Set landing zone at center of planet
+            _evacuationLandingZone = new EntityCoordinates(_evacuationPlanetMap.Value, Vector2.Zero);
+            
+            // Initialize the map
+            _mapSystem.InitializeMap(mapId);
+            
+            // Set a nice name
+            _metaData.SetEntityName(_evacuationPlanetMap.Value, "Evacuation Planet");
+            
+            Log.Info($"Created evacuation planet with {selectedBiome} biome and 1 ruin");
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Failed to setup evacuation planet: {ex}");
+            _evacuationPlanetMap = null;
+            _evacuationLandingZone = null;
+        }
+    // Starlight End: Evacuation pod planet landing
     }
 }
