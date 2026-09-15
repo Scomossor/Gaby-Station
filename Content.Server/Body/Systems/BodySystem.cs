@@ -97,6 +97,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using Content.Shared.Mind.Components; // Gaby
 using Content.Shared.Mobs; // Gaby
+using Content.Shared._ES.DeathCutscene;
 
 // Shitmed Change
 using System.Linq;
@@ -132,6 +133,9 @@ public sealed partial class BodySystem : SharedBodySystem // Shitmed change: mad
         {
             return;
         }
+
+        if (HasComp<ActiveDeathCutsceneComponent>(ent))
+            return;
 
         if (_mobState.IsDead(ent) && _mindSystem.TryGetMind(ent, out var mindId, out var mind))
         {

@@ -1,0 +1,16 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float intensity;
+uniform highp float noiseIntensity;
+
+const highp float GrainMult = 0.15;
+const highp float GrainBase = 0.05;
+
+void fragment() {
+    highp vec4 color = zTextureSpec(SCREEN_TEXTURE, UV);
+    highp vec3 gray = vec3(zGrayscale(color.rgb));
+
+    highp float grain = zRandom(FRAGCOORD.xy * SCREEN_PIXEL_SIZE + vec2(fract(TIME))).x;
+    gray = mix(gray, gray * (grain * GrainMult + GrainBase), noiseIntensity);
+
+    COLOR = vec4(mix(color.rgb, gray, intensity), color.a);
+}

@@ -165,6 +165,9 @@ public sealed partial class ContentAudioSystem
             return;
         }
 
+        if (AmbientMusicSuppressed)
+            return;
+
         bool? isDone = null;
 
         if (TryComp(_ambientMusicStream, out AudioComponent? audioComp))
