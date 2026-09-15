@@ -8,7 +8,7 @@
 - type: weightedRandom
   id: ChangelingObjectiveGroups
   weights:
-    ChangelingObjectiveGroupSteal: 1
+#    ChangelingObjectiveGroupSteal: 1 # Dumont change
     ChangelingObjectiveGroupKill: 1
 
 - type: weightedRandom
