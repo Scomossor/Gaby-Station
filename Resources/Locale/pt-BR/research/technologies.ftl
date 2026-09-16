@@ -37,6 +37,7 @@ research-technology-portable-microfusion-weaponry = Armamento portátil de micro
 research-technology-experimental-battery-ammo = Munição de Bateria Experimental
 research-technology-basic-shuttle-armament = Armamento básico de naves
 research-technology-advanced-shuttle-weapon = Armas avançadas de naves
+research-technology-combat-batteries = Tecnologias anti-magnéticas
 
 research-technology-basic-robotics = Robótica Básica
 research-technology-basic-anomalous-research = Pesquisa de Anomalias Básica

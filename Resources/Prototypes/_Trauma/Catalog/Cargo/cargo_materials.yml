@@ -1,0 +1,11 @@
+
+- type: cargoProduct
+  id: CrateMaterialGunpowder
+  icon:
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+  product: CrateMaterialGunpowder
+  cost: 3000
+  category: cargoproduct-category-name-materials
+  group: market

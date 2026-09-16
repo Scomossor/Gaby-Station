@@ -1,0 +1,41 @@
+- type: entity
+  name: combat power cell
+  description: A rechargeable standardized power cell. This combat brand is equipped with power spikes protection.
+  id: PowerCellCombat
+  suffix: Full
+  parent: PowerCellHigh
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Power/power_cells.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: combat
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: EmpResistance
+    coefficient: 0.005
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: HitscanBatteryAmmoProvider 
+    proto: RedLaser
+    fireCost: 187 # 8 shots
+
+
+- type: entity
+  id: PowerCellCombatPrinted
+  suffix: Empty
+  parent: PowerCellCombat
+  components:
+  - type: Sprite
+    layers:
+      - map: [ "enum.PowerCellVisualLayers.Base" ]
+        state: combat
+      - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+        state: o2
+        shader: unshaded
+        visible: false
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 0

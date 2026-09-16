@@ -88,3 +88,15 @@
 
 - type: Tag
   id: T45Helmet
+
+- type: Tag
+  id: MagazineGaussgun
+
+- type: Tag
+  id: CartridgeGaussgun
+
+- type: Tag
+  id: AmmoGaussgun
+
+- type: Tag
+  id: Gunpowder

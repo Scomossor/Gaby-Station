@@ -5,36 +5,37 @@
 
 #Gabystation/Andromeda
 
-- type: technology
-  id: SelectiveFirePowerguns
-  name: research-technology-selective-fire-powerguns
-  icon:
-    sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 2
-  cost: 10000
-  recipeUnlocks:
-  - WeaponRifleMA56XF
-  - WeaponPistolMX3R
-  technologyPrerequisites:
-  - SmartWeaponry
-  position: 5,4
+# Dumont edit - Lasersec - Byebye ballistics.
+#- type: technology
+#  id: SelectiveFirePowerguns
+#  name: research-technology-selective-fire-powerguns
+#  icon:
+#    sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
+#    state: icon
+#  discipline: Arsenal
+#  tier: 2
+#  cost: 10000
+#  recipeUnlocks:
+#  - WeaponRifleMA56XF
+#  - WeaponPistolMX3R
+#  technologyPrerequisites:
+#  - SmartWeaponry
+#  position: 5,4
 
-- type: technology
-  id: ShotgunsTech
-  name: research-technology-revolving-magazines
-  icon:
-    sprite: _Goobstation/Objects/Weapons/Guns/Shotguns/antelope.rsi
-    state: base
-  discipline: Arsenal
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - WeaponShotgunAntelope
-  technologyPrerequisites:
-  - SelectiveFirePowerguns
-  position: 6,4
+#- type: technology
+#  id: ShotgunsTech
+#  name: research-technology-revolving-magazines
+#  icon:
+#    sprite: _Goobstation/Objects/Weapons/Guns/Shotguns/antelope.rsi
+#    state: base
+#  discipline: Arsenal
+#  tier: 3
+#  cost: 15000
+#  recipeUnlocks:
+#  - WeaponShotgunAntelope
+#  technologyPrerequisites:
+#  - SelectiveFirePowerguns
+#  position: 6,4
 
 - type: technology
   id: PayloadsTech
@@ -52,6 +53,23 @@
   technologyPrerequisites:
   - AdvancedRiotControl
   position: 2,3
+
+- type: technology
+  id: CombatBatteries
+  name: research-technology-combat-batteries
+  icon:
+    sprite: _Mono/Objects/Power/power_cells.rsi
+    state: combat
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - InducerSec
+  - PowerCellCombat
+  technologyPrerequisites:
+  - OptimizedMicrogalvanism
+  - WeaponizedLaserManipulation
+  position: 2,-1
 
 #Mover os oculos de visão térmica para aqui
 - type: technology

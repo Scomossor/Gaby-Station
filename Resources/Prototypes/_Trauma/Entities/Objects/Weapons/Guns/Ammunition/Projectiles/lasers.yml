@@ -1,0 +1,310 @@
+
+# Buncha stuff for LaserSec rework. The reason it's in trauma is because the ideas are from there.
+- type: entity
+  id: BulletGammaRayCannon
+  name: Gamma ray bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumgold
+      shader: unshaded
+  - type: Projectile
+    penetrationThreshold: 100
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 18
+
+
+
+
+- type: entity
+  id: BaseMagFedLaserBolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
+
+# SMG bolts
+- type: entity
+  id: BulletSMGIon
+  name: Ion SMG bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavystun
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Ion: 15
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
+  - type: TriggerOnCollide
+    fixtureID: projectile
+    maxTriggers: 1
+  - type: EmpOnTrigger
+    range: 0.5
+    energyConsumption: 50
+    disableDuration: 0.3
+# that's so loud im removing it from the prints
+
+
+- type: entity
+  id: BulletSMGBluespace
+  name: Bluespace SMG bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavystun
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 8
+      armorPenetration: 0.4
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
+
+- type: entity
+  id: BulletSMGOverclocked
+  name: Overclocked SMG bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavy
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 18
+
+- type: entity
+  id: BulletGammaRaySMG
+  name: Gamma ray bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumgold
+      shader: unshaded
+  - type: Projectile
+    penetrationThreshold: 100
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 10
+
+#revolver bolts
+- type: entity
+  id: BulletRevolverOverclocked
+  name: Overclocked SMG bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavy
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 25
+
+- type: entity
+  id: BulletRevolverIon
+  name: Ion SMG bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavystun
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Ion: 21
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
+  - type: TriggerOnCollide
+    fixtureID: projectile
+    maxTriggers: 1
+  - type: EmpOnTrigger
+    range: 0.5
+    energyConsumption: 100
+    disableDuration: 0.5
+
+- type: entity
+  id: BulletGammaRayRevolver
+  name: Gamma ray bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumgold
+      shader: unshaded
+  - type: Projectile
+    penetrationThreshold: 100
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 14
+
+
+# Sniper bolts
+- type: entity
+  id: BulletLaserSniper
+  name: sniper laser bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavy
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 60
+
+- type: entity
+  id: BulletOverclockedLaserSniper
+  name: sniper overclocked bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavypurp # so strong it switched colors
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 80
+
+- type: entity
+  id: BulletGammaRaySniper
+  name: Gamma ray bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumgold
+      shader: unshaded
+  - type: Projectile
+    penetrationThreshold: 150 # gets more for being a sniper
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 45
+
+- type: entity
+  id: BulletIonSniper
+  name: ion sniper bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TriggerOnCollide
+    fixtureID: projectile
+    maxTriggers: 1
+  - type: EmpOnTrigger
+    range: 1
+    energyConsumption: 300
+    disableDuration: 2
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavystun
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Ion: 70
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
+
+- type: entity
+  id: BulletBluespaceSniper
+  name: bluespace sniper bolt
+  parent: BaseMagFedLaserBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: heavystun
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 50
+      armorPenetration: 0.5
+
+# Resources\Textures\_Impstation\Objects\Weapons\Guns\Projectiles\energybolts.rsi

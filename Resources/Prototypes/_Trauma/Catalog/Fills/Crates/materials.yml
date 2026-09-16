@@ -1,0 +1,11 @@
+
+- type: entity
+  id: CrateMaterialGunpowder
+  parent: CrateSecgear # no reason for anyone to be having this except sec
+  name: gunpowder crate
+  description: 30 units of gunpowder, for use in munitions fabrication. Requires security access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MaterialGunpowder30
+        amount: 1

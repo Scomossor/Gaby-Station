@@ -19,7 +19,7 @@
   - type: Gun
     minAngle: 21
     maxAngle: 32
-    fireRate: 6
+    fireRate: 5
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -73,12 +73,12 @@
     shape:
     - 0,0,6,1
   - type: Gun
-    fireRate: 1.2
+    fireRate: 0.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+     path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -141,7 +141,7 @@
     - Sidearm
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 2.5 # Dumontstation
+    fireRate: 2.0 # Dumontstation
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -227,7 +227,7 @@
     maxAngle: 20
     angleIncrease: -5
     angleDecay: -80
-    fireRate: 10
+    fireRate: 8
     selectedMode: FullAuto
     availableModes:
       - FullAuto

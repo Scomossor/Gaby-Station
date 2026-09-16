@@ -215,6 +215,7 @@
     id: HoSPDA
     #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurity
+    pocket1: WeaponEnergyGunPhaser
   storage:
     back:
     - Flash

@@ -84,9 +84,12 @@ public sealed partial class GunSystem
         }
 
         component.Shots = shots;
+        component.ShotsFloat = charge / component.FireCost;
 
         if (maxShots > 0)
             component.Capacity = maxShots;
+        if (maxShots > 0)
+            component.CapacityFloat = maxCharge / component.FireCost;
 
         UpdateBatteryAppearance(uid, component);
 
@@ -149,9 +152,9 @@ public sealed partial class GunSystem
         return null;
     }
 
-    protected override void TakeCharge(Entity<BatteryAmmoProviderComponent> entity)
+    protected override void TakeCharge(Entity<BatteryAmmoProviderComponent> entity, float shots = 1f)
     {
-        var ev = new ChangeChargeEvent(-entity.Comp.FireCost);
+        var ev = new ChangeChargeEvent(-entity.Comp.FireCost * shots);
         RaiseLocalEvent(entity, ref ev);
     }
 }

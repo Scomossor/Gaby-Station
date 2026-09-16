@@ -1,0 +1,5 @@
+
+- type: latheRecipe
+  id: PowerCellCombat
+  parent: PowerCellMicroreactor
+  result: PowerCellCombatPrinted

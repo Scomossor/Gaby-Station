@@ -146,7 +146,7 @@
         startingItem: PowerCellHigh
 
 - type: entity
-  parent: [ BaseInducer, BaseMinorContraband ]
+  parent: [ BaseInducer, BaseSyndicateContraband ]
   id: InducerCombat
   name: combat inducer
   description: A device for wirelessly transferring energy from a battery to other devices.
@@ -156,6 +156,7 @@
     sprite: _Orion/Objects/Tools/Inducer/inducer-syndicate.rsi
     state: icon
   - type: Inducer
+    combatInducer: true
     transferMultiplier: 1.2
   - type: ItemMapper
     mapLayers:
@@ -177,3 +178,38 @@
     slots:
       inducer_power_cell_slot:
         startingItem: PowerCellHigh
+
+# Dumont LaserSec
+- type: entity
+  parent: [ BaseInducer, BaseSecurityContraband ]
+  id: InducerSec
+  name: combat inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Empty, Combat
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Tools/Inducer/inducer-sec.rsi
+    state: icon
+  - type: Inducer
+    combatInducer: true
+    transferMultiplier: 1.2
+  - type: ItemMapper
+    mapLayers:
+      inducer-bat:
+        whitelist:
+          tags:
+          - PowerCell
+          - MegaCell
+    sprite: _Orion/Objects/Tools/Inducer/inducer-sec.rsi
+
+- type: entity
+  parent: InducerSec
+  id: InducerSecBattery
+  name: inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Battery, Combat
+  components:
+  - type: ItemSlots
+    slots:
+      inducer_power_cell_slot:
+        startingItem: MegaCellHigh

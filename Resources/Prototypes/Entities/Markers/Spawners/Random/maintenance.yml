@@ -496,7 +496,7 @@
     - !type:GroupSelector
       weight: 95
       children:
-      - id: Machete
+     # - id: Machete Dumont edit - armory weapon now.
       - id: BaseBallBat
       - id: CombatKnife
       - id: Spear

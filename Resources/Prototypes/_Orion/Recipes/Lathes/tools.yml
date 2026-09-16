@@ -17,3 +17,12 @@
   materials:
     Steel: 500
     Plastic: 100
+
+ # Dumont edit - Lasersec
+- type: latheRecipe
+  id: InducerSec
+  result: InducerSec
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 100

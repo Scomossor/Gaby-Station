@@ -33,11 +33,10 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+    maxCharge: 500
+    startingCharge: 500
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 50
   - type: AmmoSelector
     prototypes:
       - BulletDisabler
@@ -75,3 +74,98 @@
   - type: StaticPrice
     price: 150
   - type: Multishot
+
+- type: entity
+  name: laser submachine gun
+  parent: [BaseWeaponBattery, BaseSecurityContraband]
+  id: WeaponLaserSMG
+  description: Designed for maximum damage output, suffers from a small battery.
+  components:
+  - type: Battery
+    maxCharge: 900
+    startingCharge: 900
+  - type: Sprite
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Wieldable
+    unwieldOnUse: true
+  - type: Clothing
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 5
+    burstFireRate: 12
+    shotsPerBurst: 5
+    burstCooldown: 1
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserSubmachineGun
+    fireCost: 30
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name: laser rifle
+  parent: [WeaponLaserCarbine]
+  id: WeaponLaserRifle
+  description: Made for long fights, has a larger, EMP resistant battery at the cost of fire rate.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser_wide.rsi
+  - type: Clothing
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser.rsi
+  - type: Item
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/assault_laser.rsi
+    size: Huge
+    shape:
+    - 0,0,4,2
+  - type: Gun #Starlight - Start
+    burstFireRate: 5
+    shotsPerBurst: 2
+    burstCooldown: 1
+    fireRate: 1.2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+  - type: Battery
+    maxCharge: 2000 # Eu diminui o max charge e o fire cost juntos pra fazer elas mais fáceis de recarregar mas recarregar mais frequentemente: 25 tiros entre cada recarga.
+    startingCharge: 2000
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserMainWeapon
+    fireCost: 33.3
+  - type: StaticPrice
+    price: 500
+  - type: EmpResistance
+    coefficient: 0.01

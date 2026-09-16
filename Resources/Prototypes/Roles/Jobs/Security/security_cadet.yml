@@ -139,12 +139,11 @@
     id: SecurityCadetPDA
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
-    #pocket1: WeaponDisabler #Goobstation (Disablers in belts)
+    pocket1: WeaponEnergyGunPhaser
     pocket2: BookSecurity
   storage:
     back:
     - Flash
-    - MagazinePistol
 
 - type: chameleonOutfit
   id: SecurityCadetChameleonOutfit

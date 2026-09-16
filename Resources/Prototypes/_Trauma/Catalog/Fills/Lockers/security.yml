@@ -1,0 +1,73 @@
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeSurplus
+  name: surplus ballistic safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeSurplus
+
+- type: entityTable
+  id: FillGunSafeSurplus
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: GunSafeSurplusTable
+      rolls: !type:RangeNumberSelector
+        range: 3, 5
+
+- type: entityTable
+  id: GunSafeSurplusTable
+  table: !type:GroupSelector
+    children:
+    - id: WeaponRifleLecter
+    - id: WeaponShotgunKammerer
+    - id: WeaponSubMachineGunDrozd
+    - id: WeaponPistolMk58
+    - id: WeaponRevolverInspector
+    - id: WeaponShotgunDoubleBarreled
+    - id: WeaponSubMachineGunWt550
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeMelee
+  name: melee safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeMelee
+
+- type: entityTable
+  id: FillGunSafeMelee
+  table: !type:AllSelector
+    children:
+    - id: SecBreachingHammer
+      amount: 2
+    - id: Machete
+      amount: 4
+    - id: ClothingBeltSheathKatanaFilled
+      amount: 1
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeGauss
+  name: gauss safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeGauss
+
+- type: entityTable
+  id: FillGunSafeGauss
+  table: !type:AllSelector
+    children:
+    - id: WeaponGaussgun
+      amount: 2
+    - id: BaseMagazineGaussgun
+      amount: 2 
+    - id: PowerCellHigh
+      amount: 2

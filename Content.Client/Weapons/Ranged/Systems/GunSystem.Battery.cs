@@ -30,7 +30,8 @@ public sealed partial class GunSystem
     {
         if (args.Control is not BoxesStatusControl boxes) return;
 
-        boxes.Update(component.Shots, component.Capacity);
+        boxes.Update((int) (component.ShotsFloat / Math.Max(args.FireCostMultiplier, 0.001f)),
+            (int) (component.CapacityFloat / Math.Max(args.FireCostMultiplier, 0.001f)));
     }
 
     private void OnControl(EntityUid uid, BatteryAmmoProviderComponent component, AmmoCounterControlEvent args)

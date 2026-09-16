@@ -32,12 +32,12 @@
     shape:
     - 0,0,4,2
   - type: Gun
-    fireRate: 2
+    fireRate: 1.3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
     defaultDirection: 1, 0
-  - type: HitscanBatteryAmmoProvider
-    proto: RedMediumSplitLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserOvercharge
     fireCost: 60
   - type: StaticPrice
     price: 2500
@@ -78,7 +78,7 @@
   - type: Gun
     minAngle: 3
     maxAngle: 12 #Dumontstation X-00 weapon rebalance
-    fireRate: 6
+    fireRate: 5.5
     burstFireRate: 8
     angleIncrease: 4
     angleDecay: 8
@@ -90,7 +90,7 @@
       path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
     defaultDirection: 1, 0
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletLaserHeavy
+    proto: BulletLaserSubmachineGun
     fireCost: 33
   - type: StaticPrice
     price: 2500
@@ -131,7 +131,7 @@
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 0.75
+    fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
@@ -179,10 +179,10 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
-    fireRate: 0.75
+    fireRate: 1
   - type: GunRequiresWield
-  - type: HitscanBatteryAmmoProvider
-    proto: LaserSniper
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserHosSniper
     fireCost: 120
   - type: SpeedModifiedOnWield
     walkModifier: 0.80

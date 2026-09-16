@@ -197,6 +197,7 @@
     eyes: ClothingEyesGlassesSecurityContraDetect # Goobstation
     id: WardenPDA
     ears: ClothingHeadsetAltWarden # Goobstation
+    pocket1: WeaponEnergyGunPhaser
   storage:
     back:
     - Flash
