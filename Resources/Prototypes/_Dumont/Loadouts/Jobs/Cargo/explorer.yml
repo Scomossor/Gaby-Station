@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: ExplorerEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitExplorer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ExplorerEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetExplorer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ExplorerEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesExplorer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ExplorerEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsExplorer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

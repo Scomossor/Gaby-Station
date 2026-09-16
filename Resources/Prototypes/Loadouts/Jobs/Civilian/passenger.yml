@@ -236,11 +236,6 @@
   equipment:
     shoes: ClothingShoesBootsWinter
 
-- type: loadout # Dumont
-  id: LaceUpBoots
-  equipment:
-    shoes: ClothingShoesBootsLaceup
-
 # goob - colored military jumpsuits
 
 - type: loadout

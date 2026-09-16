@@ -1,0 +1,117 @@
+# Plasmaman
+- type: loadout
+  id: EngineerV1Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitEngineerV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV2Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitEngineerV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV3Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitEngineerV3
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV4Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitEngineerV4
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV1Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetEngineerV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV2Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetEngineerV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV3Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetEngineerV3
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV4Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetEngineerV4
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV1Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesEngineerV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV2Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesEngineerV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV3Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesEngineerV3
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerV4Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesEngineerV4
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: EngineerEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsEngineer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

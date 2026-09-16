@@ -111,10 +111,6 @@
   - GroupSpeciesBreathTool
   - Survival
   - NanotrasenRepresentativeGloves
-  # Goobstation - EE Plasmeme Change.
-  - NanotrasenRepresentativeEnvirohelm
-  - NanotrasenRepresentativeEnvirosuit
-  - NanotrasenRepresentativeEnvirogloves
   # Civil loadout
   - CivilianJumpsuit
   - CivilianBackpack
@@ -124,6 +120,10 @@
   - CivilianGloves
   - CivilianOuterClothing
   - CivilianBelt
+  - NanotrasenRepresentativeEnvirohelmet # Dumont start
+  - NanotrasenRepresentativeEnvirosuit
+  - NanotrasenRepresentativeEnvirogloves
+  - NanotrasenRepresentativeEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobBlueshieldOfficer
@@ -139,10 +139,6 @@
   - Animals
   - GroupSpeciesBreathTool
   - SurvivalSecurity
-  # Goobstation - EE Plasmeme Change.
-  - BlueshieldOfficerEnvirohelm
-  - BlueshieldOfficerEnvirosuit
-  - BlueshieldOfficerEnvirogloves
   - BlueshieldOfficerGloves
   # Civil loadout
   - CivilianJumpsuit
@@ -154,6 +150,11 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
+  # Goobstation - EE Plasmeme Change.
+  - GreenshieldOfficerEnvirohelmet
+  - GreenshieldOfficerEnvirosuit
+  - GreenshieldOfficerEnvirogloves
+  - GreenshieldOfficerEnviroboots
 
 - type: roleLoadout
   id: JobNanotrasenCareerTrainer
@@ -316,6 +317,7 @@
    - SurvivalMedical
    - Trinkets
    - GroupSpeciesBreathToolMedical
-   - VirologyEnvirohelm
-   - VirologyEnvirosuit
-   - VirologyEnvirogloves
+   - VirologistEnvirohelmet # Dumont start
+   - VirologistEnvirosuit
+   - VirologistEnvirogloves
+   - VirologistEnviroboots # Dumont end

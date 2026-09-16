@@ -546,9 +546,10 @@
   - CivilianBelt
   - CivilianShoes
   # Goobstation - EE Plasmeme Change.
-  - QuartermasterEnvirohelm
+  - QuartermasterEnvirohelmet
   - QuartermasterEnvirosuit
   - QuartermasterEnvirogloves
+  - QuartermasterEnviroboots
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -574,9 +575,10 @@
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - CargoTechnicianEnvirohelm
-  - CargoTechnicianEnvirosuit
-  - CargoTechnicianEnvirogloves
+  - CargoTechEnvirohelmet # Dumont start
+  - CargoTechEnvirosuit
+  - CargoTechEnvirogloves
+  - CargoTechEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -602,9 +604,10 @@
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - SalvageEnvirohelm
+  - SalvageEnvirohelmet # Dumont start
   - SalvageEnvirosuit
   - SalvageEnvirogloves
+  - SalvageEnviroboots # Dumont end
 
 # Engineering
 - type: roleLoadout
@@ -632,9 +635,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
-  - ChiefEngineerEnvirohelm
+  - ChiefEngineerEnvirohelmet
   - ChiefEngineerEnvirosuit
   - ChiefEngineerEnvirogloves
+  - ChiefEngineerEnviroboots # Dumont
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -656,9 +660,10 @@
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - TechnicalAssistantEnvirohelm
-  - TechnicalAssistantEnvirosuit
-  - TechnicalAssistantEnvirogloves
+  - TechnicianAssistantEnvirohelmet # Dumont start
+  - TechnicianAssistantEnvirosuit
+  - TechnicianAssistantEnvirogloves
+  - TechnicianAssistantEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -685,9 +690,10 @@
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - StationEngineerEnvirohelm
-  - StationEngineerEnvirosuit
-  - StationEngineerEnvirogloves
+  - EngineerEnvirohelmet # Dumont start
+  - EngineerEnvirosuit
+  - EngineerEnvirogloves
+  - EngineerEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -713,9 +719,10 @@
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - AtmosEnvirohelm
+  - AtmosEnvirohelmet # Dumont
   - AtmosEnvirosuit
   - AtmosEnvirogloves
+  - AtmosEnviroboots # Dumont
 
 # Science
 - type: roleLoadout
@@ -958,9 +965,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
-  - ChiefMedicalOfficerEnvirohelm
+  - ChiefMedicalOfficerEnvirohelmet # Dumont start
   - ChiefMedicalOfficerEnvirosuit
   - ChiefMedicalOfficerEnvirogloves
+  - ChiefMedicalOfficerEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -989,9 +997,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
-  - MedicalDoctorEnvirohelm
-  - MedicalDoctorEnvirosuit
-  - MedicalDoctorEnvirogloves
+  - MedicEnvirohelmet # Dumont start
+  - MedicEnvirosuit
+  - MedicEnvirogloves
+  - MedicEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -1000,6 +1009,7 @@
   - MedicalInternJumpsuit
   - MedicalBackpack
   - MedicalEyewear
+  - MedicalShoes
   - SurvivalMedical
   - Trinkets
   - Animals
@@ -1013,9 +1023,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
-  - MedicalInternEnvirohelm
+  - MedicalInternEnvirohelmet # Dumont start
   - MedicalInternEnvirosuit
   - MedicalInternEnvirogloves
+  - MedicalInternEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobChemist
@@ -1042,9 +1053,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
-  - ChemistEnvirohelm
+  - ChemistEnvirohelmet # Dumont start
   - ChemistEnvirosuit
   - ChemistEnvirogloves
+  - ChemistEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobParamedic
@@ -1072,9 +1084,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
-  - ParamedicEnvirohelm
+  - ParamedicEnvirohelmet # Dumont start
   - ParamedicEnvirosuit
   - ParamedicEnvirogloves
+  - ParamedicEnviroboots # Dumont end
 
 # Wildcards
 - type: roleLoadout
@@ -1133,6 +1146,7 @@
   groups:
   - GroupTankHarness
   - PsychologistJumpsuit
+  - PsychologistShoes
   - MedicalBackpack
   - Glasses
   - Survival
@@ -1149,9 +1163,10 @@
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
-  - PsychologistEnvirohelm
+  - PsychologistEnvirohelmet # Dumont start
   - PsychologistEnvirosuit
   - PsychologistEnvirogloves
+  - PsychologistEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobBoxer

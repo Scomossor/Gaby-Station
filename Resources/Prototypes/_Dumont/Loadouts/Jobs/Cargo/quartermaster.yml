@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: QuartermasterEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitQM
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: QuartermasterEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetQM
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: QuartermasterEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesQM
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: QuartermasterEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsQM
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: ChiefMedicalOfficerEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitCMO
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ChiefMedicalOfficerEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetCMO
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ChiefMedicalOfficerEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesCMO
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ChiefMedicalOfficerEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsCMO
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: NanotrasenRepresentativeEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitNTR
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: NanotrasenRepresentativeEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetNTR
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: NanotrasenRepresentativeEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesNTR
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: NanotrasenRepresentativeEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsNTR
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

@@ -195,8 +195,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.70
-    sprintModifier: 0.70
+    walkModifier: 0.80
+    sprintModifier: 0.80
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -239,8 +239,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: Armor
     traumaDeductions:
@@ -282,8 +282,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: Armor
     traumaDeductions:
@@ -812,8 +812,6 @@
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-      - state: equipped-OUTERCLOTHING-unshaded
-        shader: unshaded
 
 - type: entity
   parent: [ClothingOuterEnvirosuitBase, BaseSecurityCommandContraband]

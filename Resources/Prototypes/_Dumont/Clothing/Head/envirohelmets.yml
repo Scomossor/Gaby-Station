@@ -1383,7 +1383,7 @@
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
-  id: ClothingHeadEnvirohelmetAssistantMedicalIntern
+  id: ClothingHeadEnvirohelmetMedicalIntern
   name: medical intern envirohelmet
   description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment. Although plasmamen do not contract diseases, this helmet provides extra protection against them.
   components:
@@ -1478,7 +1478,7 @@
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
-  id: ClothingHeadEnvirohelmetAssistantPsychologist
+  id: ClothingHeadEnvirohelmetPsychologist
   name: psychologist envirohelmet
   description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment. Perfect for ignoring your patients's complaints.
   components:
@@ -1490,7 +1490,7 @@
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetBase, BaseMedicalContraband]
-  id: ClothingHeadEnvirohelmetAssistantVirologist
+  id: ClothingHeadEnvirohelmetVirologist
   name: virologist envirohelmet
   description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment. Although plasmamen do not contract diseases, this helmet provides extra protection against them.
   components:
