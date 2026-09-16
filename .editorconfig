@@ -11,7 +11,7 @@ tab_width = 4
 
 # New line preferences
 #end_of_line = crlf
-insert_final_newline = true
+insert_final_newline = false
 trim_trailing_whitespace = true
 max_line_length = 120
 

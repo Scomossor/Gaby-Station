@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: VirologistEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitVirologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: VirologistEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetVirologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: VirologistEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesVirologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: VirologistEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsVirologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

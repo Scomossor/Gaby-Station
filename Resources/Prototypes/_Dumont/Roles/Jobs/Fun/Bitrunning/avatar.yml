@@ -8,7 +8,7 @@
     jumpsuit: ClothingUniformEnvirosuitBitrunner
     head: ClothingHeadEnvirohelmBitrunner
     gloves: ClothingHandsGlovesEnviroglovesBlack
-    suitstorage: DoubleEmergencyPlasmaTankFilled
+    suitstorage: InternalsPlasmaTankFilled # Dumont Change
 
 # Vox
 - type: startingGear

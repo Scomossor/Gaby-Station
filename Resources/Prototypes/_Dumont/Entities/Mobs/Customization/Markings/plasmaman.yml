@@ -1,0 +1,268 @@
+# Head
+
+- type: marking
+  id: PlasmaHead1
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_1
+
+- type: marking
+  id: PlasmaHead2
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_2
+
+- type: marking
+  id: PlasmaHead3L
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_3_l
+
+- type: marking
+  id: PlasmaHead3R
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_3_r
+
+- type: marking
+  id: PlasmaHead4L
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_4_l
+
+- type: marking
+  id: PlasmaHead4R
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_4_r
+
+- type: marking
+  id: PlasmaHead5
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/head_markings.rsi
+    state: head_5
+
+# Chest
+
+- type: marking
+  id: PlasmaChest1
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/chest_markings.rsi
+    state: chest
+
+# Arms
+
+- type: marking
+  id: PlasmaArmL1
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/arm_markings.rsi
+    state: l_arm
+
+- type: marking
+  id: PlasmaArmR1
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/arm_markings.rsi
+    state: r_arm
+
+# Hands
+
+- type: marking
+  id: PlasmaHandL1
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/hand_markings.rsi
+    state: l_hand
+
+- type: marking
+  id: PlasmaHandR1
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/hand_markings.rsi
+    state: r_hand
+
+# Groin
+
+- type: marking
+  id: PlasmaGroin1
+  bodyPart: Groin
+  markingCategory: Groin
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/groin_markings.rsi
+    state: groin
+
+# Legs
+
+- type: marking
+  id: PlasmaLegL1
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/leg_markings.rsi
+    state: l_leg
+
+- type: marking
+  id: PlasmaLegR1
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/leg_markings.rsi
+    state: r_leg
+
+# Feet
+
+- type: marking
+  id: PlasmaFootL1
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/feet_markings.rsi
+    state: l_foot
+
+- type: marking
+  id: PlasmaFootR1
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [ Plasmaman ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#ffffff"
+  sprites:
+  - sprite: _Dumont/Mobs/Customization/Plasmaman/feet_markings.rsi
+    state: r_foot

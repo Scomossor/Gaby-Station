@@ -121,12 +121,84 @@
 
 - type: entity
   id: OrganPlasmamanHeart
-  parent: [ BasePlasmamanOrgan, OrganHumanHeart ]
+  parent: [ BasePlasmamanOrgan, OrganHumanHeart]
   name: plasmaman heart
   description: It pulses with plasma even outside the body.
   components:
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
+  - type: IgnitionSource
+    ignited: false
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      collection: lighterOnSounds
+    soundDeactivate:
+      collection: lighterOffSounds
+  - type: Appearance
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Heat: 1
+  - type: ItemToggleSize
+    activatedSize: Small
+  - type: ItemToggleHot
+  - type: Sprite
+    sprite: _EinsteinEngines/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+    - state: heart
+    - state: heart_flame
+      visible: false
+      shader: unshaded
+      map: [ "flame" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        flame:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ToggleableVisuals
+    spriteLayer: heart_flame
+  - type: UseDelay
+  - type: RefillableSolution
+    solution: Welder
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 8
+        maxVol: 8
+  - type: MeleeWeapon
+    animationRotation: 180 # WWDP
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 0
+  - type: Welder #
+    fuelConsumption: 0
+    fuelLitCost: 0
+    tankSafe: true
+  - type: PointLight
+    enabled: false
+    netsync: false
+    radius: 1.1 #smallest possible
+    color: orange
+  - type: ItemTogglePointLight
+  - type: Cautery # Shitmed
+    speed: 0.45
+  - type: SurgeryTool # Shitmed
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
+  - type: PhysicalComposition
+  - type: Tool #Goob
+    qualities:
+    - Ignition
+  - type: Tag #Goobstation - whitelisted cig pack strorage (added new tag)
+    tags:
+    - Lighter
 
 - type: entity
   id: OrganPlasmamanBrain

@@ -318,7 +318,7 @@
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
       - id: DoubleEmergencyWaterVaporTankFilled
-      - id: PlasmaTankFilledInternals
+      - id: InternalsPlasmaTankFilled # Dumont edit
     - id: WeaponCrusher
       weight: 0.5
     - !type:GroupSelector

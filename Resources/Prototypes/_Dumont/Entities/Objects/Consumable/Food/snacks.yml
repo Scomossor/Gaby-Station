@@ -1,0 +1,59 @@
+- type: entity
+  id: FoodSnackPlasmabrick
+  parent: BaseItem
+  name: plasmabrick
+  description: A solid brick made purely of plasma. Recommended only for people made of plasma.
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: plasmabrick
+  - type: Tag
+    tags:
+      - FoodSnackPlasmabrick
+  - type: Sprite
+    sprite: _Dumont/Objects/Consumable/Food/snacks.rsi
+    state: plasmabrick
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketMRETrash
+      - id: FoodSnackPlasmabrickOpen
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  id: FoodSnackPlasmabrickOpen
+  parent: FoodSnackBase
+  name: plasmabrick
+  description: A solid brick made purely of plasma. Recommended only for people made of plasma.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - plasma
+  - type: Item
+    size: Small
+    sprite: _Dumont/Objects/Consumable/Food/snacks.rsi
+    heldPrefix: plasmabrick-open
+    inhandVisuals:
+      left:
+      - state: plasmabrick-open-inhand-left
+      right:
+      - state: plasmabrick-open-inhand-right
+  - type: Sprite
+    sprite: _Dumont/Objects/Consumable/Food/snacks.rsi
+    state: plasmabrick-open
+  - type: Edible
+    edible: FoodGlass
+    solution: food
+  - type: Food
+    useSound: !type:SoundCollectionSpecifier
+      params:
+        variation: 0.2
+        volume: -1
+      collection: eatingglass
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Plasma
+          Quantity: 20

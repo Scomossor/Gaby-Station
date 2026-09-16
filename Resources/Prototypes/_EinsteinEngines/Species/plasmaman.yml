@@ -4,10 +4,10 @@
   roundStart: true
   prototype: MobPlasmaman
   sprites: MobPlasmamanSprites
-  defaultSkinTone: "#a349a4"
+  defaultSkinTone: "#ffffff"
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
-  skinColoration: Hues
+  skinColoration: NoColor # Dumont change
   youngAge: 60
   oldAge: 120
   maxAge: 180
@@ -21,18 +21,19 @@
   id: MobPlasmamanSprites
   sprites:
     Head: MobPlasmamanHead
+    HeadTop: MobHumanoidAnyMarking # Dumont change
     Face: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking # Gaby change
     Undershirt: MobHumanoidAnyMarking # Gaby change
     Chest: MobPlasmamanChest
-    Groin: MobPlasmamanGroin
-    Eyes: MobPlasmamanEyes
+    #Eyes: MobPlasmamanEyes # Dumont change
     LArm: MobPlasmamanLArm
     RArm: MobPlasmamanRArm
     LHand: MobPlasmamanLHand
     RHand: MobPlasmamanRHand
     LLeg: MobPlasmamanLLeg
     RLeg: MobPlasmamanRLeg
+    Groin: MobPlasmamanGroin
     LFoot: MobPlasmamanLFoot
     RFoot: MobPlasmamanRFoot
 
@@ -40,6 +41,9 @@
   id: MobPlasmamanMarkingLimits
   onlyWhitelisted: true # Hides the hair and facial hair options
   points:
+    Head:
+      points: 4
+      required: false
     Hair:
       points: 0
       required: false
@@ -91,11 +95,13 @@
     sprite: _EinsteinEngines/Mobs/Species/Plasmaman/parts.rsi
     state: head_f
 
-- type: humanoidBaseSprite
-  id: MobPlasmamanEyes
-  baseSprite:
-    sprite: _EinsteinEngines/Mobs/Customization/plasmaman.rsi
-    state: eyes
+# Dumont start - Removing eyes customization
+#- type: humanoidBaseSprite
+#  id: MobPlasmamanEyes
+#  baseSprite:
+#    sprite: _EinsteinEngines/Mobs/Customization/plasmaman.rsi
+#    state: eyes
+# Dumont end - Removing eyes customization
 
 - type: humanoidBaseSprite
   id: MobPlasmamanChest

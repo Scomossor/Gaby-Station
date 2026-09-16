@@ -396,7 +396,7 @@
       - id: ClothingHandsGlovesColorYellowBudget
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyPlasmaTankFilled # EE Plasmeme Change
+      - id: InternalsPlasmaTankFilled # Dumont change
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -411,7 +411,7 @@
       - id: ClothingHandsGlovesCombat
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyPlasmaTankFilled # EE Plasmeme Change
+      - id: InternalsPlasmaTankFilled # Dumont change
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -426,7 +426,7 @@
       - id: ClothingHandsGlovesCombat
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyPlasmaTankFilled # EE Plasmeme Change
+      - id: InternalsPlasmaTankFilled # Dumont Change
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -440,7 +440,7 @@
       - id: ClothingHandsGlovesCombat
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyPlasmaTankFilled # EE Plasmeme Change
+      - id: InternalsPlasmaTankFilled # Dumont change
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle

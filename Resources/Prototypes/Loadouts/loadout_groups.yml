@@ -402,6 +402,14 @@
   - CaptainJacket # Goobstation
 
 - type: loadoutGroup
+  id: CaptainShoes
+  name: loadout-group-captain-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceupShoes
+
+- type: loadoutGroup
   id: HoPHead
   name: loadout-group-hop-head
   minLimit: 0
@@ -1307,6 +1315,7 @@
   minLimit: 1
   exclusiveWith: FEET #Goostation
   loadouts: [BrownShoes, EngineeringWinterBoots]
+
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
   name: loadout-group-technical-assistant-jumpsuit
@@ -1316,6 +1325,15 @@
   - YellowJumpsuit
   - YellowJumpskirt
   - EngiMJ # goob
+
+# Dumont start
+- type: loadoutGroup
+  id: TechnicalAssistantShoes
+  name: loadout - group-technical-assistant-shoes
+  minLimit: 1
+  exclusiveWith: FEET #Goostation
+  loadouts: [WorkBoots, EngineeringWinterBoots]
+# Dumont end
 
 - type: loadoutGroup
   id: StationEngineerHead
@@ -2010,6 +2028,14 @@
   loadouts:
   - PsychologistJumpsuit
   - PsychologistJumpskirt
+
+- type: loadoutGroup
+  id: PsychologistShoes
+  name: loadout-group-psychologist-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LeatherShoes
 
 - type: loadoutGroup
   id: BoxerJumpsuit

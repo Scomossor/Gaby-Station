@@ -153,7 +153,7 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
-    - Plasmaman
+    # - Plasmaman # Dumont edit
 # Goobstation end
 
 - type: loadoutEffectGroup

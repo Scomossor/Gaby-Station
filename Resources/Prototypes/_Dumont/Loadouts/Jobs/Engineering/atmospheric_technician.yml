@@ -1,0 +1,63 @@
+# Plasmaman
+- type: loadout
+  id: AtmosV1Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitAtmosV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AtmosV2Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitAtmosV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AtmosV1Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetAtmosV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AtmosV2Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetAtmosV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AtmosV1Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesAtmosV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AtmosV2Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesAtmosV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AtmosEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsAtmos
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

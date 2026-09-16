@@ -117,7 +117,7 @@
 - type: startingGear
   id: PsychologistGear
   equipment:
-    shoes: ClothingShoesLeather
+    #shoes: ClothingShoesLeather Dumont, moved to loadouts
     id: PsychologistPDA
     ears: ClothingHeadsetMedical
   storage:

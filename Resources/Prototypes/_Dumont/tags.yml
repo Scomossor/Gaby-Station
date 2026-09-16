@@ -59,3 +59,10 @@
   
 - type: Tag
   id: XenoDungeon
+
+- type: Tag
+  id: FoodSnackPlasmabrick
+
+- type: Tag
+  id: DrinkBottleMilk
+

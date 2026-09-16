@@ -37,7 +37,7 @@
       - id: ClothingHandsGlovesCombat
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyPlasmaTankFilled # EE Plasmeme Change
+      - id: InternalsPlasmaTankFilled # Dumont edit
 
 - type: entity
   id: CrateSyndicateSuperSurplusBundle

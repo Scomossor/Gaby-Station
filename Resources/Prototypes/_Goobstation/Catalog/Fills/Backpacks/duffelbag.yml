@@ -145,7 +145,7 @@
       - id: ClothingMaskGasSyndicate
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyPlasmaTankFilled
+      - id: InternalsPlasmaTankFilled # Dumont change
 
 
 - type: entity

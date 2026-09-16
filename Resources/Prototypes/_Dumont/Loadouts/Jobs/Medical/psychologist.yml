@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: PsychologistEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitPsychologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PsychologistEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetPsychologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PsychologistEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesPsychologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PsychologistEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsPsychologist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

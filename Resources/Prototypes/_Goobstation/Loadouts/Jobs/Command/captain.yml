@@ -14,16 +14,16 @@
 - type: loadout
   id: CaptainEnvirosuit
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitCaptain
+    outerClothing: ClothingOuterEnvirosuitCap # Dumont
   effects:
   - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
     species:
     - Plasmaman
 
 - type: loadout
-  id: CaptainEnvirohelm
+  id: CaptainEnvirohelmet #Dumont
   equipment:
-    head: ClothingHeadEnvirohelmCaptain
+    head: ClothingHeadEnvirohelmetCap # Dumont
   effects:
   - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
     species:
@@ -32,7 +32,16 @@
 - type: loadout
   id: CaptainEnvirogloves
   equipment:
-    gloves: ClothingHandsGlovesEnviroglovesCaptain
+    gloves: ClothingHandsGlovesEnviroglovesCap # Dumont
+  effects:
+  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: CaptainEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsCap
   effects:
   - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
     species:

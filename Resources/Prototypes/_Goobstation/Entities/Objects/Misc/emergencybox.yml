@@ -53,6 +53,7 @@
         whitelist:
           tags:
           - DrinkBottle
+          - DrinkBottleMilk # Dumont edit
       nutriblock:
         ejectOnInteract: false
         whitelist:
@@ -118,6 +119,10 @@
           - FoodSnack
           - BreadEmergency
           - FoodTinMRE
+      plasmablock:
+        whitelist:
+          tags:
+          - FoodSnackPlasmabrick # Dumont edit
       flare:
         whitelist:
           tags:
@@ -134,6 +139,10 @@
         whitelist:
           tags:
           - DrinkBottle
+      milk:
+        whitelist:
+          tags:
+          - DrinkBottleMilk # Dumont edit
       mask:
         whitelist:
           tags:
@@ -166,6 +175,10 @@
         whitelist:
           tags:
           - EmergencyWaterVaporTank
+      plasma:
+        whitelist:
+          tags:
+          - EmergencyPlasmaTank # Dumont edit
       battery:
         whitelist:
           tags:
@@ -554,7 +567,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -567,6 +580,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxSurvivalSlotsEngineering
@@ -578,7 +595,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -591,8 +608,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
-  - type: Sprite
-    state: box_extend
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxSurvivalSlotsSecurity
@@ -604,7 +623,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -617,8 +636,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
-  - type: Sprite
-    state: box_sec
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxSurvivalSlotsMedical
@@ -630,7 +651,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -643,8 +664,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
-  - type: Sprite
-    state: box_med
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxHugSlots
@@ -656,7 +679,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -669,6 +692,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxSurvivalSlotsSyndicate
@@ -680,7 +707,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -693,8 +720,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
-  - type: Sprite
-    state: box_syndie
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxSurvivalSlots
@@ -706,7 +735,7 @@
       water:
       - DrinkMilkBottleFull
       nutriblock:
-      - FoodBreadBaguette
+      - FoodSnackPlasmabrick # Dumont edit
       flare:
       - Flare
       tank:
@@ -719,6 +748,10 @@
       - SpaceMedipen
   - type: Label
     currentLabel: reagent-name-plasma
+  - type: Sprite # Dumont edit
+    state: box_plasma
+  - type: Item
+    heldPrefix: plasma # Dumont edit
 
 - type: entity
   parent: BoxSurvivalSlots

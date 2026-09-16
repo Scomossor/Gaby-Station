@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/cc65477c04f7403ca8a457bd5bae69a01abadbf0 modified by gtheglorious, aidenkrz, and gnusnotutopia, vapor made by modifying oxy by AstroDoge",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/cc65477c04f7403ca8a457bd5bae69a01abadbf0 modified by gtheglorious, aidenkrz, and gnusnotutopia, vapor made by modifying oxy by AstroDoge, mill, plasma, plasmablock, box_plasma and inhands made by Crenissis",
   "size": {
     "x": 32,
     "y": 32
@@ -63,7 +63,13 @@
       "name": "nutriblock"
     },
     {
+      "name": "plasmablock"
+    },
+    {
       "name": "water"
+    },
+    {
+      "name": "milk"
     },
     {
       "name": "oxy"
@@ -77,9 +83,23 @@
     {
       "name": "nit"
     },
-	  {
-	    "name": "vapor"
-	  },
+	{
+	  "name": "vapor"
+	},
+    {
+      "name": "plasma"
+    },
+    {
+      "name": "box_plasma"
+    },
+    {
+      "name": "plasma-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "plasma-inhand-right",
+      "directions": 4
+    },
     {
       "name": "box_silicon"
     },

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Crenissis",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "wrapper"
+    },
+    {
+      "name": "plasmabrick"
+    },
+    {
+      "name": "plasmabrick-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "plasmabrick-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "plasmabrick-open"
+    },
+    {
+      "name": "plasmabrick-open-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "plasmabrick-open-inhand-left",
+      "directions": 4
+    }
+  ]
+}

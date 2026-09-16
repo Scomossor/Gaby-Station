@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "head_1 taken from Paradise Station at commit https://github.com/ParadiseSS13/Paradise/commit/7832e1c26f920427fe30d4bb98540da59206a9b6, head_2, head_3, head_4 and head_5 made by Crenissis",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "head_1",
+      "directions": 4
+    },
+    {
+      "name": "head_2",
+      "directions": 4
+    },
+    {
+      "name": "head_3_l",
+      "directions": 4
+    },
+    {
+      "name": "head_3_r",
+      "directions": 4
+    },
+    {
+      "name": "head_4_l",
+      "directions": 4
+    },
+    {
+      "name": "head_4_r",
+      "directions": 4
+    },
+    {
+      "name": "head_5",
+      "directions": 4
+    }
+  ]
+}

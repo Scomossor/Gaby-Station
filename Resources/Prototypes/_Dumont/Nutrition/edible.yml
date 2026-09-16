@@ -1,0 +1,7 @@
+- type: edible
+  id: FoodGlass
+  useSound: !type:SoundCollectionSpecifier
+    params:
+      variation: 0.50
+      volume: -1
+    collection: eatingglass

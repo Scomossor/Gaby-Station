@@ -1,0 +1,9 @@
+- type: entity
+  parent: CrateInternals
+  id: CratePlasmaman
+  name: plasmaman crate
+  components:
+  - type: Icon
+    sprite: _Dumont/Structures/Storage/Crates/plasmaman.rsi
+  - type: Sprite
+    sprite: _Dumont/Structures/Storage/Crates/plasmaman.rsi

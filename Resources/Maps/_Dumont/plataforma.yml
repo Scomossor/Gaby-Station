@@ -10718,7 +10718,7 @@ entities:
     - type: Transform
       pos: -38.5,-19.5
       parent: 2
-- proto: DoubleEmergencyPlasmaTankFilled
+- proto: InternalsPlasmaTankFilled
   entities:
   - uid: 1286
     components:

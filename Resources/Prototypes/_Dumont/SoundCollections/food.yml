@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: eatingglass
+  files:
+  - /Audio/_Dumont/Items/eating_glass_1.ogg
+  - /Audio/_Dumont/Items/eating_glass_2.ogg
+  - /Audio/_Dumont/Items/eating_glass_3.ogg

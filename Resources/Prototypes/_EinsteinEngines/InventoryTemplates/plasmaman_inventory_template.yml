@@ -8,6 +8,9 @@
       uiWindowPos: 1,0
       strippingWindowPos: 1,3
       displayName: Shoes
+      whitelist: #Dumont change
+        tags:
+          - PlasmamanSafe
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING
@@ -15,9 +18,6 @@
       uiWindowPos: 0,1
       strippingWindowPos: 0,2
       displayName: Jumpsuit
-      whitelist:
-        tags:
-          - PlasmamanSafe
     - name: outerClothing
       slotTexture: suit
       slotFlags: OUTERCLOTHING
@@ -25,6 +25,9 @@
       uiWindowPos: 1,1
       strippingWindowPos: 1,2
       displayName: Suit
+      whitelist: #Dumont change
+        tags:
+          - PlasmamanSafe
     - name: gloves
       slotTexture: gloves
       slotFlags: GLOVES
@@ -98,7 +101,7 @@
       stripTime: 3
       uiWindowPos: 2,0
       strippingWindowPos: 2,5
-      dependsOn: jumpsuit # Goobstation - plasmamen can use the envirosuit as gasholder
+      dependsOn: outerClothing
       dependsOnComponents:
       - type: AllowSuitStorage
       displayName: Suit Storage

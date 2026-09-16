@@ -68,7 +68,7 @@
   - !type:GroupLoadoutEffect
     proto: PlasmaBreather
   equipment:
-    suitstorage: DoubleEmergencyPlasmaTankFilled
+    suitstorage: InternalsPlasmaTankFilled # Dumont change
 
 - type: loadout
   id: EmergencySilicon

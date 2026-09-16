@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Crenissis",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "V1-icon"
+    },
+    {
+      "name": "V1-equipped-HAND",
+      "directions": 4
+    },
+    {
+      "name": "V2-icon"
+    },
+    {
+      "name": "V2-equipped-HAND",
+      "directions": 4
+    },
+    {
+      "name": "V1-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "V1-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "V2-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "V2-inhand-right",
+      "directions": 4
+    }
+  ]
+}

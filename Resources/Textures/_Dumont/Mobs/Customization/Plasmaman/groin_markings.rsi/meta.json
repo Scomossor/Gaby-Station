@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Paradise Station at commit https://github.com/ParadiseSS13/Paradise/commit/7832e1c26f920427fe30d4bb98540da59206a9b6",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "groin",
+      "directions": 4
+    }
+  ]
+}

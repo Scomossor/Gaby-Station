@@ -195,15 +195,16 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtNanotrasenRepresentative
 
-
-- type: loadout
-  id: NanotrasenRepresentativeEnvirosuit
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitNanotrasenRepresentative
-  effects:
-  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
-    species:
-    - Plasmaman
+# Dumont start
+#- type: loadout
+#  id: NanotrasenRepresentativeEnvirosuit
+#  equipment:
+#    jumpsuit: ClothingUniformEnvirosuitNanotrasenRepresentative
+#  effects:
+#  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+#    species:
+#    - Plasmaman
+# Dumont end
 
 # Belt
 - type: loadout

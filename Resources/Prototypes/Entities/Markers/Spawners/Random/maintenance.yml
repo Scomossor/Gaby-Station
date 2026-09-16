@@ -374,7 +374,7 @@
         - !type:EntSelector
           id: PlasmaTankFilled
         - !type:EntSelector
-          id: DoubleEmergencyPlasmaTankFilled
+          id: InternalsPlasmaTankFilled # Dumont edit
       - !type:GroupSelector
         weight: 3
         children:
