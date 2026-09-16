@@ -109,7 +109,6 @@
     #gloves: ClothingHandsGlovesForensic - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     # belt: ClothingBeltHolsterFilled - Dumont, revolver selector kit added to locker
-    pocket1: WeaponEnergyGunPhaser
   storage:
     back:
     - Flash
